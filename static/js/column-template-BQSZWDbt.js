@@ -1,0 +1,1 @@
+import{t as e}from"./column-template-DMc3qMz5.js";export{e as default};

@@ -1,0 +1,1 @@
+import{t as e}from"./list-CXjw8sSK.js";import{t}from"./treeList-CEMNVIt4.js";import{t as n}from"./pageList-DcBUcu6-.js";var r=e=>`代码位置：src/views/table/virtual/${e}.vue`,i=[{key:`list`,content:r(`list`),title:`虚拟表格`,component:e},{key:`treeList`,content:r(`treeList`),title:`虚拟树形表格`,component:t},{key:`pageList`,content:r(`pageList`),title:`分页表格`,component:n}];export{i as t};

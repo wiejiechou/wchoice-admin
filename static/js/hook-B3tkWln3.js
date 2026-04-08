@@ -1,0 +1,1 @@
+import{t as e}from"./hook-BAeMPqut.js";export{e as useDept};

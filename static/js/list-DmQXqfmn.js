@@ -1,0 +1,1 @@
+import{t as e}from"./list-BjsReosn.js";export{e as list};

@@ -1,0 +1,1 @@
+import{t as e}from"./columns-DlAFoT8f.js";export{e as useColumns};

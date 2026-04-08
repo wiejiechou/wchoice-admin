@@ -1,0 +1,1 @@
+import{t as e}from"./hook-BvADsNpd.js";export{e as useRole};

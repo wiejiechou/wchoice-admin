@@ -1,0 +1,1 @@
+import{t as e}from"./list--R__9xVL.js";export{e as list};

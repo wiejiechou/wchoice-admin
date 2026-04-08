@@ -1,0 +1,1 @@
+import{t as e}from"./columns-RYE_499a.js";export{e as useColumns};

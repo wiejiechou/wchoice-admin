@@ -1,0 +1,1 @@
+import{t as e}from"./columns-CPbKryx8.js";export{e as useColumns};

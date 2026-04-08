@@ -1,0 +1,1 @@
+import{t as e}from"./list-D3hfVMfP.js";export{e as list};

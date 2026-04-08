@@ -1,0 +1,1 @@
+import{t as e}from"./columns-BumWy-Fa.js";export{e as useColumns};

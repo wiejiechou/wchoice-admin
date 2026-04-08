@@ -1,0 +1,1 @@
+import{t as e}from"./hook-_8jrG_qy.js";export{e as useUser};

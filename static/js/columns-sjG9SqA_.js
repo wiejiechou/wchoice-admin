@@ -1,0 +1,1 @@
+import{t as e}from"./columns-ClFoChRG.js";export{e as useColumns};

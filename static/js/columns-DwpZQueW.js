@@ -1,0 +1,1 @@
+import{t as e}from"./columns-CaRPH6uR.js";export{e as useColumns};

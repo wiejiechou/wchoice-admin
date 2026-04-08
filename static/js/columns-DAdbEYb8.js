@@ -1,0 +1,1 @@
+import{t as e}from"./columns-s7TFH24j.js";export{e as useColumns};
