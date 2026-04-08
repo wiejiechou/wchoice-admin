@@ -1,6 +1,9 @@
 name: Build and Deploy
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
 on:
   push:
     branches:
@@ -27,16 +30,22 @@ jobs:
           version: 9
           run_install: false
 
-      - name: Deploy 🔧
+      - name: Build 🔧
         run: |
           pnpm install --no-frozen-lockfile
           sed -i "s#VITE_PUBLIC_PATH = /#VITE_PUBLIC_PATH = /wchoice-admin/#g" $(pwd)/.env.production
           pnpm build
           cd dist
-          touch README.md .nojekyll
+          touch .nojekyll
 
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          folder: dist
-          clean: true
+          path: 'dist'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
