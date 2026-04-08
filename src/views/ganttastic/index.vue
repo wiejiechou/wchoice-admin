@@ -12,7 +12,7 @@ const context = ref([
       ganttBarConfig: {
         id: "0",
         hasHandles: true,
-        label: "需求收集和分析  负责人：小张",
+        label: "需求收集與分析 負責人：小張",
         style: {
           background: "#e96560"
         }
@@ -27,7 +27,7 @@ const context = ref([
       ganttBarConfig: {
         id: "1",
         hasHandles: true,
-        label: "系统设计  负责人：小强",
+        label: "系統設計 負責人：小強",
         style: {
           background: "#5ccfa3"
         }
@@ -42,7 +42,7 @@ const context = ref([
       ganttBarConfig: {
         id: "2",
         hasHandles: true,
-        label: "编码实现  负责人：老李",
+        label: "編碼實現 負責人：老李",
         style: {
           background: "#77d6fa"
         }
@@ -57,7 +57,7 @@ const context = ref([
       ganttBarConfig: {
         id: "3",
         hasHandles: true,
-        label: "编码实现  负责人：小明",
+        label: "開發實作 負責人：小明",
         style: {
           color: "#fff",
           background: "#1b2a47"
@@ -73,7 +73,7 @@ const context = ref([
       ganttBarConfig: {
         id: "4",
         hasHandles: true,
-        label: "内部测试  负责人：小雪",
+        label: "內部測試 負責人：小雪",
         style: {
           background: "#5ccfa3"
         }
@@ -88,7 +88,7 @@ const context = ref([
       ganttBarConfig: {
         id: "5",
         hasHandles: true,
-        label: "系统优化和文档整理  负责人：小欣",
+        label: "系統最佳化與文件整理 負責人：小欣",
         style: {
           background: "#f8bc45"
         }
@@ -97,14 +97,14 @@ const context = ref([
   ],
   [
     {
-      week: "星期天",
+      week: "星期日",
       beginDate: "04:00",
       endDate: "23:59",
       ganttBarConfig: {
         id: "6",
         immobile: false,
         hasHandles: false,
-        label: "部署和上线  负责人：老王",
+        label: "部署與上線 負責人：老王",
         style: {
           background: "#f3953d"
         }

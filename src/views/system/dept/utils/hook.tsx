@@ -43,7 +43,7 @@ export function useDept() {
       )
     },
     {
-      label: "创建时间",
+      label: "建立時間",
       minWidth: 200,
       prop: "createTime",
       formatter: ({ createTime }) =>

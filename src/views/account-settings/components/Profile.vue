@@ -28,7 +28,7 @@ const userInfos = reactive({
 });
 
 const rules = reactive<FormRules<UserInfo>>({
-  nickname: [{ required: true, message: "昵称必填", trigger: "blur" }]
+  nickname: [{ required: true, message: "別稱必填", trigger: "blur" }]
 });
 
 function queryEmail(queryString, callback) {
@@ -75,23 +75,23 @@ const handleSubmitImage = () => {
   formUpload(formData)
     .then(({ code }) => {
       if (code === 0) {
-        message("更新头像成功", { type: "success" });
+        message("更新頭像成功", { type: "success" });
         handleClose();
       } else {
-        message("更新头像失败");
+        message("更新頭像失敗");
       }
     })
     .catch(error => {
-      message(`提交异常 ${error}`, { type: "error" });
+      message(`提交例外 ${error}`, { type: "error" });
     });
 };
 
-// 更新信息
+// 更新訊息
 const onSubmit = async (formEl: FormInstance) => {
   await formEl.validate((valid, fields) => {
     if (valid) {
       console.log(userInfos);
-      message("更新信息成功", { type: "success" });
+      message("更新訊息成功", { type: "success" });
     } else {
       console.log("error submit!", fields);
     }
@@ -108,14 +108,14 @@ onMounted(async () => {
 
 <template>
   <div :class="['min-w-45', deviceDetection() ? 'max-w-full' : 'max-w-[70%]']">
-    <h3 class="my-8!">个人信息</h3>
+    <h3 class="my-8!">個人資料</h3>
     <el-form
       ref="userInfoFormRef"
       label-position="top"
       :rules="rules"
       :model="userInfos"
     >
-      <el-form-item label="头像">
+      <el-form-item label="頭像">
         <el-avatar :size="80" :src="userInfos.avatar" />
         <el-upload
           ref="uploadRef"
@@ -128,34 +128,34 @@ onMounted(async () => {
         >
           <el-button plain class="ml-4!">
             <IconifyIconOffline :icon="uploadLine" />
-            <span class="ml-2">更新头像</span>
+            <span class="ml-2">更新頭像</span>
           </el-button>
         </el-upload>
       </el-form-item>
-      <el-form-item label="昵称" prop="nickname">
-        <el-input v-model="userInfos.nickname" placeholder="请输入昵称" />
+      <el-form-item label="別稱" prop="nickname">
+        <el-input v-model="userInfos.nickname" placeholder="請輸入別稱" />
       </el-form-item>
-      <el-form-item label="邮箱" prop="email">
+      <el-form-item label="電子信箱" prop="email">
         <el-autocomplete
           v-model="userInfos.email"
           :fetch-suggestions="queryEmail"
           :trigger-on-focus="false"
-          placeholder="请输入邮箱"
+          placeholder="請輸入電子信箱"
           clearable
           class="w-full"
         />
       </el-form-item>
-      <el-form-item label="联系电话">
+      <el-form-item label="聯絡電話">
         <el-input
           v-model="userInfos.phone"
-          placeholder="请输入联系电话"
+          placeholder="請輸入聯絡電話"
           clearable
         />
       </el-form-item>
-      <el-form-item label="简介">
+      <el-form-item label="簡介">
         <el-input
           v-model="userInfos.description"
-          placeholder="请输入简介"
+          placeholder="請輸入簡介"
           type="textarea"
           :autosize="{ minRows: 6, maxRows: 8 }"
           maxlength="56"
@@ -163,13 +163,13 @@ onMounted(async () => {
         />
       </el-form-item>
       <el-button type="primary" @click="onSubmit(userInfoFormRef)">
-        更新信息
+        更新訊息
       </el-button>
     </el-form>
     <el-dialog
       v-model="isShow"
       width="40%"
-      title="编辑头像"
+      title="編輯頭像"
       destroy-on-close
       :closeOnClickModal="false"
       :before-close="handleClose"
@@ -180,7 +180,7 @@ onMounted(async () => {
         <div class="dialog-footer">
           <el-button bg text @click="handleClose">取消</el-button>
           <el-button bg text type="primary" @click="handleSubmitImage">
-            确定
+            確定
           </el-button>
         </div>
       </template>

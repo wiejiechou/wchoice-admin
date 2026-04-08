@@ -12,12 +12,12 @@ export function useColumns() {
   const columns: TableColumnList = [
     {
       sortable: true,
-      label: "序号",
+      label: "序號",
       prop: "id"
     },
     {
       sortable: true,
-      label: "需求人数",
+      label: "需求人數",
       prop: "requiredNumber",
       filterMultiple: false,
       filterClassName: "pure-table-filter",
@@ -33,17 +33,17 @@ export function useColumns() {
     },
     {
       sortable: true,
-      label: "提问数量",
+      label: "提問數量",
       prop: "questionNumber"
     },
     {
       sortable: true,
-      label: "解决数量",
+      label: "解決數量",
       prop: "resolveNumber"
     },
     {
       sortable: true,
-      label: "用户满意度",
+      label: "使用者滿意度",
       minWidth: 100,
       prop: "satisfaction",
       cellRenderer: ({ row }) => (
@@ -60,7 +60,7 @@ export function useColumns() {
     },
     {
       sortable: true,
-      label: "统计日期",
+      label: "統計日期",
       prop: "date"
     },
     {
@@ -70,7 +70,7 @@ export function useColumns() {
     }
   ];
 
-  /** 分页配置 */
+  /** 分頁配置 */
   const pagination = reactive<PaginationProps>({
     pageSize: 10,
     currentPage: 1,

@@ -141,11 +141,11 @@ watch(size, val =>
             target="_blank"
             style="font-size: 16px; font-weight: 800"
           >
-            日期选择器
+            日期選擇器
           </el-link>
           <el-radio-group v-model="size">
             <el-radio value="large">大尺寸</el-radio>
-            <el-radio value="default">默认尺寸</el-radio>
+            <el-radio value="default">預設尺寸</el-radio>
             <el-radio value="small">小尺寸</el-radio>
             <el-radio value="disabled">禁用</el-radio>
           </el-radio-group>
@@ -156,16 +156,16 @@ watch(size, val =>
         href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/components/date-picker.vue"
         target="_blank"
       >
-        代码位置 src/views/components/date-picker.vue
+        代碼位置 src/views/components/date-picker.vue
       </el-link>
     </template>
 
-    <div class="mb-2">选择某一天</div>
+    <div class="mb-2">選擇某一天</div>
     <el-date-picker
       v-model="value"
       type="date"
       class="w-40!"
-      placeholder="请选择"
+      placeholder="請選擇"
       :disabled-date="disabledDate"
       :shortcuts="shortcuts"
       :popper-options="{
@@ -175,14 +175,14 @@ watch(size, val =>
       :disabled="size === 'disabled'"
     />
 
-    <div class="mb-2 mt-4">选择周、月、年或多个日期</div>
+    <div class="mb-2 mt-4">選擇周、月、年或多個日期</div>
     <el-space wrap>
       <el-date-picker
         v-model="value1"
         type="week"
         class="w-40!"
         format="YYYY年第ww周"
-        placeholder="选择某年中的某周"
+        placeholder="選擇某年中的某周"
         :size="dynamicSize"
         :disabled="size === 'disabled'"
       />
@@ -190,7 +190,7 @@ watch(size, val =>
         v-model="value2"
         type="month"
         class="w-40!"
-        placeholder="选择某月"
+        placeholder="選擇某月"
         :size="dynamicSize"
         :disabled="size === 'disabled'"
       />
@@ -198,7 +198,7 @@ watch(size, val =>
         v-model="value3"
         type="year"
         class="w-40!"
-        placeholder="选择某年"
+        placeholder="選擇某年"
         :size="dynamicSize"
         :disabled="size === 'disabled'"
       />
@@ -206,21 +206,21 @@ watch(size, val =>
         v-model="value4"
         type="dates"
         class="w-40!"
-        placeholder="选择多个日期"
+        placeholder="選擇多個日期"
         :size="dynamicSize"
         :disabled="size === 'disabled'"
       />
     </el-space>
 
-    <div class="mb-2 mt-4">选择一段时间</div>
+    <div class="mb-2 mt-4">選擇一段時間</div>
     <el-date-picker
       v-model="value5"
       type="daterange"
       class="w-60!"
       unlink-panels
       range-separator="至"
-      start-placeholder="开始时间"
-      end-placeholder="结束时间"
+      start-placeholder="開始時間"
+      end-placeholder="结束時間"
       :shortcuts="shortcuts1"
       :popper-options="{
         placement: 'bottom-start' // 下拉面板出现的位置，或 'top-start'、'bottom-end'、'top-end' 等，具体看 https://popper.js.org/docs/v2/constructors/#options
@@ -229,13 +229,13 @@ watch(size, val =>
       :disabled="size === 'disabled'"
     />
 
-    <div class="mb-2 mt-4">选择月份范围</div>
+    <div class="mb-2 mt-4">選擇月份範圍</div>
     <el-date-picker
       v-model="value6"
       type="monthrange"
       unlink-panels
       range-separator="至"
-      start-placeholder="开始月份"
+      start-placeholder="開始月份"
       end-placeholder="结束月份"
       :shortcuts="shortcuts2"
       :popper-options="{
@@ -254,7 +254,7 @@ watch(size, val =>
     >
       <el-radio value="">Date</el-radio>
       <el-radio value="YYYY-MM-DD">年月日</el-radio>
-      <el-radio value="x">时间戳</el-radio>
+      <el-radio value="x">時間戳</el-radio>
     </el-radio-group>
     <br />
     <el-space wrap>
@@ -262,7 +262,7 @@ watch(size, val =>
         v-model="value7"
         type="date"
         class="w-40!"
-        placeholder="请选择日期"
+        placeholder="請選擇日期"
         format="YYYY/MM/DD"
         :value-format="dateFormat"
         :size="dynamicSize"
@@ -271,22 +271,22 @@ watch(size, val =>
       <span class="ml-2">{{ value7 }}</span>
     </el-space>
 
-    <div class="mb-2 mt-4">自定义前缀</div>
+    <div class="mb-2 mt-4">自訂義前缀</div>
     <el-date-picker
       v-model="value8"
       type="date"
       class="w-40!"
-      placeholder="请选择日期"
+      placeholder="請選擇日期"
       :prefix-icon="useRenderIcon('twemoji:spiral-calendar')"
       :size="dynamicSize"
       :disabled="size === 'disabled'"
     />
 
-    <div class="mb-2 mt-4">自定义内容</div>
+    <div class="mb-2 mt-4">自訂義内容</div>
     <el-date-picker
       v-model="value9"
       type="date"
-      placeholder="请选择日期"
+      placeholder="請選擇日期"
       format="YYYY/MM/DD"
       value-format="YYYY-MM-DD"
       :size="dynamicSize"

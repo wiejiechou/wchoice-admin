@@ -62,17 +62,17 @@ Object.keys(devDependencies).forEach(key => {
   <div>
     <el-card class="mb-4 box-card" shadow="never">
       <span>
-        vue-pure-admin 是一款开源免费且开箱即用的中后台管理系统模版。完全采用
-        ECMAScript 模块（ESM）规范来编写和组织代码，使用了最新的
+        vue-pure-admin 是一款開源免費且開箱即用的中後台管理系統模版。完全採用
+        ECMAScript 模組（ESM）規範來編寫和組織程式碼，使用了最新的
         Vue3、Vite、Element-Plus、TypeScript、Pinia、Tailwindcss
-        等主流技术开发。
+        等主流技術開發。
       </span>
     </el-card>
 
     <el-card class="m-4 box-card" shadow="never">
       <template #header>
         <div class="card-header">
-          <span class="font-medium">平台信息</span>
+          <span class="font-medium">平台資訊</span>
         </div>
       </template>
       <el-scrollbar>
@@ -83,7 +83,7 @@ Object.keys(devDependencies).forEach(key => {
     <el-card class="m-4 box-card" shadow="never">
       <template #header>
         <div class="card-header flex items-center">
-          <span class="font-medium">生产环境依赖</span>
+          <span class="font-medium">生產環境依賴</span>
           <el-tag type="primary" effect="dark" size="small" round class="ml-1">
             {{ schema.length }}
           </el-tag>
@@ -118,7 +118,7 @@ Object.keys(devDependencies).forEach(key => {
     <el-card class="m-4 box-card" shadow="never">
       <template #header>
         <div class="card-header flex items-center">
-          <span class="font-medium">开发环境依赖</span>
+          <span class="font-medium">開發環境依賴</span>
           <el-tag type="primary" effect="dark" size="small" round class="ml-1">
             {{ devSchema.length }}
           </el-tag>

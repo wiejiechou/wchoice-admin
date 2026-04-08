@@ -1,8 +1,8 @@
 import { defineFakeRoute } from "vite-plugin-fake-server/client";
-import { faker } from "@faker-js/faker/locale/zh_CN";
+import { faker } from "@faker-js/faker/locale/zh_TW";
 
 export default defineFakeRoute([
-  // 账户设置-个人信息
+  // 帳戶設定-個人資訊
   {
     url: "/mine",
     method: "get",
@@ -13,15 +13,15 @@ export default defineFakeRoute([
         data: {
           avatar: "https://avatars.githubusercontent.com/u/44761321",
           username: "admin",
-          nickname: "小铭",
+          nickname: "系統管理員",
           email: "pureadmin@163.com",
           phone: "15888886789",
-          description: "一个热爱开源的前端工程师"
+          description: "一個熱愛開源的前端工程師"
         }
       };
     }
   },
-  // 账户设置-个人安全日志
+  // 帳戶設定-個人安全日誌
   {
     url: "/mine-logs",
     method: "get",
@@ -30,19 +30,19 @@ export default defineFakeRoute([
         {
           id: 1,
           ip: faker.internet.ipv4(),
-          address: "中国河南省信阳市",
+          address: "中國河南省信陽市",
           system: "macOS",
           browser: "Chrome",
-          summary: "账户登录", // 详情
-          operatingTime: new Date() // 时间
+          summary: "帳號登入", // 詳情
+          operatingTime: new Date() // 時間
         },
         {
           id: 2,
           ip: faker.internet.ipv4(),
-          address: "中国广东省深圳市",
+          address: "中國廣東省深圳市",
           system: "Windows",
           browser: "Firefox",
-          summary: "绑定了手机号码",
+          summary: "綁定了手機號碼",
           operatingTime: new Date().setDate(new Date().getDate() - 1)
         }
       ];
@@ -51,9 +51,9 @@ export default defineFakeRoute([
         message: "操作成功",
         data: {
           list,
-          total: list.length, // 总条目数
-          pageSize: 10, // 每页显示条目个数
-          currentPage: 1 // 当前页数
+          total: list.length, // 總條目數
+          pageSize: 10, // 每頁顯示條目個數
+          currentPage: 1 // 當前頁數
         }
       };
     }

@@ -18,10 +18,10 @@ const { isDark } = useDark();
 let curWeek = ref(1); // 0上周、1本周
 const optionsBasis: Array<OptionsType> = [
   {
-    label: "上周"
+    label: "上週"
   },
   {
-    label: "本周"
+    label: "本週"
   }
 ];
 </script>
@@ -109,7 +109,7 @@ const optionsBasis: Array<OptionsType> = [
       >
         <el-card class="bar-card" shadow="never">
           <div class="flex justify-between">
-            <span class="text-md font-medium">分析概览</span>
+            <span class="text-md font-medium">分析概覽</span>
             <Segmented v-model="curWeek" :options="optionsBasis" />
           </div>
           <div class="flex justify-between items-start mt-3">
@@ -140,7 +140,7 @@ const optionsBasis: Array<OptionsType> = [
       >
         <el-card shadow="never">
           <div class="flex justify-between">
-            <span class="text-md font-medium">解决概率</span>
+            <span class="text-md font-medium">問題解決率</span>
           </div>
           <div
             v-for="(item, index) in progressData"
@@ -187,7 +187,7 @@ const optionsBasis: Array<OptionsType> = [
       >
         <el-card shadow="never">
           <div class="flex justify-between">
-            <span class="text-md font-medium">数据统计</span>
+            <span class="text-md font-medium">數據統計</span>
           </div>
           <el-scrollbar max-height="504" class="mt-3">
             <WelcomeTable />
@@ -214,7 +214,7 @@ const optionsBasis: Array<OptionsType> = [
       >
         <el-card shadow="never">
           <div class="flex justify-between">
-            <span class="text-md font-medium">最新动态</span>
+            <span class="text-md font-medium">最新動態</span>
           </div>
           <el-scrollbar max-height="504" class="mt-3">
             <el-timeline>
@@ -236,7 +236,7 @@ const optionsBasis: Array<OptionsType> = [
               >
                 <p class="text-text_color_regular text-sm">
                   {{
-                    `新增 ${item.requiredNumber} 条问题，${item.resolveNumber} 条已解决`
+                    `新增 ${item.requiredNumber} 筆問題，${item.resolveNumber} 筆已解決`
                   }}
                 </p>
               </el-timeline-item>

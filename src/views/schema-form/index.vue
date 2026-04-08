@@ -18,7 +18,7 @@ function tabClick({ index }) {
     <template #header>
       <div class="card-header">
         <span class="font-medium">
-          JSON 格式配置表单，采用优秀开源的
+          JSON 格式設定表單，採用優秀開源的
           <el-link
             href="https://plus-pro-components.com/components/form.html"
             target="_blank"
@@ -26,7 +26,7 @@ function tabClick({ index }) {
           >
             PlusProComponents
           </el-link>
-          ，维护整体表单只需操作 columns 配置即可
+          ，維護整體表單只需操作 columns 設定即可
         </span>
       </div>
       <el-link
@@ -34,7 +34,7 @@ function tabClick({ index }) {
         href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/schema-form"
         target="_blank"
       >
-        代码位置 src/views/schema-form
+        程式碼位置 src/views/schema-form
       </el-link>
     </template>
 
@@ -45,7 +45,7 @@ function tabClick({ index }) {
             <span
               v-tippy="{
                 maxWidth: 'none',
-                content: `（第 ${index + 1} 个示例）${item.content}`
+                content: `（第 ${index + 1} 個範例）${item.content}`
               }"
             >
               {{ item.title }}

@@ -1,4 +1,4 @@
-// 根据角色动态生成路由
+// 根據角色動態產生路由
 import { defineFakeRoute } from "vite-plugin-fake-server/client";
 
 export default defineFakeRoute([
@@ -13,10 +13,10 @@ export default defineFakeRoute([
           data: {
             avatar: "https://avatars.githubusercontent.com/u/44761321",
             username: "admin",
-            nickname: "小铭",
-            // 一个用户可能有多个角色
+            nickname: "系統管理員",
+            // 一個使用者可能有多個角色
             roles: ["admin"],
-            // 按钮级别权限
+            // 按鈕等級權限
             permissions: ["*:*:*"],
             accessToken: "eyJhbGciOiJIUzUxMiJ9.admin",
             refreshToken: "eyJhbGciOiJIUzUxMiJ9.adminRefresh",
@@ -30,7 +30,7 @@ export default defineFakeRoute([
           data: {
             avatar: "https://avatars.githubusercontent.com/u/52823142",
             username: "common",
-            nickname: "小林",
+            nickname: "普通用戶",
             roles: ["common"],
             permissions: ["permission:btn:add", "permission:btn:edit"],
             accessToken: "eyJhbGciOiJIUzUxMiJ9.common",

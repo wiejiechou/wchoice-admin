@@ -4,21 +4,21 @@ export type UserResult = {
   code: number;
   message: string;
   data: {
-    /** 头像 */
+    /** 頭像 */
     avatar: string;
-    /** 用户名 */
+    /** 使用者名稱 */
     username: string;
-    /** 昵称 */
+    /** 暱稱 */
     nickname: string;
-    /** 当前登录用户的角色 */
+    /** 目前登入使用者的角色 */
     roles: Array<string>;
-    /** 按钮级别权限 */
+    /** 按鈕等級權限 */
     permissions: Array<string>;
     /** `token` */
     accessToken: string;
-    /** 用于调用刷新`accessToken`的接口时所需的`token` */
+    /** 用於呼叫刷新`accessToken`的介面時所需的`token` */
     refreshToken: string;
-    /** `accessToken`的过期时间（格式'xxxx/xx/xx xx:xx:xx'） */
+    /** `accessToken`的過期時間（格式'xxxx/xx/xx xx:xx:xx'） */
     expires: Date;
   };
 };
@@ -29,25 +29,25 @@ export type RefreshTokenResult = {
   data: {
     /** `token` */
     accessToken: string;
-    /** 用于调用刷新`accessToken`的接口时所需的`token` */
+    /** 用於呼叫刷新`accessToken`的介面時所需的`token` */
     refreshToken: string;
-    /** `accessToken`的过期时间（格式'xxxx/xx/xx xx:xx:xx'） */
+    /** `accessToken`的過期時間（格式'xxxx/xx/xx xx:xx:xx'） */
     expires: Date;
   };
 };
 
 export type UserInfo = {
-  /** 头像 */
+  /** 頭像 */
   avatar: string;
-  /** 用户名 */
+  /** 使用者名稱 */
   username: string;
-  /** 昵称 */
+  /** 暱稱 */
   nickname: string;
-  /** 邮箱 */
+  /** 信箱 */
   email: string;
-  /** 联系电话 */
+  /** 聯絡電話 */
   phone: string;
-  /** 简介 */
+  /** 簡介 */
   description: string;
 };
 
@@ -61,18 +61,18 @@ type ResultTable = {
   code: number;
   message: string;
   data?: {
-    /** 列表数据 */
+    /** 清單資料 */
     list: Array<any>;
-    /** 总条目数 */
+    /** 總條目數 */
     total?: number;
-    /** 每页显示条目个数 */
+    /** 每頁顯示條目個數 */
     pageSize?: number;
-    /** 当前页数 */
+    /** 目前頁數 */
     currentPage?: number;
   };
 };
 
-/** 登录 */
+/** 登入 */
 export const getLogin = (data?: object) => {
   return http.request<UserResult>("post", "/login", { data });
 };
@@ -82,12 +82,12 @@ export const refreshTokenApi = (data?: object) => {
   return http.request<RefreshTokenResult>("post", "/refresh-token", { data });
 };
 
-/** 账户设置-个人信息 */
+/** 帳戶設定-個人資訊 */
 export const getMine = (data?: object) => {
   return http.request<UserInfoResult>("get", "/mine", { data });
 };
 
-/** 账户设置-个人安全日志 */
+/** 帳戶設定-個人安全日誌 */
 export const getMineLogs = (data?: object) => {
   return http.request<ResultTable>("get", "/mine-logs", { data });
 };

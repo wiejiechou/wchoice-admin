@@ -79,7 +79,7 @@ export function useRole(treeRef: Ref) {
       minWidth: 160
     },
     {
-      label: "创建时间",
+      label: "建立時間",
       prop: "createTime",
       minWidth: 160,
       formatter: ({ createTime }) =>

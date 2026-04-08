@@ -1,8 +1,8 @@
 import { defineFakeRoute } from "vite-plugin-fake-server/client";
-import { faker } from "@faker-js/faker/locale/zh_CN";
+import { faker } from "@faker-js/faker/locale/zh_TW";
 
 export default defineFakeRoute([
-  // 用户管理
+  // 使用者管理
   {
     url: "/user",
     method: "post",
@@ -11,35 +11,35 @@ export default defineFakeRoute([
         {
           avatar: "https://avatars.githubusercontent.com/u/44761321",
           username: "admin",
-          nickname: "小铭",
-          phone: "15888886789",
+          nickname: "系統管理員",
+          phone: "0988888789",
           email: faker.internet.email(),
           sex: 0,
           id: 1,
           status: 1,
           dept: {
-            // 部门id
+            // 部門 ID
             id: 103,
-            // 部门名称
-            name: "研发部门"
+            // 部門名稱
+            name: "研發部門"
           },
-          remark: "管理员",
+          remark: "管理員",
           createTime: 1605456000000
         },
         {
           avatar: "https://avatars.githubusercontent.com/u/52823142",
           username: "common",
-          nickname: "小林",
-          phone: "18288882345",
+          nickname: "普通用戶",
+          phone: "0928888345",
           email: faker.internet.email(),
           sex: 1,
           id: 2,
           status: 1,
           dept: {
             id: 105,
-            name: "测试部门"
+            name: "測試部門"
           },
-          remark: "普通用户",
+          remark: "普通使用者",
           createTime: 1605456000000
         }
       ];
@@ -54,14 +54,14 @@ export default defineFakeRoute([
         message: "操作成功",
         data: {
           list,
-          total: list.length, // 总条目数
-          pageSize: 10, // 每页显示条目个数
-          currentPage: 1 // 当前页数
+          total: list.length, // 總項目數
+          pageSize: 10, // 每頁顯示數量
+          currentPage: 1 // 目前頁碼
         }
       };
     }
   },
-  // 用户管理-获取所有角色列表
+  // 使用者管理-獲取所有角色列表
   {
     url: "/list-all-role",
     method: "get",
@@ -70,13 +70,13 @@ export default defineFakeRoute([
         code: 0,
         message: "操作成功",
         data: [
-          { id: 1, name: "超级管理员" },
+          { id: 1, name: "超級管理員" },
           { id: 2, name: "普通角色" }
         ]
       };
     }
   },
-  // 用户管理-根据 userId 获取对应角色 id 列表（userId：用户id）
+  // 使用者管理-根據 userId 獲取對應角色 ID 列表（userId：使用者 ID）
   {
     url: "/list-role-ids",
     method: "post",
@@ -98,7 +98,7 @@ export default defineFakeRoute([
       } else {
         return {
           code: 10001,
-          message: "请求参数缺失或格式不正确",
+          message: "請求參數缺失或格式不正確",
           data: []
         };
       }
@@ -111,13 +111,13 @@ export default defineFakeRoute([
     response: ({ body }) => {
       let list = [
         {
-          createTime: 1605456000000, // 时间戳（毫秒ms）
+          createTime: 1605456000000, // 時間戳記（毫秒 ms）
           updateTime: 1684512000000,
           id: 1,
-          name: "超级管理员",
+          name: "超級管理員",
           code: "admin",
-          status: 1, // 状态 1 启用 0 停用
-          remark: "超级管理员拥有最高权限"
+          status: 1, // 狀態 1 啟用 0 停用
+          remark: "超級管理員擁有最高權限"
         },
         {
           createTime: 1605456000000,
@@ -126,7 +126,7 @@ export default defineFakeRoute([
           name: "普通角色",
           code: "common",
           status: 1,
-          remark: "普通角色拥有部分权限"
+          remark: "普通角色擁有部分權限"
         }
       ];
       list = list.filter(item => item.name.includes(body?.name));
@@ -139,14 +139,14 @@ export default defineFakeRoute([
         message: "操作成功",
         data: {
           list,
-          total: list.length, // 总条目数
-          pageSize: 10, // 每页显示条目个数
-          currentPage: 1 // 当前页数
+          total: list.length, // 總項目數
+          pageSize: 10, // 每頁顯示數量
+          currentPage: 1 // 目前頁碼
         }
       };
     }
   },
-  // 角色管理-权限-菜单权限
+  // 角色管理-權限-選單權限
   {
     url: "/role-menu",
     method: "post",
@@ -155,11 +155,11 @@ export default defineFakeRoute([
         code: 0,
         message: "操作成功",
         data: [
-          // 外部页面
+          // 外部頁面
           {
             parentId: 0,
             id: 100,
-            menuType: 0, // 菜单类型（0代表菜单、1代表iframe、2代表外链、3代表按钮）
+            menuType: 0, // 選單類型（0代表選單、1代表 iframe、2代表外鏈、3代表按鈕）
             title: "menus.pureExternalPage"
           },
           {
@@ -222,7 +222,7 @@ export default defineFakeRoute([
             menuType: 1,
             title: "menus.pureRouterDoc"
           },
-          // 权限管理
+          // 權限管理
           {
             parentId: 0,
             id: 200,
@@ -245,7 +245,7 @@ export default defineFakeRoute([
             parentId: 202,
             id: 203,
             menuType: 3,
-            title: "添加"
+            title: "新增"
           },
           {
             parentId: 202,
@@ -257,9 +257,9 @@ export default defineFakeRoute([
             parentId: 202,
             id: 205,
             menuType: 3,
-            title: "删除"
+            title: "刪除"
           },
-          // 系统管理
+          // 系統管理
           {
             parentId: 0,
             id: 300,
@@ -290,7 +290,7 @@ export default defineFakeRoute([
             menuType: 0,
             title: "menus.pureDept"
           },
-          // 系统监控
+          // 系統監控
           {
             parentId: 0,
             id: 400,
@@ -321,7 +321,7 @@ export default defineFakeRoute([
             menuType: 0,
             title: "menus.pureSystemLog"
           },
-          // 标签页操作
+          // 標籤頁操作
           {
             parentId: 0,
             id: 500,
@@ -338,19 +338,19 @@ export default defineFakeRoute([
             parentId: 500,
             id: 502,
             menuType: 0,
-            title: "query传参模式"
+            title: "query 傳參模式"
           },
           {
             parentId: 500,
             id: 503,
             menuType: 0,
-            title: "params传参模式"
+            title: "params 傳參模式"
           }
         ]
       };
     }
   },
-  // 角色管理-权限-菜单权限-根据角色 id 查对应菜单
+  // 角色管理-權限-選單權限-根據角色 ID 查詢對應選單
   {
     url: "/role-menu-ids",
     method: "post",
@@ -377,7 +377,7 @@ export default defineFakeRoute([
       }
     }
   },
-  // 菜单管理
+  // 選單管理
   {
     url: "/menu",
     method: "post",
@@ -386,11 +386,11 @@ export default defineFakeRoute([
         code: 0,
         message: "操作成功",
         data: [
-          // 外部页面
+          // 外部頁面
           {
             parentId: 0,
             id: 100,
-            menuType: 0, // 菜单类型（0代表菜单、1代表iframe、2代表外链、3代表按钮）
+            menuType: 0, // 選單類型（0代表選單、1代表 iframe、2代表外鏈、3代表按鈕）
             title: "menus.pureExternalPage",
             name: "PureIframe",
             path: "/iframe",
@@ -651,7 +651,7 @@ export default defineFakeRoute([
             showLink: true,
             showParent: false
           },
-          // 权限管理
+          // 權限管理
           {
             parentId: 0,
             id: 200,
@@ -752,7 +752,7 @@ export default defineFakeRoute([
             parentId: 203,
             id: 210,
             menuType: 3,
-            title: "添加",
+            title: "新增",
             name: "",
             path: "",
             component: "",
@@ -800,7 +800,7 @@ export default defineFakeRoute([
             parentId: 203,
             id: 212,
             menuType: 3,
-            title: "删除",
+            title: "刪除",
             name: "",
             path: "",
             component: "",
@@ -848,7 +848,7 @@ export default defineFakeRoute([
             parentId: 204,
             id: 220,
             menuType: 3,
-            title: "添加",
+            title: "新增",
             name: "",
             path: "",
             component: "",
@@ -896,7 +896,7 @@ export default defineFakeRoute([
             parentId: 204,
             id: 222,
             menuType: 3,
-            title: "删除",
+            title: "刪除",
             name: "",
             path: "",
             component: "",
@@ -916,7 +916,7 @@ export default defineFakeRoute([
             showLink: true,
             showParent: false
           },
-          // 系统管理
+          // 系統管理
           {
             parentId: 0,
             id: 300,
@@ -1037,7 +1037,7 @@ export default defineFakeRoute([
             showLink: true,
             showParent: false
           },
-          // 系统监控
+          // 系統監控
           {
             parentId: 0,
             id: 400,
@@ -1158,7 +1158,7 @@ export default defineFakeRoute([
             showLink: true,
             showParent: false
           },
-          // 标签页操作
+          // 標籤頁操作
           {
             parentId: 0,
             id: 500,
@@ -1211,7 +1211,7 @@ export default defineFakeRoute([
             parentId: 500,
             id: 502,
             menuType: 0,
-            title: "query传参模式",
+            title: "query 傳參模式",
             name: "TabQueryDetail",
             path: "/tabs/query-detail",
             component: "",
@@ -1235,7 +1235,7 @@ export default defineFakeRoute([
             parentId: 500,
             id: 503,
             menuType: 0,
-            title: "params传参模式",
+            title: "params 傳參模式",
             name: "TabParamsDetail",
             path: "/tabs/params-detail/:id",
             component: "params-detail",
@@ -1259,7 +1259,7 @@ export default defineFakeRoute([
       };
     }
   },
-  // 部门管理
+  // 部門管理
   {
     url: "/dept",
     method: "post",
@@ -1269,140 +1269,140 @@ export default defineFakeRoute([
         message: "操作成功",
         data: [
           {
-            name: "杭州总公司",
+            name: "杭州總公司",
             parentId: 0,
             id: 100,
             sort: 0,
-            phone: "15888888888",
+            phone: "0988888888",
             principal: faker.person.firstName(),
             email: faker.internet.email(),
-            status: 1, // 状态 1 启用 0 停用
-            type: 1, // 1 公司 2 分公司 3 部门
+            status: 1, // 狀態 1 啟用 0 停用
+            type: 1, // 1 公司 2 分公司 3 部門
             createTime: 1605456000000,
-            remark: "这里是备注信息这里是备注信息这里是备注信息这里是备注信息"
+            remark: "這裡是備註資訊這裡是備註資訊這裡是備註資訊這裡是備註資訊"
           },
           {
-            name: "郑州分公司",
+            name: "鄭州分公司",
             parentId: 100,
             id: 101,
             sort: 1,
-            phone: "15888888888",
+            phone: "0988888888",
             principal: faker.person.firstName(),
             email: faker.internet.email(),
             status: 1,
             type: 2,
             createTime: 1605456000000,
-            remark: "这里是备注信息这里是备注信息这里是备注信息这里是备注信息"
+            remark: "這裡是備註資訊這裡是備註資訊這裡是備註資訊這裡是備註資訊"
           },
           {
-            name: "研发部门",
+            name: "研發部門",
             parentId: 101,
             id: 103,
             sort: 1,
-            phone: "15888888888",
+            phone: "0988888888",
             principal: faker.person.firstName(),
             email: faker.internet.email(),
             status: 1,
             type: 3,
             createTime: 1605456000000,
-            remark: "这里是备注信息这里是备注信息这里是备注信息这里是备注信息"
+            remark: "這裡是備註資訊這裡是備註資訊這裡是備註資訊這裡是備註資訊"
           },
           {
-            name: "市场部门",
+            name: "市場部門",
             parentId: 102,
             id: 108,
             sort: 1,
-            phone: "15888888888",
+            phone: "0988888888",
             principal: faker.person.firstName(),
             email: faker.internet.email(),
             status: 1,
             type: 3,
             createTime: 1605456000000,
-            remark: "这里是备注信息这里是备注信息这里是备注信息这里是备注信息"
+            remark: "這裡是備註資訊這裡是備註資訊這裡是備註資訊這裡是備註資訊"
           },
           {
             name: "深圳分公司",
             parentId: 100,
             id: 102,
             sort: 2,
-            phone: "15888888888",
+            phone: "0988888888",
             principal: faker.person.firstName(),
             email: faker.internet.email(),
             status: 1,
             type: 2,
             createTime: 1605456000000,
-            remark: "这里是备注信息这里是备注信息这里是备注信息这里是备注信息"
+            remark: "這裡是備註資訊這裡是備註資訊這裡是備註資訊這裡是備註資訊"
           },
           {
-            name: "市场部门",
+            name: "市場部門",
             parentId: 101,
             id: 104,
             sort: 2,
-            phone: "15888888888",
+            phone: "0988888888",
             principal: faker.person.firstName(),
             email: faker.internet.email(),
             status: 1,
             type: 3,
             createTime: 1605456000000,
-            remark: "这里是备注信息这里是备注信息这里是备注信息这里是备注信息"
+            remark: "這裡是備註資訊這裡是備註資訊這裡是備註資訊這裡是備註資訊"
           },
           {
-            name: "财务部门",
+            name: "財務部門",
             parentId: 102,
             id: 109,
             sort: 2,
-            phone: "15888888888",
+            phone: "0988888888",
             principal: faker.person.firstName(),
             email: faker.internet.email(),
             status: 1,
             type: 3,
             createTime: 1605456000000,
-            remark: "这里是备注信息这里是备注信息这里是备注信息这里是备注信息"
+            remark: "這裡是備註資訊這裡是備註資訊這裡是備註資訊這裡是備註資訊"
           },
           {
-            name: "测试部门",
+            name: "測試部門",
             parentId: 101,
             id: 105,
             sort: 3,
-            phone: "15888888888",
+            phone: "0988888888",
             principal: faker.person.firstName(),
             email: faker.internet.email(),
             status: 0,
             type: 3,
             createTime: 1605456000000,
-            remark: "这里是备注信息这里是备注信息这里是备注信息这里是备注信息"
+            remark: "這裡是備註資訊這裡是備註資訊這裡是備註資訊這裡是備註資訊"
           },
           {
-            name: "财务部门",
+            name: "財務部門",
             parentId: 101,
             id: 106,
             sort: 4,
-            phone: "15888888888",
+            phone: "0988888888",
             principal: faker.person.firstName(),
             email: faker.internet.email(),
             status: 1,
             type: 3,
             createTime: 1605456000000,
-            remark: "这里是备注信息这里是备注信息这里是备注信息这里是备注信息"
+            remark: "這裡是備註資訊這裡是備註資訊這裡是備註資訊這裡是備註資訊"
           },
           {
-            name: "运维部门",
+            name: "維運部門",
             parentId: 101,
             id: 107,
             sort: 5,
-            phone: "15888888888",
+            phone: "0988888888",
             principal: faker.person.firstName(),
             email: faker.internet.email(),
             status: 0,
             type: 3,
             createTime: 1605456000000,
-            remark: "这里是备注信息这里是备注信息这里是备注信息这里是备注信息"
+            remark: "這裡是備註資訊這裡是備註資訊這裡是備註資訊這裡是備註資訊"
           }
         ]
       };
     }
   },
-  // 在线用户
+  // 線上使用者
   {
     url: "/online-logs",
     method: "post",
@@ -1412,7 +1412,7 @@ export default defineFakeRoute([
           id: 1,
           username: "admin",
           ip: faker.internet.ipv4(),
-          address: "中国河南省信阳市",
+          address: "中國河南省信陽市",
           system: "macOS",
           browser: "Chrome",
           loginTime: new Date()
@@ -1421,7 +1421,7 @@ export default defineFakeRoute([
           id: 2,
           username: "common",
           ip: faker.internet.ipv4(),
-          address: "中国广东省深圳市",
+          address: "中國廣東省深圳市",
           system: "Windows",
           browser: "Firefox",
           loginTime: new Date()
@@ -1433,14 +1433,14 @@ export default defineFakeRoute([
         message: "操作成功",
         data: {
           list,
-          total: list.length, // 总条目数
-          pageSize: 10, // 每页显示条目个数
-          currentPage: 1 // 当前页数
+          total: list.length, // 總項目數
+          pageSize: 10, // 每頁顯示數量
+          currentPage: 1 // 目前頁碼
         }
       };
     }
   },
-  // 登录日志
+  // 登入日誌
   {
     url: "/login-logs",
     method: "post",
@@ -1450,22 +1450,22 @@ export default defineFakeRoute([
           id: 1,
           username: "admin",
           ip: faker.internet.ipv4(),
-          address: "中国河南省信阳市",
+          address: "中國河南省信陽市",
           system: "macOS",
           browser: "Chrome",
-          status: 1, // 登录状态 1 成功 0 失败
-          behavior: "账号登录",
+          status: 1, // 登入狀態 1 成功 0 失敗
+          behavior: "帳號登入",
           loginTime: new Date()
         },
         {
           id: 2,
           username: "common",
           ip: faker.internet.ipv4(),
-          address: "中国广东省深圳市",
+          address: "中國廣東省深圳市",
           system: "Windows",
           browser: "Firefox",
           status: 0,
-          behavior: "第三方登录",
+          behavior: "第三方登入",
           loginTime: new Date()
         }
       ];
@@ -1478,14 +1478,14 @@ export default defineFakeRoute([
         message: "操作成功",
         data: {
           list,
-          total: list.length, // 总条目数
-          pageSize: 10, // 每页显示条目个数
-          currentPage: 1 // 当前页数
+          total: list.length, // 總項目數
+          pageSize: 10, // 每頁顯示數量
+          currentPage: 1 // 目前頁碼
         }
       };
     }
   },
-  // 操作日志
+  // 操作日誌
   {
     url: "/operation-logs",
     method: "post",
@@ -1495,24 +1495,24 @@ export default defineFakeRoute([
           id: 1,
           username: "admin",
           ip: faker.internet.ipv4(),
-          address: "中国河南省信阳市",
+          address: "中國河南省信陽市",
           system: "macOS",
           browser: "Chrome",
-          status: 1, // 操作状态 1 成功 0 失败
-          summary: "菜单管理-添加菜单", // 操作概要
-          module: "系统管理", // 所属模块
-          operatingTime: new Date() // 操作时间
+          status: 1, // 操作狀態 1 成功 0 失敗
+          summary: "選單管理-新增選單", // 操作概要
+          module: "系統管理", // 所屬模組
+          operatingTime: new Date() // 操作時間
         },
         {
           id: 2,
           username: "common",
           ip: faker.internet.ipv4(),
-          address: "中国广东省深圳市",
+          address: "中國廣東省深圳市",
           system: "Windows",
           browser: "Firefox",
           status: 0,
-          summary: "列表分页查询",
-          module: "在线用户",
+          summary: "列表分頁查詢",
+          module: "線上使用者",
           operatingTime: new Date()
         }
       ];
@@ -1525,53 +1525,53 @@ export default defineFakeRoute([
         message: "操作成功",
         data: {
           list,
-          total: list.length, // 总条目数
-          pageSize: 10, // 每页显示条目个数
-          currentPage: 1 // 当前页数
+          total: list.length, // 總項目數
+          pageSize: 10, // 每頁顯示數量
+          currentPage: 1 // 目前頁碼
         }
       };
     }
   },
-  // 系统日志
+  // 系統日誌
   {
     url: "/system-logs",
     method: "post",
     response: ({ body }) => {
       let list = [
         {
-          id: 1, // 日志ID
+          id: 1, // 日誌 ID
           /**
-           * 日志级别
-           * 0 debug调试（最低级别的日志，用于调试和开发阶段）
-           * 1 info信息（默认级别，用于记录一般的信息）
-           * 2 warn警告（表示可能出现的问题或潜在的错误，但不会影响系统的正常运行）
-           * 3 error错误（表示发生了错误，但不会导致系统崩溃）
-           * 4 fatal致命（最高级别的日志，表示发生了严重错误，导致系统无法继续运行）
+           * 日誌層級
+           * 0 debug 調試（最低層級的日誌，用於調試和開發階段）
+           * 1 info 信息（預設層級，用於記錄一般的信息）
+           * 2 warn 警告（表示可能出現的問題或潛在的錯誤，但不會影響系統的正常運作）
+           * 3 error 錯誤（表示發生了錯誤，但不會導致系統崩潰）
+           * 4 fatal 致命（最高層級的日誌，表示發生了嚴重錯誤，導致系統無法繼續執行）
            */
           level: 1,
-          module: "菜单管理", // 所属模块
-          url: "/menu", // 请求接口
-          method: "post", // 请求方法
+          module: "選單管理", // 所屬模組
+          url: "/menu", // 請求介面
+          method: "post", // 請求方法
           ip: faker.internet.ipv4(),
-          address: "中国河南省信阳市",
+          address: "中國河南省信陽市",
           system: "macOS",
           browser: "Chrome",
           /**
-           * 请求耗时（单位：ms 毫秒）
-           * 正常耗时：一般认为在几百毫秒（0.1-0.5秒）范围内的请求耗时较为正常
-           * 较慢耗时：在1秒以上的耗时可以被认为是较慢的请求，但具体是否较慢还需要根据具体业务场景和性能要求来判断
+           * 請求耗時（單位：ms 毫秒）
+           * 正常耗時：一般認為在幾百毫秒（0.1-0.5秒）範圍內的請求耗時較為正常
+           * 較慢耗時：在 1 秒以上的耗時可以被認為是較慢的請求，但具體是否較慢還需要根據具體業務場景和效能要求來判斷
            */
           takesTime: 10,
-          requestTime: new Date() // 请求时间
+          requestTime: new Date() // 請求時間
         },
         {
           id: 2,
           level: 0,
-          module: "地图",
+          module: "地圖",
           url: "/get-map-info",
           method: "get",
           ip: faker.internet.ipv4(),
-          address: "中国广东省深圳市",
+          address: "中國廣東省深圳市",
           system: "Windows",
           browser: "Firefox",
           takesTime: 1200,
@@ -1584,14 +1584,14 @@ export default defineFakeRoute([
         message: "操作成功",
         data: {
           list,
-          total: list.length, // 总条目数
-          pageSize: 10, // 每页显示条目个数
-          currentPage: 1 // 当前页数
+          total: list.length, // 總項目數
+          pageSize: 10, // 每頁顯示數量
+          currentPage: 1 // 目前頁碼
         }
       };
     }
   },
-  // 系统日志-根据 id 查日志详情
+  // 系統日誌-根據 ID 查詢日誌詳情
   {
     url: "/system-logs-detail",
     method: "post",
@@ -1600,11 +1600,11 @@ export default defineFakeRoute([
         return {
           id: 1,
           level: 1,
-          module: "菜单管理",
+          module: "選單管理",
           url: "/menu",
           method: "post",
           ip: faker.internet.ipv4(),
-          address: "中国河南省信阳市",
+          address: "中國河南省信陽市",
           system: "macOS",
           browser: "Chrome",
           takesTime: 10,
@@ -1758,7 +1758,7 @@ export default defineFakeRoute([
             "X-Requested-With": "XMLHttpRequest"
           },
           requestBody: {
-            title: "系统监控"
+            title: "系統監控"
           },
           traceId: "1495502411171032",
           requestTime: new Date()
@@ -1767,11 +1767,11 @@ export default defineFakeRoute([
         return {
           id: 2,
           level: 0,
-          module: "地图",
+          module: "地圖",
           url: "/get-map-info?plateNumber=豫A59778U",
           method: "get",
           ip: faker.internet.ipv4(),
-          address: "中国广东省深圳市",
+          address: "中國廣東省深圳市",
           system: "Windows",
           browser: "Firefox",
           takesTime: 1200,
@@ -1784,7 +1784,7 @@ export default defineFakeRoute([
           },
           responseBody: {
             plateNumber: "豫A59778U",
-            driver: "子骞",
+            driver: "子騫",
             orientation: 289,
             lng: 113.8564,
             lat: 34.373

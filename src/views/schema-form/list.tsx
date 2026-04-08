@@ -5,37 +5,37 @@ import Steps from "./form/steps.vue";
 import Search from "./form/search.vue";
 
 const rendContent = (val: string) =>
-  `代码位置：src/views/schema-form/form/${val}.vue`;
+  `程式碼位置：src/views/schema-form/form/${val}.vue`;
 
 export const list = [
   {
     key: "base",
     content: rendContent("base"),
-    title: "基础表单",
+    title: "基礎表單",
     component: Base
   },
   {
     key: "dialog",
     content: rendContent("dialog"),
-    title: "弹框表单",
+    title: "彈框表單",
     component: Dialog
   },
   {
     key: "drawer",
     content: rendContent("drawer"),
-    title: "抽屉表单",
+    title: "抽屜表單",
     component: Drawer
   },
   {
     key: "steps",
     content: rendContent("steps"),
-    title: "分步表单",
+    title: "逐步表單",
     component: Steps
   },
   {
     key: "search",
     content: rendContent("search"),
-    title: "搜索表单",
+    title: "搜尋表單",
     component: Search
   }
 ];

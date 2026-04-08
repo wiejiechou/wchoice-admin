@@ -15,18 +15,18 @@ export default defineFakeRoute([
               isSetup: true,
               type: 4,
               banner: "https://tdesign.gtimg.com/tdesign-pro/cloud-server.jpg",
-              name: "SSL证书",
+              name: "SSL證書",
               description:
-                "SSL证书又叫服务器证书，腾讯云为您提供证书的一站式服务，包括免费、付费证书的申请、管理及部"
+                "SSL證書又叫伺服器證書，Cloudflare為您提供證書的一站式服務，包括免費、付費證書的申請、管理及部署"
             },
             {
               index: 2,
               isSetup: false,
               type: 4,
               banner: "https://tdesign.gtimg.com/tdesign-pro/t-sec.jpg",
-              name: "人脸识别",
+              name: "人臉辨識",
               description:
-                "SSL证书又叫服务器证书，腾讯云为您提供证书的一站式服务，包括免费、付费证书的申请、管理及部"
+                "SSL證書又叫伺服器證書，Cloudflare為您提供證書的一站式服務，包括免費、付費證書的申請、管理及部署"
             },
             {
               index: 3,
@@ -42,9 +42,9 @@ export default defineFakeRoute([
               isSetup: false,
               type: 2,
               banner: "https://tdesign.gtimg.com/tdesign-pro/ssl.jpg",
-              name: "SSL证书",
+              name: "SSL證書",
               description:
-                "云数据库MySQL为用户提供安全可靠，性能卓越、易于维护的企业级云数据库服务。"
+                "雲端資料庫MySQL为用户提供安全可靠，性能卓越、易于维护的企业级雲端資料庫服务。"
             },
             {
               index: 5,
@@ -52,9 +52,9 @@ export default defineFakeRoute([
               type: 3,
               banner:
                 "https://tdesign.gtimg.com/tdesign-pro/face-recognition.jpg",
-              name: "SSL证书",
+              name: "SSL證書",
               description:
-                "云数据库MySQL为用户提供安全可靠，性能卓越、易于维护的企业级云数据库服务。"
+                "雲端資料庫MySQL为用户提供安全可靠，性能卓越、易于维护的企业级雲端資料庫服务。"
             },
             {
               index: 6,
@@ -79,7 +79,7 @@ export default defineFakeRoute([
               isSetup: true,
               type: 3,
               banner: "https://tdesign.gtimg.com/tdesign-pro/t-sec.jpg",
-              name: "SSL证书",
+              name: "SSL證書",
               description:
                 "云硬盘为您提供用于CVM的持久性数据块级存储服务。云硬盘中的数据自动地可用区内以多副本冗"
             },
@@ -88,7 +88,7 @@ export default defineFakeRoute([
               isSetup: false,
               type: 1,
               banner: "https://tdesign.gtimg.com/tdesign-pro/cloud-server.jpg",
-              name: "SSL证书",
+              name: "SSL證書",
               description:
                 "腾讯安全云防火墙产品，是腾讯云安全团队结合云原生的优势，自主研发的SaaS化防火墙产品，无需客无需客无需客无需客无需客无需客无需客"
             },
@@ -99,32 +99,32 @@ export default defineFakeRoute([
               banner: "https://tdesign.gtimg.com/tdesign-pro/ssl.jpg",
               name: "CVM",
               description:
-                "云数据库MySQL为用户提供安全可靠，性能卓越、易于维护的企业级云数据库服务。"
+                "雲端資料庫MySQL为用户提供安全可靠，性能卓越、易于维护的企业级雲端資料庫服务。"
             },
             {
               index: 11,
               isSetup: true,
               type: 5,
               banner: "https://tdesign.gtimg.com/tdesign-pro/t-sec.jpg",
-              name: "云数据库",
+              name: "雲端資料庫",
               description:
-                "SSL证书又叫服务器证书，腾讯云为您提供证书的一站式服务，包括免费、付费证书的申请、管理及部"
+                "SSL證書又叫伺服器證書，Cloudflare為您提供證書的一站式服務，包括免費、付費證書的申請、管理及部署"
             },
             {
               index: 12,
               isSetup: true,
               type: 2,
               banner: "https://tdesign.gtimg.com/tdesign-pro/t-sec.jpg",
-              name: "SSL证书",
+              name: "SSL證書",
               description:
-                "SSL证书又叫服务器证书，腾讯云为您提供证书的一站式服务，包括免费、付费证书的申请、管理及部"
+                "SSL證書又叫伺服器證書，Cloudflare為您提供證書的一站式服務，包括免費、付費證書的申請、管理及部署"
             },
             {
               index: 13,
               isSetup: true,
               type: 3,
               banner: "https://tdesign.gtimg.com/tdesign-pro/cloud-db.jpg",
-              name: "云数据库",
+              name: "雲端資料庫",
               description:
                 "腾讯安全云防火墙产品，是腾讯云安全团队结合云原生的优势，自主研发的SaaS化防火墙产品，无需客无需客无需客无需客无需客无需客无需客"
             },
@@ -133,7 +133,7 @@ export default defineFakeRoute([
               isSetup: false,
               type: 5,
               banner: "https://tdesign.gtimg.com/tdesign-pro/t-sec.jpg",
-              name: "SSL证书",
+              name: "SSL證書",
               description:
                 "基于腾讯优图强大的面部分析技术，提供包括人脸检测与分析、五官定位、人脸搜索、人脸比对、人脸"
             },
@@ -142,9 +142,9 @@ export default defineFakeRoute([
               isSetup: true,
               type: 2,
               banner: "https://tdesign.gtimg.com/tdesign-pro/t-sec.jpg",
-              name: "云数据库",
+              name: "雲端資料庫",
               description:
-                "SSL证书又叫服务器证书，腾讯云为您提供证书的一站式服务，包括免费、付费证书的申请、管理及部"
+                "SSL證書又叫伺服器證書，Cloudflare為您提供證書的一站式服務，包括免費、付費證書的申請、管理及部署"
             },
             {
               index: 16,
@@ -161,9 +161,9 @@ export default defineFakeRoute([
               type: 5,
               banner:
                 "https://tdesign.gtimg.com/tdesign-pro/face-recognition.jpg",
-              name: "云数据库",
+              name: "雲端資料庫",
               description:
-                "SSL证书又叫服务器证书，腾讯云为您提供证书的一站式服务，包括免费、付费证书的申请、管理及部"
+                "SSL證書又叫伺服器證書，Cloudflare為您提供證書的一站式服務，包括免費、付費證書的申請、管理及部署"
             },
             {
               index: 18,
@@ -171,7 +171,7 @@ export default defineFakeRoute([
               type: 4,
               banner:
                 "https://tdesign.gtimg.com/tdesign-pro/face-recognition.jpg",
-              name: "云数据库",
+              name: "雲端資料庫",
               description:
                 "腾讯安全云防火墙产品，是腾讯云安全团队结合云原生的优势，自主研发的SaaS化防火墙产品，无需客无需客无需客无需客无需客无需客无需客"
             },
@@ -182,7 +182,7 @@ export default defineFakeRoute([
               banner: "https://tdesign.gtimg.com/tdesign-pro/ssl.jpg",
               name: "CVM",
               description:
-                "SSL证书又叫服务器证书，腾讯云为您提供证书的一站式服务，包括免费、付费证书的申请、管理及部"
+                "SSL證書又叫伺服器證書，Cloudflare為您提供證書的一站式服務，包括免費、付費證書的申請、管理及部署"
             },
             {
               index: 20,
@@ -190,16 +190,16 @@ export default defineFakeRoute([
               type: 4,
               banner:
                 "https://tdesign.gtimg.com/tdesign-pro/face-recognition.jpg",
-              name: "SSL证书",
+              name: "SSL證書",
               description:
-                "SSL证书又叫服务器证书，腾讯云为您提供证书的一站式服务，包括免费、付费证书的申请、管理及部"
+                "SSL證書又叫伺服器證書，Cloudflare為您提供證書的一站式服務，包括免費、付費證書的申請、管理及部署"
             },
             {
               index: 21,
               isSetup: false,
               type: 4,
               banner: "https://tdesign.gtimg.com/tdesign-pro/t-sec.jpg",
-              name: "云数据库",
+              name: "雲端資料庫",
               description:
                 "云硬盘为您提供用于CVM的持久性数据块级存储服务。云硬盘中的数据自动地可用区内以多副本冗"
             },
@@ -210,14 +210,14 @@ export default defineFakeRoute([
               banner: "https://tdesign.gtimg.com/tdesign-pro/cloud-db.jpg",
               name: "CVM",
               description:
-                "SSL证书又叫服务器证书，腾讯云为您提供证书的一站式服务，包括免费、付费证书的申请、管理及部"
+                "SSL證書又叫伺服器證書，Cloudflare為您提供證書的一站式服務，包括免費、付費證書的申請、管理及部署"
             },
             {
               index: 23,
               isSetup: true,
               type: 1,
               banner: "https://tdesign.gtimg.com/tdesign-pro/ssl.jpg",
-              name: "人脸识别",
+              name: "人臉辨識",
               description:
                 "基于腾讯优图强大的面部分析技术，提供包括人脸检测与分析、五官定位、人脸搜索、人脸比对、人脸"
             },
@@ -226,7 +226,7 @@ export default defineFakeRoute([
               isSetup: true,
               type: 4,
               banner: "https://tdesign.gtimg.com/tdesign-pro/ssl.jpg",
-              name: "人脸识别",
+              name: "人臉辨識",
               description:
                 "基于腾讯优图强大的面部分析技术，提供包括人脸检测与分析、五官定位、人脸搜索、人脸比对、人脸"
             },
@@ -245,7 +245,7 @@ export default defineFakeRoute([
               isSetup: true,
               type: 4,
               banner: "https://tdesign.gtimg.com/tdesign-pro/cloud-server.jpg",
-              name: "SSL证书",
+              name: "SSL證書",
               description:
                 "云硬盘为您提供用于CVM的持久性数据块级存储服务。云硬盘中的数据自动地可用区内以多副本冗"
             },
@@ -256,14 +256,14 @@ export default defineFakeRoute([
               banner: "https://tdesign.gtimg.com/tdesign-pro/ssl.jpg",
               name: "CVM",
               description:
-                "SSL证书又叫服务器证书，腾讯云为您提供证书的一站式服务，包括免费、付费证书的申请、管理及部"
+                "SSL證書又叫伺服器證書，Cloudflare為您提供證書的一站式服務，包括免費、付費證書的申請、管理及部署"
             },
             {
               index: 28,
               isSetup: false,
               type: 4,
               banner: "https://tdesign.gtimg.com/tdesign-pro/ssl.jpg",
-              name: "云数据库",
+              name: "雲端資料庫",
               description:
                 "基于腾讯优图强大的面部分析技术，提供包括人脸检测与分析、五官定位、人脸搜索、人脸比对、人脸"
             },
@@ -274,7 +274,7 @@ export default defineFakeRoute([
               banner: "https://tdesign.gtimg.com/tdesign-pro/cloud-db.jpg",
               name: "CVM",
               description:
-                "SSL证书又叫服务器证书，腾讯云为您提供证书的一站式服务，包括免费、付费证书的申请、管理及部"
+                "SSL證書又叫伺服器證書，Cloudflare為您提供證書的一站式服務，包括免費、付費證書的申請、管理及部署"
             },
             {
               index: 30,
@@ -310,14 +310,14 @@ export default defineFakeRoute([
               banner: "https://tdesign.gtimg.com/tdesign-pro/t-sec.jpg",
               name: "CVM",
               description:
-                "云数据库MySQL为用户提供安全可靠，性能卓越、易于维护的企业级云数据库服务。"
+                "雲端資料庫MySQL为用户提供安全可靠，性能卓越、易于维护的企业级雲端資料庫服务。"
             },
             {
               index: 34,
               isSetup: false,
               type: 2,
               banner: "https://tdesign.gtimg.com/tdesign-pro/ssl.jpg",
-              name: "SSL证书",
+              name: "SSL證書",
               description:
                 "腾讯安全云防火墙产品，是腾讯云安全团队结合云原生的优势，自主研发的SaaS化防火墙产品，无需客无需客无需客无需客无需客无需客无需客"
             },
@@ -326,7 +326,7 @@ export default defineFakeRoute([
               isSetup: false,
               type: 1,
               banner: "https://tdesign.gtimg.com/tdesign-pro/cloud-server.jpg",
-              name: "云数据库",
+              name: "雲端資料庫",
               description:
                 "基于腾讯优图强大的面部分析技术，提供包括人脸检测与分析、五官定位、人脸搜索、人脸比对、人脸"
             },
@@ -336,7 +336,7 @@ export default defineFakeRoute([
               type: 4,
               banner:
                 "https://tdesign.gtimg.com/tdesign-pro/face-recognition.jpg",
-              name: "SSL证书",
+              name: "SSL證書",
               description:
                 "腾讯安全云防火墙产品，是腾讯云安全团队结合云原生的优势，自主研发的SaaS化防火墙产品，无需客无需客无需客无需客无需客无需客无需客"
             },
@@ -347,14 +347,14 @@ export default defineFakeRoute([
               banner: "https://tdesign.gtimg.com/tdesign-pro/cloud-server.jpg",
               name: "CVM",
               description:
-                "云数据库MySQL为用户提供安全可靠，性能卓越、易于维护的企业级云数据库服务。"
+                "雲端資料庫MySQL为用户提供安全可靠，性能卓越、易于维护的企业级雲端資料庫服务。"
             },
             {
               index: 38,
               isSetup: false,
               type: 4,
               banner: "https://tdesign.gtimg.com/tdesign-pro/ssl.jpg",
-              name: "云数据库",
+              name: "雲端資料庫",
               description:
                 "云硬盘为您提供用于CVM的持久性数据块级存储服务。云硬盘中的数据自动地可用区内以多副本冗"
             },
@@ -363,7 +363,7 @@ export default defineFakeRoute([
               isSetup: false,
               type: 3,
               banner: "https://tdesign.gtimg.com/tdesign-pro/t-sec.jpg",
-              name: "人脸识别",
+              name: "人臉辨識",
               description:
                 "云硬盘为您提供用于CVM的持久性数据块级存储服务。云硬盘中的数据自动地可用区内以多副本冗"
             },
@@ -374,7 +374,7 @@ export default defineFakeRoute([
               banner: "https://tdesign.gtimg.com/tdesign-pro/ssl.jpg",
               name: "CVM",
               description:
-                "SSL证书又叫服务器证书，腾讯云为您提供证书的一站式服务，包括免费、付费证书的申请、管理及部"
+                "SSL證書又叫伺服器證書，Cloudflare為您提供證書的一站式服務，包括免費、付費證書的申請、管理及部署"
             },
             {
               index: 41,
@@ -399,7 +399,7 @@ export default defineFakeRoute([
               isSetup: false,
               type: 3,
               banner: "https://tdesign.gtimg.com/tdesign-pro/cloud-db.jpg",
-              name: "SSL证书",
+              name: "SSL證書",
               description:
                 "云硬盘为您提供用于CVM的持久性数据块级存储服务。云硬盘中的数据自动地可用区内以多副本冗"
             },
@@ -408,7 +408,7 @@ export default defineFakeRoute([
               isSetup: true,
               type: 4,
               banner: "https://tdesign.gtimg.com/tdesign-pro/t-sec.jpg",
-              name: "SSL证书",
+              name: "SSL證書",
               description:
                 "云硬盘为您提供用于CVM的持久性数据块级存储服务。云硬盘中的数据自动地可用区内以多副本冗"
             },
@@ -419,23 +419,23 @@ export default defineFakeRoute([
               banner: "https://tdesign.gtimg.com/tdesign-pro/ssl.jpg",
               name: "T-Sec 云防火墙",
               description:
-                "SSL证书又叫服务器证书，腾讯云为您提供证书的一站式服务，包括免费、付费证书的申请、管理及部"
+                "SSL證書又叫伺服器證書，Cloudflare為您提供證書的一站式服務，包括免費、付費證書的申請、管理及部署"
             },
             {
               index: 46,
               isSetup: true,
               type: 2,
               banner: "https://tdesign.gtimg.com/tdesign-pro/cloud-server.jpg",
-              name: "SSL证书",
+              name: "SSL證書",
               description:
-                "SSL证书又叫服务器证书，腾讯云为您提供证书的一站式服务，包括免费、付费证书的申请、管理及部"
+                "SSL證書又叫伺服器證書，Cloudflare為您提供證書的一站式服務，包括免費、付費證書的申請、管理及部署"
             },
             {
               index: 47,
               isSetup: false,
               type: 4,
               banner: "https://tdesign.gtimg.com/tdesign-pro/cloud-server.jpg",
-              name: "SSL证书",
+              name: "SSL證書",
               description:
                 "腾讯安全云防火墙产品，是腾讯云安全团队结合云原生的优势，自主研发的SaaS化防火墙产品，无需客无需客无需客无需客无需客无需客无需客"
             },
@@ -446,7 +446,7 @@ export default defineFakeRoute([
               banner: "https://tdesign.gtimg.com/tdesign-pro/ssl.jpg",
               name: "T-Sec 云防火墙",
               description:
-                "SSL证书又叫服务器证书，腾讯云为您提供证书的一站式服务，包括免费、付费证书的申请、管理及部"
+                "SSL證書又叫伺服器證書，Cloudflare為您提供證書的一站式服務，包括免費、付費證書的申請、管理及部署"
             }
           ]
         }

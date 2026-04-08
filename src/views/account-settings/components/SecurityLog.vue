@@ -20,32 +20,32 @@ const pagination = reactive<PaginationProps>({
 });
 const columns: TableColumnList = [
   {
-    label: "详情",
+    label: "詳情",
     prop: "summary",
     minWidth: 140
   },
   {
-    label: "IP 地址",
+    label: "IP 位址",
     prop: "ip",
     minWidth: 100
   },
   {
-    label: "地点",
+    label: "地點",
     prop: "address",
     minWidth: 140
   },
   {
-    label: "操作系统",
+    label: "作業系統",
     prop: "system",
     minWidth: 100
   },
   {
-    label: "浏览器类型",
+    label: "瀏覽器類型",
     prop: "browser",
     minWidth: 100
   },
   {
-    label: "时间",
+    label: "時間",
     prop: "operatingTime",
     minWidth: 180,
     formatter: ({ operatingTime }) =>
@@ -75,7 +75,7 @@ onMounted(() => {
 
 <template>
   <div :class="['min-w-45', deviceDetection() ? 'max-w-full' : 'max-w-[70%]']">
-    <h3 class="my-8!">安全日志</h3>
+    <h3 class="my-8!">安全日誌</h3>
     <pure-table
       row-key="id"
       table-layout="auto"

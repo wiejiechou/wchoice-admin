@@ -23,35 +23,35 @@ defineOptions({
 });
 
 const swiperExample: any[] = [
-  { id: 0, label: "ChatGPT 风格", component: ChatGPT },
+  { id: 0, label: "ChatGPT 風格", component: ChatGPT },
   {
     id: 1,
-    label: "Gemini 风格",
+    label: "Gemini 風格",
     component: Bard
   },
   {
     id: 2,
-    label: "BingChat 风格",
+    label: "BingChat 風格",
     component: Bing
   },
   {
     id: 3,
-    label: "iMessage 风格",
+    label: "iMessage 風格",
     component: iMessage
   },
   {
     id: 4,
-    label: "蓝色主题且可设置背景图像",
+    label: "藍色主題且可設定背景圖片",
     component: Blue
   },
   {
     id: 5,
-    label: "渐变主题且可设置背景图像",
+    label: "漸層主題且可設定背景圖片",
     component: LoFi
   },
   {
     id: 6,
-    label: "红色风格",
+    label: "紅色風格",
     component: Red
   },
   {
@@ -61,34 +61,34 @@ const swiperExample: any[] = [
   },
   {
     id: 8,
-    label: "全宽输入框",
+    label: "全寬輸入框",
     component: FullInput
   },
   {
     id: 9,
-    label: "分组消息",
+    label: "分組訊息",
     component: Group
   },
   {
     id: 10,
-    label: "代码消息",
+    label: "代碼訊息",
     component: MessageCode
   },
   {
     id: 11,
-    label: "语音输入",
+    label: "語音輸入",
     component: Speech
   },
   {
     id: 12,
-    label: "简介面板",
+    label: "簡介面板",
     component: IntroPanel
   },
   {
     id: 13,
-    label: "更多示例",
+    label: "更多範例",
     component: h(ElEmpty, {
-      description: "敬请期待",
+      description: "敬請期待",
       style: { minWidth: "320px", height: "350px" }
     })
   }
@@ -100,7 +100,7 @@ const swiperExample: any[] = [
     <template #header>
       <div class="card-header">
         <span class="font-medium">
-          Ai聊天组件，采用开源的
+          AI 聊天元件，採用開源的
           <el-link
             href="https://deepchat.dev/"
             target="_blank"
@@ -115,7 +115,7 @@ const swiperExample: any[] = [
         href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/chatai"
         target="_blank"
       >
-        代码位置 src/views/chatai
+        代碼位置 src/views/chatai
       </el-link>
     </template>
     <el-space wrap>

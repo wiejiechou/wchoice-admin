@@ -148,7 +148,7 @@ export function useUser(tableRef: Ref, treeRef: Ref) {
       )
     },
     {
-      label: "创建时间",
+      label: "建立時間",
       minWidth: 90,
       prop: "createTime",
       formatter: ({ createTime }) =>

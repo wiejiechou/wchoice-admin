@@ -36,25 +36,25 @@ const userInfo = ref({
 const panes = [
   {
     key: "profile",
-    label: "个人信息",
+    label: "個人資訊",
     icon: ProfileIcon,
     component: Profile
   },
   {
     key: "preferences",
-    label: "偏好设置",
+    label: "偏好設定",
     icon: PreferencesIcon,
     component: Preferences
   },
   {
     key: "securityLog",
-    label: "安全日志",
+    label: "安全日誌",
     icon: SecurityLogIcon,
     component: SecurityLog
   },
   {
     key: "accountManagement",
-    label: "账户管理",
+    label: "帳號管理",
     icon: AccountManagementIcon,
     component: AccountManagement
   }

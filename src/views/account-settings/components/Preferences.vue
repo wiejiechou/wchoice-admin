@@ -9,31 +9,31 @@ defineOptions({
 
 const list = ref([
   {
-    title: "账户密码",
-    illustrate: "其他用户的消息将以站内信的形式通知",
+    title: "帳戶密碼",
+    illustrate: "其他使用者的訊息將以站內信件的形式通知",
     checked: true
   },
   {
-    title: "系统消息",
-    illustrate: "系统消息将以站内信的形式通知",
+    title: "系統訊息",
+    illustrate: "系統訊息將以站內信的形式通知",
     checked: true
   },
   {
-    title: "待办任务",
-    illustrate: "待办任务将以站内信的形式通知",
+    title: "待辦事項",
+    illustrate: "待辦任務將以站內信的形式通知",
     checked: true
   }
 ]);
 
 function onChange(val, item) {
   console.log("onChange", val);
-  message(`${item.title}设置成功`, { type: "success" });
+  message(`${item.title}設定成功`, { type: "success" });
 }
 </script>
 
 <template>
   <div :class="['min-w-45', deviceDetection() ? 'max-w-full' : 'max-w-[70%]']">
-    <h3 class="my-8!">偏好设置</h3>
+    <h3 class="my-8!">偏好設定</h3>
     <div v-for="(item, index) in list" :key="index">
       <div class="flex items-center">
         <div class="flex-1">

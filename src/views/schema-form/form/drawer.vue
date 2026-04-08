@@ -195,7 +195,7 @@ const handleOpen = () => {
 
 <template>
   <div>
-    <el-button @click="handleOpen">打开抽屉表单</el-button>
+    <el-button @click="handleOpen">打開抽屜表單</el-button>
     <PlusDrawerForm
       v-model:visible="visible"
       v-model="values"

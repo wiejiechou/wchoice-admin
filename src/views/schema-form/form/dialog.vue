@@ -195,7 +195,7 @@ const handleOpen = () => {
 
 <template>
   <div>
-    <el-button @click="handleOpen">打开弹窗表单</el-button>
+    <el-button @click="handleOpen">打開彈跳窗表單</el-button>
     <PlusDialogForm
       v-model:visible="visible"
       v-model="values"
