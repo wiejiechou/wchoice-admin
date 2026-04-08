@@ -11,6 +11,9 @@ importers:
       '@amap/amap-jsapi-loader':
         specifier: ^1.0.1
         version: 1.0.1
+      '@fontsource/alex-brush':
+        specifier: ^5.2.8
+        version: 5.2.8
       '@fontsource/iansui':
         specifier: ^5.2.8
         version: 5.2.8
@@ -1283,6 +1286,9 @@ packages:
 
   '@floating-ui/utils@0.2.11':
     resolution: {integrity: sha512-RiB/yIh78pcIxl6lLMG0CgBXAZ2Y0eVHqMPYugu+9U0AeT6YBeiJpf7lbdJNIugFP5SIjwNRgo4DhR1Qxi26Gg==}
+
+  '@fontsource/alex-brush@5.2.8':
+    resolution: {integrity: sha512-ShSsZkWN7O6H6x56Jc2c1d+YXDTCGIRBvLKiVIa7r3tyg6Ern56fN2xriAjNNBmvn37Y96XCkavrpERm/IRCEQ==}
 
   '@fontsource/iansui@5.2.8':
     resolution: {integrity: sha512-wVixkutedO531O4X4114s0EjuHEQgzlOhVIvELFhIV7FaaWKu6yaNT4LZOduj//n0dHKVlVEaSOswxG6FGLxWw==}
@@ -6800,6 +6806,8 @@ snapshots:
       '@floating-ui/utils': 0.2.11
 
   '@floating-ui/utils@0.2.11': {}
+
+  '@fontsource/alex-brush@5.2.8': {}
 
   '@fontsource/iansui@5.2.8': {}
 
