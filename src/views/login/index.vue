@@ -55,7 +55,8 @@ initStorage();
 const { dataTheme, themeMode, dataThemeChange } = useDataThemeChange();
 dataThemeChange(themeMode.value);
 const { title, getDropdownItemStyle, getDropdownItemClass } = useNav();
-const { locale, translationCh, translationEn } = useTranslationLang();
+const { locale, translationCh, translationTw, translationEn } =
+  useTranslationLang();
 
 const ruleForm = reactive({
   username: "admin",
@@ -148,6 +149,21 @@ watch(loginDay, value => {
                 :icon="Check"
               />
               简体中文
+            </el-dropdown-item>
+            <el-dropdown-item
+              :style="getDropdownItemStyle(locale, 'zh-TW')"
+              :class="[
+                'dark:text-white!',
+                getDropdownItemClass(locale, 'zh-TW')
+              ]"
+              @click="translationTw"
+            >
+              <IconifyIconOffline
+                v-show="locale === 'zh-TW'"
+                class="check-zh-tw"
+                :icon="Check"
+              />
+              繁體中文
             </el-dropdown-item>
             <el-dropdown-item
               :style="getDropdownItemStyle(locale, 'en')"
@@ -300,6 +316,7 @@ watch(loginDay, value => {
             </Motion>
           </el-form>
 
+          <!-- 第三方登入 // 從畫面移除
           <Motion v-if="currentPage === 0" :delay="350">
             <el-form-item>
               <el-divider>
@@ -322,6 +339,7 @@ watch(loginDay, value => {
               </div>
             </el-form-item>
           </Motion>
+          -->
           <!-- 手机号登录 -->
           <LoginPhone v-if="currentPage === 1" />
           <!-- 二维码登录 -->
@@ -336,7 +354,7 @@ watch(loginDay, value => {
     <div
       class="w-full flex-c absolute bottom-3 text-sm text-[rgba(0,0,0,0.6)] dark:text-[rgba(220,220,242,0.8)]"
     >
-      Copyright © 2020-present
+      Copyright © 2026-present
       <a
         class="hover:text-primary!"
         href="https://github.com/pure-admin"
@@ -368,6 +386,11 @@ watch(loginDay, value => {
   }
 
   .check-en {
+    position: absolute;
+    left: 20px;
+  }
+
+  .check-zh-tw {
     position: absolute;
     left: 20px;
   }

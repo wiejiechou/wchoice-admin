@@ -14,6 +14,12 @@ export function useTranslationLang(ref?: Ref) {
     ref && handleResize(ref.value);
   }
 
+  function translationTw() {
+    $storage.locale = { locale: "zh-TW" };
+    locale.value = "zh-TW";
+    ref && handleResize(ref.value);
+  }
+
   function translationEn() {
     $storage.locale = { locale: "en" };
     locale.value = "en";
@@ -28,7 +34,8 @@ export function useTranslationLang(ref?: Ref) {
   );
 
   onBeforeMount(() => {
-    locale.value = $storage.locale?.locale ?? "zh";
+    // 預設語系
+    locale.value = $storage.locale?.locale ?? "zh-TW";
   });
 
   return {
@@ -36,6 +43,7 @@ export function useTranslationLang(ref?: Ref) {
     route,
     locale,
     translationCh,
+    translationTw,
     translationEn
   };
 }

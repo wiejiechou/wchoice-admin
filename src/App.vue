@@ -16,8 +16,10 @@ import { ReDialog, closeAllDialog } from "@/components/ReDialog";
 import { ReDrawer, closeAllDrawer } from "@/components/ReDrawer";
 import en from "element-plus/es/locale/lang/en";
 import zhCn from "element-plus/es/locale/lang/zh-cn";
+import zhTw from "element-plus/es/locale/lang/zh-tw";
 import plusEn from "plus-pro-components/es/locale/lang/en";
 import plusZhCn from "plus-pro-components/es/locale/lang/zh-cn";
+import plusZhTw from "plus-pro-components/es/locale/lang/zh-tw";
 
 export default defineComponent({
   name: "app",
@@ -34,9 +36,13 @@ export default defineComponent({
     const watermarkEnable = computed(() => $storage.configure?.watermark);
     const watermarkText = computed(() => $storage.configure?.watermarkText);
     const currentLocale = computed(() => {
-      return $storage.locale?.locale === "zh"
-        ? { ...zhCn, ...plusZhCn }
-        : { ...en, ...plusEn };
+      if ($storage.locale?.locale === "zh") {
+        return { ...zhCn, ...plusZhCn };
+      }
+      if ($storage.locale?.locale === "zh-TW") {
+        return { ...zhTw, ...plusZhTw };
+      }
+      return { ...en, ...plusEn };
     });
 
     router.beforeEach(() => {

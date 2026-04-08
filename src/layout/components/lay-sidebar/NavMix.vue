@@ -21,7 +21,7 @@ import Check from "~icons/ep/check";
 const menuRef = ref();
 const defaultActive = ref(null);
 
-const { t, route, locale, translationCh, translationEn } =
+const { t, route, locale, translationCh, translationTw, translationEn } =
   useTranslationLang(menuRef);
 const {
   device,
@@ -122,6 +122,19 @@ watch(
               简体中文
             </el-dropdown-item>
             <el-dropdown-item
+              :style="getDropdownItemStyle(locale, 'zh-TW')"
+              :class="[
+                'dark:text-white!',
+                getDropdownItemClass(locale, 'zh-TW')
+              ]"
+              @click="translationTw"
+            >
+              <span v-show="locale === 'zh-TW'" class="check-zh-tw">
+                <IconifyIconOffline :icon="Check" />
+              </span>
+              繁體中文
+            </el-dropdown-item>
+            <el-dropdown-item
               :style="getDropdownItemStyle(locale, 'en')"
               :class="['dark:text-white!', getDropdownItemClass(locale, 'en')]"
               @click="translationEn"
@@ -190,6 +203,11 @@ watch(
   }
 
   .check-en {
+    position: absolute;
+    left: 20px;
+  }
+
+  .check-zh-tw {
     position: absolute;
     left: 20px;
   }

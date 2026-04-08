@@ -17,8 +17,8 @@ export function useLayout() {
     }
     /** 国际化 */
     if (!$storage.locale) {
-      $storage.locale = { locale: $config?.Locale ?? "zh" };
-      useI18n().locale.value = $config?.Locale ?? "zh";
+      $storage.locale = { locale: $config?.Locale ?? "zh-TW" };
+      useI18n().locale.value = $config?.Locale ?? "zh-TW";
     }
     /** 导航 */
     if (!$storage.layout) {
