@@ -11,7 +11,7 @@ export default defineFakeRoute([
         code: 0,
         message: "操作成功",
         data: {
-          avatar: "/assets/avatar/admin.jpg",
+          avatar: "./assets/avatar/admin.jpg",
           username: "admin",
           nickname: "系統管理員",
           email: "pureadmin@wang-choice.com",

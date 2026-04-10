@@ -11,7 +11,7 @@ export default defineFakeRoute([
           code: 0,
           message: "操作成功",
           data: {
-            avatar: "/assets/avatar/admin.jpg",
+            avatar: "./assets/avatar/admin.jpg",
             username: "admin",
             nickname: "系統管理員",
             // 一個使用者可能有多個角色
@@ -28,7 +28,7 @@ export default defineFakeRoute([
           code: 0,
           message: "操作成功",
           data: {
-            avatar: "/assets/avatar/wchoice.jpg",
+            avatar: "./assets/avatar/wchoice.jpg",
             username: "wchoice",
             nickname: "王寵系統用戶",
             roles: ["admin"],
@@ -43,7 +43,7 @@ export default defineFakeRoute([
           code: 0,
           message: "操作成功",
           data: {
-            avatar: "/assets/avatar/user.jpg",
+            avatar: "./assets/avatar/user.jpg",
             username: "common",
             nickname: "普通用戶",
             roles: ["common"],
