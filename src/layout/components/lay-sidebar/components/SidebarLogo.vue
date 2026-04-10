@@ -52,19 +52,19 @@ const { title, getLogo } = useNav();
 
     img {
       display: inline-block;
-      height: 32px;
+      height: 40px;
     }
 
     .sidebar-title {
       display: inline-block;
-      height: 32px;
+      height: 40px;
       margin: 2px 0 0 12px;
       overflow: hidden;
       text-overflow: ellipsis;
       font-family: "Alex Brush", cursive;
       font-size: 24px;
       font-weight: 400;
-      line-height: 32px;
+      line-height: 40px;
       color: var(--pure-theme-sub-menu-active-text);
       white-space: nowrap;
     }
