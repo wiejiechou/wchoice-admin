@@ -123,7 +123,7 @@ watch(loginDay, value => {
   <div class="select-none">
     <img :src="bg" class="wave" />
     <div class="flex-c absolute right-5 top-3">
-      <!-- 主题 -->
+      <!-- 主題 ThemeMode
       <el-switch
         v-model="dataTheme"
         inline-prompt
@@ -131,7 +131,8 @@ watch(loginDay, value => {
         :inactive-icon="darkIcon"
         @change="dataThemeChange"
       />
-      <!-- 国际化 -->
+      -->
+      <!-- 多國語系切換 (i18n)
       <el-dropdown trigger="click">
         <globalization
           class="hover:text-primary hover:bg-transparent! size-5 ml-1.5 cursor-pointer outline-hidden duration-300"
@@ -178,6 +179,7 @@ watch(loginDay, value => {
           </el-dropdown-menu>
         </template>
       </el-dropdown>
+      -->
     </div>
     <div class="login-container">
       <div class="img">
