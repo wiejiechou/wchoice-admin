@@ -417,18 +417,19 @@
 
       img {
         display: inline-block;
-        height: 32px;
+        height: 40px; /* 同步 SidebarLogo 的高度 */
       }
 
       span {
         display: inline-block;
-        height: 32px;
+        height: 40px;
         margin: 2px 0 0 12px;
         overflow: hidden;
         text-overflow: ellipsis;
-        font-size: 18px;
-        font-weight: 600;
-        line-height: 32px;
+        font-family: "Alex Brush", cursive;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 40px;
         color: var(--pure-theme-sub-menu-active-text);
         white-space: nowrap;
       }
