@@ -15,7 +15,7 @@ const list = ref([
   },
   {
     title: "密保手機",
-    illustrate: "已經綁定手機：158****6789",
+    illustrate: "已經綁定手機：0988***789",
     button: "修改"
   },
   {
@@ -25,7 +25,7 @@ const list = ref([
   },
   {
     title: "備用信箱",
-    illustrate: "已綁定信箱：pure***@163.com",
+    illustrate: "已綁定信箱：pure***@wang-choice.com",
     button: "修改"
   }
 ]);

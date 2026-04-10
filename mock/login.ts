@@ -11,7 +11,7 @@ export default defineFakeRoute([
           code: 0,
           message: "操作成功",
           data: {
-            avatar: "https://avatars.githubusercontent.com/u/44761321",
+            avatar: "/assets/avatar/admin.jpg",
             username: "admin",
             nickname: "系統管理員",
             // 一個使用者可能有多個角色
@@ -23,12 +23,27 @@ export default defineFakeRoute([
             expires: "2030/10/30 00:00:00"
           }
         };
+      } else if (body.username === "wchoice") {
+        return {
+          code: 0,
+          message: "操作成功",
+          data: {
+            avatar: "/assets/avatar/wchoice.jpg",
+            username: "wchoice",
+            nickname: "王寵系統用戶",
+            roles: ["admin"],
+            permissions: ["*:*:*"],
+            accessToken: "eyJhbGciOiJIUzUxMiJ9.wchoice",
+            refreshToken: "eyJhbGciOiJIUzUxMiJ9.wchoiceRefresh",
+            expires: "2030/10/30 00:00:00"
+          }
+        };
       } else {
         return {
           code: 0,
           message: "操作成功",
           data: {
-            avatar: "https://avatars.githubusercontent.com/u/52823142",
+            avatar: "/assets/avatar/user.jpg",
             username: "common",
             nickname: "普通用戶",
             roles: ["common"],

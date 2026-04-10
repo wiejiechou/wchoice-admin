@@ -35,7 +35,7 @@ function queryEmail(queryString, callback) {
   const emailList = [
     { value: "@qq.com" },
     { value: "@126.com" },
-    { value: "@163.com" }
+    { value: "@wang-choice.com" }
   ];
   let results = [];
   let queryList = [];

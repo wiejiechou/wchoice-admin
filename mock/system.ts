@@ -9,7 +9,7 @@ export default defineFakeRoute([
     response: ({ body }) => {
       let list = [
         {
-          avatar: "https://avatars.githubusercontent.com/u/44761321",
+          avatar: "/assets/avatar/admin.jpg",
           username: "admin",
           nickname: "系統管理員",
           phone: "0988888789",
@@ -27,7 +27,7 @@ export default defineFakeRoute([
           createTime: 1605456000000
         },
         {
-          avatar: "https://avatars.githubusercontent.com/u/52823142",
+          avatar: "/assets/avatar/user.jpg",
           username: "common",
           nickname: "普通用戶",
           phone: "0928888345",

@@ -98,7 +98,7 @@ const disabledClick = () => {
             <div class="font-bold">logo配置</div>
             <ReQrcode
               :text="qrcodeText"
-              logo="https://avatars.githubusercontent.com/u/44761321?v=4"
+              logo="https://avatars.githubusercontent.com/u/5779436?v=4"
             />
           </el-card>
         </el-col>
@@ -108,7 +108,7 @@ const disabledClick = () => {
             <ReQrcode
               :text="qrcodeText"
               :logo="{
-                src: 'https://avatars.githubusercontent.com/u/44761321?v=4',
+                src: 'https://avatars.githubusercontent.com/u/5779436?v=4',
                 logoSize: 0.2,
                 borderSize: 0.05,
                 borderRadius: 50,

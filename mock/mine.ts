@@ -11,11 +11,11 @@ export default defineFakeRoute([
         code: 0,
         message: "操作成功",
         data: {
-          avatar: "https://avatars.githubusercontent.com/u/44761321",
+          avatar: "/assets/avatar/admin.jpg",
           username: "admin",
           nickname: "系統管理員",
-          email: "pureadmin@163.com",
-          phone: "15888886789",
+          email: "pureadmin@wang-choice.com",
+          phone: "0988888789",
           description: "一個熱愛開源的前端工程師"
         }
       };
@@ -30,7 +30,7 @@ export default defineFakeRoute([
         {
           id: 1,
           ip: faker.internet.ipv4(),
-          address: "中國河南省信陽市",
+          address: "台灣台北市",
           system: "macOS",
           browser: "Chrome",
           summary: "帳號登入", // 詳情
@@ -39,7 +39,7 @@ export default defineFakeRoute([
         {
           id: 2,
           ip: faker.internet.ipv4(),
-          address: "中國廣東省深圳市",
+          address: "台灣台南縣",
           system: "Windows",
           browser: "Firefox",
           summary: "綁定了手機號碼",
