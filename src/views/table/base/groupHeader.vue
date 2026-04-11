@@ -12,7 +12,7 @@ const columns: TableColumnList = [
     prop: "name",
     children: [
       {
-        label: "地区",
+        label: "地區",
         children: [
           {
             label: "城市",

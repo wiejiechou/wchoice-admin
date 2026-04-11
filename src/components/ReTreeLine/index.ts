@@ -1,4 +1,4 @@
-// 参考https://www.npmjs.com/package/element-tree-line (主要是替换需要通过函数传参的方式去注册组件，并添加更好的类型支持，并移除this.$scopedSlots，在3.x中,将所有this.$scopedSlots替换为this.$slots)
+// 参考https://www.npmjs.com/package/element-tree-line (主要是替换需要通過函数传参的方式去註冊組件，并添加更好的類型支持，并移除this.$scopedSlots，在3.x中,將所有this.$scopedSlots替换為this.$slots)
 import "./index.scss";
 import { isFunction } from "@pureadmin/utils";
 import { type PropType, h, defineComponent } from "vue";
@@ -8,7 +8,7 @@ import type {
   TreeNodeData
 } from "element-plus/es/components/tree-v2/src/types";
 
-/** 树形连接线组件 */
+/** 树形连接線組件 */
 export default defineComponent({
   name: "ReTreeLine",
   props: {
@@ -60,11 +60,11 @@ export default defineComponent({
     };
   },
   render() {
-    // 自定义整行节点label区域
+    // 自定義整行节點label區域
     const scopeSlotDefault = this.getScopedSlot("default");
-    // 显示横线时自定义节点label区域
+    // 顯示横線時自定義节點label區域
     const labelSlot = this.getScopedSlot("node-label");
-    // 显示横线时追加在横线右边的内容
+    // 顯示横線時追加在横線右边的内容
     const afterLabelSlot = this.getScopedSlot("after-node-label");
     const labelNodes = scopeSlotDefault
       ? this.getSlotValue(scopeSlotDefault, {
@@ -88,14 +88,14 @@ export default defineComponent({
             data: this.data
           })
         ];
-    // 取得每一层的当前节点是不是在当前层级列表的最后一个
+    // 取得每一層的當前节點是不是在當前層級列表的最后一个
     const lastnodeArr = [];
     let currentNode: any = this.node;
     while (currentNode) {
       let parentNode: any = currentNode.parent;
       // 兼容element-plus的 el-tree-v2 (Virtualized Tree 虚拟树)
       if (currentNode.level === 1 && !currentNode.parent) {
-        // el-tree-v2的第一层node是没有parent的，必需 treeData 创建一个parent
+        // el-tree-v2的第一層node是没有parent的，必需 treeData 创建一个parent
         if (!this.treeData || !Array.isArray(this.treeData)) {
           throw Error(
             "if you using el-tree-v2 (Virtualized Tree) of element-plus,element-tree-line required data."

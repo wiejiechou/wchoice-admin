@@ -12,7 +12,7 @@ import type {
 
 const drawerStore = ref<Array<DrawerOptions>>([]);
 
-/** 打开抽屉 */
+/** 打開抽屉 */
 const addDrawer = (options: DrawerOptions) => {
   const open = () =>
     drawerStore.value.push(Object.assign(options, { visible: true }));
@@ -25,7 +25,7 @@ const addDrawer = (options: DrawerOptions) => {
   }
 };
 
-/** 关闭抽屉 */
+/** 關閉抽屉 */
 const closeDrawer = (options: DrawerOptions, index: number, args?: any) => {
   drawerStore.value[index].visible = false;
   options.closeCallBack && options.closeCallBack({ options, index, args });
@@ -39,14 +39,14 @@ const closeDrawer = (options: DrawerOptions, index: number, args?: any) => {
 /**
  * @description 更改抽屉自身属性值
  * @param value 属性值
- * @param key 属性，默认`title`
- * @param index 弹框索引（默认`0`，代表只有一个弹框，对于嵌套弹框要改哪个弹框的属性值就把该弹框索引赋给`index`）
+ * @param key 属性，預設`title`
+ * @param index 彈框索引（預設`0`，代表只有一个彈框，對于嵌套彈框要改哪个彈框的属性值就把該彈框索引赋给`index`）
  */
 const updateDrawer = (value: any, key = "title", index = 0) => {
   drawerStore.value[index][key] = value;
 };
 
-/** 关闭所有弹框 */
+/** 關閉所有彈框 */
 const closeAllDrawer = () => {
   drawerStore.value = [];
 };

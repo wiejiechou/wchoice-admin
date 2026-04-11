@@ -34,7 +34,7 @@ export function useColumns() {
     }
   ];
 
-  /** 分页配置 */
+  /** 分頁配置 */
   const pagination = reactive<PaginationProps>({
     pageSize: 10,
     currentPage: 1,
@@ -45,9 +45,9 @@ export function useColumns() {
     size: "default"
   });
 
-  /** 加载动画配置 */
+  /** 加載動畫配置 */
   const loadingConfig = reactive<LoadingConfig>({
-    text: "正在加载第一页...",
+    text: "正在加載第一頁...",
     viewBox: "-10, -10, 50, 50",
     spinner: `
         <path class="path" d="
@@ -72,7 +72,7 @@ export function useColumns() {
   }
 
   function onCurrentChange(val) {
-    loadingConfig.text = `正在加载第${val}页...`;
+    loadingConfig.text = `正在加載第${val}頁...`;
     loading.value = true;
     delay(600).then(() => {
       loading.value = false;

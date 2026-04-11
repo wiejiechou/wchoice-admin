@@ -58,7 +58,7 @@ onMounted(() => {
     <template #header>
       <div class="card-header">
         <span class="font-medium">
-          拖拽组件，采用开源的
+          拖拽組件，採用開源的
           <el-link
             href="https://sortablejs.github.io/vue.draggable.next/#/simple"
             target="_blank"
@@ -73,7 +73,7 @@ onMounted(() => {
         href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/able/draggable.vue"
         target="_blank"
       >
-        代码位置 src/views/able/draggable.vue
+        程式碼位置 src/views/able/draggable.vue
       </el-link>
     </template>
     <div class="drag-container">
@@ -107,10 +107,10 @@ onMounted(() => {
           <el-card shadow="never">
             <template #header>
               <div class="card-header">
-                <span>单列拖拽</span>
+                <span>單列拖拽</span>
               </div>
             </template>
-            <!-- 单列拖拽 -->
+            <!-- 單列拖拽 -->
             <draggable
               v-model="lists"
               item-key="name"
@@ -130,10 +130,10 @@ onMounted(() => {
           <el-card shadow="never">
             <template #header>
               <div class="card-header">
-                <span>拖拽实现元素位置交换</span>
+                <span>拖拽实現元素位置交换</span>
               </div>
             </template>
-            <!-- 拖拽实现元素位置切换 -->
+            <!-- 拖拽实現元素位置切换 -->
             <div class="cut-container">
               <div
                 v-for="(item, index) in cutLists"

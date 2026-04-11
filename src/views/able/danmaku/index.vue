@@ -12,15 +12,15 @@ const danmus = ref<any[]>(getDanmuData());
 const danmuMsg = ref<string>("");
 let timer = 0;
 const config = reactive({
-  channels: 5, // 轨道数量，为0则弹幕轨道数会撑满容器
-  useSlot: true, // 是否开启slot
-  loop: true, // 是否开启弹幕循环
-  speeds: 200, // 弹幕速度，实际为弹幕滚动完一整屏的秒数，值越小速度越快
+  channels: 5, // 軌道数量，為0则彈幕軌道数會撑满容器
+  useSlot: true, // 是否開啟slot
+  loop: true, // 是否開啟彈幕循环
+  speeds: 200, // 彈幕速度，实际為彈幕滚動完一整屏的秒数，值越小速度越快
   fontSize: 20, // 文本模式下的字号
-  top: 10, // 弹幕轨道间的垂直间距
-  right: 0, // 同一轨道弹幕的水平间距
-  debounce: 100, // 弹幕刷新频率（多少毫秒插入一条弹幕，建议不小于50）
-  randomChannel: true // 随机弹幕轨道
+  top: 10, // 彈幕軌道间的垂直間距
+  right: 0, // 同一軌道彈幕的水平間距
+  debounce: 100, // 彈幕刷新频率（多少毫秒插入一條彈幕，建议不小于50）
+  randomChannel: true // 随机彈幕軌道
 });
 
 onMounted(() => {
@@ -106,7 +106,7 @@ function addDanmu() {
     <template #header>
       <div class="card-header">
         <span class="font-medium">
-          弹幕组件，采用开源的
+          彈幕組件，採用開源的
           <el-link
             href="https://github.com/hellodigua/vue-danmaku/tree/vue3"
             target="_blank"
@@ -121,7 +121,7 @@ function addDanmu() {
         href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/able/danmaku"
         target="_blank"
       >
-        代码位置 src/views/able/danmaku
+        程式碼位置 src/views/able/danmaku
       </el-link>
     </template>
     <div class="flex gap-5">
@@ -132,7 +132,7 @@ function addDanmu() {
         isSuspend
         v-bind="config"
       >
-        <!-- 弹幕slot -->
+        <!-- 彈幕slot -->
         <template v-slot:dm="{ danmu, index }">
           <div class="danmu-item">
             <img class="img" :src="danmu.avatar" />
@@ -145,47 +145,47 @@ function addDanmu() {
         <p>
           播放：
           <el-button @click="play('play')">播放</el-button>
-          <el-button @click="play('pause')">暂停</el-button>
+          <el-button @click="play('pause')">暫停</el-button>
           <el-button @click="play('stop')">停止</el-button>
         </p>
         <p>
           模式：
-          <el-button @click="switchSlot(true)">弹幕 slot</el-button>
+          <el-button @click="switchSlot(true)">彈幕 slot</el-button>
           <el-button @click="switchSlot(false)">普通文本</el-button>
         </p>
         <p>
-          显示：
-          <el-button @click="play('show')">显示</el-button>
-          <el-button @click="play('hide')">隐藏</el-button>
+          顯示：
+          <el-button @click="play('show')">顯示</el-button>
+          <el-button @click="play('hide')">隱藏</el-button>
         </p>
         <p>
           速度：
           <el-button @click="speedsChange(-10)">减速</el-button>
           <el-button @click="speedsChange(10)">增速</el-button>
-          <span class="ml-5">当前速度：{{ config.speeds }}像素/s</span>
+          <span class="ml-5">當前速度：{{ config.speeds }}像素/s</span>
         </p>
         <p>
           字号：
           <el-button :disabled="config.useSlot" @click="fontChange(-1)">
-            缩小
+            縮小
           </el-button>
           <el-button :disabled="config.useSlot" @click="fontChange(1)">
             放大
           </el-button>
-          <span class="ml-5">当前字号：{{ config.fontSize }}px</span>
+          <span class="ml-5">當前字号：{{ config.fontSize }}px</span>
         </p>
         <p>
-          轨道：
+          軌道：
           <el-button @click="channelChange(-1)">-1</el-button>
           <el-button @click="channelChange(1)">+1</el-button>
           <el-button @click="channelChange(-config.channels)"> 填满 </el-button>
-          <span class="ml-5">当前轨道：{{ config.channels }}</span>
+          <span class="ml-5">當前軌道：{{ config.channels }}</span>
         </p>
         <p class="flex">
           <el-input
             v-model="danmuMsg"
             type="text"
-            placeholder="输入评论后，回车发送弹幕"
+            placeholder="輸入評論后，回车发送彈幕"
             @keyup.enter="addDanmu"
           />
         </p>

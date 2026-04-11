@@ -8,13 +8,13 @@
       "properties": {
         "a": "efrwe",
         "b": "wewe",
-        "name": "开始",
+        "name": "開始",
         "x": 280,
         "y": 200,
         "text": {
           "x": 280,
           "y": 200,
-          "value": "开始"
+          "value": "開始"
         },
         "logicFlowType": "bpmn:startEvent"
       },
@@ -28,13 +28,13 @@
       "properties": {
         "a": "efrwe",
         "b": "wewe",
-        "name": "结束",
+        "name": "結束",
         "x": 920,
         "y": 200,
         "text": {
           "x": 920,
           "y": 200,
-          "value": "结束"
+          "value": "結束"
         },
         "logicFlowType": "bpmn:endEvent"
       },
@@ -68,13 +68,13 @@
       "properties": {
         "a": "efrwe",
         "b": "wewe",
-        "name": "用户",
+        "name": "用戶",
         "x": 420,
         "y": 200,
         "text": {
           "x": 420,
           "y": 200,
-          "value": "用户"
+          "value": "用戶"
         },
         "logicFlowType": "bpmn:userTask"
       },
@@ -88,13 +88,13 @@
       "properties": {
         "a": "efrwe",
         "b": "wewe",
-        "name": "服务",
+        "name": "服務",
         "x": 760,
         "y": 200,
         "text": {
           "x": 760,
           "y": 200,
-          "value": "服务"
+          "value": "服務"
         },
         "logicFlowType": "bpmn:serviceTask"
       },

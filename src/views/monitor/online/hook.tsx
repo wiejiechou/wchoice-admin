@@ -23,32 +23,32 @@ export function useRole() {
       minWidth: 60
     },
     {
-      label: "用户名",
+      label: "用戶名",
       prop: "username",
       minWidth: 100
     },
     {
-      label: "登录 IP",
+      label: "登入 IP",
       prop: "ip",
       minWidth: 140
     },
     {
-      label: "登录地点",
+      label: "登入地點",
       prop: "address",
       minWidth: 140
     },
     {
-      label: "操作系统",
+      label: "操作系統",
       prop: "system",
       minWidth: 100
     },
     {
-      label: "浏览器类型",
+      label: "瀏覽器類型",
       prop: "browser",
       minWidth: 100
     },
     {
-      label: "登录时间",
+      label: "登入時間",
       prop: "loginTime",
       minWidth: 180,
       formatter: ({ loginTime }) =>
@@ -74,7 +74,7 @@ export function useRole() {
   }
 
   function handleOffline(row) {
-    message(`${row.username}已被强制下线`, { type: "success" });
+    message(`${row.username}已被强制下線`, { type: "success" });
     onSearch();
   }
 

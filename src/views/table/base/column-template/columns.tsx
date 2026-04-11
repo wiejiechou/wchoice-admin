@@ -1,8 +1,8 @@
 import { message } from "@/utils/message";
 import { tableData } from "../data";
 
-// 如果您不习惯tsx写法，可以传slot，然后在template里写
-// 需是hooks写法（函数中有return），避免失去响应性
+// 如果您不习惯tsx寫法，可以传slot，然后在template里寫
+// 需是hooks寫法（函数中有return），避免失去响应性
 export function useColumns() {
   const columns: TableColumnList = [
     {
@@ -56,13 +56,13 @@ export function useColumns() {
   ];
 
   const handleEdit = (index: number, row) => {
-    message(`您修改了第 ${index} 行，数据为：${JSON.stringify(row)}`, {
+    message(`您修改了第 ${index} 行，數據為：${JSON.stringify(row)}`, {
       type: "success"
     });
   };
 
   const handleDelete = (index: number, row) => {
-    message(`您删除了第 ${index} 行，数据为：${JSON.stringify(row)}`);
+    message(`您删除了第 ${index} 行，數據為：${JSON.stringify(row)}`);
   };
 
   return {

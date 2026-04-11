@@ -9,7 +9,7 @@ onMounted(() => {
     response: message => {
       console.log(message);
       return {
-        text: "仅演示，如需AI服务，请参考 https://deepchat.dev/docs/connect"
+        text: "僅演示，如需AI服務，請参考 https://deepchat.dev/docs/connect"
       };
     }
   };
@@ -28,7 +28,7 @@ onMounted(() => {
       placeholder: { text: '发送消息' }
     }"
     :introMessage="{
-      text: '单击左下角麦克风开始转录您的讲话。'
+      text: '單击左下角麦克风開始转录您的讲話。'
     }"
     :demo="true"
   />

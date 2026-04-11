@@ -19,10 +19,10 @@ export const injectResponsiveStorage = (app: App, config: PlatformConfigs) => {
         darkMode: config.DarkMode ?? false,
         sidebarStatus: config.SidebarStatus ?? true,
         epThemeColor: config.EpThemeColor ?? "#409EFF",
-        themeColor: config.Theme ?? "light", // 主题色（对应系统配置中的主题色，与theme不同的是它不会受到浅色、深色主题模式切换的影响，只会在手动点击主题色时改变）
-        themeMode: config.ThemeMode ?? "light" // 主题模式（浅色：light、深色：dark、自动：system）
+        themeColor: config.Theme ?? "light", // 主题色（對應系統配置中的主题色，与theme不同的是它不會受到浅色、深色主题模式切换的影响，只會在手動點選主题色時改变）
+        themeMode: config.ThemeMode ?? "light" // 主题模式（浅色：light、深色：dark、自動：system）
       },
-      // 系统配置-界面显示
+      // 系統配置-界面顯示
       configure: Storage.getData("configure", nameSpace) ?? {
         grey: config.Grey ?? false,
         weak: config.Weak ?? false,
@@ -38,7 +38,7 @@ export const injectResponsiveStorage = (app: App, config: PlatformConfigs) => {
     },
     config.MultiTagsCache
       ? {
-          // 默认显示顶级菜单tag
+          // 預設顯示頂級選單tag
           tags: Storage.getData("tags", nameSpace) ?? routerArrays
         }
       : {}

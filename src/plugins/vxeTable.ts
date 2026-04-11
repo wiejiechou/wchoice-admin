@@ -7,7 +7,7 @@ import type { App } from "vue";
 // import en from "vxe-table/lib/locale/lang/en-US";
 
 import {
-  // 全局对象
+  // 全局對象
   VXETable,
   // 表格功能
   // Filter,
@@ -17,7 +17,7 @@ import {
   // Keyboard,
   // Validator,
   Custom,
-  // 可选组件
+  // 可选組件
   Icon,
   Column,
   Grid,
@@ -47,7 +47,7 @@ import {
   Table
 } from "vxe-table";
 
-// 全局默认参数
+// 全局預設参数
 VXETable.setConfig({
   // i18n: (key, args) => {
   //   return unref(i18n.global.locale) === "zh"
@@ -73,7 +73,7 @@ export function useVxeTable(app: App) {
     // .use(Keyboard)
     // .use(Validator)
     .use(Custom)
-    // 可选组件
+    // 可选組件
     .use(Icon)
     .use(Column)
     .use(Grid)

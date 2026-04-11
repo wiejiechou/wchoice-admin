@@ -10,7 +10,7 @@ defineOptions({
 defineProps({
   placeholder: {
     type: String,
-    default: "请选择动画"
+    default: "請選擇動畫"
   }
 });
 
@@ -118,7 +118,7 @@ function onMouseleave() {
           </ul>
           <el-empty
             v-show="animatesList.length === 0"
-            :description="`${searchVal} 动画不存在`"
+            :description="`${searchVal} 動畫不存在`"
             :image-size="60"
           />
         </el-scrollbar>

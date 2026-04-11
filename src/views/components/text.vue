@@ -7,11 +7,11 @@ defineOptions({
   name: "PureText"
 });
 
-const customContent = ref("自定义tooltip内容");
+const customContent = ref("自定義tooltip内容");
 
 const changeTooltipContent = () => {
   customContent.value =
-    "现在的时间是: " + dayjs().format("YYYY-MM-DD HH:mm:ss");
+    "現在的時間是: " + dayjs().format("YYYY-MM-DD HH:mm:ss");
 };
 </script>
 
@@ -36,7 +36,7 @@ const changeTooltipContent = () => {
           >
             VueTippy
           </el-link>
-          自动省略后显示 Tooltip 提示， 支持多行省略
+          自動省略后顯示 Tooltip 提示， 支持多行省略
         </span>
       </div>
       <el-link
@@ -44,19 +44,19 @@ const changeTooltipContent = () => {
         href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/components/text.vue"
         target="_blank"
       >
-        代码位置 src/views/components/text.vue
+        程式碼位置 src/views/components/text.vue
       </el-link>
     </template>
 
-    <div class="mb-2">基础用法</div>
+    <div class="mb-2">基礎用法</div>
     <el-space wrap>
       <ul class="content">
         <li>
           <ReText>
-            测试文本，这是一个稍微有点长的文本，过长省略后，鼠标悬浮会有tooltip提示
+            測試文本，这是一个稍微有點長的文本，過長省略后，滑鼠悬浮會有tooltip提示
           </ReText>
           <ReText :lineClamp="2">
-            测试文本，这是一个稍微有点长的文本，lineClamp参数为2，即两行过长省略后，鼠标悬浮会有tooltip提示
+            測試文本，这是一个稍微有點長的文本，lineClamp参数為2，即两行過長省略后，滑鼠悬浮會有tooltip提示
           </ReText>
         </li>
       </ul>
@@ -64,75 +64,75 @@ const changeTooltipContent = () => {
 
     <el-divider />
 
-    <div class="mb-2">自定义 Tooltip 内容</div>
+    <div class="mb-2">自定義 Tooltip 内容</div>
     <div class="mb-2">
       <el-button @click="changeTooltipContent">
-        点击切换下方 Tooltip 内容
+        點選切换下方 Tooltip 内容
       </el-button>
     </div>
     <el-space wrap>
       <ul class="content">
         <li>
           <ReText :tippyProps="{ content: customContent }">
-            props写法 -
-            测试文本，这是一个稍微有点长的文本，过长省略后，鼠标悬浮会有tooltip提示
+            props寫法 -
+            測試文本，这是一个稍微有點長的文本，過長省略后，滑鼠悬浮會有tooltip提示
           </ReText>
         </li>
         <li>
           <ReText>
             <template #content>
               <div>
-                <b>这是插槽写法: </b>
+                <b>这是插槽寫法: </b>
                 <div>{{ customContent }}</div>
               </div>
             </template>
-            插槽写法 -
-            测试文本，这是一个稍微有点长的文本，过长省略后，鼠标悬浮会有tooltip提示
+            插槽寫法 -
+            測試文本，这是一个稍微有點長的文本，過長省略后，滑鼠悬浮會有tooltip提示
           </ReText>
         </li>
       </ul>
     </el-space>
 
     <el-divider />
-    <div class="mb-2">自定义 el-text 配置</div>
+    <div class="mb-2">自定義 el-text 配置</div>
     <el-space wrap>
       <ul class="content">
         <li>
           <ReText type="primary" size="large">
-            测试文本，这是一个稍微有点长的文本，过长省略后，鼠标悬浮会有tooltip提示
+            測試文本，这是一个稍微有點長的文本，過長省略后，滑鼠悬浮會有tooltip提示
           </ReText>
         </li>
         <li>
           <ReText :lineClamp="4" type="info">
-            测试文本，这是一个非常非常长，非常非常长，非常非常长，非常非常长，非常非常长，非常非常长，非常非常长，非常非常长，非常非常长，非常非常长，非常非常长，非常非常长，非常非常长，非常非常长的文本，lineClamp参数为4，即四行过长省略后，鼠标悬浮会有tooltip提示
+            測試文本，这是一个非常非常長，非常非常長，非常非常長，非常非常長，非常非常長，非常非常長，非常非常長，非常非常長，非常非常長，非常非常長，非常非常長，非常非常長，非常非常長，非常非常長的文本，lineClamp参数為4，即四行過長省略后，滑鼠悬浮會有tooltip提示
           </ReText>
         </li>
       </ul>
     </el-space>
 
     <el-divider />
-    <div class="mb-2">自定义 VueTippy 配置</div>
+    <div class="mb-2">自定義 VueTippy 配置</div>
     <el-space wrap>
       <ul class="content">
         <li>
           <ReText
             :tippyProps="{ offset: [0, -20], theme: 'light', arrow: false }"
           >
-            偏移白色无箭头 -
-            测试文本，这是一个稍微有点长的文本，过长省略后，鼠标悬浮会有tooltip提示
+            偏移白色無箭頭 -
+            測試文本，这是一个稍微有點長的文本，過長省略后，滑鼠悬浮會有tooltip提示
           </ReText>
         </li>
         <li>
           <ReText :lineClamp="4" :tippyProps="{ followCursor: true }">
-            鼠标跟随 -
-            测试文本，这是一个非常非常长，非常非常长，非常非常长，非常非常长，非常非常长，非常非常长，非常非常长，非常非常长，非常非常长，非常非常长，非常非常长，非常非常长，非常非常长，非常非常长的文本，lineClamp参数为4，即四行过长省略后，鼠标悬浮会有tooltip提示
+            滑鼠跟随 -
+            測試文本，这是一个非常非常長，非常非常長，非常非常長，非常非常長，非常非常長，非常非常長，非常非常長，非常非常長，非常非常長，非常非常長，非常非常長，非常非常長，非常非常長，非常非常長的文本，lineClamp参数為4，即四行過長省略后，滑鼠悬浮會有tooltip提示
           </ReText>
         </li>
       </ul>
     </el-space>
 
     <el-divider />
-    <div class="mb-2">组件嵌套: 不需要省略的需设置 truncated 为 false</div>
+    <div class="mb-2">組件嵌套: 不需要省略的需設定 truncated 為 false</div>
     <el-space wrap>
       <ul class="content">
         <li>

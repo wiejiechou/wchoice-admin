@@ -11,31 +11,31 @@ import Echarts from "./echarts/index.vue";
 import TableSelect from "./table-select/index.vue";
 
 const rendContent = (val: string) =>
-  `代码位置：src/views/table/high/${val}/index.vue`;
+  `程式碼位置：src/views/table/high/${val}/index.vue`;
 
 export const list = [
   {
     key: "adaptive",
     content: rendContent("adaptive"),
-    title: "自适应内容区高度",
+    title: "自適應内容區高度",
     component: Adaptive
   },
   {
     key: "page",
     content: rendContent("page"),
-    title: "分页、加载动画、动态列",
+    title: "分頁、加載動畫、動態列",
     component: Page
   },
   {
     key: "header",
     content: rendContent("header"),
-    title: "动态表头",
+    title: "動態表頭",
     component: Header
   },
   {
     key: "tableSelect",
     content: rendContent("table-select"),
-    title: "表格选择器",
+    title: "表格選擇器",
     component: TableSelect
   },
   {
@@ -53,7 +53,7 @@ export const list = [
   {
     key: "contextmenu",
     content: rendContent("contextmenu"),
-    title: "右键菜单",
+    title: "右鍵選單",
     component: Contextmenu
   },
   {
@@ -77,7 +77,7 @@ export const list = [
   {
     key: "echarts",
     content: rendContent("echarts"),
-    title: "内嵌echarts图表",
+    title: "内嵌echarts圖表",
     component: Echarts
   }
 ];

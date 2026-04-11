@@ -22,13 +22,13 @@ const connection = reactive({
   // for more options and details, please refer to https://github.com/mqttjs/MQTT.js#mqttclientstreambuilder-options
 });
 
-// 订阅 topic/mqttx 主题
+// 訂閱 topic/mqttx 主题
 const subscription = ref({
   topic: "topic/mqttx",
   qos: 0 as any
 });
 
-// 发布 topic/browser 主题
+// 發布 topic/browser 主题
 const publish = ref({
   topic: "topic/browser",
   qos: 0 as any,
@@ -71,7 +71,7 @@ const createConnection = () => {
     btnLoadingType.value = "connect";
     const { protocol, host, port, ...options } = connection;
     const connectUrl = `${protocol}://${host}:${port}/mqtt`;
-    // 连接MQTT 服务器
+    // 连接MQTT 服務器
     client.value = mqtt.connect(connectUrl, options);
 
     if (client.value.on) {
@@ -209,19 +209,19 @@ onUnmounted(() => {
         >
           EMQX
         </el-link>
-        实现的一套 MQTT 客户端
+        实現的一套 MQTT 客戶端
       </div>
       <el-link
         class="mt-2"
         href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/able/mqtt-client.vue"
         target="_blank"
       >
-        代码位置 src/views/able/mqtt-client.vue
+        程式碼位置 src/views/able/mqtt-client.vue
       </el-link>
     </template>
 
     <el-card shadow="never">
-      <h1>设置</h1>
+      <h1>設定</h1>
       <el-form label-position="top" :model="connection">
         <el-row :gutter="20">
           <el-col :span="8">
@@ -250,12 +250,12 @@ onUnmounted(() => {
             </el-form-item>
           </el-col>
           <el-col :span="8">
-            <el-form-item prop="clientId" label="客户端ID">
+            <el-form-item prop="clientId" label="客戶端ID">
               <el-input v-model="connection.clientId" />
             </el-form-item>
           </el-col>
           <el-col :span="8">
-            <el-form-item prop="username" label="用户名">
+            <el-form-item prop="username" label="用戶名">
               <el-input v-model="connection.username" />
             </el-form-item>
           </el-col>
@@ -281,14 +281,14 @@ onUnmounted(() => {
               :loading="btnLoadingType === 'disconnect'"
               @click="destroyConnection"
             >
-              断开连接
+              断開连接
             </el-button>
           </el-col>
         </el-row>
       </el-form>
     </el-card>
     <el-card shadow="never" class="mt-4">
-      <h1>订阅</h1>
+      <h1>訂閱</h1>
       <el-form label-position="top" :model="subscription">
         <el-row :gutter="20" :align="'middle'">
           <el-col :span="8">
@@ -324,7 +324,7 @@ onUnmounted(() => {
               :disabled="!client.connected || subscribedSuccess"
               @click="doSubscribe"
             >
-              {{ subscribedSuccess ? "已订阅" : "订阅" }}
+              {{ subscribedSuccess ? "已訂閱" : "訂閱" }}
             </el-button>
             <el-button
               v-if="subscribedSuccess"
@@ -334,14 +334,14 @@ onUnmounted(() => {
               :disabled="!client.connected"
               @click="doUnSubscribe"
             >
-              取消订阅
+              取消訂閱
             </el-button>
           </el-col>
         </el-row>
       </el-form>
     </el-card>
     <el-card shadow="never" class="mt-4">
-      <h1>发布</h1>
+      <h1>發布</h1>
       <el-form label-position="top" :model="publish">
         <el-row :gutter="20">
           <el-col :span="8">
@@ -349,14 +349,14 @@ onUnmounted(() => {
               <template #label>
                 <span>主题</span>
                 <el-text type="info" size="small">
-                  可将订阅主题设置为topic/browser，测试MQTT的自发自收。
+                  可將訂閱主题設定為topic/browser，測試MQTT的自发自收。
                 </el-text>
               </template>
               <el-input v-model="publish.topic" />
             </el-form-item>
           </el-col>
           <el-col :span="8">
-            <el-form-item prop="payload" label="有效载荷">
+            <el-form-item prop="payload" label="有效載荷">
               <el-input v-model="publish.payload" />
             </el-form-item>
           </el-col>
@@ -381,7 +381,7 @@ onUnmounted(() => {
           :disabled="!client.connected"
           @click="doPublish"
         >
-          发布
+          發布
         </el-button>
       </el-col>
     </el-card>

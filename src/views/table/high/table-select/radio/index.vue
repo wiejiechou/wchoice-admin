@@ -18,7 +18,7 @@ const {
     ref="selectRef"
     v-model="selectValue"
     class="w-50!"
-    placeholder="请选择"
+    placeholder="請選擇"
     value-key="id"
     clearable
   >

@@ -35,7 +35,7 @@ const columns: TableColumnList = [
 </template>
 
 <style>
-/* 此处样式会在全局都生效，上面 tableRowClassName 函数返回的值也就是类名必须在全局中唯一，避免样式突出 */
+/* 此处樣式會在全局都生效，上面 tableRowClassName 函数返回的值也就是类名必须在全局中唯一，避免樣式突出 */
 .pure-warning-row {
   --el-table-tr-bg-color: var(--el-color-warning-light-9);
 }

@@ -9,7 +9,7 @@ onMounted(() => {
     response: message => {
       console.log(message);
       return {
-        text: "仅演示，如需AI服务，请参考 https://deepchat.dev/docs/connect"
+        text: "僅演示，如需AI服務，請参考 https://deepchat.dev/docs/connect"
       };
     }
   };
@@ -104,7 +104,7 @@ onMounted(() => {
     :history="[
       { text: '李白是谁？', role: 'user' },
       {
-        text: '李白（701年2月28日－762年），号青莲居士，又号“谪仙人”，是唐代著名的浪漫主义诗人，被后人誉为“诗仙”。',
+        text: '李白（701年2月28日－762年），号青莲居士，又号“谪仙人”，是唐代著名的浪漫主义詩人，被后人誉為“詩仙”。',
         role: 'ai'
       }
     ]"

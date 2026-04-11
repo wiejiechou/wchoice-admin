@@ -20,7 +20,7 @@ export function useColumns() {
       prop: "date"
     },
     {
-      label: "echarts图表",
+      label: "echarts圖表",
       slot: "echart"
     }
   ];
@@ -38,7 +38,7 @@ export function useColumns() {
       {
         tooltip: {
           trigger: "item",
-          // 将 tooltip 控制在图表区域里
+          // 將 tooltip 控制在圖表區域里
           confine: true
         },
         series: [
@@ -65,7 +65,7 @@ export function useColumns() {
         name: "click",
         callback: ({ data: { name, value } }) => {
           message(
-            `您点击了第 ${i + 1} 行，图表标题为${name}，图表数据为：${value}`,
+            `您點選了第 ${i + 1} 行，圖表標題為${name}，圖表數據為：${value}`,
             {
               type: "success"
             }

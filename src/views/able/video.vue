@@ -15,7 +15,7 @@ onMounted(() => {
   new Player({
     id: "mse",
     lang: "zh",
-    // 默认静音
+    // 預設静音
     volume: 0,
     autoplay: false,
     screenShot: true,
@@ -26,7 +26,7 @@ onMounted(() => {
     poster:
       "//lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/byted-player-videos/1.0.0/poster.jpg",
     fluid: deviceDetection(),
-    //传入倍速可选数组
+    //传入倍速可选数組
     playbackRate: [0.5, 0.75, 1, 1.5, 2]
   });
 });
@@ -37,7 +37,7 @@ onMounted(() => {
     <template #header>
       <div class="card-header">
         <span class="font-medium">
-          视频组件，采用开源的
+          视频組件，採用開源的
           <el-link
             href="https://v3.h5player.bytedance.com/"
             target="_blank"
@@ -53,7 +53,7 @@ onMounted(() => {
         href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/able/video.vue"
         target="_blank"
       >
-        代码位置 src/views/able/video.vue
+        程式碼位置 src/views/able/video.vue
       </el-link>
     </template>
     <div id="mse" />

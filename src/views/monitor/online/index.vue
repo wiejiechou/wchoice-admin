@@ -35,10 +35,10 @@ const {
       :model="form"
       class="search-form bg-bg_color w-full pl-8 pt-3 overflow-auto"
     >
-      <el-form-item label="用户名" prop="username">
+      <el-form-item label="用戶名" prop="username">
         <el-input
           v-model="form.username"
-          placeholder="请输入用户名"
+          placeholder="請輸入用戶名"
           clearable
           class="w-45!"
         />
@@ -59,7 +59,7 @@ const {
     </el-form>
 
     <PureTableBar
-      title="在线用户（仅演示，操作后不生效）"
+      title="在線用戶（僅演示，操作後不生效）"
       :columns="columns"
       @refresh="onSearch"
     >
@@ -85,7 +85,7 @@ const {
         >
           <template #operation="{ row }">
             <el-popconfirm
-              :title="`是否强制下线${row.username}`"
+              :title="`是否强制下線${row.username}`"
               @confirm="handleOffline(row)"
             >
               <template #reference>

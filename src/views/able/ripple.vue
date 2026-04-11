@@ -13,12 +13,12 @@ defineOptions({
         href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/able/ripple.vue"
         target="_blank"
       >
-        代码位置 src/views/able/ripple.vue
+        程式碼位置 src/views/able/ripple.vue
       </el-link>
     </template>
-    <div class="mb-5">组件中的波纹</div>
+    <div class="mb-5">組件中的波纹</div>
     <el-alert
-      title="v-ripple在某些组件中使用波纹特效会异常，这是因为v-ripple指令只能作用于当前元素，某些组件有多层元素嵌套，且目标元素没在顶层，所以会导致特效异常"
+      title="v-ripple在某些組件中使用波纹特效會异常，这是因為v-ripple指令只能作用于當前元素，某些組件有多層元素嵌套，且目标元素没在頂層，所以會导致特效异常"
       type="warning"
       :closable="false"
     />
@@ -35,7 +35,7 @@ defineOptions({
     </el-card>
 
     <div class="mb-5">
-      只要在组件或HTML元素上使用v-ripple指令，就可以启用基本的ripple功能
+      只要在組件或HTML元素上使用v-ripple指令，就可以啟用基本的ripple功能
     </div>
     <div
       v-ripple
@@ -51,7 +51,7 @@ defineOptions({
     </span>
 
     <div class="my-5">
-      当使用v-ripple.center时，将始终从目标的中心处产生波纹
+      當使用v-ripple.center時，將始终从目标的中心处产生波纹
     </div>
     <div
       v-ripple.center
@@ -61,10 +61,10 @@ defineOptions({
     </div>
 
     <div class="mb-5">
-      使用v-ripple="{ class: '' }"添加类来自定义波纹颜色，支持tailwindcss
+      使用v-ripple="{ class: '' }"添加类来自定義波纹颜色，支持tailwindcss
     </div>
     <el-alert
-      title="自定义样式生效为文字颜色，例如：color: 'red';"
+      title="自定義樣式生效為文字颜色，例如：color: 'red';"
       type="warning"
       :closable="false"
     />
@@ -72,7 +72,7 @@ defineOptions({
       v-ripple="{ class: 'text-red-500' }"
       class="my-5 text-center shadow-md rounded-md p-4 text-lg select-none"
     >
-      自定义波纹颜色
+      自定義波纹颜色
     </div>
   </el-card>
 </template>

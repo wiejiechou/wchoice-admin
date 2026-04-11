@@ -4,7 +4,7 @@ type Result = {
   code: number;
   message: string;
   data?: {
-    /** 列表数据 */
+    /** 列表數據 */
     list: Array<any>;
   };
 };

@@ -1,5 +1,5 @@
 interface FormItemProps {
-  /** 菜单类型（0代表菜单、1代表iframe、2代表外链、3代表按钮）*/
+  /** 選單類型（0代表選單、1代表iframe、2代表外鏈、3代表按鈕）*/
   menuType: number;
   higherMenuOptions: Record<string, unknown>[];
   parentId: number;

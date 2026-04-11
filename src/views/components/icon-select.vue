@@ -13,14 +13,14 @@ const icon = ref("ep:add-location");
   <el-card shadow="never">
     <template #header>
       <div class="card-header">
-        <span class="font-medium">图标选择器</span>
+        <span class="font-medium">圖标選擇器</span>
       </div>
       <el-link
         class="mt-2"
         href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/components/icon-select.vue"
         target="_blank"
       >
-        代码位置 src/views/components/icon-select.vue
+        程式碼位置 src/views/components/icon-select.vue
       </el-link>
     </template>
     <IconSelect v-model="icon" class="w-50" />

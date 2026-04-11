@@ -26,7 +26,7 @@ export function useColumns(selectRef: Ref) {
     }
   ];
 
-  /** 分页配置 */
+  /** 分頁配置 */
   const pagination = reactive<PaginationProps>({
     pageSize: 5,
     currentPage: 1,
@@ -36,7 +36,7 @@ export function useColumns(selectRef: Ref) {
     size: "small"
   });
 
-  /** 高亮当前选中行 */
+  /** 高亮當前选中行 */
   function rowStyle({ row: { name } }) {
     return {
       cursor: "pointer",
@@ -44,11 +44,11 @@ export function useColumns(selectRef: Ref) {
     };
   }
 
-  /** 行点击 */
+  /** 行點選 */
   function onRowClick(row) {
     selectValue.value = row.name;
     selectRef.value.blur();
-    message(`当前选中行的数据为：${JSON.stringify(row)}`, { type: "success" });
+    message(`當前选中行的數據為：${JSON.stringify(row)}`, { type: "success" });
   }
 
   return {

@@ -100,7 +100,7 @@ const onMarkAsRead = () => {
 </template>
 
 <style lang="scss" scoped>
-/* ”铃铛“摇晃衰减动画 */
+/* ”铃铛“摇晃衰减動畫 */
 @keyframes pure-bell-ring {
   0%,
   100% {

@@ -2,10 +2,10 @@ import reNormalCountTo from "./src/normal";
 import reboundCountTo from "./src/rebound";
 import { withInstall } from "@pureadmin/utils";
 
-/** 普通数字动画组件 */
+/** 普通数字動畫組件 */
 const ReNormalCountTo = withInstall(reNormalCountTo);
 
-/** 回弹式数字动画组件 */
+/** 回彈式数字動畫組件 */
 const ReboundCountTo = withInstall(reboundCountTo);
 
 export { ReNormalCountTo, ReboundCountTo };

@@ -40,17 +40,17 @@ export function useTags() {
   const translateX = ref(0);
   const visible = ref(false);
   const activeIndex = ref(-1);
-  // 当前右键选中的路由信息
+  // 當前右鍵选中的路由信息
   const currentSelect = ref({});
   const isScrolling = ref(false);
 
-  /** 页签风格默认为谷歌风格 */
+  /** 頁签風格預設為谷歌風格 */
   const tagsStyle = ref(
     storageLocal().getItem<StorageConfigs>(
       `${responsiveStorageNameSpace()}configure`
     )?.tagsStyle || "chrome"
   );
-  /** 是否隐藏标签页，默认显示 */
+  /** 是否隱藏標籤頁，預設顯示 */
   const showTags =
     ref(
       storageLocal().getItem<StorageConfigs>(
@@ -172,7 +172,7 @@ export function useTags() {
     visible.value = false;
   };
 
-  /** 鼠标移入添加激活样式 */
+  /** 滑鼠移入添加激活樣式 */
   function onMouseenter(index) {
     if (index) activeIndex.value = index;
     if (unref(tagsStyle) === "smart") {
@@ -187,7 +187,7 @@ export function useTags() {
     }
   }
 
-  /** 鼠标移出恢复默认样式 */
+  /** 滑鼠移出恢复預設樣式 */
   function onMouseleave(index) {
     activeIndex.value = -1;
     if (unref(tagsStyle) === "smart") {

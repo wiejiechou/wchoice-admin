@@ -3,7 +3,7 @@ import { isObject } from "@pureadmin/utils";
 import type { Directive, DirectiveBinding } from "vue";
 
 export interface RippleOptions {
-  /** 自定义`ripple`颜色，支持`tailwindcss` */
+  /** 自定義`ripple`颜色，支持`tailwindcss` */
   class?: string;
   /** 是否从中心扩散 */
   center?: boolean;
@@ -33,13 +33,13 @@ const calculate = (
 ) => {
   const offset = el.getBoundingClientRect();
 
-  // 获取点击位置距离 el 的垂直和水平距离
+  // 获取點選位置距離 el 的垂直和水平距離
   const localX = e.clientX - offset.left;
   const localY = e.clientY - offset.top;
 
   let radius = 0;
   let scale = 0.3;
-  // 计算点击位置到 el 顶点最远距离，即为圆的最大半径（勾股定理）
+  // 计算點選位置到 el 頂點最遠距離，即為圆的最大半径（勾股定理）
   if (el._ripple?.circle) {
     scale = 0.15;
     radius = el.clientWidth / 2;
@@ -50,11 +50,11 @@ const calculate = (
     radius = Math.sqrt(el.clientWidth ** 2 + el.clientHeight ** 2) / 2;
   }
 
-  // 中心点坐标
+  // 中心點坐标
   const centerX = `${(el.clientWidth - radius * 2) / 2}px`;
   const centerY = `${(el.clientHeight - radius * 2) / 2}px`;
 
-  // 点击位置坐标
+  // 點選位置坐标
   const x = value.center ? centerX : `${localX - radius}px`;
   const y = value.center ? centerY : `${localY - radius}px`;
 
@@ -89,7 +89,7 @@ const ripples = {
 
     el.appendChild(container);
 
-    // 获取目标元素样式表
+    // 获取目标元素樣式表
     const computed = window.getComputedStyle(el);
     // 防止 position 被覆盖导致 ripple 位置有问题
     if (computed && computed.position === "static") {

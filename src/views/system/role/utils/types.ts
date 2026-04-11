@@ -1,11 +1,11 @@
-// 虽然字段很少 但是抽离出来 后续有扩展字段需求就很方便了
+// 虽然字段很少 但是抽離出来 后续有扩展字段需求就很方便了
 
 interface FormItemProps {
-  /** 角色名称 */
+  /** 角色名稱 */
   name: string;
-  /** 角色编号 */
+  /** 角色編號 */
   code: string;
-  /** 备注 */
+  /** 備註 */
   remark: string;
 }
 interface FormProps {

@@ -8,28 +8,28 @@ defineOptions({
 });
 
 const mode = "default";
-// 编辑器实例，必须用 shallowRef
+// 編輯器實例，必须用 shallowRef
 const editorRef = shallowRef();
 
 // 内容 HTML
 const valueHtml = ref("<p>你好</p>");
 
-// 模拟 ajax 异步获取内容
+// 模擬 ajax 异步获取内容
 onMounted(() => {
   setTimeout(() => {
-    valueHtml.value = "<p>我是模拟的异步数据</p>";
+    valueHtml.value = "<p>我是模擬的异步數據</p>";
   }, 1500);
 });
 
 const toolbarConfig: any = { excludeKeys: "fullScreen" };
-const editorConfig = { placeholder: "请输入内容..." };
+const editorConfig = { placeholder: "請輸入内容..." };
 
 const handleCreated = editor => {
-  // 记录 editor 实例，重要！
+  // 记录 editor 實例，重要！
   editorRef.value = editor;
 };
 
-// 组件销毁时，也及时销毁编辑器
+// 組件销毁時，也及時销毁編輯器
 onBeforeUnmount(() => {
   const editor = editorRef.value;
   if (editor == null) return;

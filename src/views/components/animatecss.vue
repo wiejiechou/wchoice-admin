@@ -25,7 +25,7 @@ watch(animate, () => {
           >
             animate.css
           </el-link>
-          选择器
+          選擇器
         </span>
       </div>
       <el-link
@@ -33,7 +33,7 @@ watch(animate, () => {
         href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/components/animatecss.vue"
         target="_blank"
       >
-        代码位置 src/views/components/animatecss.vue
+        程式碼位置 src/views/components/animatecss.vue
       </el-link>
     </template>
     <ReAnimateSelector v-model="animate" class="w-50!" />

@@ -7,7 +7,7 @@
   "glyphs": [
     {
       "icon_id": "755619",
-      "name": "自适应图标",
+      "name": "自適應圖标",
       "font_class": "full-screen-hs",
       "unicode": "e656",
       "unicode_decimal": 58966
@@ -21,7 +21,7 @@
     },
     {
       "icon_id": "9712640",
-      "name": "下载",
+      "name": "下載",
       "font_class": "download-hs",
       "unicode": "e6af",
       "unicode_decimal": 59055
@@ -42,7 +42,7 @@
     },
     {
       "icon_id": "1010015",
-      "name": "缩小",
+      "name": "縮小",
       "font_class": "zoom-out-hs",
       "unicode": "e744",
       "unicode_decimal": 59204

@@ -37,7 +37,7 @@ export function useColumns() {
     res.unshift(titleList);
     const workSheet = utils.aoa_to_sheet(res);
     const workBook = utils.book_new();
-    utils.book_append_sheet(workBook, workSheet, "数据报表");
+    utils.book_append_sheet(workBook, workSheet, "數據報表");
     writeFile(workBook, "pure-admin-table.xlsx");
     message("导出成功", {
       type: "success"

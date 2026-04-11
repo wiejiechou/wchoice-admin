@@ -18,7 +18,7 @@ function tabClick({ index }) {
     <template #header>
       <div class="card-header">
         <span class="font-medium">
-          虚拟滚动采用
+          虚拟滚動採用
           <el-link
             href="https://vxetable.cn/#/table/scroll/scroll"
             target="_blank"
@@ -33,7 +33,7 @@ function tabClick({ index }) {
         href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/table/virtual"
         target="_blank"
       >
-        代码位置 src/views/table/virtual
+        程式碼位置 src/views/table/virtual
       </el-link>
     </template>
 

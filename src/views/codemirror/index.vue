@@ -60,7 +60,7 @@ watch(
     <template #header>
       <div class="card-header">
         <span class="font-medium">
-          代码编辑器组件，采用开源的
+          代码編輯器組件，採用開源的
           <el-link
             href="https://rennzhang.github.io/codemirror-editor-vue3/zh-CN/guide/getting-started"
             target="_blank"
@@ -75,7 +75,7 @@ watch(
         href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/codemirror/index.vue"
         target="_blank"
       >
-        代码位置 src/views/codemirror/index.vue
+        程式碼位置 src/views/codemirror/index.vue
       </el-link>
     </template>
     <Codemirror

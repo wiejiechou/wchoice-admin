@@ -13,12 +13,12 @@ function sayHello(): void {
 }
 sayHello();
 \`\`\`
-# 一级标题
-## 二级标题
-### 三级标题
-#### 四级标题
-##### 五级标题
-###### 六级标题
+# 一級標題
+## 二級標題
+### 三級標題
+#### 四級標題
+##### 五級標題
+###### 六級標題
 `);
 </script>
 
@@ -27,7 +27,7 @@ sayHello();
     <template #header>
       <div class="card-header">
         <span class="font-medium">
-          Markdown组件，采用开源的
+          Markdown組件，採用開源的
           <el-link
             href="https://b3log.org/vditor/"
             target="_blank"
@@ -42,7 +42,7 @@ sayHello();
         href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/markdown"
         target="_blank"
       >
-        代码位置 src/views/markdown
+        程式碼位置 src/views/markdown
       </el-link>
     </template>
     <h1 class="mb-2!">

@@ -9,7 +9,7 @@ onMounted(() => {
     response: message => {
       console.log(message);
       return {
-        text: "仅演示，如需AI服务，请参考 https://deepchat.dev/docs/connect"
+        text: "僅演示，如需AI服務，請参考 https://deepchat.dev/docs/connect"
       };
     }
   };
@@ -75,7 +75,7 @@ onMounted(() => {
     :history="[
       { text: '什么水果适合减脂期间吃？', role: 'user' },
       {
-        text: '减脂期间适合吃苹果、柑橘类水果、蓝莓和草莓等低热量、高纤维的水果，有助于增加饱腹感并促进新陈代谢。',
+        text: '减脂期间适合吃蘋果、柑橘类水果、蓝莓和草莓等低热量、高纤维的水果，有助于增加饱腹感并促进新陈代谢。',
         role: 'ai'
       }
     ]"

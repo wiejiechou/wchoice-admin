@@ -5,51 +5,51 @@ import { storageLocal, isString, isIncludeAllChildren } from "@pureadmin/utils";
 export interface DataInfo<T> {
   /** token */
   accessToken: string;
-  /** `accessToken`的过期时间（时间戳） */
+  /** `accessToken`的過期時間（時間戳） */
   expires: T;
-  /** 用于调用刷新accessToken的接口时所需的token */
+  /** 用于調用刷新accessToken的接口時所需的token */
   refreshToken: string;
-  /** 头像 */
+  /** 頭像 */
   avatar?: string;
-  /** 用户名 */
+  /** 用戶名 */
   username?: string;
   /** 昵称 */
   nickname?: string;
-  /** 当前登录用户的角色 */
+  /** 當前登入用戶的角色 */
   roles?: Array<string>;
-  /** 当前登录用户的按钮级别权限 */
+  /** 當前登入用戶的按鈕級别權限 */
   permissions?: Array<string>;
 }
 
 export const userKey = "user-info";
 export const TokenKey = "authorized-token";
 /**
- * 通过`multiple-tabs`是否在`cookie`中，判断用户是否已经登录系统，
- * 从而支持多标签页打开已经登录的系统后无需再登录。
- * 浏览器完全关闭后`multiple-tabs`将自动从`cookie`中销毁，
- * 再次打开浏览器需要重新登录系统
+ * 通過`multiple-tabs`是否在`cookie`中，判断用戶是否已經登入系統，
+ * 从而支持多標籤頁打開已經登入的系統后無需再登入。
+ * 瀏覽器完全關閉后`multiple-tabs`將自動从`cookie`中销毁，
+ * 再次打開瀏覽器需要重新登入系統
  * */
 export const multipleTabsKey = "multiple-tabs";
 
 /** 获取`token` */
 export function getToken(): DataInfo<number> {
-  // 此处与`TokenKey`相同，此写法解决初始化时`Cookies`中不存在`TokenKey`报错
+  // 此处与`TokenKey`相同，此寫法解决初始化時`Cookies`中不存在`TokenKey`报错
   return Cookies.get(TokenKey)
     ? JSON.parse(Cookies.get(TokenKey))
     : storageLocal().getItem(userKey);
 }
 
 /**
- * @description 设置`token`以及一些必要信息并采用无感刷新`token`方案
- * 无感刷新：后端返回`accessToken`（访问接口使用的`token`）、`refreshToken`（用于调用刷新`accessToken`的接口时所需的`token`，`refreshToken`的过期时间（比如30天）应大于`accessToken`的过期时间（比如2小时））、`expires`（`accessToken`的过期时间）
- * 将`accessToken`、`expires`、`refreshToken`这三条信息放在key值为authorized-token的cookie里（过期自动销毁）
- * 将`avatar`、`username`、`nickname`、`roles`、`permissions`、`refreshToken`、`expires`这七条信息放在key值为`user-info`的localStorage里（利用`multipleTabsKey`当浏览器完全关闭后自动销毁）
+ * @description 設定`token`以及一些必要信息并採用無感刷新`token`方案
+ * 無感刷新：后端返回`accessToken`（訪問接口使用的`token`）、`refreshToken`（用于調用刷新`accessToken`的接口時所需的`token`，`refreshToken`的過期時間（比如30天）应大于`accessToken`的過期時間（比如2小時））、`expires`（`accessToken`的過期時間）
+ * 將`accessToken`、`expires`、`refreshToken`这三條信息放在key值為authorized-token的cookie里（過期自動销毁）
+ * 將`avatar`、`username`、`nickname`、`roles`、`permissions`、`refreshToken`、`expires`这七條信息放在key值為`user-info`的localStorage里（利用`multipleTabsKey`當瀏覽器完全關閉后自動销毁）
  */
 export function setToken(data: DataInfo<Date>) {
   let expires = 0;
   const { accessToken, refreshToken } = data;
   const { isRemembered, loginDay } = useUserStoreHook();
-  expires = new Date(data.expires).getTime(); // 如果后端直接设置时间戳，将此处代码改为expires = data.expires，然后把上面的DataInfo<Date>改成DataInfo<number>即可
+  expires = new Date(data.expires).getTime(); // 如果后端直接設定時間戳，將此处代码改為expires = data.expires，然后把上面的DataInfo<Date>改成DataInfo<number>即可
   const cookieString = JSON.stringify({ accessToken, expires, refreshToken });
 
   expires > 0
@@ -115,7 +115,7 @@ export function setToken(data: DataInfo<Date>) {
   }
 }
 
-/** 删除`token`以及key值为`user-info`的localStorage信息 */
+/** 删除`token`以及key值為`user-info`的localStorage信息 */
 export function removeToken() {
   Cookies.remove(TokenKey);
   Cookies.remove(multipleTabsKey);
@@ -127,7 +127,7 @@ export const formatToken = (token: string): string => {
   return "Bearer " + token;
 };
 
-/** 是否有按钮级别的权限（根据登录接口返回的`permissions`字段进行判断）*/
+/** 是否有按鈕級别的權限（根據登入接口返回的`permissions`字段进行判断）*/
 export const hasPerms = (value: string | Array<string>): boolean => {
   if (!value) return false;
   const allPerms = "*:*:*";

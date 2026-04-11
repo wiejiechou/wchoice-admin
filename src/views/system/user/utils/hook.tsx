@@ -43,7 +43,7 @@ import {
 
 export function useUser(tableRef: Ref, treeRef: Ref) {
   const form = reactive({
-    // 左侧部门树的id
+    // 左側部門树的id
     deptId: "",
     username: "",
     phone: "",
@@ -53,7 +53,7 @@ export function useUser(tableRef: Ref, treeRef: Ref) {
   const ruleFormRef = ref();
   const dataList = ref([]);
   const loading = ref(true);
-  // 上传头像信息
+  // 上傳頭像信息
   const avatarInfo = ref();
   const switchLoadMap = ref({});
   const { switchStyle } = usePublicHooks();
@@ -69,18 +69,18 @@ export function useUser(tableRef: Ref, treeRef: Ref) {
   });
   const columns: TableColumnList = [
     {
-      label: "勾选列", // 如果需要表格多选，此处label必须设置
+      label: "勾选列", // 如果需要表格多選，此处label必须設定
       type: "selection",
       fixed: "left",
-      reserveSelection: true // 数据刷新后保留选项
+      reserveSelection: true // 數據刷新后保留選項
     },
     {
-      label: "用户编号",
+      label: "用戶編號",
       prop: "id",
       width: 90
     },
     {
-      label: "用户头像",
+      label: "用戶頭像",
       prop: "avatar",
       cellRenderer: ({ row }) => (
         <el-image
@@ -94,12 +94,12 @@ export function useUser(tableRef: Ref, treeRef: Ref) {
       width: 90
     },
     {
-      label: "用户名称",
+      label: "用戶名稱",
       prop: "username",
       minWidth: 130
     },
     {
-      label: "用户昵称",
+      label: "用戶昵称",
       prop: "nickname",
       minWidth: 130
     },
@@ -118,18 +118,18 @@ export function useUser(tableRef: Ref, treeRef: Ref) {
       )
     },
     {
-      label: "部门",
+      label: "部門",
       prop: "dept.name",
       minWidth: 90
     },
     {
-      label: "手机号码",
+      label: "手机號碼",
       prop: "phone",
       minWidth: 90,
       formatter: ({ phone }) => hideTextAtIndex(phone, { start: 3, end: 6 })
     },
     {
-      label: "状态",
+      label: "狀態",
       prop: "status",
       minWidth: 90,
       cellRenderer: scope => (
@@ -139,7 +139,7 @@ export function useUser(tableRef: Ref, treeRef: Ref) {
           v-model={scope.row.status}
           active-value={1}
           inactive-value={0}
-          active-text="已启用"
+          active-text="已啟用"
           inactive-text="已停用"
           inline-prompt
           style={switchStyle.value}
@@ -181,20 +181,20 @@ export function useUser(tableRef: Ref, treeRef: Ref) {
     { color: "#1bbf1b", text: "强" },
     { color: "#008000", text: "非常强" }
   ];
-  // 当前密码强度（0-4）
+  // 當前密码强度（0-4）
   const curScore = ref();
   const roleOptions = ref([]);
 
   function onChange({ row, index }) {
     ElMessageBox.confirm(
-      `确认要<strong>${
-        row.status === 0 ? "停用" : "启用"
+      `確認要<strong>${
+        row.status === 0 ? "停用" : "啟用"
       }</strong><strong style='color:var(--el-color-primary)'>${
         row.username
-      }</strong>用户吗?`,
-      "系统提示",
+      }</strong>用戶吗?`,
+      "系統提示",
       {
-        confirmButtonText: "确定",
+        confirmButtonText: "確定",
         cancelButtonText: "取消",
         type: "warning",
         dangerouslyUseHTMLString: true,
@@ -217,7 +217,7 @@ export function useUser(tableRef: Ref, treeRef: Ref) {
               loading: false
             }
           );
-          message("已成功修改用户状态", {
+          message("已成功修改用戶狀態", {
             type: "success"
           });
         }, 300);
@@ -232,7 +232,7 @@ export function useUser(tableRef: Ref, treeRef: Ref) {
   }
 
   function handleDelete(row) {
-    message(`您删除了用户编号为${row.id}的这条数据`, { type: "success" });
+    message(`您删除了用戶編號為${row.id}的这條數據`, { type: "success" });
     onSearch();
   }
 
@@ -244,26 +244,26 @@ export function useUser(tableRef: Ref, treeRef: Ref) {
     console.log(`current page: ${val}`);
   }
 
-  /** 当CheckBox选择项发生变化时会触发该事件 */
+  /** 當CheckBox選擇项发生變化時會触发該事件 */
   function handleSelectionChange(val) {
     selectedNum.value = val.length;
     // 重置表格高度
     tableRef.value.setAdaptive();
   }
 
-  /** 取消选择 */
+  /** 取消選擇 */
   function onSelectionCancel() {
     selectedNum.value = 0;
-    // 用于多选表格，清空用户的选择
+    // 用于多選表格，清空用戶的選擇
     tableRef.value.getTableRef().clearSelection();
   }
 
   /** 批量删除 */
   function onbatchDel() {
-    // 返回当前选中的行
+    // 返回當前选中的行
     const curSelected = tableRef.value.getTableRef().getSelectionRows();
-    // 接下来根据实际业务，通过选中行的某项数据，比如下面的id，调用接口进行批量删除
-    message(`已删除用户编号为 ${getKeyList(curSelected, "id")} 的数据`, {
+    // 接下来根據实际业務，通過选中行的某项數據，比如下面的id，調用接口進行批量删除
+    message(`已删除用戶編號為 ${getKeyList(curSelected, "id")} 的數據`, {
       type: "success"
     });
     tableRef.value.getTableRef().clearSelection();
@@ -299,7 +299,7 @@ export function useUser(tableRef: Ref, treeRef: Ref) {
   }
 
   function formatHigherDeptOptions(treeList) {
-    // 根据返回数据的status字段值判断追加是否禁用disabled字段，返回处理后的树结构，用于上级部门级联选择器的展示（实际开发中也是如此，不可能前端需要的每个字段后端都会返回，这时需要前端自行根据后端返回的某些字段做逻辑处理）
+    // 根據返回數據的status字段值判断追加是否禁用disabled字段，返回處理后的树結构，用于上級部門級联選擇器的展示（实际開发中也是如此，不可能前端需要的每个字段后端都會返回，这時需要前端自行根據后端返回的某些字段做逻辑處理）
     if (!treeList || !treeList.length) return;
     const newTreeList = [];
     for (let i = 0; i < treeList.length; i++) {
@@ -312,7 +312,7 @@ export function useUser(tableRef: Ref, treeRef: Ref) {
 
   function openDialog(title = "新增", row?: FormItemProps) {
     addDialog({
-      title: `${title}用户`,
+      title: `${title}用戶`,
       props: {
         formInline: {
           title,
@@ -338,21 +338,21 @@ export function useUser(tableRef: Ref, treeRef: Ref) {
         const FormRef = formRef.value.getRef();
         const curData = options.props.formInline as FormItemProps;
         function chores() {
-          message(`您${title}了用户名称为${curData.username}的这条数据`, {
+          message(`您${title}了用戶名稱為${curData.username}的这條數據`, {
             type: "success"
           });
-          done(); // 关闭弹框
-          onSearch(); // 刷新表格数据
+          done(); // 關閉彈框
+          onSearch(); // 刷新表格數據
         }
         FormRef.validate(valid => {
           if (valid) {
             console.log("curData", curData);
-            // 表单规则校验通过
+            // 表單规则校驗通過
             if (title === "新增") {
-              // 实际开发先调用新增接口，再进行下面操作
+              // 实际開发先調用新增接口，再進行下面操作
               chores();
             } else {
-              // 实际开发先调用修改接口，再进行下面操作
+              // 实际開发先調用修改接口，再進行下面操作
               chores();
             }
           }
@@ -362,10 +362,10 @@ export function useUser(tableRef: Ref, treeRef: Ref) {
   }
 
   const cropRef = ref();
-  /** 上传头像 */
+  /** 上傳頭像 */
   function handleUpload(row) {
     addDialog({
-      title: "裁剪、上传头像",
+      title: "裁剪、上傳頭像",
       width: "40%",
       closeOnClickModal: false,
       fullscreen: deviceDetection(),
@@ -376,10 +376,10 @@ export function useUser(tableRef: Ref, treeRef: Ref) {
           onCropper: info => (avatarInfo.value = info)
         }),
       beforeSure: done => {
-        console.log("裁剪后的图片信息：", avatarInfo.value);
-        // 根据实际业务使用avatarInfo.value和row里的某些字段去调用上传头像接口即可
-        done(); // 关闭弹框
-        onSearch(); // 刷新表格数据
+        console.log("裁剪后的圖片信息：", avatarInfo.value);
+        // 根據实际业務使用avatarInfo.value和row里的某些字段去調用上傳頭像接口即可
+        done(); // 關閉彈框
+        onSearch(); // 刷新表格數據
       },
       closeCallBack: () => cropRef.value.hidePopover()
     });
@@ -394,7 +394,7 @@ export function useUser(tableRef: Ref, treeRef: Ref) {
   /** 重置密码 */
   function handleReset(row) {
     addDialog({
-      title: `重置 ${row.username} 用户的密码`,
+      title: `重置 ${row.username} 用戶的密码`,
       width: "30%",
       draggable: true,
       closeOnClickModal: false,
@@ -407,7 +407,7 @@ export function useUser(tableRef: Ref, treeRef: Ref) {
               rules={[
                 {
                   required: true,
-                  message: "请输入新密码",
+                  message: "請輸入新密码",
                   trigger: "blur"
                 }
               ]}
@@ -417,7 +417,7 @@ export function useUser(tableRef: Ref, treeRef: Ref) {
                 show-password
                 type="password"
                 v-model={pwdForm.newPwd}
-                placeholder="请输入新密码"
+                placeholder="請輸入新密码"
               />
             </ElFormItem>
           </ElForm>
@@ -451,14 +451,14 @@ export function useUser(tableRef: Ref, treeRef: Ref) {
       beforeSure: done => {
         ruleFormRef.value.validate(valid => {
           if (valid) {
-            // 表单规则校验通过
-            message(`已成功重置 ${row.username} 用户的密码`, {
+            // 表單规则校驗通過
+            message(`已成功重置 ${row.username} 用戶的密码`, {
               type: "success"
             });
             console.log(pwdForm.newPwd);
-            // 根据实际业务使用pwdForm.newPwd和row里的某些字段去调用重置用户密码接口即可
-            done(); // 关闭弹框
-            onSearch(); // 刷新表格数据
+            // 根據实际业務使用pwdForm.newPwd和row里的某些字段去調用重置用戶密码接口即可
+            done(); // 關閉彈框
+            onSearch(); // 刷新表格數據
           }
         });
       }
@@ -470,7 +470,7 @@ export function useUser(tableRef: Ref, treeRef: Ref) {
     // 选中的角色列表
     const ids = (await getRoleIds({ userId: row.id })).data ?? [];
     addDialog({
-      title: `分配 ${row.username} 用户的角色`,
+      title: `分配 ${row.username} 用戶的角色`,
       props: {
         formInline: {
           username: row?.username ?? "",
@@ -488,8 +488,8 @@ export function useUser(tableRef: Ref, treeRef: Ref) {
       beforeSure: (done, { options }) => {
         const curData = options.props.formInline as RoleFormItemProps;
         console.log("curIds", curData.ids);
-        // 根据实际业务使用curData.ids和row里的某些字段去调用修改角色接口即可
-        done(); // 关闭弹框
+        // 根據实际业務使用curData.ids和row里的某些字段去調用修改角色接口即可
+        done(); // 關閉彈框
       }
     });
   }
@@ -498,7 +498,7 @@ export function useUser(tableRef: Ref, treeRef: Ref) {
     treeLoading.value = true;
     onSearch();
 
-    // 归属部门
+    // 归属部門
     const { code, data } = await getDeptList();
     if (code === 0) {
       higherDeptOptions.value = handleTree(data);

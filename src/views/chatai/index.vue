@@ -115,7 +115,7 @@ const swiperExample: any[] = [
         href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/chatai"
         target="_blank"
       >
-        代碼位置 src/views/chatai
+        程式碼位置 src/views/chatai
       </el-link>
     </template>
     <el-space wrap>

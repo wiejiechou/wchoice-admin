@@ -7,11 +7,11 @@ const value2 = ref(0);
 
 <template>
   <div class="slider-demo-block">
-    <span class="demonstration">不显示断点</span>
+    <span class="demonstration">不顯示断點</span>
     <el-slider v-model="value1" :step="10" />
   </div>
   <div class="slider-demo-block">
-    <span class="demonstration">显示断点</span>
+    <span class="demonstration">顯示断點</span>
     <el-slider v-model="value2" :step="10" show-stops />
   </div>
 </template>

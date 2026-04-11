@@ -22,7 +22,7 @@ export function useDept() {
 
   const columns: TableColumnList = [
     {
-      label: "部门名称",
+      label: "部門名稱",
       prop: "name",
       width: 180,
       align: "left"
@@ -33,12 +33,12 @@ export function useDept() {
       minWidth: 70
     },
     {
-      label: "状态",
+      label: "狀態",
       prop: "status",
       minWidth: 100,
       cellRenderer: ({ row, props }) => (
         <el-tag size={props.size} style={tagStyle.value(row.status)}>
-          {row.status === 1 ? "启用" : "停用"}
+          {row.status === 1 ? "啟用" : "停用"}
         </el-tag>
       )
     },
@@ -50,7 +50,7 @@ export function useDept() {
         dayjs(createTime).format("YYYY-MM-DD HH:mm:ss")
     },
     {
-      label: "备注",
+      label: "備註",
       prop: "remark",
       minWidth: 320
     },
@@ -74,18 +74,18 @@ export function useDept() {
 
   async function onSearch() {
     loading.value = true;
-    const { code, data } = await getDeptList(); // 这里是返回一维数组结构，前端自行处理成树结构，返回格式要求：唯一id加父节点parentId，parentId取父节点id
+    const { code, data } = await getDeptList(); // 这里是返回一维数組結构，前端自行處理成树結构，返回格式要求：唯一id加父节點parentId，parentId取父节點id
     if (code === 0) {
       let newData = data;
       if (!isAllEmpty(form.name)) {
-        // 前端搜索部门名称
+        // 前端搜索部門名稱
         newData = newData.filter(item => item.name.includes(form.name));
       }
       if (!isAllEmpty(form.status)) {
-        // 前端搜索状态
+        // 前端搜索狀態
         newData = newData.filter(item => item.status === form.status);
       }
-      dataList.value = handleTree(newData); // 处理成树结构
+      dataList.value = handleTree(newData); // 處理成树結构
     }
 
     setTimeout(() => {
@@ -94,7 +94,7 @@ export function useDept() {
   }
 
   function formatHigherDeptOptions(treeList) {
-    // 根据返回数据的status字段值判断追加是否禁用disabled字段，返回处理后的树结构，用于上级部门级联选择器的展示（实际开发中也是如此，不可能前端需要的每个字段后端都会返回，这时需要前端自行根据后端返回的某些字段做逻辑处理）
+    // 根據返回數據的status字段值判断追加是否禁用disabled字段，返回處理后的树結构，用于上級部門級联選擇器的展示（实际開发中也是如此，不可能前端需要的每个字段后端都會返回，这時需要前端自行根據后端返回的某些字段做逻辑處理）
     if (!treeList || !treeList.length) return;
     const newTreeList = [];
     for (let i = 0; i < treeList.length; i++) {
@@ -107,7 +107,7 @@ export function useDept() {
 
   function openDialog(title = "新增", row?: FormItemProps) {
     addDialog({
-      title: `${title}部门`,
+      title: `${title}部門`,
       props: {
         formInline: {
           higherDeptOptions: formatHigherDeptOptions(cloneDeep(dataList.value)),
@@ -131,21 +131,21 @@ export function useDept() {
         const FormRef = formRef.value.getRef();
         const curData = options.props.formInline as FormItemProps;
         function chores() {
-          message(`您${title}了部门名称为${curData.name}的这条数据`, {
+          message(`您${title}了部門名稱為${curData.name}的这條數據`, {
             type: "success"
           });
-          done(); // 关闭弹框
-          onSearch(); // 刷新表格数据
+          done(); // 關閉彈框
+          onSearch(); // 刷新表格數據
         }
         FormRef.validate(valid => {
           if (valid) {
             console.log("curData", curData);
-            // 表单规则校验通过
+            // 表單规则校驗通過
             if (title === "新增") {
-              // 实际开发先调用新增接口，再进行下面操作
+              // 实际開发先調用新增接口，再進行下面操作
               chores();
             } else {
-              // 实际开发先调用修改接口，再进行下面操作
+              // 实际開发先調用修改接口，再進行下面操作
               chores();
             }
           }
@@ -155,7 +155,7 @@ export function useDept() {
   }
 
   function handleDelete(row) {
-    message(`您删除了部门名称为${row.name}的这条数据`, { type: "success" });
+    message(`您删除了部門名稱為${row.name}的这條數據`, { type: "success" });
     onSearch();
   }
 
@@ -172,9 +172,9 @@ export function useDept() {
     onSearch,
     /** 重置 */
     resetForm,
-    /** 新增、修改部门 */
+    /** 新增、修改部門 */
     openDialog,
-    /** 删除部门 */
+    /** 删除部門 */
     handleDelete,
     handleSelectionChange
   };

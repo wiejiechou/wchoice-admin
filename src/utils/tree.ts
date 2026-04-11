@@ -1,7 +1,7 @@
 /**
- * @description 提取菜单树中的每一项uniqueId
+ * @description 提取選單树中的每一项uniqueId
  * @param tree 树
- * @returns 每一项uniqueId组成的数组
+ * @returns 每一项uniqueId組成的数組
  */
 export const extractPathList = (tree: any[]): any => {
   if (!Array.isArray(tree)) {
@@ -21,10 +21,10 @@ export const extractPathList = (tree: any[]): any => {
 };
 
 /**
- * @description 如果父级下children的length为1，删除children并自动组建唯一uniqueId
+ * @description 如果父級下children的length為1，删除children并自動組建唯一uniqueId
  * @param tree 树
- * @param pathList 每一项的id组成的数组
- * @returns 组件唯一uniqueId后的树
+ * @param pathList 每一项的id組成的数組
+ * @returns 組件唯一uniqueId后的树
  */
 export const deleteChildren = (tree: any[], pathList = []): any => {
   if (!Array.isArray(tree)) {
@@ -48,10 +48,10 @@ export const deleteChildren = (tree: any[], pathList = []): any => {
 };
 
 /**
- * @description 创建层级关系
+ * @description 创建層級关系
  * @param tree 树
- * @param pathList 每一项的id组成的数组
- * @returns 创建层级关系后的树
+ * @param pathList 每一项的id組成的数組
+ * @returns 创建層級关系后的树
  */
 export const buildHierarchyTree = (tree: any[], pathList = []): any => {
   if (!Array.isArray(tree)) {
@@ -72,10 +72,10 @@ export const buildHierarchyTree = (tree: any[], pathList = []): any => {
 };
 
 /**
- * @description 广度优先遍历，根据唯一uniqueId找当前节点信息
+ * @description 广度优先遍历，根據唯一uniqueId找當前节點信息
  * @param tree 树
  * @param uniqueId 唯一uniqueId
- * @returns 当前节点信息
+ * @returns 當前节點信息
  */
 export const getNodeByUniqueId = (
   tree: any[],
@@ -96,7 +96,7 @@ export const getNodeByUniqueId = (
 };
 
 /**
- * @description 向当前唯一uniqueId节点中追加字段
+ * @description 向當前唯一uniqueId节點中追加字段
  * @param tree 树
  * @param uniqueId 唯一uniqueId
  * @param fields 需要追加的字段
@@ -127,11 +127,11 @@ export const appendFieldByUniqueId = (
 };
 
 /**
- * @description 构造树型结构数据
- * @param data 数据源
- * @param id id字段 默认id
- * @param parentId 父节点字段，默认parentId
- * @param children 子节点字段，默认children
+ * @description 构造树型結构數據
+ * @param data 數據源
+ * @param id id字段 預設id
+ * @param parentId 父节點字段，預設parentId
+ * @param children 子节點字段，預設children
  * @returns 追加字段后的树
  */
 export const handleTree = (

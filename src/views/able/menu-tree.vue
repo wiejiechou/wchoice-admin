@@ -47,7 +47,7 @@ const filterMethod = (query: string, node: treeNode) => {
     <template #header>
       <div class="card-header">
         <span class="font-medium">
-          菜单树结构（采用 Element Plus 的
+          選單树結构（採用 Element Plus 的
           <el-link
             href="https://element-plus.gitee.io/zh-CN/component/tree-v2.html"
             target="_blank"
@@ -56,7 +56,7 @@ const filterMethod = (query: string, node: treeNode) => {
           >
             Tree V2
           </el-link>
-          组件并支持国际化）
+          組件并支持國際化）
         </span>
       </div>
       <el-link
@@ -64,13 +64,13 @@ const filterMethod = (query: string, node: treeNode) => {
         href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/able/menu-tree.vue"
         target="_blank"
       >
-        代码位置 src/views/able/menu-tree.vue
+        程式碼位置 src/views/able/menu-tree.vue
       </el-link>
     </template>
     <el-input
       v-model="query"
       class="mb-4"
-      placeholder="请输入关键字查找"
+      placeholder="請輸入关鍵字查找"
       clearable
       @input="onQueryChanged"
     />

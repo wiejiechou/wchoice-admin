@@ -18,7 +18,7 @@ function tabClick({ index }) {
     <template #header>
       <div class="card-header">
         <span class="font-medium">
-          可编辑用法全部采用 TSX 语法，充分发挥
+          可編輯用法全部採用 TSX 语法，充分发挥
           <el-link
             href="https://github.com/pure-admin/pure-admin-table"
             target="_blank"
@@ -34,13 +34,13 @@ function tabClick({ index }) {
         href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/table/edit"
         target="_blank"
       >
-        代码位置 src/views/table/edit
+        程式碼位置 src/views/table/edit
       </el-link>
     </template>
 
     <el-alert
-      title="可编辑用法中所有表格都设置了 row-key ，它是唯一值的字段，比如id。作用：1. 用来优化 Table
-      的渲染，尤其当字段在深层结构中；2. 防止拖拽后表格组件内部混乱（拖拽必须设置）"
+      title="可編輯用法中所有表格都設定了 row-key ，它是唯一值的字段，比如id。作用：1. 用来优化 Table
+      的渲染，尤其當字段在深層結构中；2. 防止拖拽后表格組件内部混乱（拖拽必须設定）"
       type="info"
       :closable="false"
     />

@@ -9,8 +9,8 @@ defineOptions({
   name: "Segmented"
 });
 
-/** 基础用法 */
-const value = ref(4); // 必须为number类型
+/** 基礎用法 */
+const value = ref(4); // 必须為number類型
 const size = ref("default");
 const dynamicSize = ref();
 
@@ -36,11 +36,11 @@ const optionsBasis: Array<OptionsType> = [
 const optionsTooltip: Array<OptionsType> = [
   {
     label: "周一",
-    tip: "周一启航，新的篇章"
+    tip: "周一啟航，新的篇章"
   },
   {
     label: "周二",
-    tip: "周二律动，携手共进"
+    tip: "周二律動，携手共进"
   },
   {
     label: "周三",
@@ -92,12 +92,12 @@ const optionsBlock: Array<OptionsType> = [
     label: "周四"
   },
   {
-    label: "周五喜悦，收尾归档，周末倒计时",
-    tip: "周五喜悦，收尾归档，周末倒计时"
+    label: "周五喜悦，收尾归档，周末倒计時",
+    tip: "周五喜悦，收尾归档，周末倒计時"
   }
 ];
 
-/** 可设置图标 */
+/** 可設定圖标 */
 const optionsIcon: Array<OptionsType> = [
   {
     label: "周一",
@@ -119,7 +119,7 @@ const optionsIcon: Array<OptionsType> = [
   }
 ];
 
-/** 只设置图标 */
+/** 只設定圖标 */
 const optionsOnlyIcon: Array<OptionsType> = [
   {
     icon: HomeFilled
@@ -138,7 +138,7 @@ const optionsOnlyIcon: Array<OptionsType> = [
   }
 ];
 
-/** 自定义渲染 */
+/** 自定義渲染 */
 const optionsLabel: Array<OptionsType> = [
   {
     label: () => (
@@ -190,7 +190,7 @@ const optionsChange: Array<OptionsType> = [
 /** change 事件 */
 function onChange({ index, option }) {
   const { label, value } = option;
-  message(`当前选中项索引为：${index}，名字为${label}，值为${value}`, {
+  message(`當前选中项索引為：${index}，名字為${label}，值為${value}`, {
     type: "success"
   });
 }
@@ -206,7 +206,7 @@ watch(size, val => (dynamicSize.value = size.value));
           <span style="font-size: 16px; font-weight: 800"> 分段控制器 </span>
           <el-radio-group v-model="size">
             <el-radio value="large">大尺寸</el-radio>
-            <el-radio value="default">默认尺寸</el-radio>
+            <el-radio value="default">預設尺寸</el-radio>
             <el-radio value="small">小尺寸</el-radio>
           </el-radio-group>
         </el-space>
@@ -216,12 +216,12 @@ watch(size, val => (dynamicSize.value = size.value));
         href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/components/segmented.vue"
         target="_blank"
       >
-        代码位置 src/views/components/segmented.vue
+        程式碼位置 src/views/components/segmented.vue
       </el-link>
     </template>
     <el-scrollbar>
       <div class="mb-2">
-        基础用法（v-model）<span class="text-primary">
+        基礎用法（v-model）<span class="text-primary">
           {{ optionsBasis[value].label }}
         </span>
       </div>
@@ -243,16 +243,16 @@ watch(size, val => (dynamicSize.value = size.value));
       <div class="mb-2">全局禁用</div>
       <Segmented :options="optionsBasis" :size="dynamicSize" disabled />
       <el-divider />
-      <div class="mb-2">block 属性(将宽度调整为父元素宽度)</div>
+      <div class="mb-2">block 属性(將寬度調整為父元素寬度)</div>
       <Segmented :options="optionsBlock" block :size="dynamicSize" />
       <el-divider />
-      <div class="mb-2">可设置图标</div>
+      <div class="mb-2">可設定圖标</div>
       <Segmented :options="optionsIcon" :size="dynamicSize" />
       <el-divider />
-      <div class="mb-2">只设置图标</div>
+      <div class="mb-2">只設定圖标</div>
       <Segmented :options="optionsOnlyIcon" :size="dynamicSize" />
       <el-divider />
-      <div class="mb-2">自定义渲染</div>
+      <div class="mb-2">自定義渲染</div>
       <Segmented :options="optionsLabel" :size="dynamicSize" />
     </el-scrollbar>
   </el-card>

@@ -45,7 +45,7 @@ export function useDataThemeChange() {
     targetEl.className = flag ? `${className} ${clsName}` : className;
   }
 
-  /** 设置导航主题色 */
+  /** 設定导航主题色 */
   function setLayoutThemeColor(
     theme = getConfig().Theme ?? "light",
     isClick = true
@@ -79,7 +79,7 @@ export function useDataThemeChange() {
     );
   }
 
-  /** 设置 `element-plus` 主题色 */
+  /** 設定 `element-plus` 主题色 */
   const setEpThemeColor = (color: string) => {
     useEpThemeStoreHook().setEpThemeColor(color);
     document.documentElement.style.setProperty("--el-color-primary", color);
@@ -110,7 +110,7 @@ export function useDataThemeChange() {
     }
   }
 
-  /** 清空缓存并返回登录页 */
+  /** 清空缓存并返回登入頁 */
   function onReset() {
     removeToken();
     storageLocal().clear();

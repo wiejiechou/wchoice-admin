@@ -9,8 +9,8 @@ const model = ref("radio");
 <template>
   <el-space>
     <el-radio-group v-model="model">
-      <el-radio-button value="radio">单选</el-radio-button>
-      <el-radio-button value="multiple">多选</el-radio-button>
+      <el-radio-button value="radio">單選</el-radio-button>
+      <el-radio-button value="multiple">多選</el-radio-button>
     </el-radio-group>
     <el-divider direction="vertical" />
     <component

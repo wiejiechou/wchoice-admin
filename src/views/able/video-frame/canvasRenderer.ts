@@ -79,7 +79,7 @@ export class CanvasRenderer {
   public drawTick(event) {
     this.render();
 
-    // 当前勾选图片的索引
+    // 當前勾选圖片的索引
     const index =
       Math.ceil(
         (Math.abs(this.positionX) + event.offsetX) / this.images[0].width
@@ -87,12 +87,12 @@ export class CanvasRenderer {
     const x = event.offsetX;
     const y = event.offsetY;
 
-    // 绘制样式
+    // 绘制樣式
     this.ctx.strokeStyle = "red";
     this.ctx.lineWidth = 4;
     this.ctx.lineCap = "round";
 
-    // 绘制对勾
+    // 绘制對勾
     this.ctx.beginPath();
     this.ctx.moveTo(x - 10, y);
     this.ctx.lineTo(x, y + 10);

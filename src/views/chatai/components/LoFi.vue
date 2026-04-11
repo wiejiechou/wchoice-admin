@@ -9,7 +9,7 @@ onMounted(() => {
     response: message => {
       console.log(message);
       return {
-        text: "仅演示，如需AI服务，请参考 https://deepchat.dev/docs/connect"
+        text: "僅演示，如需AI服務，請参考 https://deepchat.dev/docs/connect"
       };
     }
   };
@@ -88,9 +88,9 @@ onMounted(() => {
       background-color: unset;
     }"
     :history="[
-      { text: '公认的最减肥运动推荐一个？', role: 'user' },
+      { text: '公认的最减肥运動推荐一个？', role: 'user' },
       {
-        text: '公认的最减肥运动之一是高强度间歇训练（HIIT），它通过短时间内的高强度运动和短暂休息交替进行，不仅在运动过程中燃烧大量卡路里，还能通过“后燃效应”让身体在运动结束后继续消耗热量。',
+        text: '公认的最减肥运動之一是高强度间歇训练（HIIT），它通過短時間内的高强度运動和短暫休息交替進行，不仅在运動過程中燃烧大量卡路里，還能通過“后燃效应”让身体在运動結束后继续消耗热量。',
         role: 'ai'
       }
     ]"

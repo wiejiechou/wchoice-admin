@@ -13,9 +13,9 @@ export interface OptimizeOptions {
   event: string;
   /** 事件触发的方法 */
   fn: (...params: any) => any;
-  /** 是否立即执行 */
+  /** 是否立即執行 */
   immediate?: boolean;
-  /** 防抖或节流的延迟时间（防抖默认：`200`毫秒、节流默认：`1000`毫秒） */
+  /** 防抖或节流的延迟時間（防抖預設：`200`毫秒、节流預設：`1000`毫秒） */
   timeout?: number;
   /** 传递的参数 */
   params?: any;

@@ -40,7 +40,7 @@ const load = () => {
           target="_blank"
           style="margin: 0 5px 4px 0; font-size: 16px"
         >
-          表格无限滚动
+          表格無限滚動
         </el-link>
       </div>
       <el-link
@@ -48,11 +48,11 @@ const load = () => {
         href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/able/infinite-scroll.vue"
         target="_blank"
       >
-        代码位置 src/views/able/infinite-scroll.vue
+        程式碼位置 src/views/able/infinite-scroll.vue
       </el-link>
     </template>
     <div class="mb-2">
-      {{ isBottom ? "已加载全部页" : `加载到第 ${page} 页` }}
+      {{ isBottom ? "已加載全部頁" : `加載到第 ${page} 頁` }}
     </div>
     <el-table
       v-el-table-infinite-scroll="load"
@@ -63,7 +63,7 @@ const load = () => {
     >
       <el-table-column width="80" type="index" label="序号" />
       <el-table-column prop="date" label="日期" />
-      <el-table-column prop="name" label="名称" />
+      <el-table-column prop="name" label="名稱" />
       <el-table-column prop="age" label="年龄" />
     </el-table>
   </el-card>

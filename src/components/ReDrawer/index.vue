@@ -35,7 +35,7 @@ const footerButtons = computed(() => {
             }
           },
           {
-            label: "确定",
+            label: "確定",
             type: "primary",
             text: true,
             bg: true,
@@ -82,10 +82,10 @@ function eventsCallBack(
 
 /**
  *
- * @param {DrawerOptions} options - 包含抽屉相关配置的对象
+ * @param {DrawerOptions} options - 包含抽屉相關配置的對象
  * @param {number} index - 抽屉的索引
- * @param {Object} args - 传递给关闭抽屉操作的参数对象，默认为 { command: 'close' }
- * @returns {void} 这个函数不返回任何值
+ * @param {Object} args - 传递给關閉抽屉操作的参数對象，預設為 { command: 'close' }
+ * @returns {void} 這個函数不返回任何值
  */
 function handleClose(
   options: DrawerOptions,

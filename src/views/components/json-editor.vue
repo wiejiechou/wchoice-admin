@@ -76,7 +76,7 @@ watch(
     <template #header>
       <div class="card-header">
         <span class="font-medium">
-          JSON编辑器，采用开源的
+          JSON編輯器，採用開源的
           <el-link
             href="https://github.com/leezng/vue-json-pretty"
             target="_blank"
@@ -84,7 +84,7 @@ watch(
           >
             vue-json-pretty
           </el-link>
-          （支持大数据量）
+          （支持大數據量）
         </span>
       </div>
       <el-link
@@ -92,7 +92,7 @@ watch(
         href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/components/json-editor.vue"
         target="_blank"
       >
-        代码位置 src/views/components/json-editor.vue
+        程式碼位置 src/views/components/json-editor.vue
       </el-link>
     </template>
     <vue-json-pretty

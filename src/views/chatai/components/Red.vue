@@ -9,7 +9,7 @@ onMounted(() => {
     response: message => {
       console.log(message);
       return {
-        text: "仅演示，如需AI服务，请参考 https://deepchat.dev/docs/connect"
+        text: "僅演示，如需AI服務，請参考 https://deepchat.dev/docs/connect"
       };
     }
   };
@@ -53,9 +53,9 @@ onMounted(() => {
       background-color: red;
     }"
     :history="[
-      { text: '健身的最佳时间？', role: 'user' },
+      { text: '健身的最佳時間？', role: 'user' },
       {
-        text: '健身的最佳时间是根据个人作息和偏好而定，但一般建议在下午或傍晚进行锻炼以达到最佳状态。',
+        text: '健身的最佳時間是根據个人作息和偏好而定，但一般建议在下午或傍晚進行锻炼以达到最佳狀態。',
         role: 'ai'
       }
     ]"

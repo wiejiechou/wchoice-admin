@@ -95,10 +95,10 @@ onMounted(() => {
       :model="form"
       class="search-form bg-bg_color w-full pl-8 pt-3 overflow-auto"
     >
-      <el-form-item label="角色名称：" prop="name">
+      <el-form-item label="角色名稱：" prop="name">
         <el-input
           v-model="form.name"
-          placeholder="请输入角色名称"
+          placeholder="請輸入角色名稱"
           clearable
           class="w-45!"
         />
@@ -106,19 +106,19 @@ onMounted(() => {
       <el-form-item label="角色标识：" prop="code">
         <el-input
           v-model="form.code"
-          placeholder="请输入角色标识"
+          placeholder="請輸入角色标识"
           clearable
           class="w-45!"
         />
       </el-form-item>
-      <el-form-item label="状态：" prop="status">
+      <el-form-item label="狀態：" prop="status">
         <el-select
           v-model="form.status"
-          placeholder="请选择状态"
+          placeholder="請選擇狀態"
           clearable
           class="w-45!"
         >
-          <el-option label="已启用" value="1" />
+          <el-option label="已啟用" value="1" />
           <el-option label="已停用" value="0" />
         </el-select>
       </el-form-item>
@@ -144,7 +144,7 @@ onMounted(() => {
       <PureTableBar
         :class="[isShow && !deviceDetection() ? 'w-[60vw]!' : 'w-full']"
         style="transition: width 220ms cubic-bezier(0.4, 0, 0.2, 1)"
-        title="角色管理（仅演示，操作后不生效）"
+        title="角色管理（僅演示，操作後不生效）"
         :columns="columns"
         @refresh="onSearch"
       >
@@ -191,7 +191,7 @@ onMounted(() => {
                 修改
               </el-button>
               <el-popconfirm
-                :title="`是否确认删除角色名称为${row.name}的这条数据`"
+                :title="`是否確認删除角色名稱為${row.name}的这條數據`"
                 @confirm="handleDelete(row)"
               >
                 <template #reference>
@@ -214,7 +214,7 @@ onMounted(() => {
                 :icon="useRenderIcon(Menu)"
                 @click="handleMenu(row)"
               >
-                权限
+                權限
               </el-button>
               <!-- <el-dropdown>
               <el-button
@@ -235,7 +235,7 @@ onMounted(() => {
                       :icon="useRenderIcon(Menu)"
                       @click="handleMenu"
                     >
-                      菜单权限
+                      選單權限
                     </el-button>
                   </el-dropdown-item>
                   <el-dropdown-item>
@@ -247,7 +247,7 @@ onMounted(() => {
                       :icon="useRenderIcon(Database)"
                       @click="handleDatabase"
                     >
-                      数据权限
+                      數據權限
                     </el-button>
                   </el-dropdown-item>
                 </el-dropdown-menu>
@@ -267,7 +267,7 @@ onMounted(() => {
             <span :class="iconClass">
               <IconifyIconOffline
                 v-tippy="{
-                  content: '关闭'
+                  content: '關閉'
                 }"
                 class="dark:text-white"
                 width="18px"
@@ -279,7 +279,7 @@ onMounted(() => {
             <span :class="[iconClass, 'ml-2']">
               <IconifyIconOffline
                 v-tippy="{
-                  content: '保存菜单权限'
+                  content: '保存選單權限'
                 }"
                 class="dark:text-white"
                 width="18px"
@@ -290,21 +290,21 @@ onMounted(() => {
             </span>
           </div>
           <p class="font-bold truncate">
-            菜单权限
+            選單權限
             {{ `${curRow?.name ? `（${curRow.name}）` : ""}` }}
           </p>
         </div>
         <el-input
           v-model="treeSearchValue"
-          placeholder="请输入菜单进行搜索"
+          placeholder="請輸入選單進行搜索"
           class="mb-1"
           clearable
           @input="onQueryChanged"
         />
         <div class="flex flex-wrap">
-          <el-checkbox v-model="isExpandAll" label="展开/折叠" />
+          <el-checkbox v-model="isExpandAll" label="展開/折叠" />
           <el-checkbox v-model="isSelectAll" label="全选/全不选" />
-          <el-checkbox v-model="isLinkage" label="父子联动" />
+          <el-checkbox v-model="isLinkage" label="父子联動" />
         </div>
         <el-tree-v2
           ref="treeRef"

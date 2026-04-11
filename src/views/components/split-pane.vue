@@ -29,22 +29,22 @@ const settingTB: ContextProps = reactive({
           href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/components/split-pane.vue"
           target="_blank"
         >
-          代码位置 src/views/components/split-pane.vue
+          程式碼位置 src/views/components/split-pane.vue
         </el-link>
       </div>
     </template>
     <div class="split-pane">
       <splitpane :splitSet="settingLR">
-        <!-- #paneL 表示指定该组件为左侧面板 -->
+        <!-- #paneL 表示指定該組件為左側面板 -->
         <template #paneL>
-          <!-- 自定义左侧面板的内容 -->
+          <!-- 自定義左側面板的内容 -->
           <el-scrollbar>
             <div class="dv-a">A</div>
           </el-scrollbar>
         </template>
-        <!-- #paneR 表示指定该组件为右侧面板 -->
+        <!-- #paneR 表示指定該組件為右側面板 -->
         <template #paneR>
-          <!-- 再次将右侧面板进行拆分 -->
+          <!-- 再次將右側面板進行拆分 -->
           <splitpane :splitSet="settingTB">
             <template #paneL>
               <el-scrollbar><div class="dv-b">B</div></el-scrollbar>

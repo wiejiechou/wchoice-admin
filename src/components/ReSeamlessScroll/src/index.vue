@@ -34,22 +34,22 @@ const xPos = ref<number>(0);
 const yPos = ref<number>(0);
 const delay = ref<number>(0);
 const height = ref<number>(0);
-// 外容器宽度
+// 外容器寬度
 const width = ref<number>(0);
-// 内容实际宽度
+// 内容实际寬度
 const realBoxWidth = ref<number>(0);
 const realBoxHeight = ref<number>(0);
 const copyHtml = ref("");
-// single 单步滚动的定时器
+// single 單步滚動的定時器
 let singleWaitTime = null;
-// move动画的animationFrame定时器
+// move動畫的animationFrame定時器
 let reqFrame = null;
 let startPos = null;
-//记录touchStart时候的posY
+//记录touchStart時候的posY
 let startPosY = null;
-//记录touchStart时候的posX
+//记录touchStart時候的posX
 let startPosX = null;
-// mouseenter mouseleave 控制scrollMove()的开关
+// mouseenter mouseleave 控制scrollMove()的開关
 let isHover = false;
 let ease = "ease-in";
 
@@ -78,21 +78,21 @@ const rightSwitchState = computed(() => {
 
 const defaultOption = computed(() => {
   return {
-    //步长
+    //步長
     step: 1,
-    //启动无缝滚动最小数据数
+    //啟動無缝滚動最小數據数
     limitMoveNum: 5,
-    //是否启用鼠标hover控制
+    //是否啟用滑鼠hover控制
     hoverStop: true,
-    // bottom 往下 top 往上(默认) left 向左 right 向右
+    // bottom 往下 top 往上(預設) left 向左 right 向右
     direction: "top",
-    //开启移动端touch
+    //開啟移動端touch
     openTouch: true,
-    //单条数据高度有值hoverStop关闭
+    //單條數據高度有值hoverStop關閉
     singleHeight: 0,
-    //单条数据宽度有值hoverStop关闭
+    //單條數據寬度有值hoverStop關閉
     singleWidth: 0,
-    //单步停止等待时间
+    //單步停止等待時間
     waitTime: 1000,
     switchOffset: 30,
     autoPlay: true,
@@ -100,7 +100,7 @@ const defaultOption = computed(() => {
     switchSingleStep: 134,
     switchDelay: 400,
     switchDisabledClass: "disabled",
-    // singleWidth/singleHeight 是否开启rem度量
+    // singleWidth/singleHeight 是否開啟rem度量
     isSingleRemUnit: false
   };
 });
@@ -201,7 +201,7 @@ const step = computed(() => {
     singleStep = unref(realSingleStopHeight);
   }
   if (singleStep > 0 && singleStep % step > 0) {
-    throw "如果设置了单步滚动，step需是单步大小的约数，否则无法保证单步滚动结束的位置是否准确";
+    throw "如果設定了單步滚動，step需是單步大小的约数，否则無法保證單步滚動結束的位置是否准確";
   }
   return step;
 });
@@ -215,7 +215,7 @@ function reset() {
 
 function leftSwitchClick() {
   if (!unref(leftSwitchState)) return;
-  // 小于单步距离
+  // 小于單步距離
   if (Math.abs(unref(xPos)) < unref(options).switchSingleStep) {
     xPos.value = 0;
     return;
@@ -225,7 +225,7 @@ function leftSwitchClick() {
 
 function rightSwitchClick() {
   if (!unref(rightSwitchState)) return;
-  // 小于单步距离
+  // 小于單步距離
   if (
     unref(realBoxWidth) - unref(width) + unref(xPos) <
     unref(options).switchSingleStep
@@ -243,7 +243,7 @@ function scrollCancle() {
 function touchStart(e) {
   if (!unref(canTouchScroll)) return;
   let timer;
-  //touches数组对象获得屏幕上所有的touch，取第一个touch
+  //touches数組對象获得屏幕上所有的touch，取第一个touch
   const touch = e.targetTouches[0];
   const { waitTime, singleHeight, singleWidth } = unref(options);
   //取第一个touch的坐标值
@@ -251,9 +251,9 @@ function touchStart(e) {
     x: touch.pageX,
     y: touch.pageY
   };
-  //记录touchStart时候的posY
+  //记录touchStart時候的posY
   startPosY = unref(yPos);
-  //记录touchStart时候的posX
+  //记录touchStart時候的posX
   startPosX = unref(xPos);
   if (!!singleHeight && !!singleWidth) {
     if (timer) clearTimeout(timer);
@@ -266,7 +266,7 @@ function touchStart(e) {
 }
 
 function touchMove(e) {
-  //当屏幕有多个touch或者页面被缩放过，就不执行move操作
+  //當屏幕有多个touch或者頁面被縮放過，就不執行move操作
   if (
     !unref(canTouchScroll) ||
     e.targetTouches.length > 1 ||
@@ -279,21 +279,21 @@ function touchMove(e) {
     x: touch.pageX - startPos.x,
     y: touch.pageY - startPos.y
   };
-  //阻止触摸事件的默认行为，即阻止滚屏
+  //阻止触摸事件的預設行為，即阻止滚屏
   e.preventDefault();
-  //dir，1表示纵向滑动，0为横向滑动
+  //dir，1表示纵向滑動，0為横向滑動
   const dir = Math.abs(endPos.x) < Math.abs(endPos.y) ? 1 : 0;
   if (
     (dir === 1 && direction === "bottom") ||
     (dir === 1 && direction === "top")
   ) {
-    // 表示纵向滑动 && 运动方向为上下
+    // 表示纵向滑動 && 运動方向為上下
     yPos.value = startPosY + endPos.y;
   } else if (
     (dir === 0 && direction === "left") ||
     (dir === 0 && direction === "right")
   ) {
-    // 为横向滑动 && 运动方向为左右
+    // 為横向滑動 && 运動方向為左右
     xPos.value = startPosX + endPos.x;
   }
 }
@@ -331,14 +331,14 @@ function leave() {
 }
 
 function scrollMove() {
-  // 鼠标移入时拦截scrollMove()
+  // 滑鼠移入時拦截scrollMove()
   if (isHover) return;
-  //进入move立即先清除动画 防止频繁touchMove导致多动画同时进行
+  //进入move立即先清除動畫 防止频繁touchMove导致多動畫同時进行
   // scrollCancle();
   reqFrame = requestAnimationFrame(function () {
     //实际高度
     const h = unref(realBoxHeight) / 2;
-    //宽度
+    //寬度
     const w = unref(realBoxWidth) / 2;
     const { direction, waitTime } = unref(options);
     if (direction === "top") {
@@ -372,9 +372,9 @@ function scrollMove() {
     }
     if (singleWaitTime) clearTimeout(singleWaitTime);
     if (unref(realSingleStopHeight)) {
-      //是否启动了单行暂停配置
+      //是否啟動了單行暫停配置
       if (Math.abs(unref(yPos)) % unref(realSingleStopHeight) < unref(step)) {
-        // 符合条件暂停waitTime
+        // 符合條件暫停waitTime
         singleWaitTime = setTimeout(() => {
           scrollMove();
         }, waitTime);
@@ -383,7 +383,7 @@ function scrollMove() {
       }
     } else if (unref(realSingleStopWidth)) {
       if (Math.abs(unref(xPos)) % unref(realSingleStopWidth) < unref(step)) {
-        // 符合条件暂停waitTime
+        // 符合條件暫停waitTime
         singleWaitTime = setTimeout(() => {
           scrollMove();
         }, waitTime);
@@ -405,7 +405,7 @@ function scrollInitMove() {
       height.value = unref(wrap).offsetHeight;
       width.value = unref(wrap).offsetWidth;
       let slotListWidth = unref(slotList).offsetWidth;
-      // 水平滚动设置warp width
+      // 水平滚動設定warp width
       if (unref(autoPlay)) {
         // 修正offsetWidth四舍五入
         slotListWidth = slotListWidth * 2 + 1;
@@ -423,7 +423,7 @@ function scrollInitMove() {
       return;
     }
 
-    // 是否可以滚动判断
+    // 是否可以滚動判断
     if (unref(scrollSwitch)) {
       let timer;
       if (timer) clearTimeout(timer);
@@ -440,20 +440,20 @@ function scrollInitMove() {
 }
 
 function scrollStartMove() {
-  //开启scrollMove
+  //開啟scrollMove
   isHover = false;
   scrollMove();
 }
 
 function scrollStopMove() {
-  //关闭scrollMove
+  //關閉scrollMove
   isHover = true;
-  // 防止频频hover进出单步滚动,导致定时器乱掉
+  // 防止频频hover进出單步滚動,导致定時器乱掉
   if (singleWaitTime) clearTimeout(singleWaitTime);
   scrollCancle();
 }
 
-// 鼠标滚轮事件
+// 滑鼠滾輪事件
 function wheel(e) {
   if (
     unref(options).direction === "left" ||

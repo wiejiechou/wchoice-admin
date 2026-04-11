@@ -22,7 +22,7 @@ const focusIndex = ref<Number>(-1);
 const titleLists = ref([
   {
     icon: "icon-zoom-out-hs",
-    text: "缩小",
+    text: "縮小",
     size: "18",
     disabled: false
   },
@@ -34,7 +34,7 @@ const titleLists = ref([
   },
   {
     icon: "icon-full-screen-hs",
-    text: "适应",
+    text: "適應",
     size: "15",
     disabled: false
   },
@@ -52,13 +52,13 @@ const titleLists = ref([
   },
   {
     icon: "icon-download-hs",
-    text: "下载图片",
+    text: "下載圖片",
     size: "17",
     disabled: false
   },
   {
     icon: "icon-watch-hs",
-    text: "查看数据",
+    text: "查看數據",
     size: "17",
     disabled: false
   }
@@ -95,7 +95,7 @@ onMounted(() => {
 
 <template>
   <div class="control-container">
-    <!-- 功能按钮 -->
+    <!-- 功能按鈕 -->
     <ul>
       <li
         v-for="(item, key) in titleLists"

@@ -53,7 +53,7 @@ if (unref(layoutTheme)) {
   setMenuLayout(layout);
 }
 
-/** 页签风格默认为谷歌风格 */
+/** 頁签風格預設為谷歌風格 */
 const tagsStyleValue = ref($storage.configure?.tagsStyle ?? "chrome");
 
 const logoVal = ref($storage.configure?.showLogo ?? true);
@@ -80,7 +80,7 @@ const getThemeColorStyle = computed(() => {
   };
 });
 
-/** 当网页整体为暗色风格时不显示亮白色主题配色切换选项 */
+/** 當网頁整体為暗色風格時不顯示亮白色主题配色切换選項 */
 const showThemeColors = computed(() => {
   return themeColor => {
     return themeColor === "light" && isDark.value ? false : true;
@@ -93,34 +93,34 @@ function storageConfigureChange<T>(key: string, val: T): void {
   $storage.configure = storageConfigure;
 }
 
-/** 灰色模式设置 */
+/** 灰色模式設定 */
 const greyChange = (value): void => {
   const htmlEl = document.querySelector("html");
   toggleClass(settings.greyVal, "html-grey", htmlEl);
   storageConfigureChange("grey", value);
 };
 
-/** 色弱模式设置 */
+/** 色弱模式設定 */
 const weekChange = (value): void => {
   const htmlEl = document.querySelector("html");
   toggleClass(settings.weakVal, "html-weakness", htmlEl);
   storageConfigureChange("weak", value);
 };
 
-/** 隐藏标签页设置 */
+/** 隱藏標籤頁設定 */
 const tagsChange = () => {
   const showVal = settings.tabsVal;
   storageConfigureChange("hideTabs", showVal);
   emitter.emit("tagViewsChange", showVal as unknown as string);
 };
 
-/** 隐藏页脚设置 */
+/** 隱藏頁脚設定 */
 const hideFooterChange = () => {
   const hideFooter = settings.hideFooter;
   storageConfigureChange("hideFooter", hideFooter);
 };
 
-/** 标签页持久化设置 */
+/** 標籤頁持久化設定 */
 const multiTagsCacheChange = () => {
   const multiTagsCache = settings.multiTagsCache;
   storageConfigureChange("multiTagsCache", multiTagsCache);
@@ -142,7 +142,7 @@ function onWatermarkInputChange(text) {
   storageConfigureChange("watermarkText", text);
 }
 
-/** 侧边栏Logo */
+/** 側边欄Logo */
 function logoChange() {
   unref(logoVal)
     ? storageConfigureChange("showLogo", true)
@@ -156,7 +156,7 @@ function setFalse(Doms): any {
   });
 }
 
-/** 页宽 */
+/** 頁宽 */
 const stretchTypeOptions = computed<Array<OptionsType>>(() => {
   return [
     {
@@ -182,7 +182,7 @@ const stretchTypeChange = ({ option }) => {
   value === "custom" ? setStretch(1440) : setStretch(false);
 };
 
-/** 主题色 激活选择项 */
+/** 主题色 激活選擇项 */
 const getThemeColor = computed(() => {
   return current => {
     if (
@@ -251,7 +251,7 @@ const markOptions = computed<Array<OptionsType>>(() => {
   ];
 });
 
-/** 设置菜单布局 */
+/** 設定選單布局 */
 function setMenuLayout(layout: string) {
   layoutTheme.value.layout = layout;
   window.document.body.setAttribute("layout", layout);
@@ -289,7 +289,7 @@ watch($storage, ({ layout }) => {
 
 const mediaQueryList = window.matchMedia("(prefers-color-scheme: dark)");
 
-/** 根据操作系统主题设置平台主题模式 */
+/** 根據操作系統主题設定平台主题模式 */
 function updateTheme() {
   if (themeMode.value !== "system") return;
   if (mediaQueryList.matches) {
@@ -304,7 +304,7 @@ function removeMatchMedia() {
   mediaQueryList.removeEventListener("change", updateTheme);
 }
 
-/** 监听操作系统主题改变 */
+/** 监听操作系統主题改变 */
 function watchSystemThemeChange() {
   updateTheme();
   removeMatchMedia();
@@ -312,7 +312,7 @@ function watchSystemThemeChange() {
 }
 
 onBeforeMount(() => {
-  /* 初始化系统配置 */
+  /* 初始化系統配置 */
   nextTick(() => {
     watchSystemThemeChange();
     settings.greyVal &&

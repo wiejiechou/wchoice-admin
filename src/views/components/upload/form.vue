@@ -17,7 +17,7 @@ const submitForm = formEl => {
   if (!formEl) return;
   formEl.validate(valid => {
     if (valid) {
-      // 多个 file 在一个接口同时上传
+      // 多个 file 在一个接口同時上傳
       const formData = createFormData({
         files: validateForm.fileList.map(file => ({ raw: file.raw })), // file 文件
         date: validateForm.date // 别的字段
@@ -27,7 +27,7 @@ const submitForm = formEl => {
           if (code === 0) {
             message("提交成功", { type: "success" });
           } else {
-            message("提交失败");
+            message("提交失敗");
           }
         })
         .catch(error => {
@@ -50,7 +50,7 @@ const resetForm = formEl => {
     <el-form-item
       label="附件"
       prop="fileList"
-      :rules="[{ required: true, message: '附件不能为空' }]"
+      :rules="[{ required: true, message: '附件不能為空' }]"
     >
       <el-upload
         ref="uploadRef"
@@ -63,20 +63,20 @@ const resetForm = formEl => {
       >
         <div class="el-upload__text">
           <UploadIcon class="m-auto mb-2" />
-          可点击或拖拽上传
+          可點選或拖拽上傳
         </div>
       </el-upload>
     </el-form-item>
     <el-form-item
       label="日期"
       prop="date"
-      :rules="[{ required: true, message: '日期不能为空' }]"
+      :rules="[{ required: true, message: '日期不能為空' }]"
     >
       <el-date-picker
         v-model="validateForm.date"
         type="datetime"
         class="w-50!"
-        placeholder="请选择日期时间"
+        placeholder="請選擇日期時間"
         value-format="YYYY-MM-DD HH:mm:ss"
       />
     </el-form-item>

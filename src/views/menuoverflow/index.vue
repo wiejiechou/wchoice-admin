@@ -5,5 +5,5 @@ defineOptions({
 </script>
 
 <template>
-  <div>目录、菜单文字超出显示 Tooltip 文字提示</div>
+  <div>目录、選單文字超出顯示 Tooltip 文字提示</div>
 </template>

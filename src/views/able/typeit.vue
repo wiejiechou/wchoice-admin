@@ -14,13 +14,13 @@ const options: TypeItOptions = {
   <el-card shadow="never">
     <template #header>
       <div class="card-header">
-        <p class="font-medium">打字机组件</p>
+        <p class="font-medium">打字机組件</p>
         <el-link
           class="mt-2"
           href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/able/typeit.vue"
           target="_blank"
         >
-          代码位置 src/views/able/typeit.vue
+          程式碼位置 src/views/able/typeit.vue
         </el-link>
       </div>
     </template>

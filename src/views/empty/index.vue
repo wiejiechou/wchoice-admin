@@ -11,9 +11,9 @@ const router = useRouter();
 
 <template>
   <div class="size-full text-center">
-    <h1>业务内容模块</h1>
-    <p>使用场景：需要外嵌平台某个页面，不需要展示菜单导航以及额外模块</p>
-    <div class="back" title="返回上一页" @click="router.go(-1)">
+    <h1>业務内容模組</h1>
+    <p>使用场景：需要外嵌平台某个頁面，不需要展示選單导航以及额外模組</p>
+    <div class="back" title="返回上一頁" @click="router.go(-1)">
       <back class="size-20" />
     </div>
   </div>

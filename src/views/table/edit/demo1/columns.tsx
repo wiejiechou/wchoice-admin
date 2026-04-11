@@ -28,7 +28,7 @@ export function useColumns() {
       label: "爱好",
       prop: "hobby",
       cellRenderer: ({ row }) => (
-        <el-select v-model={row.hobby} clearable placeholder="请选择爱好">
+        <el-select v-model={row.hobby} clearable placeholder="請選擇爱好">
           {options.map(item => {
             return (
               <el-option
@@ -50,7 +50,7 @@ export function useColumns() {
           type="date"
           format="YYYY/MM/DD"
           value-format="YYYY-MM-DD"
-          placeholder="请选择日期"
+          placeholder="請選擇日期"
         />
       ),
       minWidth: 110

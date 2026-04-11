@@ -38,7 +38,7 @@ const active = computed({
   }
 });
 
-/** 鼠标移入 */
+/** 滑鼠移入 */
 async function handleMouse(item) {
   active.value = item.path;
 }

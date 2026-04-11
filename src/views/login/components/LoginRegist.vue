@@ -49,7 +49,7 @@ const onUpdate = async (formEl: FormInstance | undefined) => {
   await formEl.validate(valid => {
     if (valid) {
       if (checked.value) {
-        // 模拟请求，需根据实际开发进行修改
+        // 模擬請求，需根據实际開发進行修改
         setTimeout(() => {
           message(transformI18n($t("login.pureRegisterSuccess")), {
             type: "success"

@@ -10,7 +10,7 @@ const { columns, dataList, onChange } = useColumns();
 <template>
   <div>
     <el-button type="primary" class="mb-5!" @click="onChange">
-      切换表头
+      切换表頭
     </el-button>
     <pure-table
       ref="tableRef"

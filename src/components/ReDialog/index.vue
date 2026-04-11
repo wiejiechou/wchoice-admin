@@ -38,7 +38,7 @@ const footerButtons = computed(() => {
             }
           },
           {
-            label: "确定",
+            label: "確定",
             type: "primary",
             text: true,
             bg: true,

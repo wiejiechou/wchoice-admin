@@ -74,7 +74,7 @@ export default defineComponent({
     const { VITE_PUBLIC_PATH, MODE } = import.meta.env;
     // https://github.com/guMcrey/version-rocket/blob/main/README.zh-CN.md#api
     if (MODE === "production") {
-      // 版本实时更新检测，只作用于线上环境
+      // 版本实時更新检测，只作用于線上环境
       checkVersion(
         // config
         {

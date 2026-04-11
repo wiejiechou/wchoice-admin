@@ -9,7 +9,7 @@ onMounted(() => {
     response: message => {
       console.log(message);
       return {
-        text: "仅演示，如需AI服务，请参考 https://deepchat.dev/docs/connect"
+        text: "僅演示，如需AI服務，請参考 https://deepchat.dev/docs/connect"
       };
     }
   };
@@ -137,7 +137,7 @@ onMounted(() => {
     :history="[
       { text: '赵云是谁？', role: 'user' },
       {
-        text: '赵云（约168年－229年），字子龙，是三国时期蜀汉的重要将领，以其忠诚和勇敢著称。',
+        text: '赵云（约168年－229年），字子龙，是三国時期蜀汉的重要將领，以其忠诚和勇敢著称。',
         role: 'ai'
       }
     ]"

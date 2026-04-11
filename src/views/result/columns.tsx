@@ -13,13 +13,13 @@ export function useColumns() {
                 width="18px"
                 height="18px"
               />
-              <span class="ml-1 mr-4">您的账户已被冻结</span>
+              <span class="ml-1 mr-4">您的帳戶已被凍結</span>
               <a
                 href="javascript:void(0);"
                 class="flex items-center"
                 style="color: var(--el-color-primary)"
               >
-                立即解冻
+                立即解凍
                 <iconify-icon-offline
                   icon={ArrowRightSLine}
                   color="var(--el-color-primary)"
@@ -35,13 +35,13 @@ export function useColumns() {
                 width="18px"
                 height="18px"
               />
-              <span class="ml-1 mr-4">您的账户还不具备申请资格</span>
+              <span class="ml-1 mr-4">您的帳戶還不具備申請資格</span>
               <a
                 href="javascript:void(0);"
                 class="flex items-center"
                 style="color: var(--el-color-primary)"
               >
-                立即升级
+                立即升級
                 <iconify-icon-offline
                   icon={ArrowRightSLine}
                   color="var(--el-color-primary)"

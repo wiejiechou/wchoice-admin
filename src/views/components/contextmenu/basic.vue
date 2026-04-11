@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div class="mb-2">基础用法</div>
+    <div class="mb-2">基礎用法</div>
     <div v-contextmenu:contextmenu class="wrapper">
-      <code>右键点击此区域</code>
+      <code>右鍵點選此區域</code>
     </div>
 
     <v-contextmenu ref="contextmenu">

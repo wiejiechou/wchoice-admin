@@ -20,7 +20,7 @@ const { query } = useRoute();
     <el-input v-model="input" />
 
     <div v-if="query.text" class="mt-4">
-      此页面携带的参数值为：{{ query.text }}
+      此頁面携帶的参数值為：{{ query.text }}
     </div>
   </div>
 </template>

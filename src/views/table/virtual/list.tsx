@@ -3,7 +3,7 @@ import TreeList from "./treeList.vue";
 import PageList from "./pageList.vue";
 
 const rendContent = (val: string) =>
-  `代码位置：src/views/table/virtual/${val}.vue`;
+  `程式碼位置：src/views/table/virtual/${val}.vue`;
 
 export const list = [
   {
@@ -21,7 +21,7 @@ export const list = [
   {
     key: "pageList",
     content: rendContent("pageList"),
-    title: "分页表格",
+    title: "分頁表格",
     component: PageList
   }
 ];

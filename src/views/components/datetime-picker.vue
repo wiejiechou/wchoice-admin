@@ -141,7 +141,7 @@ function onChecked(tag, index) {
   });
   checkTag.value.map(item => (item.checked = false));
   checkTag.value[index].checked = curTagMap.value[index].checked;
-  // 外部触发日期时间选择面板的打开与关闭
+  // 外部触发日期時間選擇面板的打開与關閉
   curTagMap.value[index].checked
     ? datePickerRef.value.handleOpen()
     : datePickerRef.value.handleClose();
@@ -161,17 +161,17 @@ watch(size, val =>
         <el-space wrap :size="40">
           <el-link
             v-tippy="{
-              content: '点击查看详细文档'
+              content: '點選查看详细文档'
             }"
             href="https://element-plus.org/zh-CN/component/datetime-picker.html"
             target="_blank"
             style="font-size: 16px; font-weight: 800"
           >
-            日期时间选择器
+            日期時間選擇器
           </el-link>
           <el-radio-group v-model="size">
             <el-radio value="large">大尺寸</el-radio>
-            <el-radio value="default">默认尺寸</el-radio>
+            <el-radio value="default">預設尺寸</el-radio>
             <el-radio value="small">小尺寸</el-radio>
             <el-radio value="disabled">禁用</el-radio>
           </el-radio-group>
@@ -182,22 +182,22 @@ watch(size, val =>
         href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/components/datetime-picker.vue"
         target="_blank"
       >
-        代码位置 src/views/components/datetime-picker.vue
+        程式碼位置 src/views/components/datetime-picker.vue
       </el-link>
     </template>
 
-    <div class="mb-2">日期和时间点</div>
+    <div class="mb-2">日期和時間點</div>
     <el-date-picker
       v-model="value"
       type="datetime"
       class="w-50!"
-      placeholder="请选择日期时间"
+      placeholder="請選擇日期時間"
       :shortcuts="shortcuts"
       :size="dynamicSize"
       :disabled="size === 'disabled'"
     />
 
-    <div class="mb-2 mt-4">日期时间格式</div>
+    <div class="mb-2 mt-4">日期時間格式</div>
     <el-radio-group
       v-model="datetimeFormat"
       class="mb-2"
@@ -205,8 +205,8 @@ watch(size, val =>
       @change="value1 = ''"
     >
       <el-radio value="">Date</el-radio>
-      <el-radio value="YYYY-MM-DD HH:mm:ss">年月日 时分秒</el-radio>
-      <el-radio value="x">时间戳</el-radio>
+      <el-radio value="YYYY-MM-DD HH:mm:ss">年月日 時分秒</el-radio>
+      <el-radio value="x">時間戳</el-radio>
     </el-radio-group>
     <br />
     <el-space wrap>
@@ -214,7 +214,7 @@ watch(size, val =>
         v-model="value1"
         type="datetime"
         class="w-50!"
-        placeholder="请选择日期时间"
+        placeholder="請選擇日期時間"
         format="YYYY/MM/DD hh:mm:ss"
         :value-format="datetimeFormat"
         :size="dynamicSize"
@@ -223,14 +223,14 @@ watch(size, val =>
       <span class="ml-2">{{ value1 }}</span>
     </el-space>
 
-    <div class="mb-2 mt-4">日期和时间范围</div>
+    <div class="mb-2 mt-4">日期和時間範圍</div>
     <el-date-picker
       v-model="value2"
       type="datetimerange"
       :shortcuts="shortcuts1"
       range-separator="至"
-      start-placeholder="开始日期时间"
-      end-placeholder="结束日期时间"
+      start-placeholder="開始日期時間"
+      end-placeholder="結束日期時間"
       :popper-options="{
         placement: 'bottom-start'
       }"
@@ -239,7 +239,7 @@ watch(size, val =>
     />
 
     <div class="mb-2 mt-4">
-      弹出面板位置可控（如果弹出位置不足以完整展示面板会自动调整位置）
+      彈出面板位置可控（如果彈出位置不足以完整展示面板會自動調整位置）
     </div>
     <el-space wrap class="w-100">
       <el-check-tag
@@ -261,7 +261,7 @@ watch(size, val =>
       v-model="value3"
       type="datetime"
       class="ml-[15%]"
-      placeholder="请选择日期时间"
+      placeholder="請選擇日期時間"
       :popper-options="{
         placement
       }"

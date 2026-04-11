@@ -9,7 +9,7 @@ defineOptions({
 const selectRange = ref<string>("");
 const dataLists = ref([
   {
-    title: "基础用法",
+    title: "基礎用法",
     echo: [],
     disabled: false
   },
@@ -40,7 +40,7 @@ const selectedVal = ({ left, right }): void => {
           href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/components/selector.vue"
           target="_blank"
         >
-          代码位置 src/views/components/selector.vue
+          程式碼位置 src/views/components/selector.vue
         </el-link>
       </template>
       <Selector
@@ -49,7 +49,7 @@ const selectedVal = ({ left, right }): void => {
         :disabled="item.disabled"
         @selectedVal="selectedVal"
       />
-      <h4 v-if="!item.disabled" class="mt-3!">选中范围：{{ selectRange }}</h4>
+      <h4 v-if="!item.disabled" class="mt-3!">选中範圍：{{ selectRange }}</h4>
     </el-card>
   </div>
 </template>

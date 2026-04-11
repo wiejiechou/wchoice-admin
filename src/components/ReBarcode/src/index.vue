@@ -22,7 +22,7 @@ const props = defineProps({
       return {};
     }
   },
-  // type 相当于 options.format，如果 type 和 options.format 同时存在，type 值优先；
+  // type 相當于 options.format，如果 type 和 options.format 同時存在，type 值优先；
   type: {
     type: String,
     default: "CODE128"

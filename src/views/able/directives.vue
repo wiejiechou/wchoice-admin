@@ -12,7 +12,7 @@ const searchThree = ref("");
 const searchFour = ref("");
 const searchFive = ref("");
 const searchSix = ref("copy");
-const text = ref("可复制的文本");
+const text = ref("可複製的文本");
 const long = ref(false);
 const cbText = ref("");
 const idx = ref(0);
@@ -43,7 +43,7 @@ function onCustomLongpress() {
 function onCbLongpress() {
   idx.value += 1;
   long.value = true;
-  cbText.value = `持续回调${idx.value}次`;
+  cbText.value = `持续回調${idx.value}次`;
 }
 function onReset() {
   long.value = false;
@@ -56,18 +56,18 @@ function onReset() {
   <el-card shadow="never">
     <template #header>
       <div class="card-header">
-        <p class="font-medium">自定义防抖、截流、文本复制、长按指令</p>
+        <p class="font-medium">自定義防抖、截流、文本複製、長按指令</p>
         <el-link
           class="mt-2"
           href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/able/directives.vue"
           target="_blank"
         >
-          代码位置 src/views/able/directives.vue
+          程式碼位置 src/views/able/directives.vue
         </el-link>
       </div>
     </template>
     <div class="mb-2">
-      防抖指令（连续输入，只会执行第一次点击事件，立即执行）
+      防抖指令（连续輸入，只會執行第一次點選事件，立即執行）
       <el-input
         v-model="search"
         v-optimize="{
@@ -82,7 +82,7 @@ function onReset() {
       />
     </div>
     <div class="mb-2">
-      防抖指令（连续输入，只会执行最后一次事件，延后执行）
+      防抖指令（连续輸入，只會執行最后一次事件，延后執行）
       <el-input
         v-model="searchTwo"
         v-optimize="{ event: 'input', fn: onInputTwo, timeout: 400 }"
@@ -91,7 +91,7 @@ function onReset() {
       />
     </div>
     <div>
-      防抖指令（连续输入，只会执行最后一次事件，延后执行，传参用法）
+      防抖指令（连续輸入，只會執行最后一次事件，延后執行，传参用法）
       <el-input
         v-model="searchThree"
         v-optimize="{
@@ -108,7 +108,7 @@ function onReset() {
     <el-divider />
 
     <div class="mb-2">
-      节流指令（连续输入，每一秒只会执行一次事件）
+      节流指令（连续輸入，每一秒只會執行一次事件）
       <el-input
         v-model="searchFour"
         v-optimize:throttle="{ event: 'input', fn: onInputFour, timeout: 1000 }"
@@ -117,7 +117,7 @@ function onReset() {
       />
     </div>
     <div>
-      节流指令（连续输入，每一秒只会执行一次事件，传参用法）
+      节流指令（连续輸入，每一秒只會執行一次事件，传参用法）
       <el-input
         v-model="searchFive"
         v-optimize:throttle="{
@@ -133,27 +133,27 @@ function onReset() {
     <el-divider />
 
     <div class="mb-2">
-      文本复制指令（双击输入框内容即可复制）
+      文本複製指令（双击輸入框内容即可複製）
       <el-input v-model="searchSix" v-copy="searchSix" class="w-50!" />
     </div>
     <div>
-      文本复制指令（自定义触发事件，单击复制）
+      文本複製指令（自定義触发事件，單击複製）
       <span v-copy:click="text" class="text-sky-500">{{ text }}</span>
     </div>
 
     <el-divider />
     <el-space wrap>
-      长按指令
-      <el-button v-longpress="onLongpress">长按（默认500ms）</el-button>
+      長按指令
+      <el-button v-longpress="onLongpress">長按（預設500ms）</el-button>
       <el-button v-longpress:1000="onCustomLongpress">
-        自定义长按时长（1000ms）
+        自定義長按時長（1000ms）
       </el-button>
       <el-button v-longpress:2000:200="onCbLongpress">
-        2秒后每200ms持续回调
+        2秒后每200ms持续回調
       </el-button>
-      <el-button @click="onReset"> 重置状态 </el-button>
+      <el-button @click="onReset"> 重置狀態 </el-button>
       <el-tag :type="long ? 'success' : 'info'" class="ml-2" size="large">
-        {{ long ? "当前为长按状态" : "当前非长按状态" }}
+        {{ long ? "當前為長按狀態" : "當前非長按狀態" }}
       </el-tag>
       <el-tag v-if="cbText" type="danger" class="ml-2" size="large">
         {{ cbText }}

@@ -42,10 +42,10 @@ export function useRole(tableRef: Ref) {
 
   const columns: TableColumnList = [
     {
-      label: "勾选列", // 如果需要表格多选，此处label必须设置
+      label: "勾选列", // 如果需要表格多選，此处label必须設定
       type: "selection",
       fixed: "left",
-      reserveSelection: true // 数据刷新后保留选项
+      reserveSelection: true // 數據刷新后保留選項
     },
     {
       label: "ID",
@@ -53,19 +53,19 @@ export function useRole(tableRef: Ref) {
       minWidth: 90
     },
     {
-      label: "所属模块",
+      label: "所属模組",
       prop: "module",
       minWidth: 100
     },
     {
       headerRenderer: () => (
         <span class="flex-c">
-          请求接口
+          請求接口
           <iconify-icon-offline
             icon={Info}
             class="ml-1 cursor-help"
             v-tippy={{
-              content: "双击下面请求接口进行拷贝"
+              content: "双击下面請求接口進行拷贝"
             }}
           />
         </span>
@@ -74,7 +74,7 @@ export function useRole(tableRef: Ref) {
       minWidth: 140
     },
     {
-      label: "请求方法",
+      label: "請求方法",
       prop: "method",
       minWidth: 140
     },
@@ -84,22 +84,22 @@ export function useRole(tableRef: Ref) {
       minWidth: 100
     },
     {
-      label: "地点",
+      label: "地點",
       prop: "address",
       minWidth: 140
     },
     {
-      label: "操作系统",
+      label: "操作系統",
       prop: "system",
       minWidth: 100
     },
     {
-      label: "浏览器类型",
+      label: "瀏覽器類型",
       prop: "browser",
       minWidth: 100
     },
     // {
-    //   label: "级别",
+    //   label: "級别",
     //   prop: "level",
     //   minWidth: 90,
     //   cellRenderer: ({ row, props }) => (
@@ -109,7 +109,7 @@ export function useRole(tableRef: Ref) {
     //   )
     // },
     {
-      label: "请求耗时",
+      label: "請求耗時",
       prop: "takesTime",
       minWidth: 100,
       cellRenderer: ({ row, props }) => (
@@ -123,7 +123,7 @@ export function useRole(tableRef: Ref) {
       )
     },
     {
-      label: "请求时间",
+      label: "請求時間",
       prop: "requestTime",
       minWidth: 180,
       formatter: ({ requestTime }) =>
@@ -144,35 +144,35 @@ export function useRole(tableRef: Ref) {
     console.log(`current page: ${val}`);
   }
 
-  /** 当CheckBox选择项发生变化时会触发该事件 */
+  /** 當CheckBox選擇项发生變化時會触发該事件 */
   function handleSelectionChange(val) {
     selectedNum.value = val.length;
     // 重置表格高度
     tableRef.value.setAdaptive();
   }
 
-  /** 取消选择 */
+  /** 取消選擇 */
   function onSelectionCancel() {
     selectedNum.value = 0;
-    // 用于多选表格，清空用户的选择
+    // 用于多選表格，清空用戶的選擇
     tableRef.value.getTableRef().clearSelection();
   }
 
-  /** 拷贝请求接口，表格单元格被双击时触发 */
+  /** 拷贝請求接口，表格單元格被双击時触发 */
   function handleCellDblclick({ url }, { property }) {
     if (property !== "url") return;
     update(url);
     copied.value
       ? message(`${url} 已拷贝`, { type: "success" })
-      : message("拷贝失败", { type: "warning" });
+      : message("拷贝失敗", { type: "warning" });
   }
 
   /** 批量删除 */
   function onbatchDel() {
-    // 返回当前选中的行
+    // 返回當前选中的行
     const curSelected = tableRef.value.getTableRef().getSelectionRows();
-    // 接下来根据实际业务，通过选中行的某项数据，比如下面的id，调用接口进行批量删除
-    message(`已删除序号为 ${getKeyList(curSelected, "id")} 的数据`, {
+    // 接下来根據实际业務，通過选中行的某项數據，比如下面的id，調用接口進行批量删除
+    message(`已删除序号為 ${getKeyList(curSelected, "id")} 的數據`, {
       type: "success"
     });
     tableRef.value.getTableRef().clearSelection();
@@ -181,8 +181,8 @@ export function useRole(tableRef: Ref) {
 
   /** 清空日志 */
   function clearAll() {
-    // 根据实际业务，调用接口删除所有日志数据
-    message("已删除所有日志数据", {
+    // 根據实际业務，調用接口删除所有日志數據
+    message("已删除所有日志數據", {
       type: "success"
     });
     onSearch();
@@ -191,7 +191,7 @@ export function useRole(tableRef: Ref) {
   function onDetail(row) {
     getSystemLogsDetail({ id: row.id }).then(res => {
       addDialog({
-        title: "系统日志详情",
+        title: "系統日志詳情",
         fullscreen: true,
         hideFooter: true,
         contentRenderer: () => Detail,

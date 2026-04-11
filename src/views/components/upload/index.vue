@@ -29,30 +29,30 @@ const srcList = Array.from({ length: 3 }).map((_, index) => {
   return getImgUrl(index + 1);
 });
 
-/** 上传文件前校验 */
+/** 上傳文件前校驗 */
 const onBefore = file => {
   if (!["image/jpeg", "image/png", "image/gif"].includes(file.type)) {
-    message("只能上传图片");
+    message("只能上傳圖片");
     return false;
   }
   const isExceed = file.size / 1024 / 1024 > 2;
   if (isExceed) {
-    message(`单个图片大小不能超过2MB`);
+    message(`單个圖片大小不能超過2MB`);
     return false;
   }
 };
 
-/** 超出最大上传数时触发 */
+/** 超出最大上傳数時触发 */
 const onExceed = () => {
-  message("最多上传3张图片，请先删除在上传");
+  message("最多上傳3張圖片，請先删除在上傳");
 };
 
-/** 移除上传的文件 */
+/** 移除上傳的文件 */
 const handleRemove = (file: UploadFile) => {
   fileList.value.splice(fileList.value.indexOf(file), 1);
 };
 
-/** 大图预览 */
+/** 大圖預覽 */
 const handlePictureCardPreview = (file: UploadFile) => {
   curOpenImgIndex.value = fileList.value.findIndex(img => img.uid === file.uid);
   dialogVisible.value = true;
@@ -60,7 +60,7 @@ const handlePictureCardPreview = (file: UploadFile) => {
 
 const getUploadItem = () => document.querySelectorAll("#pure-upload-item");
 
-/** 缩略图拖拽排序 */
+/** 縮略圖拖拽排序 */
 const imgDrop = uid => {
   const CLASSNAME = "el-upload-list";
   const _curIndex = fileList.value.findIndex(img => img.uid === uid);
@@ -80,12 +80,12 @@ const imgDrop = uid => {
   });
 };
 
-/** 下载图片 */
+/** 下載圖片 */
 const onDownload = () => {
   [
     { name: "巴旦木.jpeg", type: "img" },
     { name: "恭喜发财.png", type: "img" },
-    { name: "可爱动物.gif", type: "gif" },
+    { name: "可爱動物.gif", type: "gif" },
     { name: "pure-upload.csv", type: "other" },
     { name: "pure-upload.txt", type: "other" }
   ].forEach(img => {
@@ -106,13 +106,13 @@ const onDownload = () => {
       <div class="card-header">
         <el-link
           v-tippy="{
-            content: '点击查看详细文档'
+            content: '點選查看详细文档'
           }"
           href="https://element-plus.org/zh-CN/component/upload.html"
           target="_blank"
           style="font-size: 16px; font-weight: 800"
         >
-          文件上传
+          文件上傳
         </el-link>
       </div>
       <el-link
@@ -120,17 +120,17 @@ const onDownload = () => {
         href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/components/upload"
         target="_blank"
       >
-        代码位置 src/views/components/upload
+        程式碼位置 src/views/components/upload
       </el-link>
     </template>
 
     <el-button class="mb-4!" text bg @click="onDownload">
-      点击下载安全文件进行上传测试
+      點選下載安全文件進行上傳測試
     </el-button>
     <p class="mb-4!">
-      综合示例<span class="text-[14px]">
-        （ <span class="text-[red]">自动上传</span>
-        、拖拽上传、拖拽排序、设置请求头、上传进度、大图预览、多选文件、最大文件数量、文件类型限制、文件大小限制、删除文件）
+      綜合示例<span class="text-[14px]">
+        （ <span class="text-[red]">自動上傳</span>
+        、拖拽上傳、拖拽排序、設定請求頭、上傳進度、大圖預覽、多選文件、最大文件数量、文件類型限制、文件大小限制、删除文件）
       </span>
     </p>
     <p v-show="fileList.length > 0" class="mb-4!">
@@ -155,7 +155,7 @@ const onDownload = () => {
           v-if="file.status == 'ready' || file.status == 'uploading'"
           class="mt-[35%]! m-auto"
         >
-          <p class="font-medium">文件上传中</p>
+          <p class="font-medium">文件上傳中</p>
           <el-progress
             class="mt-2!"
             :stroke-width="2"
@@ -201,7 +201,7 @@ const onDownload = () => {
         </div>
       </template>
     </el-upload>
-    <!-- 有时文档没写并不代表没有，多看源码好处多多😝 https://github.com/element-plus/element-plus/tree/dev/packages/components/image-viewer/src （emm...这让我想起刚开始写这个项目时，很多东西只有英文或者没有文档，需要看源码时，想笑🥹。那些美好时光都给这些坑了，giao） -->
+    <!-- 有時文档没寫并不代表没有，多看源码好处多多😝 https://github.com/element-plus/element-plus/tree/dev/packages/components/image-viewer/src （emm...这让我想起刚開始寫這個项目時，很多东西只有英文或者没有文档，需要看源码時，想笑🥹。那些美好時光都给这些坑了，giao） -->
     <el-image-viewer
       v-if="dialogVisible"
       :initialIndex="curOpenImgIndex"
@@ -212,7 +212,7 @@ const onDownload = () => {
       @close="dialogVisible = false"
       @switch="index => (curOpenImgIndex = index)"
     />
-    <!-- 将自定义内容插入到body里，有了它在图片预览的时候，想插入个分页器或者别的东东在预览区某个位置就很方便咯（用户需求可以很灵活，开源组件库几乎不可能尽善尽美，很多时候寻找别的解决途径或许更好） -->
+    <!-- 將自定義内容插入到body里，有了它在圖片預覽的時候，想插入个分頁器或者别的东东在預覽區某个位置就很方便咯（用戶需求可以很灵活，開源組件库几乎不可能尽善尽美，很多時候寻找别的解决途径或许更好） -->
     <teleport to="body">
       <div
         v-if="fileList[curOpenImgIndex] && dialogVisible"
@@ -228,20 +228,20 @@ const onDownload = () => {
       </div>
     </teleport>
     <p class="el-upload__tip">
-      可拖拽上传最多3张单个不超过2MB且格式为jpeg/png/gif的图片
+      可拖拽上傳最多3張單个不超過2MB且格式為jpeg/png/gif的圖片
     </p>
     <el-divider />
 
     <p class="my-4!">
-      结合表单校验进行<span class="text-[red]">手动上传</span>
+      結合表單校驗進行<span class="text-[red]">手動上傳</span>
       <span class="text-[14px]">
-        （可先打开浏览器控制台找到Network，然后填写表单内容后点击点提交观察请求变化）
+        （可先打開瀏覽器控制台找到Network，然后填寫表單内容后點選點提交觀察請求變化）
       </span>
     </p>
     <div class="flex justify-between">
       <UploadForm />
       <div>
-        <p class="text-center">上传接口相关截图</p>
+        <p class="text-center">上傳接口相關截圖</p>
         <el-image
           class="w-50 rounded-md"
           :src="srcList[0]"
@@ -254,17 +254,17 @@ const onDownload = () => {
 
     <div class="flex flex-wrap">
       <p>
-        裁剪、上传头像请参考
+        裁剪、上傳頭像請参考
         <span
           class="font-bold text-[18x] cursor-pointer hover:text-[red]"
           @click="router.push({ name: 'SystemUser' })"
         >
-          系统管理-用户管理
+          系統管理-用戶管理
         </span>
-        表格操作栏中的上传头像功能
+        表格操作欄中的上傳頭像功能
       </p>
       <p class="text-[red] text-[12px] flex flex-auto items-center justify-end">
-        免责声明：上传接口使用
+        免責聲明：上傳接口使用
         <el-link
           href="https://beeceptor.com/"
           target="_blank"
@@ -272,8 +272,8 @@ const onDownload = () => {
         >
           &nbsp;Beeceptor&nbsp;
         </el-link>
-        <span class="font-bold text-[18x]"> 请不要上传重要信息 </span
-        >，如果造成任何损失，我们概不负责
+        <span class="font-bold text-[18x]"> 請不要上傳重要信息 </span
+        >，如果造成任何損失，我們概不負責
       </p>
     </div>
   </el-card>
@@ -309,8 +309,8 @@ const onDownload = () => {
   border-radius: 22px;
   transform: translateX(-50%);
 
-  /** 将下面的 left: 50%; bottom: 80px; transform: translateX(-50%); 注释掉
-   *  解开下面 left: 40px; top: 40px; 注释，体验不一样的感觉。啊？还是差强人意，自己调整位置吧🥹
+  /** 將下面的 left: 50%; bottom: 80px; transform: translateX(-50%); 注释掉
+   *  解開下面 left: 40px; top: 40px; 注释，体驗不一样的感觉。啊？還是差强人意，自己調整位置吧🥹
    */
   // left: 40px;
   // top: 40px;

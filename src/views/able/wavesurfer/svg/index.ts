@@ -6,7 +6,7 @@ import Rewind from "./rewind.svg?component";
 export {
   /** 播放 */
   Play,
-  /** 暂停 */
+  /** 暫停 */
   Pause,
   /** 快进 */
   Forward,

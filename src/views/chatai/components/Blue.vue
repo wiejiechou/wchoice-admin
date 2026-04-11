@@ -9,7 +9,7 @@ onMounted(() => {
     response: message => {
       console.log(message);
       return {
-        text: "仅演示，如需AI服务，请参考 https://deepchat.dev/docs/connect"
+        text: "僅演示，如需AI服務，請参考 https://deepchat.dev/docs/connect"
       };
     }
   };
@@ -65,7 +65,7 @@ onMounted(() => {
     :history="[
       { text: '熬夜都有哪些坏处？', role: 'user' },
       {
-        text: '熬夜会损害身体健康，导致免疫力下降、精神不振和工作效率降低。',
+        text: '熬夜會損害身体健康，导致免疫力下降、精神不振和工作效率降低。',
         role: 'ai'
       }
     ]"

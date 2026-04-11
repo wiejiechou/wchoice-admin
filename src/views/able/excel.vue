@@ -63,7 +63,7 @@ const exportExcel = () => {
   res.unshift(titleList);
   const workSheet = utils.aoa_to_sheet(res);
   const workBook = utils.book_new();
-  utils.book_append_sheet(workBook, workSheet, "数据报表");
+  utils.book_append_sheet(workBook, workSheet, "數據報表");
   writeFile(workBook, "tableV2.xlsx");
 };
 </script>
@@ -77,7 +77,7 @@ const exportExcel = () => {
           target="_blank"
           style="margin: 0 5px 4px 0; font-size: 16px"
         >
-          导出Excel
+          匯出Excel
         </el-link>
       </div>
       <el-link
@@ -85,10 +85,10 @@ const exportExcel = () => {
         href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/able/excel.vue"
         target="_blank"
       >
-        代码位置 src/views/able/excel.vue
+        程式碼位置 src/views/able/excel.vue
       </el-link>
     </template>
-    <el-button type="primary" @click="exportExcel">导出Excel</el-button>
+    <el-button type="primary" @click="exportExcel">匯出Excel</el-button>
     <div class="h-100 mt-3">
       <el-auto-resizer>
         <template #default="{ height, width }">

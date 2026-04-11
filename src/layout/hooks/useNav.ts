@@ -25,7 +25,7 @@ export function useNav() {
   const routers = useRouter().options.routes;
   const { isFullscreen, toggle } = useFullscreen();
   const { wholeMenus } = storeToRefs(usePermissionStoreHook());
-  /** 平台`layout`中所有`el-tooltip`的`effect`配置，默认`light` */
+  /** 平台`layout`中所有`el-tooltip`的`effect`配置，預設`light` */
   const tooltipEffect = getConfig()?.TooltipEffect ?? "light";
 
   const getDivStyle = computed((): CSSProperties => {
@@ -38,21 +38,21 @@ export function useNav() {
     };
   });
 
-  /** 头像（如果头像为空则使用 src/assets/user.jpg ） */
+  /** 頭像（如果頭像為空则使用 src/assets/user.jpg ） */
   const userAvatar = computed(() => {
     return isAllEmpty(useUserStoreHook()?.avatar)
       ? Avatar
       : useUserStoreHook()?.avatar;
   });
 
-  /** 昵称（如果昵称为空则显示用户名） */
+  /** 昵称（如果昵称為空则顯示用戶名） */
   const username = computed(() => {
     return isAllEmpty(useUserStoreHook()?.nickname)
       ? useUserStoreHook()?.username
       : useUserStoreHook()?.nickname;
   });
 
-  /** 设置国际化选中后的样式 */
+  /** 設定國際化选中后的樣式 */
   const getDropdownItemStyle = computed(() => {
     return (locale, t) => {
       return {
@@ -89,14 +89,14 @@ export function useNav() {
     return $config.Title;
   });
 
-  /** 动态title */
+  /** 動態title */
   function changeTitle(meta: routeMetaType) {
     const Title = getConfig().Title;
     if (Title) document.title = `${transformI18n(meta.title)} | ${Title}`;
     else document.title = transformI18n(meta.title);
   }
 
-  /** 退出登录 */
+  /** 退出登入 */
   function logout() {
     useUserStoreHook().logOut();
   }
@@ -137,7 +137,7 @@ export function useNav() {
     emitter.emit("changLayoutRoute", indexPath);
   }
 
-  /** 判断路径是否参与菜单 */
+  /** 判断路径是否参与選單 */
   function isRemaining(path: string) {
     return remainingPaths.includes(path);
   }

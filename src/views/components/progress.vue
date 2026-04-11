@@ -14,13 +14,13 @@ const format = percentage => (percentage === 100 ? "Full" : `${percentage}%`);
       <div class="card-header">
         <el-link
           v-tippy="{
-            content: '点击查看详细文档'
+            content: '點選查看详细文档'
           }"
           href="https://element-plus.org/zh-CN/component/progress.html"
           target="_blank"
           style="font-size: 16px; font-weight: 800"
         >
-          进度条
+          進度條
         </el-link>
       </div>
       <el-link
@@ -28,11 +28,11 @@ const format = percentage => (percentage === 100 ? "Full" : `${percentage}%`);
         href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/components/progress.vue"
         target="_blank"
       >
-        代码位置 src/views/components/progress.vue
+        程式碼位置 src/views/components/progress.vue
       </el-link>
     </template>
 
-    <div class="mb-4">直线进度条动画</div>
+    <div class="mb-4">直線進度條動畫</div>
     <div class="w-1/4">
       <el-progress indeterminate :percentage="50" class="mb-4" />
       <el-progress
@@ -61,7 +61,7 @@ const format = percentage => (percentage === 100 ? "Full" : `${percentage}%`);
       />
     </div>
 
-    <div class="mb-4">进度条内显示百分比标识</div>
+    <div class="mb-4">進度條内顯示百分比标识</div>
     <div class="w-1/4">
       <el-progress
         :text-inside="true"
@@ -97,10 +97,10 @@ const format = percentage => (percentage === 100 ? "Full" : `${percentage}%`);
       />
     </div>
 
-    <div class="mb-4">自定义内容</div>
+    <div class="mb-4">自定義内容</div>
     <div class="w-1/4 demo-progress">
       <el-progress :percentage="50">
-        <el-button text>自定义内容</el-button>
+        <el-button text>自定義内容</el-button>
       </el-progress>
       <el-progress
         :text-inside="true"
@@ -108,7 +108,7 @@ const format = percentage => (percentage === 100 ? "Full" : `${percentage}%`);
         :percentage="50"
         status="exception"
       >
-        <span>自定义内容</span>
+        <span>自定義内容</span>
       </el-progress>
       <el-progress type="circle" :percentage="100" status="success">
         <el-button type="success" :icon="useRenderIcon('ep:check')" circle />

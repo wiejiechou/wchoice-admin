@@ -16,35 +16,35 @@ const columns = [
     prop: "ip"
   },
   {
-    label: "地点",
+    label: "地點",
     prop: "address"
   },
   {
-    label: "操作系统",
+    label: "操作系統",
     prop: "system"
   },
   {
-    label: "浏览器类型",
+    label: "瀏覽器類型",
     prop: "browser"
   },
   {
-    label: "所属模块",
+    label: "所属模組",
     prop: "module"
   },
   {
-    label: "请求时间",
+    label: "請求時間",
     prop: "requestTime"
   },
   {
-    label: "请求方法",
+    label: "請求方法",
     prop: "method"
   },
   {
-    label: "请求耗时",
+    label: "請求耗時",
     prop: "takesTime"
   },
   {
-    label: "请求接口",
+    label: "請求接口",
     prop: "url",
     copy: true
   },
@@ -57,7 +57,7 @@ const columns = [
 
 const dataList = ref([
   {
-    title: "响应头",
+    title: "响应頭",
     name: "responseHeaders",
     data: (props.data[0] as any).responseHeaders
   },
@@ -67,12 +67,12 @@ const dataList = ref([
     data: (props.data[0] as any).responseBody
   },
   {
-    title: "请求头",
+    title: "請求頭",
     name: "requestHeaders",
     data: (props.data[0] as any).requestHeaders
   },
   {
-    title: "请求体",
+    title: "請求体",
     name: "requestBody",
     data: (props.data[0] as any).requestBody
   }

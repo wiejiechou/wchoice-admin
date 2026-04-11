@@ -10,31 +10,31 @@ const scroll = ref();
 
 const listData = ref([
   {
-    title: "无缝滚动第一行无缝滚动第一行！！！！！！！！！！"
+    title: "無缝滚動第一行無缝滚動第一行！！！！！！！！！！"
   },
   {
-    title: "无缝滚动第二行无缝滚动第二行！！！！！！！！！！"
+    title: "無缝滚動第二行無缝滚動第二行！！！！！！！！！！"
   },
   {
-    title: "无缝滚动第三行无缝滚动第三行！！！！！！！！！！"
+    title: "無缝滚動第三行無缝滚動第三行！！！！！！！！！！"
   },
   {
-    title: "无缝滚动第四行无缝滚动第四行！！！！！！！！！！"
+    title: "無缝滚動第四行無缝滚動第四行！！！！！！！！！！"
   },
   {
-    title: "无缝滚动第五行无缝滚动第五行！！！！！！！！！！"
+    title: "無缝滚動第五行無缝滚動第五行！！！！！！！！！！"
   },
   {
-    title: "无缝滚动第六行无缝滚动第六行！！！！！！！！！！"
+    title: "無缝滚動第六行無缝滚動第六行！！！！！！！！！！"
   },
   {
-    title: "无缝滚动第七行无缝滚动第七行！！！！！！！！！！"
+    title: "無缝滚動第七行無缝滚動第七行！！！！！！！！！！"
   },
   {
-    title: "无缝滚动第八行无缝滚动第八行！！！！！！！！！！"
+    title: "無缝滚動第八行無缝滚動第八行！！！！！！！！！！"
   },
   {
-    title: "无缝滚动第九行无缝滚动第九行！！！！！！！！！！"
+    title: "無缝滚動第九行無缝滚動第九行！！！！！！！！！！"
   }
 ]);
 
@@ -53,7 +53,7 @@ function changeDirection(val) {
     <el-card class="box-card" shadow="never">
       <template #header>
         <div class="card-header">
-          <span class="font-medium">无缝滚动</span>
+          <span class="font-medium">無缝滚動</span>
           <el-button
             class="button"
             link
@@ -63,7 +63,7 @@ function changeDirection(val) {
             <span
               :style="{ color: classOption.direction === 'top' ? 'red' : '' }"
             >
-              向上滚动
+              向上滚動
             </span>
           </el-button>
           <el-button
@@ -77,7 +77,7 @@ function changeDirection(val) {
                 color: classOption.direction === 'bottom' ? 'red' : ''
               }"
             >
-              向下滚动
+              向下滚動
             </span>
           </el-button>
           <el-button
@@ -89,7 +89,7 @@ function changeDirection(val) {
             <span
               :style="{ color: classOption.direction === 'left' ? 'red' : '' }"
             >
-              向左滚动
+              向左滚動
             </span>
           </el-button>
           <el-button
@@ -101,7 +101,7 @@ function changeDirection(val) {
             <span
               :style="{ color: classOption.direction === 'right' ? 'red' : '' }"
             >
-              向右滚动
+              向右滚動
             </span>
           </el-button>
         </div>
@@ -110,7 +110,7 @@ function changeDirection(val) {
           href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/components/seamless-scroll.vue"
           target="_blank"
         >
-          代码位置 src/views/components/seamless-scroll.vue
+          程式碼位置 src/views/components/seamless-scroll.vue
         </el-link>
       </template>
       <SeamlessScroll

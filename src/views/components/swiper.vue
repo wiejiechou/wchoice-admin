@@ -13,31 +13,31 @@ defineOptions({
 SwiperCore.use([Autoplay, Navigation, Pagination]);
 
 const swiperExample: any[] = [
-  { id: 0, label: "基础滑动", options: {} },
+  { id: 0, label: "基礎滑動", options: {} },
   {
     id: 1,
-    label: "按钮切换",
+    label: "按鈕切换",
     options: {
       navigation: true
     }
   },
   {
     id: 2,
-    label: "分页器",
+    label: "分頁器",
     options: {
       pagination: true
     }
   },
   {
     id: 3,
-    label: "分页器 / 动态指示点",
+    label: "分頁器 / 動態指示點",
     options: {
       pagination: { dynamicBullets: true }
     }
   },
   {
     id: 4,
-    label: "分页器 / 进度条",
+    label: "分頁器 / 進度條",
     options: {
       navigation: true,
       pagination: {
@@ -47,7 +47,7 @@ const swiperExample: any[] = [
   },
   {
     id: 5,
-    label: "分页器 / 分式",
+    label: "分頁器 / 分式",
     options: {
       navigation: true,
       pagination: {
@@ -57,7 +57,7 @@ const swiperExample: any[] = [
   },
   {
     id: 6,
-    label: "一次显示多个Slides",
+    label: "一次顯示多个Slides",
     options: {
       pagination: {
         clickable: true
@@ -68,7 +68,7 @@ const swiperExample: any[] = [
   },
   {
     id: 7,
-    label: "无限循环",
+    label: "無限循环",
     options: {
       autoplay: {
         delay: 2000,
@@ -101,7 +101,7 @@ const swiperExample: any[] = [
         href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/components/swiper.vue"
         target="_blank"
       >
-        代码位置 src/views/components/swiper.vue
+        程式碼位置 src/views/components/swiper.vue
       </el-link>
     </template>
     <el-row :gutter="10">

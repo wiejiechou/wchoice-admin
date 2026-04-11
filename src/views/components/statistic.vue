@@ -30,13 +30,13 @@ function reset() {
         <div class="card-header">
           <el-link
             v-tippy="{
-              content: '点击查看详细文档'
+              content: '點選查看详细文档'
             }"
             href="https://element-plus.org/zh-CN/component/statistic.html"
             target="_blank"
             style="font-size: 16px; font-weight: 800"
           >
-            统计组件
+            統计組件
           </el-link>
         </div>
         <el-link
@@ -44,7 +44,7 @@ function reset() {
           href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/components/statistic.vue"
           target="_blank"
         >
-          代码位置 src/views/components/statistic.vue
+          程式碼位置 src/views/components/statistic.vue
         </el-link>
       </template>
 
@@ -54,12 +54,12 @@ function reset() {
         </re-col>
 
         <re-col :value="6" :xs="24" :sm="24">
-          <el-countdown title="距离答疑结束还剩" :value="value" />
+          <el-countdown title="距離答疑結束還剩" :value="value" />
         </re-col>
 
         <re-col :value="6" :xs="24" :sm="24">
           <el-countdown
-            title="VIP到期时间还剩"
+            title="VIP到期時間還剩"
             format="HH:mm:ss"
             :value="value1"
           />
@@ -69,11 +69,11 @@ function reset() {
         </re-col>
 
         <re-col :value="6" :xs="24" :sm="24">
-          <el-countdown format="DD天 HH时 mm分 ss秒" :value="value2">
+          <el-countdown format="DD天 HH時 mm分 ss秒" :value="value2">
             <template #title>
               <div style="display: inline-flex; align-items: center">
                 <IconifyIconOnline icon="ep:calendar" class="mr-2" />
-                距离下个月还剩
+                距離下个月還剩
               </div>
             </template>
           </el-countdown>

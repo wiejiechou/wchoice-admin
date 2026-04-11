@@ -135,7 +135,7 @@ watch(size, val =>
         <el-space wrap :size="40">
           <el-link
             v-tippy="{
-              content: '点击查看详细文档'
+              content: '點選查看详细文档'
             }"
             href="https://element-plus.org/zh-CN/component/date-picker.html"
             target="_blank"
@@ -156,7 +156,7 @@ watch(size, val =>
         href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/components/date-picker.vue"
         target="_blank"
       >
-        代碼位置 src/views/components/date-picker.vue
+        程式碼位置 src/views/components/date-picker.vue
       </el-link>
     </template>
 
@@ -220,10 +220,10 @@ watch(size, val =>
       unlink-panels
       range-separator="至"
       start-placeholder="開始時間"
-      end-placeholder="结束時間"
+      end-placeholder="結束時間"
       :shortcuts="shortcuts1"
       :popper-options="{
-        placement: 'bottom-start' // 下拉面板出现的位置，或 'top-start'、'bottom-end'、'top-end' 等，具体看 https://popper.js.org/docs/v2/constructors/#options
+        placement: 'bottom-start' // 下拉面板出現的位置，或 'top-start'、'bottom-end'、'top-end' 等，具体看 https://popper.js.org/docs/v2/constructors/#options
       }"
       :size="dynamicSize"
       :disabled="size === 'disabled'"
@@ -236,7 +236,7 @@ watch(size, val =>
       unlink-panels
       range-separator="至"
       start-placeholder="開始月份"
-      end-placeholder="结束月份"
+      end-placeholder="結束月份"
       :shortcuts="shortcuts2"
       :popper-options="{
         placement: 'bottom-start'
@@ -271,7 +271,7 @@ watch(size, val =>
       <span class="ml-2">{{ value7 }}</span>
     </el-space>
 
-    <div class="mb-2 mt-4">自訂義前缀</div>
+    <div class="mb-2 mt-4">自訂義前綴</div>
     <el-date-picker
       v-model="value8"
       type="date"

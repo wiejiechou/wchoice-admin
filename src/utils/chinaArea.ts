@@ -7,15 +7,15 @@ interface ProvinceData {
   children?: Array<ProvinceData>;
 }
 
-// code转汉字大对象,例：CodeToText['110000']输出北京市
+// code转汉字大對象,例：CodeToText['110000']輸出北京市
 const CodeToText = {};
-// 汉字转code大对象,例：TextToCode['北京市']['市辖区']['朝阳区'].code输出110105
+// 汉字转code大對象,例：TextToCode['北京市']['市辖區']['朝阳區'].code輸出110105
 const TextToCode = {};
-// 省份对象
+// 省份對象
 const provinceObject = REGION_DATA["86"];
-// 省市区三级联动数据（不带“全部”选项）
+// 省市區三級联動數據（不帶“全部”選項）
 const regionData = [];
-// 省市二级联动数据（不带“全部”选项）
+// 省市二級联動數據（不帶“全部”選項）
 let provinceAndCityData = [];
 
 const ALL_TEXT = "全部";
@@ -65,7 +65,7 @@ regionData.forEach((item: ProvinceData) => {
 });
 provinceAndCityData = cloneDeep(regionData);
 
-// 计算区
+// 计算區
 regionData.forEach((item: ProvinceData) => {
   const province = item.children;
   const provinceText = item.label;
@@ -95,7 +95,7 @@ regionData.forEach((item: ProvinceData) => {
   }
 });
 
-// 添加“全部”选项
+// 添加“全部”選項
 const provinceAndCityDataPlus = cloneDeep(provinceAndCityData);
 provinceAndCityDataPlus.unshift({
   value: "",
@@ -150,10 +150,10 @@ regionDataPlus.forEach((item: ProvinceData) => {
 });
 
 /**
- * 汉字转区域码
+ * 汉字转區域码
  * @param provinceText 省
  * @param cityText 市
- * @param regionText 区
+ * @param regionText 區
  * @returns
  */
 function convertTextToCode(

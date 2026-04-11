@@ -11,11 +11,11 @@ const columns = [
     value: "12345"
   },
   {
-    label: "负责人：",
+    label: "負責人：",
     value: "明明"
   },
   {
-    label: "生效时间：",
+    label: "生效時間：",
     value: lastBuildTime
   }
 ];
@@ -25,20 +25,20 @@ const columns = [
   <el-card shadow="never">
     <template #header>
       <div class="card-header">
-        <span class="font-medium">成功页</span>
+        <span class="font-medium">成功頁</span>
       </div>
       <el-link
         class="mt-2"
         href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/result/success.vue"
         target="_blank"
       >
-        代码位置 src/views/result/success.vue
+        程式碼位置 src/views/result/success.vue
       </el-link>
     </template>
     <el-result
       icon="success"
       title="提交成功"
-      sub-title="提交结果页用于反馈一系列操作任务的处理结果， 如果仅是简单操作，使用 Message 全局提示反馈即可。 本文字区域可以展示简单的补充说明，如果有类似展示 “单据”的需求，下面这个灰色区域可以呈现比较复杂的内容。"
+      sub-title="提交結果頁用于反饋一系列操作任務的處理結果， 如果僅是簡單操作，使用 Message 全局提示反饋即可。 本文字區域可以展示簡單的補充說明，如果有類似展示 “單據”的需求，下面這個灰色區域可以呈現比較複雜的内容。"
     >
       <template #extra>
         <div class="flex">
@@ -49,7 +49,7 @@ const columns = [
       </template>
     </el-result>
     <div class="p-6 w-[90%] m-auto bg-[#fafafa] dark:bg-[#1d1d1d]">
-      <PureDescriptions title="项目名称" :columns="columns" class="mb-5" />
+      <PureDescriptions title="项目名稱" :columns="columns" class="mb-5" />
       <el-steps :active="2">
         <el-step title="创建项目">
           <template #description>
@@ -57,7 +57,7 @@ const columns = [
             <p>{{ lastBuildTime }}</p>
           </template>
         </el-step>
-        <el-step title="部门初审">
+        <el-step title="部門初審">
           <template #description>
             <p class="flex items-center">
               亮亮
@@ -84,7 +84,7 @@ const columns = [
             </p>
           </template>
         </el-step>
-        <el-step title="财务复核" />
+        <el-step title="財務复核" />
         <el-step title="完成" />
       </el-steps>
     </div>

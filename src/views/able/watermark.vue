@@ -17,7 +17,7 @@ const { setWatermark: setPreventLocalWatermark } = useWatermark(preventLocal);
 
 onMounted(() => {
   nextTick(() => {
-    setPreventLocalWatermark("无法删除的水印", {
+    setPreventLocalWatermark("無法删除的水印", {
       forever: true,
       width: 180,
       height: 70
@@ -26,7 +26,7 @@ onMounted(() => {
 });
 
 onBeforeUnmount(() => {
-  // 在离开该页面时清除整页水印
+  // 在離開該頁面時清除整頁水印
   clear();
 });
 </script>
@@ -41,7 +41,7 @@ onBeforeUnmount(() => {
             target="_blank"
             style="margin: 0 5px 4px 0; font-size: 16px"
           >
-            页面水印
+            頁面水印
           </el-link>
         </span>
       </div>
@@ -50,19 +50,19 @@ onBeforeUnmount(() => {
         href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/able/watermark.vue"
         target="_blank"
       >
-        代码位置 src/views/able/watermark.vue
+        程式碼位置 src/views/able/watermark.vue
       </el-link>
     </template>
     <el-space wrap class="mb-2!">
-      <span> 请输入要创建水印的值：</span>
+      <span> 請輸入要创建水印的值：</span>
       <el-input v-model="value" class="mr-4" style="width: 200px" clearable />
-      <span>请选择要创建水印的颜色：</span>
+      <span>請選擇要创建水印的颜色：</span>
       <el-color-picker v-model="color" show-alpha />
     </el-space>
 
     <el-space wrap>
       <el-button plain @click="setWatermark(value, { color })">
-        创建整页水印
+        创建整頁水印
       </el-button>
       <el-button
         plain
@@ -76,7 +76,7 @@ onBeforeUnmount(() => {
           })
         "
       >
-        创建整页渐变水印
+        创建整頁漸變水印
       </el-button>
       <el-button
         plain
@@ -91,7 +91,7 @@ onBeforeUnmount(() => {
           })
         "
       >
-        创建整页渐变且水平90度的水印
+        创建整頁漸變且水平90度的水印
       </el-button>
       <el-button
         plain
@@ -106,7 +106,7 @@ onBeforeUnmount(() => {
           })
         "
       >
-        创建整页渐变且有阴影的水印
+        创建整頁漸變且有陰影的水印
       </el-button>
       <el-button
         plain
@@ -121,9 +121,9 @@ onBeforeUnmount(() => {
           })
         "
       >
-        创建整页高透明渐变水印
+        创建整頁高透明漸變水印
       </el-button>
-      <el-button plain @click="clear">清除整页水印</el-button>
+      <el-button plain @click="clear">清除整頁水印</el-button>
     </el-space>
 
     <div ref="local" class="w-1/2 h-50 border border-sky-500 mt-4" />
@@ -155,7 +155,7 @@ onBeforeUnmount(() => {
           })
         "
       >
-        创建局部渐变水印
+        创建局部漸變水印
       </el-button>
       <el-button
         plain
@@ -172,7 +172,7 @@ onBeforeUnmount(() => {
           })
         "
       >
-        创建局部渐变且水平90度的水印
+        创建局部漸變且水平90度的水印
       </el-button>
       <el-button
         plain
@@ -189,7 +189,7 @@ onBeforeUnmount(() => {
           })
         "
       >
-        创建局部渐变且有阴影的水印
+        创建局部漸變且有陰影的水印
       </el-button>
       <el-button plain @click="clearLocal">清除局部水印</el-button>
     </el-space>

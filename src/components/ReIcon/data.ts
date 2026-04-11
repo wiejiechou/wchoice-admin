@@ -1,7 +1,7 @@
 /**
- * 想要哪个图标集 自行添加即可 请注意此处添加的图标集均为在线图标（https://iconify.design/docs/api/#public-api）
- * 如果项目在内网环境下 参考 https://www.bilibili.com/video/BV17S4y1J79d?p=4&vd_source=5a992808de6229d78e7810536c5f9ab3 教程自行离线部署图标
- * https://icones.js.org/collections/图标集前缀名-meta.json（如：https://icones.js.org/collections/ri-meta.json 取icons字段，可获得当前图标集的所有图标）
+ * 想要哪个圖标集 自行添加即可 請注意此处添加的圖标集均為在線圖标（https://iconify.design/docs/api/#public-api）
+ * 如果项目在内网环境下 参考 https://www.bilibili.com/video/BV17S4y1J79d?p=4&vd_source=5a992808de6229d78e7810536c5f9ab3 教程自行離線部署圖标
+ * https://icones.js.org/collections/圖标集前綴名-meta.json（如：https://icones.js.org/collections/ri-meta.json 取icons字段，可获得當前圖标集的所有圖标）
  */
 export const IconJson = {
   // https://icones.js.org/collections/ep-meta.json

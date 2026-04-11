@@ -34,7 +34,7 @@ const barcodes = [
     <el-card shadow="never">
       <template #header>
         <div class="font-medium">
-          条形码（基于
+          條形码（基于
           <el-link
             href="https://lindell.me/JsBarcode/"
             target="_blank"
@@ -49,7 +49,7 @@ const barcodes = [
           href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/able/barcode.vue"
           target="_blank"
         >
-          代码位置 src/views/able/barcode.vue
+          程式碼位置 src/views/able/barcode.vue
         </el-link>
       </template>
       <el-row :gutter="12">

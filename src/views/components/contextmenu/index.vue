@@ -13,27 +13,27 @@ defineOptions({
   <el-card shadow="never">
     <template #header>
       <div class="card-header">
-        <p class="font-medium">右键菜单</p>
+        <p class="font-medium">右鍵選單</p>
         <el-link
           class="mt-2"
           href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/components/contextmenu"
           target="_blank"
         >
-          代码位置 src/views/components/contextmenu
+          程式碼位置 src/views/components/contextmenu
         </el-link>
       </div>
     </template>
     <el-row :gutter="24">
       <el-col :xs="24" :sm="10" :md="10" :lg="8" :xl="10">
-        <!-- 基础用法 -->
+        <!-- 基礎用法 -->
         <basic />
       </el-col>
       <el-col :xs="24" :sm="10" :md="10" :lg="8" :xl="10">
-        <!-- 按钮组 -->
+        <!-- 按鈕組 -->
         <menuGroup />
       </el-col>
       <el-col :xs="24" :sm="10" :md="10" :lg="8" :xl="10">
-        <!-- 动态菜单 -->
+        <!-- 動態選單 -->
         <menuDynamic />
       </el-col>
     </el-row>

@@ -16,7 +16,7 @@ import { cloneDeep, isAllEmpty, storageLocal } from "@pureadmin/utils";
 import SearchIcon from "~icons/ri/search-line";
 
 interface Props {
-  /** 弹窗显隐 */
+  /** 彈窗显隐 */
   value: boolean;
 }
 
@@ -48,7 +48,7 @@ const handleSearch = useDebounceFn(search, 300);
 const historyNum = getConfig().MenuSearchHistory;
 const inputRef = ref<HTMLInputElement | null>(null);
 
-/** 菜单树形结构 */
+/** 選單树形結构 */
 const menusData = computed(() => {
   return cloneDeep(usePermissionStoreHook().wholeMenus);
 });
@@ -92,7 +92,7 @@ function setStorageItem(key, value) {
   storageLocal().setItem(key, value);
 }
 
-/** 将菜单树形结构扁平化为一维数组，用于菜单查询 */
+/** 將選單树形結构扁平化為一维数組，用于選單查询 */
 function flatTree(arr) {
   const res = [];
   function deep(arr, parentIcon?) {
@@ -135,7 +135,7 @@ function search() {
 
 function handleClose() {
   show.value = false;
-  /** 延时处理防止用户看到某些操作 */
+  /** 延時處理防止用戶看到某些操作 */
   setTimeout(() => {
     resultOptions.value = [];
     historyPath.value = "";
@@ -149,7 +149,7 @@ function scrollTo(index) {
   scrollbarRef.value.setScrollTop(scrollTop);
 }
 
-/** 获取当前选项和路径 */
+/** 获取當前選項和路径 */
 function getCurrentOptionsAndPath() {
   const isResultOptions = resultOptions.value.length > 0;
   const options = isResultOptions ? resultOptions.value : historyOptions.value;
@@ -157,7 +157,7 @@ function getCurrentOptionsAndPath() {
   return { options, currentPath, isResultOptions };
 }
 
-/** 更新路径并滚动到指定项 */
+/** 更新路径并滚動到指定项 */
 function updatePathAndScroll(newIndex, isResultOptions) {
   if (isResultOptions) {
     activePath.value = resultOptions.value[newIndex].path;

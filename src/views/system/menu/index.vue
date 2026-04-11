@@ -42,10 +42,10 @@ function onFullscreen() {
       :model="form"
       class="search-form bg-bg_color w-full pl-8 pt-3 overflow-auto"
     >
-      <el-form-item label="菜单名称：" prop="title">
+      <el-form-item label="選單名稱：" prop="title">
         <el-input
           v-model="form.title"
-          placeholder="请输入菜单名称"
+          placeholder="請輸入選單名稱"
           clearable
           class="w-45!"
         />
@@ -66,7 +66,7 @@ function onFullscreen() {
     </el-form>
 
     <PureTableBar
-      title="菜单管理（仅演示，操作后不生效）"
+      title="選單管理（僅演示，操作後不生效）"
       :columns="columns"
       :isExpandAll="false"
       :tableRef="tableRef?.getTableRef()"
@@ -79,7 +79,7 @@ function onFullscreen() {
           :icon="useRenderIcon(AddFill)"
           @click="openDialog()"
         >
-          新增菜单
+          新增選單
         </el-button>
       </template>
       <template v-slot="{ size, dynamicColumns }">
@@ -124,7 +124,7 @@ function onFullscreen() {
               新增
             </el-button>
             <el-popconfirm
-              :title="`是否确认删除菜单名称为${transformI18n(row.title)}的这条数据${row?.children?.length > 0 ? '。注意下级菜单也会一并删除，请谨慎操作' : ''}`"
+              :title="`是否確認删除選單名稱為${transformI18n(row.title)}的这條數據${row?.children?.length > 0 ? '。注意下級選單也會一并删除，請谨慎操作' : ''}`"
               @confirm="handleDelete(row)"
             >
               <template #reference>

@@ -9,7 +9,7 @@ onMounted(() => {
     response: message => {
       console.log(message);
       return {
-        text: "仅演示，如需AI服务，请参考 https://deepchat.dev/docs/connect"
+        text: "僅演示，如需AI服務，請参考 https://deepchat.dev/docs/connect"
       };
     }
   };
@@ -123,9 +123,9 @@ onMounted(() => {
       height: '4em'
     }"
     :history="[
-      { text: '钓鱼需要准备什么东西？', role: 'user' },
+      { text: '钓鱼需要准備什么东西？', role: 'user' },
       {
-        text: '钓鱼需要准备鱼竿、渔轮、钓线、鱼钩、浮漂、铅坠和适合的饵料。',
+        text: '钓鱼需要准備鱼竿、渔轮、钓線、鱼钩、浮漂、铅坠和适合的饵料。',
         role: 'ai'
       }
     ]"

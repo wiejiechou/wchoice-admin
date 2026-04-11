@@ -20,7 +20,7 @@ export function useColumns() {
   ]);
 
   function onChange() {
-    // 动态表头只需给 columns.value 重新赋值即可，如下
+    // 動態表頭只需给 columns.value 重新赋值即可，如下
     columns.value = [
       {
         label: "日期" + Math.round(Math.random() * 99),

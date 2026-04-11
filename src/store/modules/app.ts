@@ -18,18 +18,18 @@ export const useAppStore = defineStore("pure-app", {
       withoutAnimation: false,
       isClickCollapse: false
     },
-    // 这里的layout用于监听容器拖拉后恢复对应的菜单布局
+    // 这里的layout用于监听容器拖拉后恢复對應的選單布局
     layout:
       storageLocal().getItem<StorageConfigs>(
         `${responsiveStorageNameSpace()}layout`
       )?.layout ?? getConfig().Layout,
     device: deviceDetection() ? "mobile" : "desktop",
-    // 浏览器窗口的可视区域大小
+    // 瀏覽器窗口的可视區域大小
     viewportSize: {
       width: document.documentElement.clientWidth,
       height: document.documentElement.clientHeight
     },
-    // 作用于 src/views/components/draggable/index.vue 页面，当离开页面并不会销毁 new Swap()，sortablejs 官网也没有提供任何销毁的 api
+    // 作用于 src/views/components/draggable/index.vue 頁面，當離開頁面并不會销毁 new Swap()，sortablejs 官网也没有提供任何销毁的 api
     sortSwap: false
   }),
   getters: {

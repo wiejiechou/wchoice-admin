@@ -44,11 +44,11 @@ export function useRole(treeRef: Ref) {
   });
   const columns: TableColumnList = [
     {
-      label: "角色编号",
+      label: "角色編號",
       prop: "id"
     },
     {
-      label: "角色名称",
+      label: "角色名稱",
       prop: "name"
     },
     {
@@ -56,7 +56,7 @@ export function useRole(treeRef: Ref) {
       prop: "code"
     },
     {
-      label: "状态",
+      label: "狀態",
       cellRenderer: scope => (
         <el-switch
           size={scope.props.size === "small" ? "small" : "default"}
@@ -64,7 +64,7 @@ export function useRole(treeRef: Ref) {
           v-model={scope.row.status}
           active-value={1}
           inactive-value={0}
-          active-text="已启用"
+          active-text="已啟用"
           inactive-text="已停用"
           inline-prompt
           style={switchStyle.value}
@@ -74,7 +74,7 @@ export function useRole(treeRef: Ref) {
       minWidth: 90
     },
     {
-      label: "备注",
+      label: "備註",
       prop: "remark",
       minWidth: 160
     },
@@ -104,14 +104,14 @@ export function useRole(treeRef: Ref) {
 
   function onChange({ row, index }) {
     ElMessageBox.confirm(
-      `确认要<strong>${
-        row.status === 0 ? "停用" : "启用"
+      `確認要<strong>${
+        row.status === 0 ? "停用" : "啟用"
       }</strong><strong style='color:var(--el-color-primary)'>${
         row.name
       }</strong>吗?`,
-      "系统提示",
+      "系統提示",
       {
-        confirmButtonText: "确定",
+        confirmButtonText: "確定",
         cancelButtonText: "取消",
         type: "warning",
         dangerouslyUseHTMLString: true,
@@ -134,7 +134,7 @@ export function useRole(treeRef: Ref) {
               loading: false
             }
           );
-          message(`已${row.status === 0 ? "停用" : "启用"}${row.name}`, {
+          message(`已${row.status === 0 ? "停用" : "啟用"}${row.name}`, {
             type: "success"
           });
         }, 300);
@@ -145,7 +145,7 @@ export function useRole(treeRef: Ref) {
   }
 
   function handleDelete(row) {
-    message(`您删除了角色名称为${row.name}的这条数据`, { type: "success" });
+    message(`您删除了角色名稱為${row.name}的这條數據`, { type: "success" });
     onSearch();
   }
 
@@ -202,21 +202,21 @@ export function useRole(treeRef: Ref) {
         const FormRef = formRef.value.getRef();
         const curData = options.props.formInline as FormItemProps;
         function chores() {
-          message(`您${title}了角色名称为${curData.name}的这条数据`, {
+          message(`您${title}了角色名稱為${curData.name}的这條數據`, {
             type: "success"
           });
-          done(); // 关闭弹框
-          onSearch(); // 刷新表格数据
+          done(); // 關閉彈框
+          onSearch(); // 刷新表格數據
         }
         FormRef.validate(valid => {
           if (valid) {
             console.log("curData", curData);
-            // 表单规则校验通过
+            // 表單规则校驗通過
             if (title === "新增") {
-              // 实际开发先调用新增接口，再进行下面操作
+              // 实际開发先調用新增接口，再進行下面操作
               chores();
             } else {
-              // 实际开发先调用修改接口，再进行下面操作
+              // 实际開发先調用修改接口，再進行下面操作
               chores();
             }
           }
@@ -225,7 +225,7 @@ export function useRole(treeRef: Ref) {
     });
   }
 
-  /** 菜单权限 */
+  /** 選單權限 */
   async function handleMenu(row?: any) {
     const { id } = row;
     if (id) {
@@ -241,7 +241,7 @@ export function useRole(treeRef: Ref) {
     }
   }
 
-  /** 高亮当前权限选中行 */
+  /** 高亮當前權限选中行 */
   function rowStyle({ row: { id } }) {
     return {
       cursor: "pointer",
@@ -249,17 +249,17 @@ export function useRole(treeRef: Ref) {
     };
   }
 
-  /** 菜单权限-保存 */
+  /** 選單權限-保存 */
   function handleSave() {
     const { id, name } = curRow.value;
-    // 根据用户 id 调用实际项目中菜单权限修改接口
+    // 根據用戶 id 調用实际项目中選單權限修改接口
     console.log(id, treeRef.value.getCheckedKeys());
-    message(`角色名称为${name}的菜单权限修改成功`, {
+    message(`角色名稱為${name}的選單權限修改成功`, {
       type: "success"
     });
   }
 
-  /** 数据权限 可自行开发 */
+  /** 數據權限 可自行開发 */
   // function handleDatabase() {}
 
   const onQueryChanged = (query: string) => {

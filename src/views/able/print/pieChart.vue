@@ -22,7 +22,7 @@ setOptions({
   },
   series: [
     {
-      name: "饼图",
+      name: "饼圖",
       type: "pie",
       top: "20%",
       radius: "80%",

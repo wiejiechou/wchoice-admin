@@ -51,20 +51,20 @@ defineExpose({ getRef });
   >
     <el-row :gutter="30">
       <re-col :value="12" :xs="24" :sm="24">
-        <el-form-item label="用户昵称" prop="nickname">
+        <el-form-item label="用戶昵称" prop="nickname">
           <el-input
             v-model="newFormInline.nickname"
             clearable
-            placeholder="请输入用户昵称"
+            placeholder="請輸入用戶昵称"
           />
         </el-form-item>
       </re-col>
       <re-col :value="12" :xs="24" :sm="24">
-        <el-form-item label="用户名称" prop="username">
+        <el-form-item label="用戶名稱" prop="username">
           <el-input
             v-model="newFormInline.username"
             clearable
-            placeholder="请输入用户名称"
+            placeholder="請輸入用戶名稱"
           />
         </el-form-item>
       </re-col>
@@ -75,11 +75,11 @@ defineExpose({ getRef });
         :xs="24"
         :sm="24"
       >
-        <el-form-item label="用户密码" prop="password">
+        <el-form-item label="用戶密码" prop="password">
           <el-input
             v-model="newFormInline.password"
             clearable
-            placeholder="请输入用户密码"
+            placeholder="請輸入用戶密码"
           />
         </el-form-item>
       </re-col>
@@ -88,7 +88,7 @@ defineExpose({ getRef });
           <el-input
             v-model="newFormInline.phone"
             clearable
-            placeholder="请输入手机号"
+            placeholder="請輸入手机号"
           />
         </el-form-item>
       </re-col>
@@ -98,15 +98,15 @@ defineExpose({ getRef });
           <el-input
             v-model="newFormInline.email"
             clearable
-            placeholder="请输入邮箱"
+            placeholder="請輸入邮箱"
           />
         </el-form-item>
       </re-col>
       <re-col :value="12" :xs="24" :sm="24">
-        <el-form-item label="用户性别">
+        <el-form-item label="用戶性别">
           <el-select
             v-model="newFormInline.sex"
-            placeholder="请选择用户性别"
+            placeholder="請選擇用戶性别"
             class="w-full"
             clearable
           >
@@ -121,7 +121,7 @@ defineExpose({ getRef });
       </re-col>
 
       <re-col :value="12" :xs="24" :sm="24">
-        <el-form-item label="归属部门">
+        <el-form-item label="归属部門">
           <el-cascader
             v-model="newFormInline.parentId"
             class="w-full"
@@ -134,7 +134,7 @@ defineExpose({ getRef });
             }"
             clearable
             filterable
-            placeholder="请选择归属部门"
+            placeholder="請選擇归属部門"
           >
             <template #default="{ node, data }">
               <span>{{ data.name }}</span>
@@ -149,13 +149,13 @@ defineExpose({ getRef });
         :xs="24"
         :sm="24"
       >
-        <el-form-item label="用户状态">
+        <el-form-item label="用戶狀態">
           <el-switch
             v-model="newFormInline.status"
             inline-prompt
             :active-value="1"
             :inactive-value="0"
-            active-text="启用"
+            active-text="啟用"
             inactive-text="停用"
             :style="switchStyle"
           />
@@ -163,10 +163,10 @@ defineExpose({ getRef });
       </re-col>
 
       <re-col>
-        <el-form-item label="备注">
+        <el-form-item label="備註">
           <el-input
             v-model="newFormInline.remark"
-            placeholder="请输入备注信息"
+            placeholder="請輸入備註信息"
             type="textarea"
           />
         </el-form-item>

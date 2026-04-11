@@ -3,9 +3,9 @@ import { h, defineComponent, type Component } from "vue";
 import { FontIcon, IconifyIconOnline, IconifyIconOffline } from "../index";
 
 /**
- * 支持 `iconfont`、自定义 `svg` 以及 `iconify` 中所有的图标
- * @see 点击查看文档图标篇 {@link https://pure-admin.cn/pages/icon/}
- * @param icon 必传 图标
+ * 支持 `iconfont`、自定義 `svg` 以及 `iconify` 中所有的圖标
+ * @see 點選查看文档圖标篇 {@link https://pure-admin.cn/pages/icon/}
+ * @param icon 必传 圖标
  * @param attrs 可选 iconType 属性
  * @returns Component
  */
@@ -45,7 +45,7 @@ export function useRenderIcon(icon: any, attrs?: iconType): Component {
       }
     });
   } else {
-    // 通过是否存在 : 符号来判断是在线还是本地图标，存在即是在线图标，反之
+    // 通過是否存在 : 符号来判断是在線還是本地圖标，存在即是在線圖标，反之
     return defineComponent({
       name: "Icon",
       render() {

@@ -67,7 +67,7 @@ const props = {
   src: { type: String, required: true },
   alt: { type: String },
   circled: { type: Boolean, default: false },
-  /** 是否可以通过点击裁剪区域关闭右键弹出的功能菜单，默认 `true` */
+  /** 是否可以通過點選裁剪區域關閉右鍵彈出的功能選單，預設 `true` */
   isClose: { type: Boolean, default: true },
   realTimePreview: { type: Boolean, default: true },
   height: { type: [String, Number], default: "360px" },
@@ -260,7 +260,7 @@ export default defineComponent({
               <Upload
                 class={iconClass.value}
                 v-tippy={{
-                  content: "上传",
+                  content: "上傳",
                   placement: "left-start"
                 }}
               />
@@ -268,7 +268,7 @@ export default defineComponent({
             <DownloadIcon
               class={iconClass.value}
               v-tippy={{
-                content: "下载",
+                content: "下載",
                 placement: "right-start"
               }}
               onClick={() => downloadByBase64(imgBase64.value, "cropping.png")}
@@ -295,7 +295,7 @@ export default defineComponent({
             <ArrowUp
               class={iconClass.value}
               v-tippy={{
-                content: "上移（可长按）",
+                content: "上移（可長按）",
                 placement: "left-start"
               }}
               v-longpress={[() => handCropper("move", [0, -10]), "0:100"]}
@@ -303,7 +303,7 @@ export default defineComponent({
             <ArrowDown
               class={iconClass.value}
               v-tippy={{
-                content: "下移（可长按）",
+                content: "下移（可長按）",
                 placement: "right-start"
               }}
               v-longpress={[() => handCropper("move", [0, 10]), "0:100"]}
@@ -311,7 +311,7 @@ export default defineComponent({
             <ArrowLeft
               class={iconClass.value}
               v-tippy={{
-                content: "左移（可长按）",
+                content: "左移（可長按）",
                 placement: "left-start"
               }}
               v-longpress={[() => handCropper("move", [-10, 0]), "0:100"]}
@@ -319,7 +319,7 @@ export default defineComponent({
             <ArrowRight
               class={iconClass.value}
               v-tippy={{
-                content: "右移（可长按）",
+                content: "右移（可長按）",
                 placement: "right-start"
               }}
               v-longpress={[() => handCropper("move", [10, 0]), "0:100"]}
@@ -343,7 +343,7 @@ export default defineComponent({
             <RotateLeft
               class={iconClass.value}
               v-tippy={{
-                content: "逆时针旋转",
+                content: "逆時针旋转",
                 placement: "left-start"
               }}
               onClick={() => handCropper("rotate", -45)}
@@ -351,7 +351,7 @@ export default defineComponent({
             <RotateRight
               class={iconClass.value}
               v-tippy={{
-                content: "顺时针旋转",
+                content: "顺時针旋转",
                 placement: "right-start"
               }}
               onClick={() => handCropper("rotate", 45)}
@@ -359,7 +359,7 @@ export default defineComponent({
             <SearchPlus
               class={iconClass.value}
               v-tippy={{
-                content: "放大（可长按）",
+                content: "放大（可長按）",
                 placement: "left-start"
               }}
               v-longpress={[() => handCropper("zoom", 0.1), "0:100"]}
@@ -367,7 +367,7 @@ export default defineComponent({
             <SearchMinus
               class={iconClass.value}
               v-tippy={{
-                content: "缩小（可长按）",
+                content: "縮小（可長按）",
                 placement: "right-start"
               }}
               v-longpress={[() => handCropper("zoom", -0.1), "0:100"]}

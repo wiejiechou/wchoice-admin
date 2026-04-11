@@ -2,22 +2,22 @@ import { reactive } from "vue";
 import type { FormRules } from "element-plus";
 import { isPhone, isEmail } from "@pureadmin/utils";
 
-/** 自定义表单规则校验 */
+/** 自定義表單规则校驗 */
 export const formRules = reactive(<FormRules>{
-  name: [{ required: true, message: "部门名称为必填项", trigger: "blur" }],
+  name: [{ required: true, message: "部門名稱為必填项", trigger: "blur" }],
   phone: [
     {
       validator: (rule, value, callback) => {
         if (value === "") {
           callback();
         } else if (!isPhone(value)) {
-          callback(new Error("请输入正确的手机号码格式"));
+          callback(new Error("請輸入正確的手机號碼格式"));
         } else {
           callback();
         }
       },
       trigger: "blur"
-      // trigger: "click" // 如果想在点击确定按钮时触发这个校验，trigger 设置成 click 即可
+      // trigger: "click" // 如果想在點選確定按鈕時触发這個校驗，trigger 設定成 click 即可
     }
   ],
   email: [
@@ -26,7 +26,7 @@ export const formRules = reactive(<FormRules>{
         if (value === "") {
           callback();
         } else if (!isEmail(value)) {
-          callback(new Error("请输入正确的邮箱格式"));
+          callback(new Error("請輸入正確的邮箱格式"));
         } else {
           callback();
         }

@@ -32,15 +32,15 @@ const tableData = [
 const options = [
   {
     value: 0,
-    label: "上午写代码"
+    label: "上午寫代码"
   },
   {
     value: 1,
-    label: "下午写代码"
+    label: "下午寫代码"
   },
   {
     value: 2,
-    label: "晚上写代码"
+    label: "晚上寫代码"
   },
   {
     value: 3,

@@ -1,18 +1,18 @@
 @use "sass:color";
 @use "element-plus/theme-chalk/src/dark/css-vars.scss" as *;
 
-/* 整体暗色风格适配 */
+/* 整体暗色風格适配 */
 html.dark {
   $border-style: #303030;
   $color-white: #fff;
 
-  /* 自定义深色背景颜色 */
+  /* 自定義深色背景颜色 */
   // --el-bg-color: #020409;
 
-  /* 常用border-color 需要时可取用 */
+  /* 常用border-color 需要時可取用 */
   --pure-border-color: rgb(253 253 253 / 12%);
 
-  /* switch关闭状态下的color 需要时可取用 */
+  /* switch關閉狀態下的color 需要時可取用 */
   --pure-switch-off-color: #ffffff3f;
 
   /* vxe-table */
@@ -97,7 +97,7 @@ html.dark {
     filter: invert(0.9) hue-rotate(180deg);
   }
 
-  /* 标签页 */
+  /* 標籤頁 */
   .tags-view {
     .arrow-left,
     .arrow-right {
@@ -135,7 +135,7 @@ html.dark {
     }
   }
 
-  /* 表单设计器 */
+  /* 表單设计器 */
   .design-form {
     .el-main.config-content,
     .el-header,
@@ -179,7 +179,7 @@ html.dark {
     background: transparent;
   }
 
-  /* 全局覆盖element-plus的el-dialog、el-drawer、el-message-box、el-notification组件右上角关闭图标的样式，表现更鲜明 */
+  /* 全局覆盖element-plus的el-dialog、el-drawer、el-message-box、el-notification組件右上角關閉圖标的樣式，表現更鲜明 */
   .el-icon {
     &.el-dialog__close,
     &.el-drawer__close,
@@ -196,7 +196,7 @@ html.dark {
     }
   }
 
-  /* 克隆并自定义 ElMessage 样式，不会影响 ElMessage 原本样式，在 src/utils/message.ts 中调用自定义样式 ElMessage 方法即可，整体浅色风格在 src/style/element-plus.scss 文件进行了适配 */
+  /* 克隆并自定義 ElMessage 樣式，不會影响 ElMessage 原本樣式，在 src/utils/message.ts 中調用自定義樣式 ElMessage 方法即可，整体浅色風格在 src/style/element-plus.scss 文件进行了适配 */
   .pure-message {
     background-color: rgb(36 37 37) !important;
     background-image: initial !important;
@@ -219,7 +219,7 @@ html.dark {
     }
   }
 
-  /* 自定义菜单搜索样式 */
+  /* 自定義選單搜索樣式 */
   .pure-search-dialog {
     .el-dialog__footer {
       box-shadow:
@@ -238,7 +238,7 @@ html.dark {
     }
   }
 
-  /* ReSegmented 组件 */
+  /* ReSegmented 組件 */
   .pure-segmented {
     color: rgb(255 255 255 / 65%);
     background-color: #000;
@@ -252,7 +252,7 @@ html.dark {
     }
   }
 
-  /* 仿 el-scrollbar 滚动条样式 支持大多数浏览器，如Chrome、Edge、Firefox、Safari等 */
+  /* 仿 el-scrollbar 滚動條樣式 支持大多数瀏覽器，如Chrome、Edge、Firefox、Safari等 */
   .pure-scrollbar {
     scrollbar-color: rgb(63 64 66) transparent;
 

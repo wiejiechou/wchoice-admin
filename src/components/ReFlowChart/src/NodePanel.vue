@@ -32,7 +32,7 @@ const nodeDragNode = item => {
 </script>
 
 <template>
-  <!-- 左侧bpmn元素选择器 -->
+  <!-- 左側bpmn元素選擇器 -->
   <div class="node-panel">
     <div
       v-for="item in nodeList"

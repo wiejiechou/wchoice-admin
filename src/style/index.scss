@@ -4,15 +4,15 @@
 @use "sidebar";
 @use "dark";
 
-/* 自定义全局 CssVar */
+/* 自定義全局 CssVar */
 :root {
-  /* 左侧菜单展开、收起动画时长 */
+  /* 左側選單展開、收起動畫時長 */
   --pure-transition-duration: 0.3s;
 
-  /* 常用border-color 需要时可取用 */
+  /* 常用border-color 需要時可取用 */
   --pure-border-color: rgb(5 5 5 / 6%);
 
-  /* switch关闭状态下的color 需要时可取用 */
+  /* switch關閉狀態下的color 需要時可取用 */
   --pure-switch-off-color: #a6a6a6;
 
   /** 主题色 */
@@ -36,7 +36,7 @@
   filter: invert(80%);
 }
 
-/* 轻微缩小，再恢复原状的平滑缩放动画 */
+/* 轻微縮小，再恢复原状的平滑縮放動畫 */
 @keyframes pure-scale-bounce {
   0% {
     transform: scale(1);

@@ -14,7 +14,7 @@ const activeNames = ref("1");
     <template #header>
       <div class="card-header">
         <span class="font-medium">
-          编辑器组件，采用开源的
+          編輯器組件，採用開源的
           <el-link
             href="https://www.wangeditor.com"
             target="_blank"
@@ -29,17 +29,17 @@ const activeNames = ref("1");
         href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/editor"
         target="_blank"
       >
-        代码位置 src/views/editor
+        程式碼位置 src/views/editor
       </el-link>
     </template>
     <el-collapse v-model="activeNames" accordion>
-      <el-collapse-item title="基础用法" name="1">
+      <el-collapse-item title="基礎用法" name="1">
         <EditorBase v-if="activeNames === '1'" />
       </el-collapse-item>
       <el-collapse-item title="多个富文本" name="2">
         <EditorMulti v-if="activeNames === '2'" />
       </el-collapse-item>
-      <el-collapse-item title="自定义图片上传" name="3">
+      <el-collapse-item title="自定義圖片上傳" name="3">
         <EditorUpload v-if="activeNames === '3'" />
       </el-collapse-item>
     </el-collapse>

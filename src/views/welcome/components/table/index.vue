@@ -24,7 +24,7 @@ const { loading, columns, dataList, pagination, Empty, onCurrentChange } =
     @page-current-change="onCurrentChange"
   >
     <template #empty>
-      <el-empty description="暂无数据" :image-size="60">
+      <el-empty description="暫無數據" :image-size="60">
         <template #image>
           <Empty />
         </template>
@@ -35,7 +35,7 @@ const { loading, columns, dataList, pagination, Empty, onCurrentChange } =
         plain
         circle
         size="small"
-        :title="`查看序号为${row.id}的详情`"
+        :title="`查看序号為${row.id}的詳情`"
         :icon="useRenderIcon('ri:search-line')"
       />
     </template>

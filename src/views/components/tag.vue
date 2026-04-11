@@ -40,7 +40,7 @@ function onReset() {
   tagList.value = cloneDeep(copyTagList);
 }
 
-/** 动态编辑标签 */
+/** 動態編輯標籤 */
 const inputValue = ref("");
 const dynamicTags = ref(["Tag 1", "Tag 2", "Tag 3"]);
 const inputVisible = ref(false);
@@ -70,17 +70,17 @@ const handleInputConfirm = () => {
         <el-space wrap :size="40">
           <el-link
             v-tippy="{
-              content: '点击查看详细文档'
+              content: '點選查看详细文档'
             }"
             href="https://element-plus.org/zh-CN/component/tag.html"
             target="_blank"
             style="font-size: 16px; font-weight: 800"
           >
-            Tag 标签
+            Tag 標籤
           </el-link>
           <el-radio-group v-model="size">
             <el-radio value="large">大尺寸</el-radio>
-            <el-radio value="default">默认尺寸</el-radio>
+            <el-radio value="default">預設尺寸</el-radio>
             <el-radio value="small">小尺寸</el-radio>
           </el-radio-group>
         </el-space>
@@ -90,11 +90,11 @@ const handleInputConfirm = () => {
         href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/components/tag.vue"
         target="_blank"
       >
-        代码位置 src/views/components/tag.vue
+        程式碼位置 src/views/components/tag.vue
       </el-link>
     </template>
 
-    <div class="mb-2">基础按钮</div>
+    <div class="mb-2">基礎按鈕</div>
     <el-radio-group v-model="baseTag" class="mb-3">
       <el-radio label="dark" value="dark" />
       <el-radio label="light" value="light" />
@@ -140,7 +140,7 @@ const handleInputConfirm = () => {
     </el-space>
     <el-divider />
 
-    <div class="mb-2">动态编辑标签</div>
+    <div class="mb-2">動態編輯標籤</div>
     <el-tag
       v-for="tag in dynamicTags"
       :key="tag"
@@ -167,7 +167,7 @@ const handleInputConfirm = () => {
       size="small"
       @click="showInput"
     >
-      新建标签
+      新建標籤
     </el-button>
   </el-card>
 </template>

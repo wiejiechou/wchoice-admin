@@ -39,7 +39,7 @@ defineExpose({ getRef });
   >
     <el-row :gutter="30">
       <re-col>
-        <el-form-item label="上级部门">
+        <el-form-item label="上級部門">
           <el-cascader
             v-model="newFormInline.parentId"
             class="w-full"
@@ -52,7 +52,7 @@ defineExpose({ getRef });
             }"
             clearable
             filterable
-            placeholder="请选择上级部门"
+            placeholder="請選擇上級部門"
           >
             <template #default="{ node, data }">
               <span>{{ data.name }}</span>
@@ -63,20 +63,20 @@ defineExpose({ getRef });
       </re-col>
 
       <re-col :value="12" :xs="24" :sm="24">
-        <el-form-item label="部门名称" prop="name">
+        <el-form-item label="部門名稱" prop="name">
           <el-input
             v-model="newFormInline.name"
             clearable
-            placeholder="请输入部门名称"
+            placeholder="請輸入部門名稱"
           />
         </el-form-item>
       </re-col>
       <re-col :value="12" :xs="24" :sm="24">
-        <el-form-item label="部门负责人">
+        <el-form-item label="部門負責人">
           <el-input
             v-model="newFormInline.principal"
             clearable
-            placeholder="请输入部门负责人"
+            placeholder="請輸入部門負責人"
           />
         </el-form-item>
       </re-col>
@@ -86,7 +86,7 @@ defineExpose({ getRef });
           <el-input
             v-model="newFormInline.phone"
             clearable
-            placeholder="请输入手机号"
+            placeholder="請輸入手机号"
           />
         </el-form-item>
       </re-col>
@@ -95,7 +95,7 @@ defineExpose({ getRef });
           <el-input
             v-model="newFormInline.email"
             clearable
-            placeholder="请输入邮箱"
+            placeholder="請輸入邮箱"
           />
         </el-form-item>
       </re-col>
@@ -112,13 +112,13 @@ defineExpose({ getRef });
         </el-form-item>
       </re-col>
       <re-col :value="12" :xs="24" :sm="24">
-        <el-form-item label="部门状态">
+        <el-form-item label="部門狀態">
           <el-switch
             v-model="newFormInline.status"
             inline-prompt
             :active-value="1"
             :inactive-value="0"
-            active-text="启用"
+            active-text="啟用"
             inactive-text="停用"
             :style="switchStyle"
           />
@@ -126,10 +126,10 @@ defineExpose({ getRef });
       </re-col>
 
       <re-col>
-        <el-form-item label="备注">
+        <el-form-item label="備註">
           <el-input
             v-model="newFormInline.remark"
-            placeholder="请输入备注信息"
+            placeholder="請輸入備註信息"
             type="textarea"
           />
         </el-form-item>

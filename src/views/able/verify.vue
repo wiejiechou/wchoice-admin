@@ -5,11 +5,11 @@ import Vcode from "vue3-puzzle-vcode";
 const isShow = ref(true);
 
 function onSuccess() {
-  console.log("验证成功");
+  console.log("驗證成功");
 }
 
 function onFail() {
-  console.log("验证失败");
+  console.log("驗證失敗");
 }
 </script>
 
@@ -22,7 +22,7 @@ function onFail() {
           target="_blank"
           style="margin: 0 5px 4px 0; font-size: 16px"
         >
-          拼图人机验证、右滑拼图验证
+          拼圖人机驗證、右滑拼圖驗證
         </el-link>
       </div>
       <el-link
@@ -30,7 +30,7 @@ function onFail() {
         href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/able/verify.vue"
         target="_blank"
       >
-        代码位置 src/views/able/verify.vue
+        程式碼位置 src/views/able/verify.vue
       </el-link>
     </template>
     <div class="bg-[rgba(15,23,42,0.2)] p-6 w-90">

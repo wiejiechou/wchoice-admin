@@ -1,9 +1,9 @@
 import { ref, onMounted } from "vue";
 
 /**
- * 绘制图形验证码
- * @param width - 图形宽度
- * @param height - 图形高度
+ * 绘制圖形驗證码
+ * @param width - 圖形寬度
+ * @param height - 圖形高度
  */
 export const useImageVerify = (width = 120, height = 40) => {
   const domRef = ref<HTMLCanvasElement>();

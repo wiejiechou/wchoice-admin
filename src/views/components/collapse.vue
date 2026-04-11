@@ -31,7 +31,7 @@ const handleChange = (val: string[]) => {
         <el-space wrap :size="40">
           <el-link
             v-tippy="{
-              content: '点击查看详细文档'
+              content: '點選查看详细文档'
             }"
             href="https://element-plus.org/zh-CN/component/collapse.html"
             target="_blank"
@@ -46,17 +46,17 @@ const handleChange = (val: string[]) => {
         href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/components/collapse.vue"
         target="_blank"
       >
-        代码位置 src/views/components/collapse.vue
+        程式碼位置 src/views/components/collapse.vue
       </el-link>
     </template>
 
-    <div class="mb-2">基础用法</div>
+    <div class="mb-2">基礎用法</div>
     <el-radio-group v-model="radio" class="mb-3">
-      <el-radio value="">可同时展开多个面板</el-radio>
-      <el-radio value="accordion">每次只能展开一个面板</el-radio>
+      <el-radio value="">可同時展開多个面板</el-radio>
+      <el-radio value="accordion">每次只能展開一个面板</el-radio>
     </el-radio-group>
     <el-button size="small" text bg class="ml-8! mb-1!" @click="onClick">
-      外部触发打开、关闭
+      外部触发打開、關閉
     </el-button>
     <el-collapse
       ref="collapseRef"
@@ -66,10 +66,10 @@ const handleChange = (val: string[]) => {
       @change="handleChange"
     >
       <el-collapse-item title="周一" name="1">
-        周一启航，新的篇章
+        周一啟航，新的篇章
       </el-collapse-item>
       <el-collapse-item title="周二" name="2">
-        周二律动，携手共进
+        周二律動，携手共进
       </el-collapse-item>
       <el-collapse-item title="周三" name="3">
         周三昂扬，激情不减

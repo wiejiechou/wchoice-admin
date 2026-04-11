@@ -50,7 +50,7 @@ defineExpose({ hidePopover });
             @readied="showPopover = true"
           />
           <p v-show="showPopover" class="mt-1 text-center">
-            温馨提示：右键上方裁剪区可开启功能菜单
+            温馨提示：右鍵上方裁剪區可開啟功能選單
           </p>
         </div>
       </template>
@@ -63,7 +63,7 @@ defineExpose({ hidePopover });
         />
         <div v-if="infos" class="mt-1">
           <p>
-            图像大小：{{ parseInt(infos.width) }} ×
+            圖像大小：{{ parseInt(infos.width) }} ×
             {{ parseInt(infos.height) }}像素
           </p>
           <p>

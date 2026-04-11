@@ -73,7 +73,7 @@ const onCurrentChange = (current: number) => {
 const handleDeleteItem = product => {
   ElMessageBox.confirm(
     product
-      ? `确认删除后${product.name}的所有产品信息将被清空, 且无法恢复`
+      ? `確認删除后${product.name}的所有產品信息將被清空, 且無法恢复`
       : "",
     "提示",
     {
@@ -100,12 +100,12 @@ const handleManageProduct = product => {
         :icon="useRenderIcon(AddFill)"
         @click="formDialogVisible = true"
       >
-        新建产品
+        新建產品
       </el-button>
       <el-input
         v-model="searchValue"
         style="width: 300px"
-        placeholder="请输入产品名称"
+        placeholder="請輸入產品名稱"
         clearable
       >
         <template #suffix>
@@ -134,7 +134,7 @@ const handleManageProduct = product => {
               v.name.toLowerCase().includes(searchValue.toLowerCase())
             ).length === 0
         "
-        :description="`${searchValue} 产品不存在`"
+        :description="`${searchValue} 產品不存在`"
       />
       <template v-if="pagination.total > 0">
         <el-row :gutter="16">

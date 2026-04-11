@@ -1,23 +1,23 @@
 <template>
   <div>
-    <div class="mb-2">动态菜单</div>
+    <div class="mb-2">動態選單</div>
     <div v-contextmenu:contextmenu class="wrapper">
-      <code>右键点击此区域</code>
+      <code>右鍵點選此區域</code>
     </div>
 
     <v-contextmenu ref="contextmenu">
       <v-contextmenu-group title="操作">
         <v-contextmenu-item :hide-on-click="false" @click="extra.push('item')">
-          添加菜单
+          添加選單
         </v-contextmenu-item>
         <v-contextmenu-item :hide-on-click="false" @click="extra.push('group')">
-          添加菜单组
+          添加選單組
         </v-contextmenu-item>
         <v-contextmenu-item
           :hide-on-click="false"
           @click="extra.push('submenu')"
         >
-          添加子菜单
+          添加子選單
         </v-contextmenu-item>
         <v-contextmenu-item :hide-on-click="false" @click="extra.pop()">
           删除
@@ -29,23 +29,23 @@
 
         <v-contextmenu-group
           v-if="item === 'group'"
-          :title="`菜单组 ${index + 1}`"
+          :title="`選單組 ${index + 1}`"
         >
-          <v-contextmenu-item>菜单1</v-contextmenu-item>
-          <v-contextmenu-item>菜单2</v-contextmenu-item>
-          <v-contextmenu-item>菜单3</v-contextmenu-item>
+          <v-contextmenu-item>選單1</v-contextmenu-item>
+          <v-contextmenu-item>選單2</v-contextmenu-item>
+          <v-contextmenu-item>選單3</v-contextmenu-item>
         </v-contextmenu-group>
 
         <v-contextmenu-submenu
           v-else-if="item === 'submenu'"
-          :title="`子菜单 ${index + 1}`"
+          :title="`子選單 ${index + 1}`"
         >
-          <v-contextmenu-item>菜单1</v-contextmenu-item>
-          <v-contextmenu-item>菜单2</v-contextmenu-item>
-          <v-contextmenu-item>菜单3</v-contextmenu-item>
+          <v-contextmenu-item>選單1</v-contextmenu-item>
+          <v-contextmenu-item>選單2</v-contextmenu-item>
+          <v-contextmenu-item>選單3</v-contextmenu-item>
         </v-contextmenu-submenu>
 
-        <v-contextmenu-item v-else>菜单 {{ index + 1 }}</v-contextmenu-item>
+        <v-contextmenu-item v-else>選單 {{ index + 1 }}</v-contextmenu-item>
       </template>
     </v-contextmenu>
   </div>

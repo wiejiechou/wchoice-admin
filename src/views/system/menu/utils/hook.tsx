@@ -21,19 +21,19 @@ export function useMenu() {
   const getMenuType = (type, text = false) => {
     switch (type) {
       case 0:
-        return text ? "菜单" : "primary";
+        return text ? "選單" : "primary";
       case 1:
         return text ? "iframe" : "warning";
       case 2:
-        return text ? "外链" : "danger";
+        return text ? "外鏈" : "danger";
       case 3:
-        return text ? "按钮" : "info";
+        return text ? "按鈕" : "info";
     }
   };
 
   const columns: TableColumnList = [
     {
-      label: "菜单名称",
+      label: "選單名稱",
       prop: "title",
       align: "left",
       cellRenderer: ({ row }) => (
@@ -48,7 +48,7 @@ export function useMenu() {
       )
     },
     {
-      label: "菜单类型",
+      label: "選單類型",
       prop: "menuType",
       width: 100,
       cellRenderer: ({ row, props }) => (
@@ -66,13 +66,13 @@ export function useMenu() {
       prop: "path"
     },
     {
-      label: "组件路径",
+      label: "組件路径",
       prop: "component",
       formatter: ({ path, component }) =>
         isAllEmpty(component) ? path : component
     },
     {
-      label: "权限标识",
+      label: "權限标识",
       prop: "auths"
     },
     {
@@ -81,7 +81,7 @@ export function useMenu() {
       width: 100
     },
     {
-      label: "隐藏",
+      label: "隱藏",
       prop: "showLink",
       formatter: ({ showLink }) => (showLink ? "否" : "是"),
       width: 100
@@ -106,16 +106,16 @@ export function useMenu() {
 
   async function onSearch() {
     loading.value = true;
-    const { code, data } = await getMenuList(); // 这里是返回一维数组结构，前端自行处理成树结构，返回格式要求：唯一id加父节点parentId，parentId取父节点id
+    const { code, data } = await getMenuList(); // 这里是返回一维数組結构，前端自行處理成树結构，返回格式要求：唯一id加父节點parentId，parentId取父节點id
     if (code === 0) {
       let newData = data;
       if (!isAllEmpty(form.title)) {
-        // 前端搜索菜单名称
+        // 前端搜索選單名稱
         newData = newData.filter(item =>
           transformI18n(item.title).includes(form.title)
         );
       }
-      dataList.value = handleTree(newData); // 处理成树结构
+      dataList.value = handleTree(newData); // 處理成树結构
     }
 
     setTimeout(() => {
@@ -136,7 +136,7 @@ export function useMenu() {
 
   function openDialog(title = "新增", row?: FormItemProps) {
     addDialog({
-      title: `${title}菜单`,
+      title: `${title}選單`,
       props: {
         formInline: {
           menuType: row?.menuType ?? 0,
@@ -174,23 +174,23 @@ export function useMenu() {
         const curData = options.props.formInline as FormItemProps;
         function chores() {
           message(
-            `您${title}了菜单名称为${transformI18n(curData.title)}的这条数据`,
+            `您${title}了選單名稱為${transformI18n(curData.title)}的这條數據`,
             {
               type: "success"
             }
           );
-          done(); // 关闭弹框
-          onSearch(); // 刷新表格数据
+          done(); // 關閉彈框
+          onSearch(); // 刷新表格數據
         }
         FormRef.validate(valid => {
           if (valid) {
             console.log("curData", curData);
-            // 表单规则校验通过
+            // 表單规则校驗通過
             if (title === "新增") {
-              // 实际开发先调用新增接口，再进行下面操作
+              // 实际開发先調用新增接口，再進行下面操作
               chores();
             } else {
-              // 实际开发先调用修改接口，再进行下面操作
+              // 实际開发先調用修改接口，再進行下面操作
               chores();
             }
           }
@@ -200,7 +200,7 @@ export function useMenu() {
   }
 
   function handleDelete(row) {
-    message(`您删除了菜单名称为${transformI18n(row.title)}的这条数据`, {
+    message(`您删除了選單名稱為${transformI18n(row.title)}的这條數據`, {
       type: "success"
     });
     onSearch();
@@ -219,9 +219,9 @@ export function useMenu() {
     onSearch,
     /** 重置 */
     resetForm,
-    /** 新增、修改菜单 */
+    /** 新增、修改選單 */
     openDialog,
-    /** 删除菜单 */
+    /** 删除選單 */
     handleDelete,
     handleSelectionChange
   };

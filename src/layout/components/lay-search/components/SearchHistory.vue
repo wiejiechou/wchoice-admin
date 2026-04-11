@@ -17,7 +17,7 @@ interface Emits {
 
 const historyRef = ref();
 const innerHeight = ref();
-/** 判断是否停止鼠标移入事件处理 */
+/** 判断是否停止滑鼠移入事件處理 */
 const stopMouseEvent = ref(false);
 
 const { t } = useI18n();
@@ -80,7 +80,7 @@ function handleDelete(item) {
   emit("delete", item);
 }
 
-/** 鼠标移入 */
+/** 滑鼠移入 */
 async function handleMouse(item) {
   if (!stopMouseEvent.value) active.value = item.path;
 }

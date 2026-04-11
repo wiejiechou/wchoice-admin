@@ -1,12 +1,12 @@
 <template>
   <div>
-    <div class="mb-2">按钮组</div>
+    <div class="mb-2">按鈕組</div>
     <div v-contextmenu:contextmenu class="wrapper">
-      <code>右键点击此区域</code>
+      <code>右鍵點選此區域</code>
     </div>
 
     <v-contextmenu ref="contextmenu">
-      <v-contextmenu-item>菜单</v-contextmenu-item>
+      <v-contextmenu-item>選單</v-contextmenu-item>
 
       <v-contextmenu-group>
         <v-contextmenu-item>Github</v-contextmenu-item>
@@ -17,10 +17,10 @@
 
       <v-contextmenu-divider />
 
-      <v-contextmenu-group title="按钮组">
-        <v-contextmenu-item>菜单1</v-contextmenu-item>
-        <v-contextmenu-item>菜单2</v-contextmenu-item>
-        <v-contextmenu-item disabled>菜单3</v-contextmenu-item>
+      <v-contextmenu-group title="按鈕組">
+        <v-contextmenu-item>選單1</v-contextmenu-item>
+        <v-contextmenu-item>選單2</v-contextmenu-item>
+        <v-contextmenu-item disabled>選單3</v-contextmenu-item>
       </v-contextmenu-group>
     </v-contextmenu>
   </div>

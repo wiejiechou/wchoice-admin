@@ -6,12 +6,12 @@ type Result = {
   data: Array<any>;
 };
 
-/** 地图数据 */
+/** 地圖數據 */
 export const mapJson = (params?: object) => {
   return http.request<Result>("get", "/get-map-info", { params });
 };
 
-/** 文件上传 */
+/** 文件上傳 */
 export const formUpload = data => {
   return http.request<Result>(
     "post",

@@ -16,14 +16,14 @@ const stepForm = ref([
       modelValue: {},
       columns: [
         {
-          label: "名称",
+          label: "名稱",
           width: 120,
           prop: "name",
           valueType: "copy",
-          tooltip: "名称最多显示6个字符"
+          tooltip: "名稱最多顯示6个字符"
         },
         {
-          label: "状态",
+          label: "狀態",
           width: 120,
           prop: "status",
           valueType: "select",
@@ -44,7 +44,7 @@ const stepForm = ref([
               color: "yellow"
             },
             {
-              label: "失败",
+              label: "失敗",
               value: "3",
               color: "red"
             }
@@ -55,7 +55,7 @@ const stepForm = ref([
         name: [
           {
             required: true,
-            message: "请输入名称"
+            message: "請輸入名稱"
           }
         ]
       }
@@ -73,23 +73,23 @@ const stepForm = ref([
       modelValue: {},
       columns: [
         {
-          label: "标签",
+          label: "標籤",
           width: 120,
           prop: "tag"
         },
         {
-          label: "执行进度",
+          label: "執行進度",
           width: 200,
           prop: "progress"
         },
         {
-          label: "评分",
+          label: "評分",
           width: 200,
           prop: "rate",
           valueType: "rate"
         },
         {
-          label: "是否显示",
+          label: "是否顯示",
           width: 100,
           prop: "switch",
           valueType: "switch"
@@ -99,13 +99,13 @@ const stepForm = ref([
         tag: [
           {
             required: true,
-            message: "请输入标签"
+            message: "請輸入標籤"
           }
         ],
         progress: [
           {
             required: true,
-            message: "请输入执行进度"
+            message: "請輸入執行進度"
           }
         ]
       }
@@ -122,7 +122,7 @@ const stepForm = ref([
       modelValue: {},
       columns: [
         {
-          label: "时间",
+          label: "時間",
           prop: "time",
           valueType: "date-picker"
         },
@@ -132,15 +132,15 @@ const stepForm = ref([
           valueType: "checkbox",
           options: [
             {
-              label: "四六级",
+              label: "四六級",
               value: "0"
             },
             {
-              label: "计算机二级证书",
+              label: "计算机二級證書",
               value: "1"
             },
             {
-              label: "普通话证书",
+              label: "普通話證書",
               value: "2"
             }
           ]
@@ -154,7 +154,7 @@ const stepForm = ref([
           prop: "percentage"
         },
         {
-          label: "说明",
+          label: "說明",
           prop: "desc",
           valueType: "textarea",
           fieldProps: {
@@ -169,14 +169,14 @@ const stepForm = ref([
           {
             required: true,
             trigger: "change",
-            message: "请选择时间"
+            message: "請選擇時間"
           }
         ],
         demand: [
           {
             required: true,
             trigger: "change",
-            message: "请选择要求"
+            message: "請選擇要求"
           }
         ]
       }

@@ -14,7 +14,7 @@ setTimeout(() => {
   asyncTitle.value = unref(qrcodeText);
 }, 3000);
 const codeClick = () => {
-  message("点击事件", { type: "info" });
+  message("點選事件", { type: "info" });
 };
 const disabledClick = () => {
   message("失效", { type: "info" });
@@ -26,7 +26,7 @@ const disabledClick = () => {
     <el-card shadow="never">
       <template #header>
         <div class="font-medium">
-          二维码（基于
+          二維碼（基于
           <el-link
             href="https://github.com/soldair/node-qrcode"
             target="_blank"
@@ -41,25 +41,25 @@ const disabledClick = () => {
           href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/able/qrcode.vue"
           target="_blank"
         >
-          代码位置 src/views/able/qrcode.vue
+          程式碼位置 src/views/able/qrcode.vue
         </el-link>
       </template>
       <el-row :gutter="20" justify="space-between">
         <el-col :xl="6" :lg="6" :md="12" :sm="24" :xs="24">
           <el-card shadow="hover" class="mb-2.5 text-center">
-            <div class="font-bold">基础用法</div>
+            <div class="font-bold">基礎用法</div>
             <ReQrcode :text="qrcodeText" />
           </el-card>
         </el-col>
         <el-col :xl="6" :lg="6" :md="12" :sm="24" :xs="24">
           <el-card shadow="hover" class="mb-2.5 text-center">
-            <div class="font-bold">img标签</div>
+            <div class="font-bold">img標籤</div>
             <ReQrcode :text="qrcodeText" tag="img" />
           </el-card>
         </el-col>
         <el-col :xl="6" :lg="6" :md="12" :sm="24" :xs="24">
           <el-card shadow="hover" class="mb-2.5 text-center">
-            <div class="font-bold">样式配置</div>
+            <div class="font-bold">樣式配置</div>
             <ReQrcode
               :text="qrcodeText"
               :options="{
@@ -73,7 +73,7 @@ const disabledClick = () => {
         </el-col>
         <el-col :xl="6" :lg="6" :md="12" :sm="24" :xs="24">
           <el-card shadow="hover" class="mb-2.5 text-center">
-            <div class="font-bold">点击事件</div>
+            <div class="font-bold">點選事件</div>
             <ReQrcode :text="qrcodeText" @click="codeClick" />
           </el-card>
         </el-col>
@@ -104,7 +104,7 @@ const disabledClick = () => {
         </el-col>
         <el-col :xl="6" :lg="6" :md="12" :sm="24" :xs="24">
           <el-card shadow="hover" class="mb-2.5 text-center">
-            <div class="font-bold">logo样式</div>
+            <div class="font-bold">logo樣式</div>
             <ReQrcode
               :text="qrcodeText"
               :logo="{

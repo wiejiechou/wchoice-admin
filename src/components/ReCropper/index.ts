@@ -1,7 +1,7 @@
 import reCropper from "./src";
 import { withInstall } from "@pureadmin/utils";
 
-/** 图片裁剪组件 */
+/** 圖片裁剪組件 */
 export const ReCropper = withInstall(reCropper);
 
 export default ReCropper;

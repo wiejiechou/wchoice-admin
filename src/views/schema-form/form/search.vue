@@ -11,13 +11,13 @@ const state = ref({
 
 const columns: PlusColumn[] = [
   {
-    label: "名称",
+    label: "名稱",
     prop: "name",
     valueType: "copy",
-    tooltip: "名称最多显示6个字符"
+    tooltip: "名稱最多顯示6个字符"
   },
   {
-    label: "状态",
+    label: "狀態",
     prop: "status",
     valueType: "select",
     options: [
@@ -37,14 +37,14 @@ const columns: PlusColumn[] = [
         color: "yellow"
       },
       {
-        label: "失败",
+        label: "失敗",
         value: "3",
         color: "red"
       }
     ]
   },
   {
-    label: "时间",
+    label: "時間",
     prop: "time",
     valueType: "date-picker"
   },
@@ -69,15 +69,15 @@ const columns: PlusColumn[] = [
             children: [
               {
                 value: "0-0-0",
-                label: "新城区"
+                label: "新城區"
               },
               {
                 value: "0-0-1",
-                label: "高新区"
+                label: "高新區"
               },
               {
                 value: "0-0-2",
-                label: "灞桥区"
+                label: "灞桥區"
               }
             ]
           }
@@ -93,7 +93,7 @@ const columns: PlusColumn[] = [
             children: [
               {
                 value: "1-0-0",
-                label: "小店区"
+                label: "小店區"
               },
               {
                 value: "1-0-1",
@@ -101,7 +101,7 @@ const columns: PlusColumn[] = [
               },
               {
                 value: "1-0-2",
-                label: "万柏林区"
+                label: "万柏林區"
               }
             ]
           }
@@ -110,21 +110,21 @@ const columns: PlusColumn[] = [
     ]
   },
   {
-    label: "地区",
+    label: "地區",
     prop: "place",
-    tooltip: "请精确到门牌号",
+    tooltip: "請精確到門牌号",
     fieldProps: {
-      placeholder: "请精确到门牌号"
+      placeholder: "請精確到門牌号"
     }
   },
   {
-    label: "到期时间",
+    label: "到期時間",
     prop: "endTime",
     valueType: "date-picker",
     fieldProps: {
       type: "datetimerange",
-      startPlaceholder: "请选择",
-      endPlaceholder: "请选择"
+      startPlaceholder: "請選擇",
+      endPlaceholder: "請選擇"
     }
   },
   {

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import "animate.css";
-// 引入 src/components/ReIcon/src/offlineIcon.ts 文件中所有使用addIcon添加过的本地图标
+// 引入 src/components/ReIcon/src/offlineIcon.ts 文件中所有使用addIcon添加過的本地圖标
 import "@/components/ReIcon/src/offlineIcon";
 import { setType } from "./types";
 import { useI18n } from "vue-i18n";
@@ -85,7 +85,7 @@ function toggle(device: string, bool: boolean) {
   useAppStoreHook().toggleSideBar(bool, "resize");
 }
 
-// 判断是否可自动关闭菜单栏
+// 判断是否可自動關閉選單欄
 let isAutoCloseSidebar = true;
 
 useResizeObserver(appWrapperRef, entries => {
@@ -94,10 +94,10 @@ useResizeObserver(appWrapperRef, entries => {
   const [{ inlineSize: width, blockSize: height }] = entry.borderBoxSize;
   useAppStoreHook().setViewportSize({ width, height });
   width <= 760 ? setTheme("vertical") : setTheme(useAppStoreHook().layout);
-  /** width app-wrapper类容器宽度
-   * 0 < width <= 760 隐藏侧边栏
-   * 760 < width <= 990 折叠侧边栏
-   * width > 990 展开侧边栏
+  /** width app-wrapper类容器寬度
+   * 0 < width <= 760 隱藏側边欄
+   * 760 < width <= 990 折叠側边欄
+   * width > 990 展開側边欄
    */
   if (width > 0 && width <= 760) {
     toggle("mobile", false);
@@ -198,7 +198,7 @@ const LayHeader = defineComponent({
         <LayContent :fixed-header="set.fixedHeader" />
       </el-scrollbar>
     </div>
-    <!-- 系统设置 -->
+    <!-- 系統設定 -->
     <LaySetting />
   </div>
 </template>

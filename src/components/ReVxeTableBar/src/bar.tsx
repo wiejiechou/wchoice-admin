@@ -24,7 +24,7 @@ import SettingIcon from "@/assets/table-bar/settings.svg?component";
 import CollapseIcon from "@/assets/table-bar/collapse.svg?component";
 
 const props = {
-  /** 头部最左边的标题 */
+  /** 頭部最左边的標題 */
   title: {
     type: String,
     default: $t("tableBar.pureList")
@@ -37,7 +37,7 @@ const props = {
     type: Array as PropType<any>,
     default: () => []
   },
-  /** 是否为树列表 */
+  /** 是否為树列表 */
   tree: {
     type: Boolean,
     default: false
@@ -208,7 +208,7 @@ export default defineComponent({
             const oldColumn = dynamicColumns.value[oldIndex];
             const newColumn = dynamicColumns.value[newIndex];
             if (oldColumn?.fixed || newColumn?.fixed) {
-              // 当前列存在fixed属性 则不可拖拽
+              // 當前列存在fixed属性 则不可拖拽
               const oldThElem = wrapperElem.children[oldIndex] as HTMLElement;
               if (newIndex > oldIndex) {
                 wrapperElem.insertBefore(targetThElem, oldThElem);

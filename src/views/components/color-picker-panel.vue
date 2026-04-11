@@ -32,16 +32,16 @@ const predefineColors = [
         <el-space wrap :size="40">
           <el-link
             v-tippy="{
-              content: '点击查看详细文档'
+              content: '點選查看详细文档'
             }"
             href="https://element-plus.org/zh-CN/component/color-picker-panel.html"
             target="_blank"
             style="font-size: 16px; font-weight: 800"
           >
-            颜色选择器面板
+            颜色選擇器面板
           </el-link>
           <el-radio-group v-model="disabled">
-            <el-radio :value="false">启用</el-radio>
+            <el-radio :value="false">啟用</el-radio>
             <el-radio :value="true">禁用</el-radio>
           </el-radio-group>
         </el-space>
@@ -51,11 +51,11 @@ const predefineColors = [
         href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/components/color-picker-panel.vue"
         target="_blank"
       >
-        代码位置 src/views/components/color-picker-panel.vue
+        程式碼位置 src/views/components/color-picker-panel.vue
       </el-link>
     </template>
 
-    <div class="mb-2">选择透明度、预定义颜色、无边框</div>
+    <div class="mb-2">選擇透明度、预定義颜色、無边框</div>
     <el-color-picker-panel
       v-model="color"
       show-alpha

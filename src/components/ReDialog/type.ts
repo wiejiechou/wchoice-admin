@@ -8,7 +8,7 @@ type EventType =
   | "closeAutoFocus"
   | "fullscreenCallBack";
 type ArgsType = {
-  /** `cancel` 点击取消按钮、`sure` 点击确定按钮、`close` 点击右上角关闭按钮或空白页或按下了esc键 */
+  /** `cancel` 點選取消按鈕、`sure` 點選確定按鈕、`close` 點選右上角關閉按鈕或空白頁或按下了esc鍵 */
   command: "cancel" | "sure" | "close";
 };
 type ButtonType =
@@ -21,97 +21,97 @@ type ButtonType =
 
 /** https://element-plus.org/zh-CN/component/dialog.html#attributes */
 type DialogProps = {
-  /** `Dialog` 的显示与隐藏 */
+  /** `Dialog` 的顯示与隱藏 */
   visible?: boolean;
-  /** `Dialog` 的标题 */
+  /** `Dialog` 的標題 */
   title?: string;
-  /** `Dialog` 的宽度，默认 `50%` */
+  /** `Dialog` 的寬度，預設 `50%` */
   width?: string | number;
-  /** 是否为全屏 `Dialog`（会一直处于全屏状态，除非弹框关闭），默认 `false`，`fullscreen` 和 `fullscreenIcon` 都传时只有 `fullscreen` 会生效 */
+  /** 是否為全屏 `Dialog`（會一直处于全屏狀態，除非彈框關閉），預設 `false`，`fullscreen` 和 `fullscreenIcon` 都传時只有 `fullscreen` 會生效 */
   fullscreen?: boolean;
-  /** 是否显示全屏操作图标，默认 `false`，`fullscreen` 和 `fullscreenIcon` 都传时只有 `fullscreen` 会生效 */
+  /** 是否顯示全屏操作圖标，預設 `false`，`fullscreen` 和 `fullscreenIcon` 都传時只有 `fullscreen` 會生效 */
   fullscreenIcon?: boolean;
-  /** `Dialog CSS` 中的 `margin-top` 值，默认 `15vh` */
+  /** `Dialog CSS` 中的 `margin-top` 值，預設 `15vh` */
   top?: string;
-  /** 是否需要遮罩层，默认 `true` */
+  /** 是否需要遮罩層，預設 `true` */
   modal?: boolean;
-  /** 是否允许穿透遮罩层，默认 `false`。使用时需将 `modal` 属性设置为 `false` */
+  /** 是否允许穿透遮罩層，預設 `false`。使用時需將 `modal` 属性設定為 `false` */
   modalPenetrable?: boolean;
-  /** 遮罩的自定义类名 */
+  /** 遮罩的自定義类名 */
   modalClass?: string;
-  /** `header` 部分的自定义 `class` 名 */
+  /** `header` 部分的自定義 `class` 名 */
   headerClass?: string;
-  /** `body` 部分的自定义 `class` 名 */
+  /** `body` 部分的自定義 `class` 名 */
   bodyClass?: string;
-  /** `footer` 部分的自定义 `class` 名 */
+  /** `footer` 部分的自定義 `class` 名 */
   footerClass?: string;
-  /** `Dialog` 自身是否插入至 `body` 元素上。嵌套的 `Dialog` 必须指定该属性并赋值为 `true`，默认 `false` */
+  /** `Dialog` 自身是否插入至 `body` 元素上。嵌套的 `Dialog` 必须指定該属性并赋值為 `true`，預設 `false` */
   appendToBody?: boolean;
-  /** `Dialog` 挂载到哪个 `DOM` 元素，该属性会覆盖 `append-to-body` 属性，默认 `body` */
+  /** `Dialog` 挂載到哪个 `DOM` 元素，該属性會覆盖 `append-to-body` 属性，預設 `body` */
   appendTo?: string | HTMLElement;
-  /** 是否在 `Dialog` 出现时将 `body` 滚动锁定，默认 `true` */
+  /** 是否在 `Dialog` 出現時將 `body` 滚動锁定，預設 `true` */
   lockScroll?: boolean;
-  /** `Dialog` 的自定义类名 */
+  /** `Dialog` 的自定義类名 */
   class?: string;
-  /** `Dialog` 的自定义样式 */
+  /** `Dialog` 的自定義樣式 */
   style?: CSSProperties;
-  /** `Dialog` 打开的延时时间，单位毫秒，默认 `0` */
+  /** `Dialog` 打開的延時時間，單位毫秒，預設 `0` */
   openDelay?: number;
-  /** `Dialog` 关闭的延时时间，单位毫秒，默认 `0` */
+  /** `Dialog` 關閉的延時時間，單位毫秒，預設 `0` */
   closeDelay?: number;
-  /** 是否可以通过点击 `modal` 关闭 `Dialog`，默认 `true` */
+  /** 是否可以通過點選 `modal` 關閉 `Dialog`，預設 `true` */
   closeOnClickModal?: boolean;
-  /** 是否可以通过按下 `ESC` 关闭 `Dialog`，默认 `true` */
+  /** 是否可以通過按下 `ESC` 關閉 `Dialog`，預設 `true` */
   closeOnPressEscape?: boolean;
-  /** 是否显示关闭按钮，默认 `true` */
+  /** 是否顯示關閉按鈕，預設 `true` */
   showClose?: boolean;
-  /** 关闭前的回调，会暂停 `Dialog` 的关闭. 回调函数内执行 `done` 参数方法的时候才是真正关闭对话框的时候 */
+  /** 關閉前的回調，會暫停 `Dialog` 的關閉. 回調函数内執行 `done` 参数方法的時候才是真正關閉對話框的時候 */
   beforeClose?: (done: DoneFn) => void;
-  /** 为 `Dialog` 启用可拖拽功能，默认 `false` */
+  /** 為 `Dialog` 啟用可拖拽功能，預設 `false` */
   draggable?: boolean;
-  /** 拖动范围可以超出可视区，默认 `false` */
+  /** 拖動範圍可以超出可视區，預設 `false` */
   overflow?: boolean;
-  /** 是否让 `Dialog` 的 `header` 和 `footer` 部分居中排列，默认 `false` */
+  /** 是否让 `Dialog` 的 `header` 和 `footer` 部分居中排列，預設 `false` */
   center?: boolean;
-  /** 是否水平垂直对齐对话框，默认 `false` */
+  /** 是否水平垂直對齐對話框，預設 `false` */
   alignCenter?: boolean;
-  /** 当关闭 `Dialog` 时，销毁其中的元素，默认 `false` */
+  /** 當關閉 `Dialog` 時，销毁其中的元素，預設 `false` */
   destroyOnClose?: boolean;
-  /** 自定义关闭图标，默认 `Close` */
+  /** 自定義關閉圖标，預設 `Close` */
   closeIcon?: string | Component;
   /** 和原生的 `CSS` 的 `z-index` 相同，改变 `z` 轴的顺序 */
   zIndex?: number;
   /** `header` 的 `aria-level` 属性 */
   headerAriaLevel?: string;
-  /** 对话框动画的自定义过渡配置。可以是一个字符串（过渡名称），也可以是一个包含 `Vue` 过渡属性的对象，默认 `dialog-fade` */
+  /** 對話框動畫的自定義過渡配置。可以是一个字符串（過渡名稱），也可以是一个包含 `Vue` 過渡属性的對象，預設 `dialog-fade` */
   transition?: string | object;
 };
 
 //element-plus.org/zh-CN/component/popconfirm.html#attributes
 type Popconfirm = {
-  /** 标题 */
+  /** 標題 */
   title?: string;
-  /** 确定按钮文字 */
+  /** 確定按鈕文字 */
   confirmButtonText?: string;
-  /** 取消按钮文字 */
+  /** 取消按鈕文字 */
   cancelButtonText?: string;
-  /** 确定按钮类型，默认 `primary` */
+  /** 確定按鈕類型，預設 `primary` */
   confirmButtonType?: ButtonType;
-  /** 取消按钮类型，默认 `text` */
+  /** 取消按鈕類型，預設 `text` */
   cancelButtonType?: ButtonType;
-  /** 自定义图标，默认 `QuestionFilled` */
+  /** 自定義圖标，預設 `QuestionFilled` */
   icon?: string | Component;
-  /** `Icon` 颜色，默认 `#f90` */
+  /** `Icon` 颜色，預設 `#f90` */
   iconColor?: string;
-  /** 是否隐藏 `Icon`，默认 `false` */
+  /** 是否隱藏 `Icon`，預設 `false` */
   hideIcon?: boolean;
-  /** 关闭时的延迟，默认 `200` */
+  /** 關閉時的延迟，預設 `200` */
   hideAfter?: number;
-  /** 是否将 `popover` 的下拉列表插入至 `body` 元素，默认 `true` */
+  /** 是否將 `popover` 的下拉列表插入至 `body` 元素，預設 `true` */
   teleported?: boolean;
-  /** 当 `popover` 组件长时间不触发且 `persistent` 属性设置为 `false` 时, `popover` 将会被删除，默认 `false` */
+  /** 當 `popover` 組件長時間不触发且 `persistent` 属性設定為 `false` 時, `popover` 將會被删除，預設 `false` */
   persistent?: boolean;
-  /** 弹层宽度，最小宽度 `150px`，默认 `150` */
+  /** 彈層寬度，最小寬度 `150px`，預設 `150` */
   width?: string | number;
 };
 
@@ -125,69 +125,69 @@ type BtnClickButton = {
 };
 /** https://element-plus.org/zh-CN/component/button.html#button-attributes */
 type ButtonProps = {
-  /** 按钮文字 */
+  /** 按鈕文字 */
   label: string;
-  /** 按钮尺寸 */
+  /** 按鈕尺寸 */
   size?: "large" | "default" | "small";
-  /** 按钮类型 */
+  /** 按鈕類型 */
   type?: "primary" | "success" | "warning" | "danger" | "info";
-  /** 是否为朴素按钮，默认 `false` */
+  /** 是否為朴素按鈕，預設 `false` */
   plain?: boolean;
-  /** 是否为文字按钮，默认 `false` */
+  /** 是否為文字按鈕，預設 `false` */
   text?: boolean;
-  /** 是否显示文字按钮背景颜色，默认 `false` */
+  /** 是否顯示文字按鈕背景颜色，預設 `false` */
   bg?: boolean;
-  /** 是否为链接按钮，默认 `false` */
+  /** 是否為鏈接按鈕，預設 `false` */
   link?: boolean;
-  /** 是否为圆角按钮，默认 `false` */
+  /** 是否為圆角按鈕，預設 `false` */
   round?: boolean;
-  /** 是否为圆形按钮，默认 `false` */
+  /** 是否為圆形按鈕，預設 `false` */
   circle?: boolean;
-  /** 确定按钮的 `Popconfirm` 气泡确认框相关配置 */
+  /** 確定按鈕的 `Popconfirm` 气泡確認框相關配置 */
   popconfirm?: Popconfirm;
-  /** 是否为加载中状态，默认 `false` */
+  /** 是否為加載中狀態，預設 `false` */
   loading?: boolean;
-  /** 自定义加载中状态图标组件 */
+  /** 自定義加載中狀態圖标組件 */
   loadingIcon?: string | Component;
-  /** 按钮是否为禁用状态，默认 `false` */
+  /** 按鈕是否為禁用狀態，預設 `false` */
   disabled?: boolean;
-  /** 图标组件 */
+  /** 圖标組件 */
   icon?: string | Component;
-  /** 是否开启原生 `autofocus` 属性，默认 `false` */
+  /** 是否開啟原生 `autofocus` 属性，預設 `false` */
   autofocus?: boolean;
-  /** 原生 `type` 属性，默认 `button` */
+  /** 原生 `type` 属性，預設 `button` */
   nativeType?: "button" | "submit" | "reset";
-  /** 自动在两个中文字符之间插入空格 */
+  /** 自動在两个中文字符之间插入空格 */
   autoInsertSpace?: boolean;
-  /** 自定义按钮颜色, 并自动计算 `hover` 和 `active` 触发后的颜色 */
+  /** 自定義按鈕颜色, 并自動计算 `hover` 和 `active` 触发后的颜色 */
   color?: string;
-  /** `dark` 模式, 意味着自动设置 `color` 为 `dark` 模式的颜色，默认 `false` */
+  /** `dark` 模式, 意味着自動設定 `color` 為 `dark` 模式的颜色，預設 `false` */
   dark?: boolean;
-  /** 自定义元素标签 */
+  /** 自定義元素標籤 */
   tag?: string | Component;
-  /** 点击按钮后触发的回调 */
+  /** 點選按鈕后触发的回調 */
   btnClick?: ({
     dialog,
     button
   }: {
-    /** 当前 `Dialog` 信息 */
+    /** 當前 `Dialog` 信息 */
     dialog: BtnClickDialog;
-    /** 当前 `button` 信息 */
+    /** 當前 `button` 信息 */
     button: BtnClickButton;
   }) => void;
 };
 
 interface DialogOptions extends DialogProps {
-  /** 内容区组件的 `props`，可通过 `defineProps` 接收 */
+  /** 内容區組件的 `props`，可通過 `defineProps` 接收 */
   props?: any;
-  /** 是否隐藏 `Dialog` 按钮操作区的内容 */
+  /** 是否隱藏 `Dialog` 按鈕操作區的内容 */
   hideFooter?: boolean;
-  /** 确定按钮的 `Popconfirm` 气泡确认框相关配置 */
+  /** 確定按鈕的 `Popconfirm` 气泡確認框相關配置 */
   popconfirm?: Popconfirm;
-  /** 点击确定按钮后是否开启 `loading` 加载动画 */
+  /** 點選確定按鈕后是否開啟 `loading` 加載動畫 */
   sureBtnLoading?: boolean;
   /**
-   * @description 自定义对话框标题的内容渲染器
+   * @description 自定義對話框標題的内容渲染器
    * @see {@link https://element-plus.org/zh-CN/component/dialog.html#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%A4%B4%E9%83%A8}
    */
   headerRenderer?: ({
@@ -199,7 +199,7 @@ interface DialogOptions extends DialogProps {
     titleId: string;
     titleClass: string;
   }) => VNode | Component;
-  /** 自定义内容渲染器 */
+  /** 自定義内容渲染器 */
   contentRenderer?: ({
     options,
     index
@@ -207,7 +207,7 @@ interface DialogOptions extends DialogProps {
     options: DialogOptions;
     index: number;
   }) => VNode | Component;
-  /** 自定义按钮操作区的内容渲染器，会覆盖`footerButtons`以及默认的 `取消` 和 `确定` 按钮 */
+  /** 自定義按鈕操作區的内容渲染器，會覆盖`footerButtons`以及預設的 `取消` 和 `確定` 按鈕 */
   footerRenderer?: ({
     options,
     index
@@ -215,9 +215,9 @@ interface DialogOptions extends DialogProps {
     options: DialogOptions;
     index: number;
   }) => VNode | Component;
-  /** 自定义底部按钮操作 */
+  /** 自定義底部按鈕操作 */
   footerButtons?: Array<ButtonProps>;
-  /** `Dialog` 打开后的回调 */
+  /** `Dialog` 打開后的回調 */
   open?: ({
     options,
     index
@@ -225,7 +225,7 @@ interface DialogOptions extends DialogProps {
     options: DialogOptions;
     index: number;
   }) => void;
-  /** `Dialog` 关闭后的回调（只有点击右上角关闭按钮或空白页或按下了esc键关闭页面时才会触发） */
+  /** `Dialog` 關閉后的回調（只有點選右上角關閉按鈕或空白頁或按下了esc鍵關閉頁面時才會触发） */
   close?: ({
     options,
     index
@@ -233,7 +233,7 @@ interface DialogOptions extends DialogProps {
     options: DialogOptions;
     index: number;
   }) => void;
-  /** `Dialog` 关闭后的回调。 `args` 返回的 `command` 值解析：`cancel` 点击取消按钮、`sure` 点击确定按钮、`close` 点击右上角关闭按钮或空白页或按下了esc键  */
+  /** `Dialog` 關閉后的回調。 `args` 返回的 `command` 值解析：`cancel` 點選取消按鈕、`sure` 點選確定按鈕、`close` 點選右上角關閉按鈕或空白頁或按下了esc鍵  */
   closeCallBack?: ({
     options,
     index,
@@ -243,7 +243,7 @@ interface DialogOptions extends DialogProps {
     index: number;
     args: any;
   }) => void;
-  /** 点击全屏按钮时的回调 */
+  /** 點選全屏按鈕時的回調 */
   fullscreenCallBack?: ({
     options,
     index
@@ -251,7 +251,7 @@ interface DialogOptions extends DialogProps {
     options: DialogOptions;
     index: number;
   }) => void;
-  /** 输入焦点聚焦在 `Dialog` 内容时的回调 */
+  /** 輸入焦點聚焦在 `Dialog` 内容時的回調 */
   openAutoFocus?: ({
     options,
     index
@@ -259,7 +259,7 @@ interface DialogOptions extends DialogProps {
     options: DialogOptions;
     index: number;
   }) => void;
-  /** 输入焦点从 `Dialog` 内容失焦时的回调 */
+  /** 輸入焦點从 `Dialog` 内容失焦時的回調 */
   closeAutoFocus?: ({
     options,
     index
@@ -267,7 +267,7 @@ interface DialogOptions extends DialogProps {
     options: DialogOptions;
     index: number;
   }) => void;
-  /** 点击底部取消按钮的回调，会暂停 `Dialog` 的关闭. 回调函数内执行 `done` 参数方法的时候才是真正关闭对话框的时候 */
+  /** 點選底部取消按鈕的回調，會暫停 `Dialog` 的關閉. 回調函数内執行 `done` 参数方法的時候才是真正關閉對話框的時候 */
   beforeCancel?: (
     done: Function,
     {
@@ -278,7 +278,7 @@ interface DialogOptions extends DialogProps {
       index: number;
     }
   ) => void;
-  /** 点击底部确定按钮的回调，会暂停 `Dialog` 的关闭. 回调函数内执行 `done` 参数方法的时候才是真正关闭对话框的时候 */
+  /** 點選底部確定按鈕的回調，會暫停 `Dialog` 的關閉. 回調函数内執行 `done` 参数方法的時候才是真正關閉對話框的時候 */
   beforeSure?: (
     done: Function,
     {
@@ -288,7 +288,7 @@ interface DialogOptions extends DialogProps {
     }: {
       options: DialogOptions;
       index: number;
-      /** 关闭确定按钮的 `loading` 加载动画 */
+      /** 關閉確定按鈕的 `loading` 加載動畫 */
       closeLoading: Function;
     }
   ) => void;

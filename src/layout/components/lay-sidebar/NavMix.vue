@@ -39,7 +39,7 @@ const {
 
 function getDefaultActive(routePath) {
   const wholeMenus = usePermissionStoreHook().wholeMenus;
-  /** 当前路由的父级路径 */
+  /** 當前路由的父級路径 */
   const parentRoutes = getParentPaths(routePath, wholeMenus)[0];
   defaultActive.value = !isAllEmpty(route.meta?.activePath)
     ? route.meta.activePath
@@ -100,9 +100,9 @@ watch(
       </el-menu-item>
     </el-menu>
     <div class="horizontal-header-right">
-      <!-- 菜单搜索 -->
+      <!-- 選單搜尋 -->
       <LaySearch id="header-search" />
-      <!-- 国际化 -->
+      <!-- 多國語系切換 (i18n) -->
       <el-dropdown id="header-translation" trigger="click">
         <div
           class="globalization-icon navbar-bg-hover hover:[&>svg]:animate-scale-bounce"
@@ -151,7 +151,7 @@ watch(
       <LaySidebarFullScreen id="full-screen" />
       <!-- 消息通知 -->
       <LayNotice id="header-notice" />
-      <!-- 退出登录 -->
+      <!-- 退出登入 -->
       <el-dropdown trigger="click">
         <span class="el-dropdown-link navbar-bg-hover select-none">
           <img :src="userAvatar" :style="avatarsStyle" />

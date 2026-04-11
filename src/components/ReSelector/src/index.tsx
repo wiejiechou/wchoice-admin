@@ -9,13 +9,13 @@ import {
 } from "vue";
 import { addClass, removeClass, toggleClass } from "@pureadmin/utils";
 
-const stayClass = "stay"; //鼠标点击
-const activeClass = "hs-on"; //鼠标移动上去
-const voidClass = "hs-off"; //鼠标移开
-const inRange = "hs-range"; //当前选中的两个元素之间的背景
+const stayClass = "stay"; //滑鼠點選
+const activeClass = "hs-on"; //滑鼠移動上去
+const voidClass = "hs-off"; //滑鼠移開
+const inRange = "hs-range"; //當前选中的两个元素之间的背景
 const bothLeftSides = "both-left-sides";
 const bothRightSides = "both-right-sides";
-let selectedDirection = "right"; //默认从左往右，索引变大
+let selectedDirection = "right"; //預設从左往右，索引变大
 
 let overList = [];
 // 存放第一个选中的元素和最后一个选中元素，只能存放这两个元素
@@ -40,7 +40,7 @@ const props = {
       return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     }
   },
-  // 回显数据的索引，长度必须是2
+  // 回显數據的索引，長度必须是2
   echo: {
     type: Array,
     default() {
@@ -77,10 +77,10 @@ export default defineComponent({
       return result;
     });
 
-    // 鼠标移入
+    // 滑鼠移入
     const setCurrentValue = index => {
       if (props.disabled) return;
-      // 当选中一个元素后，开始添加背景色
+      // 當选中一个元素后，開始添加背景色
       if (selectedList.length === 1) {
         if (overList.length < 1) overList.push({ index });
 
@@ -123,7 +123,7 @@ export default defineComponent({
       addClass(document.querySelector("." + voidClass + index), activeClass);
     };
 
-    // 鼠标离开
+    // 滑鼠離開
     const resetCurrentValue = index => {
       if (props.disabled) return;
       // 移除先检查是否选中 选中则返回false 不移除
@@ -134,7 +134,7 @@ export default defineComponent({
         removeClass(currentHsDom, activeClass);
       }
 
-      // 当选中一个元素后，开始移除背景色
+      // 當选中一个元素后，開始移除背景色
       if (selectedList.length === 1) {
         const firstIndex = overList[0].index;
         if (index >= firstIndex) {
@@ -156,7 +156,7 @@ export default defineComponent({
       }
     };
 
-    // 鼠标点击
+    // 滑鼠點選
     const selectValue = (index, item) => {
       if (props.disabled) return;
       const len = selectedList.length;
@@ -189,7 +189,7 @@ export default defineComponent({
         }
 
         if (len === 1) {
-          // 顺时针排序
+          // 顺時针排序
           if (selectedDirection === "right") {
             emit("selectedVal", {
               left: selectedList[0].item,
@@ -240,12 +240,12 @@ export default defineComponent({
       }
     };
 
-    // 回显数据
+    // 回显數據
     const echoView = item => {
       if (item.length === 0) return;
 
       if (item.length > 2 || item.length === 1) {
-        throw "传入的数组长度必须是2";
+        throw "传入的数組長度必须是2";
       }
 
       item.sort((a, b) => {

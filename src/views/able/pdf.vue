@@ -29,7 +29,7 @@ const showAllPagesChange = () => {
 };
 
 const onPrint = () => {
-  // 如果在打印时，打印页面是本身的两倍，在打印配置 页面 设置 仅限页码为奇数的页面 即可
+  // 如果在打印時，打印頁面是本身的两倍，在打印配置 頁面 設定 仅限頁码為奇数的頁面 即可
   pdfRef.value.print();
 };
 </script>
@@ -43,7 +43,7 @@ const onPrint = () => {
           target="_blank"
           style="margin: 0 5px 4px 0; font-size: 16px"
         >
-          PDF预览
+          PDF預覽
         </el-link>
       </div>
       <el-link
@@ -51,7 +51,7 @@ const onPrint = () => {
         href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/able/pdf.vue"
         target="_blank"
       >
-        代码位置 src/views/able/pdf.vue
+        程式碼位置 src/views/able/pdf.vue
       </el-link>
     </template>
     <div
@@ -61,7 +61,7 @@ const onPrint = () => {
     >
       <div class="flex-bc h-9">
         <div v-if="showAllPages" class="font-medium ml-1.25 text-xl">
-          共{{ pageCount }}页
+          共{{ pageCount }}頁
         </div>
         <div v-else>
           <el-pagination
@@ -76,12 +76,12 @@ const onPrint = () => {
         </div>
         <div class="w-42.5 flex-bc">
           <el-checkbox v-model="showAllPages" @change="showAllPagesChange">
-            显示所有页面
+            顯示所有頁面
           </el-checkbox>
           <IconifyIconOnline
             v-tippy="{
               maxWidth: 'none',
-              content: `翻转（当前角度${rotations[currentRotation]}度）`
+              content: `翻转（當前角度${rotations[currentRotation]}度）`
             }"
             icon="ic:baseline-rotate-90-degrees-ccw"
             class="cursor-pointer outline-transparent"

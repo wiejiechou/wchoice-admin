@@ -1,6 +1,6 @@
 export const nodeList = [
   {
-    text: "开始",
+    text: "開始",
     type: "start",
     class: "node-start"
   },
@@ -11,7 +11,7 @@ export const nodeList = [
   },
   {
     type: "user",
-    text: "用户",
+    text: "用戶",
     class: "node-user"
   },
   {
@@ -26,7 +26,7 @@ export const nodeList = [
   },
   {
     type: "end",
-    text: "结束",
+    text: "結束",
     class: "node-end"
   }
 ];
@@ -34,12 +34,12 @@ export const nodeList = [
 export const BpmnNode = [
   {
     type: "bpmn:startEvent",
-    text: "开始",
+    text: "開始",
     class: "bpmn-start"
   },
   {
     type: "bpmn:endEvent",
-    text: "结束",
+    text: "結束",
     class: "bpmn-end"
   },
   {
@@ -49,7 +49,7 @@ export const BpmnNode = [
   },
   {
     type: "bpmn:userTask",
-    text: "用户",
+    text: "用戶",
     class: "bpmn-user"
   }
 ];

@@ -342,11 +342,11 @@ watch(loginDay, value => {
             </el-form-item>
           </Motion>
           -->
-          <!-- 手机号登录 -->
+          <!-- 手机号登入 -->
           <LoginPhone v-if="currentPage === 1" />
-          <!-- 二维码登录 -->
+          <!-- 二維碼登入 -->
           <LoginQrCode v-if="currentPage === 2" />
-          <!-- 注册 -->
+          <!-- 註冊 -->
           <LoginRegist v-if="currentPage === 3" />
           <!-- 忘记密码 -->
           <LoginUpdate v-if="currentPage === 4" />

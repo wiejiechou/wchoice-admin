@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { useVModel } from "@vueuse/core";
 
-// 声明 props 类型
+// 声明 props 類型
 export interface FormProps {
   data?: string;
 }
 
-// 声明 props 默认值
+// 声明 props 預設值
 // 推荐阅读：https://cn.vuejs.org/guide/typescript/composition-api.html#typing-component-props
 const props = withDefaults(defineProps<FormProps>(), {
   data: () => ""
@@ -18,5 +18,5 @@ const data = useVModel(props, "data", emit);
 </script>
 
 <template>
-  <el-input v-model="data" class="w-55!" placeholder="请输入内容" />
+  <el-input v-model="data" class="w-55!" placeholder="請輸入内容" />
 </template>

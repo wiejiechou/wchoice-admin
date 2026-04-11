@@ -22,37 +22,37 @@ import NestProp from "./nestProp.vue";
 import ImgPreview from "./imgPreview.vue";
 
 const rendContent = (val: string) =>
-  `代码位置：src/views/table/base/${val}.vue`;
+  `程式碼位置：src/views/table/base/${val}.vue`;
 
 export const list = [
   {
     key: "base",
     content: rendContent("base"),
-    title: "基础表格",
+    title: "基礎表格",
     component: Base
   },
   {
     key: "stripe",
     content: rendContent("stripe"),
-    title: "带斑马纹表格",
+    title: "帶斑马纹表格",
     component: Stripe
   },
   {
     key: "border",
     content: rendContent("border"),
-    title: "带边框表格",
+    title: "帶边框表格",
     component: Border
   },
   {
     key: "status",
     content: rendContent("status"),
-    title: "带状态表格",
+    title: "帶狀態表格",
     component: Status
   },
   {
     key: "fixHeader",
     content: rendContent("fixHeader"),
-    title: "固定表头",
+    title: "固定表頭",
     component: FixHeader
   },
   {
@@ -64,13 +64,13 @@ export const list = [
   {
     key: "fixColumnHeader",
     content: rendContent("fixColumn"),
-    title: "固定列和表头",
+    title: "固定列和表頭",
     component: () => <FixColumn height={"360"} />
   },
   {
     key: "groupHeader",
     content: rendContent("groupHeader"),
-    title: "多级表头（表头分组）",
+    title: "多級表頭（表頭分組）",
     component: GroupHeader
   },
   {
@@ -82,13 +82,13 @@ export const list = [
   {
     key: "radio",
     content: rendContent("radio"),
-    title: "单选",
+    title: "單選",
     component: Radio
   },
   {
     key: "multipleChoice",
     content: rendContent("multipleChoice"),
-    title: "多选",
+    title: "多選",
     component: MultipleChoice
   },
   {
@@ -106,25 +106,25 @@ export const list = [
   {
     key: "column-template",
     content: rendContent("column-template/index"),
-    title: "自定义列模板",
+    title: "自定義列模板",
     component: ColumnTemplate
   },
   {
     key: "header-renderer",
     content: rendContent("header-renderer/index"),
-    title: "自定义表头",
+    title: "自定義表頭",
     component: HeaderRenderer
   },
   {
     key: "expand",
     content: rendContent("expand"),
-    title: "展开行",
+    title: "展開行",
     component: Expand
   },
   {
     key: "tree",
     content: rendContent("tree"),
-    title: "树形数据与懒加载",
+    title: "树形數據与懒加載",
     component: TreeTable
   },
   {
@@ -136,13 +136,13 @@ export const list = [
   {
     key: "merge",
     content: rendContent("merge"),
-    title: "合并行或列",
+    title: "合併行或列",
     component: Merge
   },
   {
     key: "customIndex",
     content: rendContent("customIndex"),
-    title: "自定义索引",
+    title: "自定義索引",
     component: CustomIndex
   },
   {
@@ -154,13 +154,13 @@ export const list = [
   {
     key: "nestProp",
     content: rendContent("nestProp"),
-    title: "多种数据格式（深层结构）",
+    title: "多種數據格式（深層結构）",
     component: NestProp
   },
   {
     key: "imgPreview",
     content: rendContent("imgPreview"),
-    title: "图像预览",
+    title: "圖像預覽",
     component: ImgPreview
   }
 ];

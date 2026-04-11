@@ -3,7 +3,7 @@ import type { CSSProperties, VNode, Component } from "vue";
 type DoneFn = (cancel?: boolean) => void;
 type EventType = "open" | "close" | "openAutoFocus" | "closeAutoFocus";
 type ArgsType = {
-  /** `cancel` 点击取消按钮、`sure` 点击确定按钮、`close` 点击右上角关闭按钮或空白页或按下了 `esc` 键 */
+  /** `cancel` 點選取消按鈕、`sure` 點選確定按鈕、`close` 點選右上角關閉按鈕或空白頁或按下了 `esc` 鍵 */
   command: "cancel" | "sure" | "close";
 };
 type ButtonType =
@@ -15,85 +15,85 @@ type ButtonType =
   | "text";
 
 type DrawerProps = {
-  /** `Drawer` 的显示与隐藏 */
+  /** `Drawer` 的顯示与隱藏 */
   visible?: boolean;
-  /** `Drawer` 自身是否插入至 `body` 元素上。嵌套的 `Drawer` 必须指定该属性并赋值为 `true`，默认 `false` */
+  /** `Drawer` 自身是否插入至 `body` 元素上。嵌套的 `Drawer` 必须指定該属性并赋值為 `true`，預設 `false` */
   appendToBody?: boolean;
-  /** 挂载到哪个 `DOM` 元素，会覆盖 `appendToBody` 属性，默认 `body` */
+  /** 挂載到哪个 `DOM` 元素，會覆盖 `appendToBody` 属性，預設 `body` */
   appendTo?: string;
-  /** 是否在 `Drawer` 出现时将 `body` 滚动锁定，默认 `true` */
+  /** 是否在 `Drawer` 出現時將 `body` 滚動锁定，預設 `true` */
   lockScroll?: boolean;
-  /** 关闭前的回调，会暂停 `Drawer` 的关闭，回调函数内执行 `done` 参数方法的时候才是真正关闭对话框的时候 */
+  /** 關閉前的回調，會暫停 `Drawer` 的關閉，回調函数内執行 `done` 参数方法的時候才是真正關閉對話框的時候 */
   beforeClose?: (done: DoneFn) => void;
-  /** 是否可以通过点击 `modal` 关闭 `Drawer` ，默认 `true` */
+  /** 是否可以通過點選 `modal` 關閉 `Drawer` ，預設 `true` */
   closeOnClickModal?: boolean;
-  /** 是否可以通过按下 `ESC` 关闭 `Drawer` ，默认 `true` */
+  /** 是否可以通過按下 `ESC` 關閉 `Drawer` ，預設 `true` */
   closeOnPressEscape?: boolean;
-  /** 是否显示关闭按钮，默认 `true` */
+  /** 是否顯示關閉按鈕，預設 `true` */
   showClose?: boolean;
-  /** `Drawer` 打开的延时时间，单位毫秒，默认 `0` */
+  /** `Drawer` 打開的延時時間，單位毫秒，預設 `0` */
   openDelay?: number;
-  /** `Drawer` 关闭的延时时间，单位毫秒，默认 `0` */
+  /** `Drawer` 關閉的延時時間，單位毫秒，預設 `0` */
   closeDelay?: number;
-  /** `Drawer` 自定义类名 */
+  /** `Drawer` 自定義类名 */
   class?: string;
-  /** `Drawer` 的自定义样式 */
+  /** `Drawer` 的自定義樣式 */
   style?: CSSProperties;
-  /** 控制是否在关闭 `Drawer` 之后将子元素全部销毁，默认 `false` */
+  /** 控制是否在關閉 `Drawer` 之后將子元素全部销毁，預設 `false` */
   destroyOnClose?: boolean;
-  /** 是否需要遮罩层，默认 `true` */
+  /** 是否需要遮罩層，預設 `true` */
   modal?: boolean;
-  /** 是否允许穿透遮罩层，默认 `false`。使用时需将 `modal` 属性设置为 `false` */
+  /** 是否允许穿透遮罩層，預設 `false`。使用時需將 `modal` 属性設定為 `false` */
   modalPenetrable?: boolean;
-  /** `Drawer` 打开的方向，默认 `rtl` */
+  /** `Drawer` 打開的方向，預設 `rtl` */
   direction?: "rtl" | "ltr" | "ttb" | "btt";
-  /** 是否启用可调整大小的功能，默认 `false` */
+  /** 是否啟用可調整大小的功能，預設 `false` */
   resizable?: boolean;
-  /** `Drawer` 窗体的大小, 当使用 `number` 类型时, 以像素为单位, 当使用 `string` 类型时, 请传入 `'x%'`, 否则便会以 `number` 类型解释，默认 `30%` */
+  /** `Drawer` 窗体的大小, 當使用 `number` 類型時, 以像素為單位, 當使用 `string` 類型時, 請传入 `'x%'`, 否则便會以 `number` 類型解释，預設 `30%` */
   size?: string | number;
-  /** `Drawer` 的标题 */
+  /** `Drawer` 的標題 */
   title?: string;
-  /** 控制是否显示 `header` 栏, 默认为 `true`, 当此项为 `false` 时, `title attribute` 和 `title slot` 均不生效 */
+  /** 控制是否顯示 `header` 欄, 預設為 `true`, 當此项為 `false` 時, `title attribute` 和 `title slot` 均不生效 */
   withHeader?: boolean;
-  /** 遮罩层的自定义类名 */
+  /** 遮罩層的自定義类名 */
   modalClass?: string;
-  /** `header` 部分的自定义 `class` 名 */
+  /** `header` 部分的自定義 `class` 名 */
   headerClass?: string;
-  /** `body` 部分的自定义 `class` 名 */
+  /** `body` 部分的自定義 `class` 名 */
   bodyClass?: string;
-  /** `footer` 部分的自定义 `class` 名 */
+  /** `footer` 部分的自定義 `class` 名 */
   footerClass?: string;
-  /** 设置 `z-index` */
+  /** 設定 `z-index` */
   zIndex?: number;
-  /** `header` 的 `aria-level` 属性，默认 `2` */
+  /** `header` 的 `aria-level` 属性，預設 `2` */
   headerAriaLevel?: string;
 };
 
 //element-plus.org/zh-CN/component/popConfirm.html#attributes
 type PopConfirm = {
-  /** 标题 */
+  /** 標題 */
   title?: string;
-  /** 确认按钮文字 */
+  /** 確認按鈕文字 */
   confirmButtonText?: string;
-  /** 取消按钮文字 */
+  /** 取消按鈕文字 */
   cancelButtonText?: string;
-  /** 确认按钮类型，默认 `primary` */
+  /** 確認按鈕類型，預設 `primary` */
   confirmButtonType?: ButtonType;
-  /** 取消按钮类型，默认 `text` */
+  /** 取消按鈕類型，預設 `text` */
   cancelButtonType?: ButtonType;
-  /** 自定义图标，默认 `QuestionFilled` */
+  /** 自定義圖标，預設 `QuestionFilled` */
   icon?: string | Component;
-  /** `Icon` 颜色，默认 `#f90` */
+  /** `Icon` 颜色，預設 `#f90` */
   iconColor?: string;
-  /** 是否隐藏 `Icon`，默认 `false` */
+  /** 是否隱藏 `Icon`，預設 `false` */
   hideIcon?: boolean;
-  /** 关闭时的延迟，默认 `200` */
+  /** 關閉時的延迟，預設 `200` */
   hideAfter?: number;
-  /** 是否将 `popover` 的下拉列表插入至 `body` 元素，默认 `true` */
+  /** 是否將 `popover` 的下拉列表插入至 `body` 元素，預設 `true` */
   teleported?: boolean;
-  /** 当 `popover` 组件长时间不触发且 `persistent` 属性设置为 `false` 时, `popover` 将会被删除，默认 `false` */
+  /** 當 `popover` 組件長時間不触发且 `persistent` 属性設定為 `false` 時, `popover` 將會被删除，預設 `false` */
   persistent?: boolean;
-  /** 弹层宽度，最小宽度 `150px`，默认 `150` */
+  /** 彈層寬度，最小寬度 `150px`，預設 `150` */
   width?: string | number;
 };
 
@@ -107,69 +107,69 @@ type BtnClickButton = {
 };
 /** https://element-plus.org/zh-CN/component/button.html#button-attributes */
 type ButtonProps = {
-  /** 按钮文字 */
+  /** 按鈕文字 */
   label: string;
-  /** 按钮尺寸 */
+  /** 按鈕尺寸 */
   size?: "large" | "default" | "small";
-  /** 按钮类型 */
+  /** 按鈕類型 */
   type?: "primary" | "success" | "warning" | "danger" | "info";
-  /** 是否为朴素按钮，默认 `false` */
+  /** 是否為朴素按鈕，預設 `false` */
   plain?: boolean;
-  /** 是否为文字按钮，默认 `false` */
+  /** 是否為文字按鈕，預設 `false` */
   text?: boolean;
-  /** 是否显示文字按钮背景颜色，默认 `false` */
+  /** 是否顯示文字按鈕背景颜色，預設 `false` */
   bg?: boolean;
-  /** 是否为链接按钮，默认 `false` */
+  /** 是否為鏈接按鈕，預設 `false` */
   link?: boolean;
-  /** 是否为圆角按钮，默认 `false` */
+  /** 是否為圆角按鈕，預設 `false` */
   round?: boolean;
-  /** 是否为圆形按钮，默认 `false` */
+  /** 是否為圆形按鈕，預設 `false` */
   circle?: boolean;
-  /** 确认按钮的 `PopConfirm` 气泡确认框相关配置 */
+  /** 確認按鈕的 `PopConfirm` 气泡確認框相關配置 */
   popConfirm?: PopConfirm;
-  /** 是否为加载中状态，默认 `false` */
+  /** 是否為加載中狀態，預設 `false` */
   loading?: boolean;
-  /** 自定义加载中状态图标组件 */
+  /** 自定義加載中狀態圖标組件 */
   loadingIcon?: string | Component;
-  /** 按钮是否为禁用状态，默认 `false` */
+  /** 按鈕是否為禁用狀態，預設 `false` */
   disabled?: boolean;
-  /** 图标组件 */
+  /** 圖标組件 */
   icon?: string | Component;
-  /** 是否开启原生 `autofocus` 属性，默认 `false` */
+  /** 是否開啟原生 `autofocus` 属性，預設 `false` */
   autofocus?: boolean;
-  /** 原生 `type` 属性，默认 `button` */
+  /** 原生 `type` 属性，預設 `button` */
   nativeType?: "button" | "submit" | "reset";
-  /** 自动在两个中文字符之间插入空格 */
+  /** 自動在两个中文字符之间插入空格 */
   autoInsertSpace?: boolean;
-  /** 自定义按钮颜色, 并自动计算 `hover` 和 `active` 触发后的颜色 */
+  /** 自定義按鈕颜色, 并自動计算 `hover` 和 `active` 触发后的颜色 */
   color?: string;
-  /** `dark` 模式, 意味着自动设置 `color` 为 `dark` 模式的颜色，默认 `false` */
+  /** `dark` 模式, 意味着自動設定 `color` 為 `dark` 模式的颜色，預設 `false` */
   dark?: boolean;
-  /** 自定义元素标签 */
+  /** 自定義元素標籤 */
   tag?: string | Component;
-  /** 点击按钮后触发的回调 */
+  /** 點選按鈕后触发的回調 */
   btnClick?: ({
     drawer,
     button
   }: {
-    /** 当前 `Drawer` 信息 */
+    /** 當前 `Drawer` 信息 */
     drawer: BtnClickDrawer;
-    /** 当前 `button` 信息 */
+    /** 當前 `button` 信息 */
     button: BtnClickButton;
   }) => void;
 };
 
 interface DrawerOptions extends DrawerProps {
-  /** 内容区组件的 `props`，可通过 `defineProps` 接收 */
+  /** 内容區組件的 `props`，可通過 `defineProps` 接收 */
   props?: any;
-  /** 是否隐藏 `Drawer` 按钮操作区的内容 */
+  /** 是否隱藏 `Drawer` 按鈕操作區的内容 */
   hideFooter?: boolean;
-  /** 确认按钮的 `PopConfirm` 气泡确认框相关配置 */
+  /** 確認按鈕的 `PopConfirm` 气泡確認框相關配置 */
   popConfirm?: PopConfirm;
-  /** 点击确定按钮后是否开启 `loading` 加载动画 */
+  /** 點選確定按鈕后是否開啟 `loading` 加載動畫 */
   sureBtnLoading?: boolean;
   /**
-   * @description 自定义抽屉标题的内容渲染器
+   * @description 自定義抽屉標題的内容渲染器
    * @see {@link https://element-plus.org/zh-CN/component/drawer.html#%E6%8F%92%E6%A7%BD}
    */
   headerRenderer?: ({
@@ -181,7 +181,7 @@ interface DrawerOptions extends DrawerProps {
     titleId: string;
     titleClass: string;
   }) => VNode | Component;
-  /** 自定义内容渲染器 */
+  /** 自定義内容渲染器 */
   contentRenderer?: ({
     options,
     index
@@ -189,7 +189,7 @@ interface DrawerOptions extends DrawerProps {
     options: DrawerOptions;
     index: number;
   }) => VNode | Component;
-  /** 自定义按钮操作区的内容渲染器，会覆盖`footerButtons`以及默认的 `取消` 和 `确定` 按钮 */
+  /** 自定義按鈕操作區的内容渲染器，會覆盖`footerButtons`以及預設的 `取消` 和 `確定` 按鈕 */
   footerRenderer?: ({
     options,
     index
@@ -197,9 +197,9 @@ interface DrawerOptions extends DrawerProps {
     options: DrawerOptions;
     index: number;
   }) => VNode | Component;
-  /** 自定义底部按钮操作 */
+  /** 自定義底部按鈕操作 */
   footerButtons?: Array<ButtonProps>;
-  /** `Drawer` 打开后的回调 */
+  /** `Drawer` 打開后的回調 */
   open?: ({
     options,
     index
@@ -207,7 +207,7 @@ interface DrawerOptions extends DrawerProps {
     options: DrawerOptions;
     index: number;
   }) => void;
-  /** `Drawer` 关闭后的回调（只有点击右上角关闭按钮或空白页或按下了esc键关闭页面时才会触发） */
+  /** `Drawer` 關閉后的回調（只有點選右上角關閉按鈕或空白頁或按下了esc鍵關閉頁面時才會触发） */
   close?: ({
     options,
     index
@@ -215,7 +215,7 @@ interface DrawerOptions extends DrawerProps {
     options: DrawerOptions;
     index: number;
   }) => void;
-  /** `Drawer` 关闭后的回调。 `args` 返回的 `command` 值解析：`cancel` 点击取消按钮、`sure` 点击确定按钮、`close` 点击右上角关闭按钮或空白页或按下了esc键  */
+  /** `Drawer` 關閉后的回調。 `args` 返回的 `command` 值解析：`cancel` 點選取消按鈕、`sure` 點選確定按鈕、`close` 點選右上角關閉按鈕或空白頁或按下了esc鍵  */
   closeCallBack?: ({
     options,
     index,
@@ -225,7 +225,7 @@ interface DrawerOptions extends DrawerProps {
     index: number;
     args: any;
   }) => void;
-  /** 输入焦点聚焦在 `Drawer` 内容时的回调 */
+  /** 輸入焦點聚焦在 `Drawer` 内容時的回調 */
   openAutoFocus?: ({
     options,
     index
@@ -233,7 +233,7 @@ interface DrawerOptions extends DrawerProps {
     options: DrawerOptions;
     index: number;
   }) => void;
-  /** 输入焦点从 `Drawer` 内容失焦时的回调 */
+  /** 輸入焦點从 `Drawer` 内容失焦時的回調 */
   closeAutoFocus?: ({
     options,
     index
@@ -242,7 +242,7 @@ interface DrawerOptions extends DrawerProps {
     index: number;
   }) => void;
 
-  /** 点击底部取消按钮的回调，会暂停 `Drawer` 的关闭. 回调函数内执行 `done` 参数方法的时候才是真正关闭对话框的时候 */
+  /** 點選底部取消按鈕的回調，會暫停 `Drawer` 的關閉. 回調函数内執行 `done` 参数方法的時候才是真正關閉對話框的時候 */
   beforeCancel?: (
     done: Function,
     {
@@ -253,7 +253,7 @@ interface DrawerOptions extends DrawerProps {
       index: number;
     }
   ) => void;
-  /** 点击底部确定按钮的回调，会暂停 `Drawer` 的关闭. 回调函数内执行 `done` 参数方法的时候才是真正关闭对话框的时候 */
+  /** 點選底部確定按鈕的回調，會暫停 `Drawer` 的關閉. 回調函数内執行 `done` 参数方法的時候才是真正關閉對話框的時候 */
   beforeSure?: (
     done: Function,
     {

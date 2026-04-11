@@ -12,7 +12,7 @@ defineOptions({
 const { lastBuildTime } = __APP_INFO__;
 const activities = [
   {
-    content: "支持圆点发光",
+    content: "支持圆點发光",
     timestamp: lastBuildTime,
     icon: markRaw(useRenderFlicker())
   },
@@ -22,7 +22,7 @@ const activities = [
     icon: markRaw(useRenderFlicker({ borderRadius: 0, background: "#67C23A" }))
   },
   {
-    content: "支持渐变发光",
+    content: "支持漸變发光",
     timestamp: lastBuildTime,
     icon: markRaw(
       useRenderFlicker({
@@ -33,16 +33,16 @@ const activities = [
     )
   },
   {
-    content: "支持默认颜色",
+    content: "支持預設颜色",
     timestamp: lastBuildTime
   },
   {
-    content: "支持自定义颜色",
+    content: "支持自定義颜色",
     timestamp: lastBuildTime,
     color: "#F56C6C"
   },
   {
-    content: "支持自定义图标",
+    content: "支持自定義圖标",
     timestamp: lastBuildTime,
     color: "transparent",
     icon: useRenderIcon(Iphone, {
@@ -56,13 +56,13 @@ const activities = [
   <el-card shadow="never">
     <template #header>
       <div class="card-header">
-        <p class="font-medium">时间线</p>
+        <p class="font-medium">時間線</p>
         <el-link
           class="mt-2"
           href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/components/timeline.vue"
           target="_blank"
         >
-          代码位置 src/views/components/timeline.vue
+          程式碼位置 src/views/components/timeline.vue
         </el-link>
       </div>
     </template>
@@ -89,7 +89,7 @@ const activities = [
           placement="bottom"
         >
           <div class="message">
-            vue-pure-admin 第{{ activities.length - index }}个版本发布啦
+            vue-pure-admin 第{{ activities.length - index }}个版本發布啦
           </div>
         </el-timeline-item>
       </el-timeline>

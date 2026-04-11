@@ -49,12 +49,12 @@ function getSubMenuData() {
   let path = "";
   path = defaultActive.value;
   subMenuData.value = [];
-  // path的上级路由组成的数组
+  // path的上級路由組成的数組
   const parentPathArr = getParentPaths(
     path,
     usePermissionStoreHook().wholeMenus
   );
-  // 当前路由的父级路由信息
+  // 當前路由的父級路由信息
   const parenetRoute = findRouteByPath(
     parentPathArr[0] || path,
     usePermissionStoreHook().wholeMenus

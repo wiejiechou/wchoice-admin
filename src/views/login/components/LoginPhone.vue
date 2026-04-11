@@ -26,7 +26,7 @@ const onLogin = async (formEl: FormInstance | undefined) => {
   if (!formEl) return;
   await formEl.validate(valid => {
     if (valid) {
-      // 模拟登录请求，需根据实际开发进行修改
+      // 模擬登入請求，需根據实际開发進行修改
       setTimeout(() => {
         message(transformI18n($t("login.pureLoginSuccess")), {
           type: "success"

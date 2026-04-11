@@ -9,7 +9,7 @@ onMounted(() => {
     response: message => {
       console.log(message);
       return {
-        text: "仅演示，如需AI服务，请参考 https://deepchat.dev/docs/connect"
+        text: "僅演示，如需AI服務，請参考 https://deepchat.dev/docs/connect"
       };
     }
   };
@@ -132,7 +132,7 @@ onMounted(() => {
     :history="[
       { text: '韩信是谁？', role: 'user' },
       {
-        text: '韩信（约前231年－前196年），是秦末汉初时期的杰出军事家和战略家，被后世誉为“兵仙”。',
+        text: '韩信（约前231年－前196年），是秦末汉初時期的杰出军事家和战略家，被后世誉為“兵仙”。',
         role: 'ai'
       }
     ]"

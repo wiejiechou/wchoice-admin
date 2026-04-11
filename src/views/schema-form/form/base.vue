@@ -22,21 +22,21 @@ const rules = {
   name: [
     {
       required: true,
-      message: "请输入名称"
+      message: "請輸入名稱"
     }
   ]
 };
 
 const columns: PlusColumn[] = [
   {
-    label: "名称",
+    label: "名稱",
     width: 120,
     prop: "name",
     valueType: "copy",
-    tooltip: "我是名称"
+    tooltip: "我是名稱"
   },
   {
-    label: "状态",
+    label: "狀態",
     width: 120,
     prop: "status",
     valueType: "select",
@@ -57,31 +57,31 @@ const columns: PlusColumn[] = [
         color: "yellow"
       },
       {
-        label: "失败",
+        label: "失敗",
         value: "3",
         color: "red"
       }
     ]
   },
   {
-    label: "执行进度",
+    label: "執行進度",
     width: 200,
     prop: "progress"
   },
   {
-    label: "评分",
+    label: "評分",
     width: 200,
     prop: "rate",
     valueType: "rate"
   },
   {
-    label: "是否显示",
+    label: "是否顯示",
     width: 100,
     prop: "switch",
     valueType: "switch"
   },
   {
-    label: "时间",
+    label: "時間",
     prop: "time",
     valueType: "date-picker"
   },
@@ -92,16 +92,16 @@ const columns: PlusColumn[] = [
     fieldProps: { precision: 2, step: 2 }
   },
   {
-    label: "梦想",
+    label: "夢想",
     prop: "gift",
     valueType: "radio",
     options: [
       {
-        label: "诗",
+        label: "詩",
         value: "0"
       },
       {
-        label: "远方",
+        label: "遠方",
         value: "1"
       },
       {
@@ -111,17 +111,17 @@ const columns: PlusColumn[] = [
     ]
   },
   {
-    label: "到期时间",
+    label: "到期時間",
     prop: "endTime",
     valueType: "date-picker",
     fieldProps: {
       type: "datetimerange",
-      startPlaceholder: "请选择开始时间",
-      endPlaceholder: "请选择结束时间"
+      startPlaceholder: "請選擇開始時間",
+      endPlaceholder: "請選擇結束時間"
     }
   },
   {
-    label: "说明",
+    label: "說明",
     prop: "desc",
     valueType: "textarea",
     fieldProps: {

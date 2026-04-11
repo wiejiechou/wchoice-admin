@@ -89,12 +89,12 @@ const moveToView = async (index: number): Promise<void> => {
   const tabItemEl = instance.refs["dynamic" + index][0];
   const tabItemElOffsetLeft = (tabItemEl as HTMLElement)?.offsetLeft;
   const tabItemOffsetWidth = (tabItemEl as HTMLElement)?.offsetWidth;
-  // 标签页导航栏可视长度（不包含溢出部分）
+  // 標籤頁导航欄可视長度（不包含溢出部分）
   const scrollbarDomWidth = scrollbarDom.value
     ? scrollbarDom.value?.offsetWidth
     : 0;
 
-  // 已有标签页总长度（包含溢出部分）
+  // 已有標籤頁总長度（包含溢出部分）
   const tabDomWidth = tabDom.value ? tabDom.value?.offsetWidth : 0;
 
   scrollbarDomWidth <= tabDomWidth
@@ -103,14 +103,14 @@ const moveToView = async (index: number): Promise<void> => {
   if (tabDomWidth < scrollbarDomWidth || tabItemElOffsetLeft === 0) {
     translateX.value = 0;
   } else if (tabItemElOffsetLeft < -translateX.value) {
-    // 标签在可视区域左侧
+    // 標籤在可视區域左側
     translateX.value = -tabItemElOffsetLeft + tabNavPadding;
   } else if (
     tabItemElOffsetLeft > -translateX.value &&
     tabItemElOffsetLeft + tabItemOffsetWidth <
       -translateX.value + scrollbarDomWidth
   ) {
-    // 标签在可视区域
+    // 標籤在可视區域
     translateX.value = Math.min(
       0,
       scrollbarDomWidth -
@@ -119,7 +119,7 @@ const moveToView = async (index: number): Promise<void> => {
         tabNavPadding
     );
   } else {
-    // 标签在可视区域右侧
+    // 標籤在可视區域右側
     translateX.value = -(
       tabItemElOffsetLeft -
       (scrollbarDomWidth - tabNavPadding - tabItemOffsetWidth)
@@ -163,7 +163,7 @@ const handleWheel = (event: WheelEvent): void => {
 };
 
 const smoothScroll = (offset: number): void => {
-  // 每帧滚动的距离
+  // 每帧滚動的距離
   const scrollAmount = 20;
   let remaining = Math.abs(offset);
 
@@ -261,12 +261,12 @@ function deleteDynamicTag(obj: any, current: any, tag?: string) {
   } else if (tag === "right") {
     spliceRoute(valueIndex + 1, multiTags.value.length);
   } else {
-    // 从当前匹配到的路径中删除
+    // 从當前匹配到的路径中删除
     spliceRoute(valueIndex, 1);
   }
   const newRoute = useMultiTagsStoreHook().handleTags("slice");
   if (current === route.path) {
-    // 如果删除当前激活tag就自动切换到最后一个tag
+    // 如果删除當前激活tag就自動切换到最后一个tag
     if (tag === "left") return;
     if (newRoute[0]?.query) {
       router.push({ name: newRoute[0].name, query: newRoute[0].query });
@@ -309,30 +309,30 @@ function onClickDrop(key, item, selectRoute?: RouteConfigs) {
     selectTagRoute = { path: route.path, meta: route.meta };
   }
 
-  // 当前路由信息
+  // 當前路由信息
   switch (key) {
     case 0:
       // 刷新路由
       onFresh();
       break;
     case 1:
-      // 关闭当前标签页
+      // 關閉當前標籤頁
       deleteMenu(selectTagRoute);
       break;
     case 2:
-      // 关闭左侧标签页
+      // 關閉左側標籤頁
       deleteMenu(selectTagRoute, "left");
       break;
     case 3:
-      // 关闭右侧标签页
+      // 關閉右側標籤頁
       deleteMenu(selectTagRoute, "right");
       break;
     case 4:
-      // 关闭其他标签页
+      // 關閉其他標籤頁
       deleteMenu(selectTagRoute, "other");
       break;
     case 5:
-      // 关闭全部标签页
+      // 關閉全部標籤頁
       useMultiTagsStoreHook().handleTags("splice", "", {
         startIndex: fixedTags.length,
         length: multiTags.value.length
@@ -342,7 +342,7 @@ function onClickDrop(key, item, selectRoute?: RouteConfigs) {
       handleAliveRoute(route as ToRouteType);
       break;
     case 6:
-      // 内容区全屏
+      // 内容區全屏
       onContentFullScreen();
       setTimeout(() => {
         if (pureSetting.hiddenSideBar) {
@@ -365,7 +365,7 @@ function handleCommand(command: any) {
   onClickDrop(key, item);
 }
 
-/** 触发右键中菜单的点击事件 */
+/** 触发右鍵中選單的點選事件 */
 function selectTag(key, item) {
   closeMenu();
   onClickDrop(key, item, currentSelect.value);
@@ -387,7 +387,7 @@ function disabledMenus(value: boolean, fixedTag = false) {
   }
 }
 
-/** 检查当前右键的菜单两边是否存在别的菜单，如果左侧的菜单是顶级菜单，则不显示关闭左侧标签页，如果右侧没有菜单，则不显示关闭右侧标签页 */
+/** 检查當前右鍵的選單两边是否存在别的選單，如果左側的選單是頂級選單，则不顯示關閉左側標籤頁，如果右側没有選單，则不顯示關閉右側標籤頁 */
 function showMenuModel(
   currentPath: string,
   query: object = {},
@@ -419,11 +419,11 @@ function showMenuModel(
   }
 
   /**
-   * currentIndex为1时，左侧的菜单顶级菜单，则不显示关闭左侧标签页
-   * 如果currentIndex等于routeLength-1，右侧没有菜单，则不显示关闭右侧标签页
+   * currentIndex為1時，左側的選單頂級選單，则不顯示關閉左側標籤頁
+   * 如果currentIndex等于routeLength-1，右側没有選單，则不顯示關閉右側標籤頁
    */
   if (currentIndex === 1 && routeLength !== 2) {
-    // 左侧的菜单是顶级菜单，右侧存在别的菜单
+    // 左側的選單是頂級選單，右側存在别的選單
     tagsViews[2].show = false;
     Array.of(1, 3, 4, 5).forEach(v => {
       tagsViews[v].disabled = false;
@@ -432,14 +432,14 @@ function showMenuModel(
     fixedTagDisabled();
   } else if (currentIndex === 1 && routeLength === 2) {
     disabledMenus(false);
-    // 左侧的菜单是顶级菜单，右侧不存在别的菜单
+    // 左側的選單是頂級選單，右側不存在别的選單
     Array.of(2, 3, 4).forEach(v => {
       tagsViews[v].show = false;
       tagsViews[v].disabled = true;
     });
     fixedTagDisabled();
   } else if (routeLength - 1 === currentIndex && currentIndex !== 0) {
-    // 当前路由是所有路由中的最后一个
+    // 當前路由是所有路由中的最后一个
     tagsViews[3].show = false;
     Array.of(1, 2, 4, 5).forEach(v => {
       tagsViews[v].disabled = false;
@@ -451,7 +451,7 @@ function showMenuModel(
     }
     fixedTagDisabled();
   } else if (currentIndex === 0 || currentPath === `/redirect${topPath}`) {
-    // 当前路由为顶级菜单
+    // 當前路由為頂級選單
     disabledMenus(true);
   } else {
     disabledMenus(false, allRoute[currentIndex - 1]?.meta?.fixedTag);
@@ -462,16 +462,16 @@ function showMenuModel(
 function openMenu(tag, e) {
   closeMenu();
   if (tag.path === topPath || tag?.meta?.fixedTag) {
-    // 右键菜单为顶级菜单或拥有 fixedTag 属性，只显示刷新
+    // 右鍵選單為頂級選單或擁有 fixedTag 属性，只顯示刷新
     showMenus(false);
     tagsViews[0].show = true;
   } else if (route.path !== tag.path && route.name !== tag.name) {
-    // 右键菜单不匹配当前路由，隐藏刷新
+    // 右鍵選單不匹配當前路由，隱藏刷新
     tagsViews[0].show = false;
     showMenuModel(tag.path, tag.query, tag.params);
   } else if (multiTags.value.length === 2 && route.path !== tag.path) {
     showMenus(true);
-    // 只有两个标签时不显示关闭其他标签页
+    // 只有两个標籤時不顯示關閉其他標籤頁
     tagsViews[4].show = false;
     showMenuModel(tag.path, tag.query, tag.params);
   } else {
@@ -497,7 +497,7 @@ function openMenu(tag, e) {
   });
 }
 
-/** 触发tags标签切换 */
+/** 触发tags標籤切换 */
 function tagOnClick(item) {
   const { name, path } = item;
   if (name) {
@@ -532,21 +532,21 @@ watch(route, () => {
 onMounted(() => {
   if (!instance) return;
 
-  // 根据当前路由初始化操作标签页的禁用状态
+  // 根據當前路由初始化操作標籤頁的禁用狀態
   showMenuModel(route.fullPath);
 
-  // 触发隐藏标签页
+  // 触发隱藏標籤頁
   emitter.on("tagViewsChange", (key: any) => {
     if (unref(showTags as any) === key) return;
     (showTags as any).value = key;
   });
 
-  // 改变标签风格
+  // 改变標籤風格
   emitter.on("tagViewsTagsStyle", key => {
     tagsStyle.value = key;
   });
 
-  //  接收侧边栏切换传递过来的参数
+  //  接收側边欄切换传递過来的参数
   emitter.on("changLayoutRoute", indexPath => {
     dynamicRouteTag(indexPath);
     setTimeout(() => {
@@ -642,7 +642,7 @@ onBeforeUnmount(() => {
     <span v-show="isShowArrow" class="arrow-right">
       <IconifyIconOffline :icon="ArrowRightSLine" @click="handleScroll(-200)" />
     </span>
-    <!-- 右键菜单按钮 -->
+    <!-- 右鍵選單按鈕 -->
     <transition name="el-zoom-in-top">
       <ul
         v-show="visible"
@@ -663,7 +663,7 @@ onBeforeUnmount(() => {
         </div>
       </ul>
     </transition>
-    <!-- 右侧功能按钮 -->
+    <!-- 右側功能按鈕 -->
     <el-dropdown
       trigger="click"
       placement="bottom-end"

@@ -26,7 +26,7 @@ export function useColumns() {
   const menuOptions = {
     menuList: [
       {
-        label: ({ id }) => `ID为：${id}`,
+        label: ({ id }) => `ID為：${id}`,
         disabled: true
       },
       {
@@ -36,7 +36,7 @@ export function useColumns() {
           message(
             `您修改了第 ${
               dataList.value.findIndex(v => v.id === row.id) + 1
-            } 行，数据为：${JSON.stringify(row)}`,
+            } 行，數據為：${JSON.stringify(row)}`,
             {
               type: "success"
             }
@@ -51,7 +51,7 @@ export function useColumns() {
     const ctx = CustomMouseMenu({
       el: event.currentTarget,
       params: row,
-      // 菜单容器的CSS设置
+      // 選單容器的CSS設定
       menuWrapperCss: {
         background: "var(--el-bg-color)"
       },

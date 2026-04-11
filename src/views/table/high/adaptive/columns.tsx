@@ -25,7 +25,7 @@ export function useColumns() {
     }
   ];
 
-  /** 分页配置 */
+  /** 分頁配置 */
   const pagination = reactive<PaginationProps>({
     pageSize: 20,
     currentPage: 1,
@@ -36,9 +36,9 @@ export function useColumns() {
     size: "default"
   });
 
-  /** 加载动画配置 */
+  /** 加載動畫配置 */
   const loadingConfig = reactive<LoadingConfig>({
-    text: "正在加载第一页...",
+    text: "正在加載第一頁...",
     viewBox: "-10, -10, 50, 50",
     spinner: `
         <path class="path" d="
@@ -54,15 +54,15 @@ export function useColumns() {
     // background: rgba()
   });
 
-  /** 撑满内容区自适应高度相关配置 */
+  /** 撑满内容區自適應高度相關配置 */
   const adaptiveConfig: AdaptiveConfig = {
-    /** 表格距离页面底部的偏移量，默认值为 `96` */
+    /** 表格距離頁面底部的偏移量，預設值為 `96` */
     offsetBottom: 110
-    /** 是否固定表头，默认值为 `true`（如果不想固定表头，fixHeader设置为false并且表格要设置table-layout="auto"） */
+    /** 是否固定表頭，預設值為 `true`（如果不想固定表頭，fixHeader設定為false并且表格要設定table-layout="auto"） */
     // fixHeader: true
-    /** 页面 `resize` 时的防抖时间，默认值为 `60` ms */
+    /** 頁面 `resize` 時的防抖時間，預設值為 `60` ms */
     // timeout: 60
-    /** 表头的 `z-index`，默认值为 `100` */
+    /** 表頭的 `z-index`，預設值為 `100` */
     // zIndex: 100
   };
 
@@ -71,7 +71,7 @@ export function useColumns() {
   }
 
   function onCurrentChange(val) {
-    loadingConfig.text = `正在加载第${val}页...`;
+    loadingConfig.text = `正在加載第${val}頁...`;
     loading.value = true;
     delay(600).then(() => {
       loading.value = false;

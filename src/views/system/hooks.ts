@@ -1,4 +1,4 @@
-// 抽离可公用的工具函数等用于系统管理页面逻辑
+// 抽離可公用的工具函数等用于系統管理頁面逻辑
 import { computed } from "vue";
 import { useDark } from "@pureadmin/utils";
 
@@ -29,11 +29,11 @@ export function usePublicHooks() {
   });
 
   return {
-    /** 当前网页是否为`dark`模式 */
+    /** 當前网頁是否為`dark`模式 */
     isDark,
-    /** 表现更鲜明的`el-switch`组件  */
+    /** 表現更鲜明的`el-switch`組件  */
     switchStyle,
-    /** 表现更鲜明的`el-tag`组件  */
+    /** 表現更鲜明的`el-tag`組件  */
     tagStyle
   };
 }

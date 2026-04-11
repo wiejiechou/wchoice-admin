@@ -14,15 +14,15 @@ const formatTooltip = (val: number) => {
 
 <template>
   <div class="slider-demo-block">
-    <span class="demonstration">默认值</span>
+    <span class="demonstration">預設值</span>
     <el-slider v-model="value1" />
   </div>
   <div class="slider-demo-block">
-    <span class="demonstration">自定义初始值</span>
+    <span class="demonstration">自定義初始值</span>
     <el-slider v-model="value2" />
   </div>
   <div class="slider-demo-block">
-    <span class="demonstration">隐藏 Tooltip 提示</span>
+    <span class="demonstration">隱藏 Tooltip 提示</span>
     <el-slider v-model="value3" :show-tooltip="false" />
   </div>
   <div class="slider-demo-block">

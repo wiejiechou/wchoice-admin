@@ -50,9 +50,9 @@ const { t, locale, translationCh, translationTw, translationEn } =
     <LayNavMix v-if="layout === 'mix'" />
 
     <div v-if="layout === 'vertical'" class="vertical-header-right">
-      <!-- 菜单搜索 -->
+      <!-- 選單搜尋 -->
       <LaySearch id="header-search" />
-      <!-- 国际化 -->
+      <!-- 多國語系切換 (i18n) -->
       <el-dropdown id="header-translation" trigger="click">
         <div
           class="globalization-icon navbar-bg-hover hover:[&>svg]:animate-scale-bounce"
@@ -103,7 +103,7 @@ const { t, locale, translationCh, translationTw, translationEn } =
       <LaySidebarFullScreen id="full-screen" />
       <!-- 消息通知 -->
       <LayNotice id="header-notice" />
-      <!-- 退出登录 -->
+      <!-- 退出登入 -->
       <el-dropdown trigger="click">
         <span class="el-dropdown-link navbar-bg-hover select-none">
           <img :src="userAvatar" :style="avatarsStyle" />

@@ -26,7 +26,7 @@ const {
     ref="selectRef"
     v-model="selectValue"
     class="w-50!"
-    placeholder="请选择"
+    placeholder="請選擇"
     clearable
     multiple
     collapse-tags
@@ -42,7 +42,7 @@ const {
             <el-select
               v-model="searchForm.sexValue"
               class="w-30!"
-              placeholder="请选择性别"
+              placeholder="請選擇性别"
               :teleported="false"
               clearable
             >
@@ -59,7 +59,7 @@ const {
               v-model="searchForm.searchDate"
               class="w-37.5!"
               type="date"
-              placeholder="请选择日期"
+              placeholder="請選擇日期"
               format="YYYY/MM/DD"
               value-format="YYYY-MM-D"
             />
@@ -98,7 +98,7 @@ const {
           bg
           @click="onSure"
         >
-          确定
+          確定
         </el-button>
         <!-- </el-config-provider> -->
       </div>

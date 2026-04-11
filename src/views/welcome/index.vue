@@ -252,17 +252,17 @@ const optionsBasis: Array<OptionsType> = [
 :deep(.el-card) {
   --el-card-border-color: none;
 
-  /* 解决概率进度条宽度 */
+  /* 解决概率進度條寬度 */
   .el-progress--line {
     width: 85%;
   }
 
-  /* 解决概率进度条字体大小 */
+  /* 解决概率進度條字体大小 */
   .el-progress-bar__innerText {
     font-size: 15px;
   }
 
-  /* 隐藏 el-scrollbar 滚动条 */
+  /* 隱藏 el-scrollbar 滚動條 */
   .el-scrollbar__bar {
     display: none;
   }

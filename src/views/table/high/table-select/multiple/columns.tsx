@@ -52,7 +52,7 @@ export function useColumns(selectRef: Ref, formRef: Ref, tableRef: Ref) {
     }
   ];
 
-  /** 分页配置 */
+  /** 分頁配置 */
   const pagination = reactive<PaginationProps>({
     pageSize: 5,
     currentPage: 1,
@@ -105,7 +105,7 @@ export function useColumns(selectRef: Ref, formRef: Ref, tableRef: Ref) {
 
   const onSure = () => {
     selectRef.value.blur();
-    message(`当前选中的数据为：${JSON.stringify(selectValue.value)}`, {
+    message(`當前选中的數據為：${JSON.stringify(selectValue.value)}`, {
       type: "success"
     });
   };
@@ -117,7 +117,7 @@ export function useColumns(selectRef: Ref, formRef: Ref, tableRef: Ref) {
       const { toggleRowSelection } = tableRef.value.getTableRef();
       selectValue.value.forEach(val => {
         tableData.value.forEach(row => {
-          // 默认回显
+          // 預設回显
           row.id === val ? toggleRowSelection(row) : undefined;
         });
       });

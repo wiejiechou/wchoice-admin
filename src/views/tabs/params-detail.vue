@@ -11,7 +11,7 @@ initToDetail("params");
 
 <template>
   <div>
-    {{ getParameter.id }} - 详情页内容在此（params传参）
-    <p>当前页面参数为：{{ getParameter }}</p>
+    {{ getParameter.id }} - 詳情頁内容在此（params传参）
+    <p>當前頁面参数為：{{ getParameter }}</p>
   </div>
 </template>

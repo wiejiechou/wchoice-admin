@@ -26,7 +26,7 @@ function tabClick({ index }) {
           >
             el-table
           </el-link>
-          完全兼容 api 并提供灵活的配置项以及完善的类型提示，不用将代码都写在
+          完全兼容 api 并提供灵活的配置项以及完善的類型提示，不用將代码都寫在
           template 里了
           <el-link
             href="https://github.com/pure-admin/pure-admin-table"
@@ -42,13 +42,13 @@ function tabClick({ index }) {
         href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/table/base"
         target="_blank"
       >
-        代码位置 src/views/table/base
+        程式碼位置 src/views/table/base
       </el-link>
     </template>
 
     <el-alert
-      title="基础用法中大部分表格都没设置 row-key ，不过最好都设置一下，后端需返回唯一值的字段，比如id。作用：1. 用来优化 Table
-      的渲染，尤其当字段在深层结构中；2. 防止某些操作导致表格组件内部混乱"
+      title="基礎用法中大部分表格都没設定 row-key ，不過最好都設定一下，后端需返回唯一值的字段，比如id。作用：1. 用来优化 Table
+      的渲染，尤其當字段在深層結构中；2. 防止某些操作导致表格組件内部混乱"
       type="info"
       :closable="false"
     />

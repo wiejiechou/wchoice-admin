@@ -28,11 +28,11 @@ defineExpose({ getRef });
     :rules="formRules"
     label-width="82px"
   >
-    <el-form-item label="角色名称" prop="name">
+    <el-form-item label="角色名稱" prop="name">
       <el-input
         v-model="newFormInline.name"
         clearable
-        placeholder="请输入角色名称"
+        placeholder="請輸入角色名稱"
       />
     </el-form-item>
 
@@ -40,14 +40,14 @@ defineExpose({ getRef });
       <el-input
         v-model="newFormInline.code"
         clearable
-        placeholder="请输入角色标识"
+        placeholder="請輸入角色标识"
       />
     </el-form-item>
 
-    <el-form-item label="备注">
+    <el-form-item label="備註">
       <el-input
         v-model="newFormInline.remark"
-        placeholder="请输入备注信息"
+        placeholder="請輸入備註信息"
         type="textarea"
       />
     </el-form-item>

@@ -16,7 +16,7 @@ const columns: TableColumnList = [
     width: "260"
   },
   {
-    label: "地区",
+    label: "地區",
     prop: "state",
     width: "260"
   },

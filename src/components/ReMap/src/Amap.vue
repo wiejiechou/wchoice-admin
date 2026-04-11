@@ -28,7 +28,7 @@ const mapSet = reactive({
   loading: deviceDetection() ? false : true
 });
 
-// 地图创建完成(动画关闭)
+// 地圖创建完成(動畫關閉)
 const complete = (): void => {
   if (map) {
     map.on("complete", () => {
@@ -48,13 +48,13 @@ onBeforeMount(() => {
     plugins: ["AMap.MarkerCluster"]
   })
     .then(AMap => {
-      // 创建地图实例
+      // 创建地圖實例
       map = new AMap.Map(instance.refs.mapview, options);
 
-      //地图中添加地图操作ToolBar插件
+      //地圖中添加地圖操作ToolBar插件
       map.plugin(["AMap.ToolBar", "AMap.MapType"], () => {
         map.addControl(new AMap.ToolBar());
-        //地图类型切换
+        //地圖類型切换
         map.addControl(
           new AMap.MapType({
             defaultType: 0
@@ -76,21 +76,21 @@ onBeforeMount(() => {
             marker.setContent(content);
             marker.setLabel({
               direction: "bottom",
-              //设置文本标注偏移量
+              //設定文本标注偏移量
               offset: new AMap.Pixel(-4, 0),
-              //设置文本标注内容
+              //設定文本标注内容
               content: `<div> ${plateNumber}(${driver})</div>`
             });
             marker.setOffset(new AMap.Pixel(-18, -10));
             marker.on("click", ({ lnglat }) => {
-              map.setZoom(13); //设置地图层级
+              map.setZoom(13); //設定地圖層級
               map.setCenter(lnglat);
             });
           }
         }
       });
 
-      // 获取模拟车辆信息
+      // 获取模擬车辆信息
       mapJson()
         .then(({ code, data }) => {
           if (code === 0) {
@@ -111,13 +111,13 @@ onBeforeMount(() => {
     })
     .catch(() => {
       mapSet.loading = false;
-      throw "地图加载失败，请重新加载";
+      throw "地圖加載失敗，請重新加載";
     });
 });
 
 onUnmounted(() => {
   if (map) {
-    // 销毁地图实例
+    // 销毁地圖實例
     map.destroy() && map.clearEvents("click");
   }
 });

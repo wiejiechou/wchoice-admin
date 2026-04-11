@@ -17,44 +17,44 @@ defineOptions({
 const GUIDE_STEPS = [
   {
     element: document.querySelector(".sidebar-logo-container"),
-    title: "项目名称和Logo",
-    intro: "您可以在这里设置项目名称和Logo",
+    title: "專案名稱與Logo",
+    intro: "您可以在這裡設定專案名稱和Logo",
     position: "left"
   },
   {
     element: document.querySelector("#header-search"),
-    title: "搜索菜单",
-    intro: "您可以在这里搜索想要查看的菜单",
+    title: "搜尋選單",
+    intro: "您可以在這裡搜尋想要查看的選單",
     position: "left"
   },
   {
     element: document.querySelector("#header-translation"),
-    title: "国际化",
-    intro: "您可以在这里进行语言切换",
+    title: "語系切換",
+    intro: "您可以在這裡進行語言切換",
     position: "left"
   },
   {
     element: document.querySelector("#full-screen"),
-    title: "全屏",
-    intro: "您可以在这里进行全屏切换",
+    title: "全螢幕",
+    intro: "您可以在這裡進行全螢幕切換",
     position: "left"
   },
   {
     element: document.querySelector("#header-notice"),
-    title: "消息通知",
-    intro: "您可以在这里查看管理员发送的消息",
+    title: "訊息通知",
+    intro: "您可以在這裡查看管理員發送的訊息",
     position: "left"
   },
   {
     element: document.querySelector(".set-icon"),
-    title: "系统配置",
-    intro: "您可以在这里查看系统配置",
+    title: "系統配置",
+    intro: "您可以在這裡查看系統配置",
     position: "left"
   },
   {
     element: document.querySelector(".tags-view"),
-    title: "多标签页",
-    intro: "这里是您访问过的页面的历史",
+    title: "多標籤頁",
+    intro: "這裡是您造訪過的頁面的歷史",
     position: "bottom"
   }
 ] as Partial<GuideStep>[];
@@ -79,7 +79,7 @@ const onTour = () => {
     <template #header>
       <div class="card-header">
         <span class="font-medium">
-          引导页常用于引导式介绍项目的基本功能或亮点
+          引導頁常用於引導式介紹專案的基本功能或亮點
         </span>
       </div>
       <el-link
@@ -87,11 +87,11 @@ const onTour = () => {
         href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/guide/index.vue"
         target="_blank"
       >
-        代码位置 src/views/guide/index.vue
+        程式碼位置 src/views/guide/index.vue
       </el-link>
     </template>
-    <el-button @click="onGuide"> 打开引导页 (intro.js) </el-button>
-    <el-button @click="onTour"> 打开引导页 (el-tour) </el-button>
+    <el-button @click="onGuide"> 開啟引導頁 (intro.js) </el-button>
+    <el-button @click="onTour"> 開啟引導頁 (el-tour) </el-button>
 
     <el-tour v-model="tourOpen">
       <el-tour-step

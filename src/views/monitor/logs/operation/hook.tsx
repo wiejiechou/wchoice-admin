@@ -25,10 +25,10 @@ export function useRole(tableRef: Ref) {
   });
   const columns: TableColumnList = [
     {
-      label: "勾选列", // 如果需要表格多选，此处label必须设置
+      label: "勾选列", // 如果需要表格多選，此处label必须設定
       type: "selection",
       fixed: "left",
-      reserveSelection: true // 数据刷新后保留选项
+      reserveSelection: true // 數據刷新后保留選項
     },
     {
       label: "序号",
@@ -36,12 +36,12 @@ export function useRole(tableRef: Ref) {
       minWidth: 90
     },
     {
-      label: "操作人员",
+      label: "操作人員",
       prop: "username",
       minWidth: 100
     },
     {
-      label: "所属模块",
+      label: "所属模組",
       prop: "module",
       minWidth: 140
     },
@@ -56,32 +56,32 @@ export function useRole(tableRef: Ref) {
       minWidth: 100
     },
     {
-      label: "操作地点",
+      label: "操作地點",
       prop: "address",
       minWidth: 140
     },
     {
-      label: "操作系统",
+      label: "操作系統",
       prop: "system",
       minWidth: 100
     },
     {
-      label: "浏览器类型",
+      label: "瀏覽器類型",
       prop: "browser",
       minWidth: 100
     },
     {
-      label: "操作状态",
+      label: "操作狀態",
       prop: "status",
       minWidth: 100,
       cellRenderer: ({ row, props }) => (
         <el-tag size={props.size} style={tagStyle.value(row.status)}>
-          {row.status === 1 ? "成功" : "失败"}
+          {row.status === 1 ? "成功" : "失敗"}
         </el-tag>
       )
     },
     {
-      label: "操作时间",
+      label: "操作時間",
       prop: "operatingTime",
       minWidth: 180,
       formatter: ({ operatingTime }) =>
@@ -97,26 +97,26 @@ export function useRole(tableRef: Ref) {
     console.log(`current page: ${val}`);
   }
 
-  /** 当CheckBox选择项发生变化时会触发该事件 */
+  /** 當CheckBox選擇项发生變化時會触发該事件 */
   function handleSelectionChange(val) {
     selectedNum.value = val.length;
     // 重置表格高度
     tableRef.value.setAdaptive();
   }
 
-  /** 取消选择 */
+  /** 取消選擇 */
   function onSelectionCancel() {
     selectedNum.value = 0;
-    // 用于多选表格，清空用户的选择
+    // 用于多選表格，清空用戶的選擇
     tableRef.value.getTableRef().clearSelection();
   }
 
   /** 批量删除 */
   function onbatchDel() {
-    // 返回当前选中的行
+    // 返回當前选中的行
     const curSelected = tableRef.value.getTableRef().getSelectionRows();
-    // 接下来根据实际业务，通过选中行的某项数据，比如下面的id，调用接口进行批量删除
-    message(`已删除序号为 ${getKeyList(curSelected, "id")} 的数据`, {
+    // 接下来根據实际业務，通過选中行的某项數據，比如下面的id，調用接口進行批量删除
+    message(`已删除序号為 ${getKeyList(curSelected, "id")} 的數據`, {
       type: "success"
     });
     tableRef.value.getTableRef().clearSelection();
@@ -125,8 +125,8 @@ export function useRole(tableRef: Ref) {
 
   /** 清空日志 */
   function clearAll() {
-    // 根据实际业务，调用接口删除所有日志数据
-    message("已删除所有日志数据", {
+    // 根據实际业務，調用接口删除所有日志數據
+    message("已删除所有日志數據", {
       type: "success"
     });
     onSearch();

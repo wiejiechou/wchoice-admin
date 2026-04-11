@@ -11,7 +11,7 @@ export default [
       showLink: false
     }
   },
-  // 全屏403（无权访问）页面
+  // 全屏403（無權訪問）頁面
   {
     path: "/access-denied",
     name: "AccessDenied",
@@ -21,7 +21,7 @@ export default [
       showLink: false
     }
   },
-  // 全屏500（服务器出错）页面
+  // 全屏500（服務器出错）頁面
   {
     path: "/server-error",
     name: "ServerError",
@@ -55,7 +55,7 @@ export default [
       showLink: false
     }
   },
-  // 下面是一个无layout菜单的例子（一个全屏空白页面），因为这种情况极少发生，所以只需要在前端配置即可（配置路径：src/router/modules/remaining.ts）
+  // 下面是一个無layout選單的例子（一个全屏空白頁面），因為这種情况极少发生，所以只需要在前端配置即可（配置路径：src/router/modules/remaining.ts）
   {
     path: "/empty",
     name: "Empty",

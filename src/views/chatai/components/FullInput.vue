@@ -9,7 +9,7 @@ onMounted(() => {
     response: message => {
       console.log(message);
       return {
-        text: "仅演示，如需AI服务，请参考 https://deepchat.dev/docs/connect"
+        text: "僅演示，如需AI服務，請参考 https://deepchat.dev/docs/connect"
       };
     }
   };
@@ -54,7 +54,7 @@ onMounted(() => {
     :history="[
       { text: '预防心梗、脑梗的方法？', role: 'user' },
       {
-        text: '预防心梗和脑梗的关键方法包括保持健康的生活方式，如均衡饮食、定期锻炼、控制血压和血脂、戒烟限酒以及管理压力。',
+        text: '预防心梗和脑梗的关鍵方法包括保持健康的生活方式，如均衡饮食、定期锻炼、控制血压和血脂、戒烟限酒以及管理压力。',
         role: 'ai'
       }
     ]"

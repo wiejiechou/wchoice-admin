@@ -19,7 +19,7 @@ const columns: TableColumnList = [
     slot: "video"
   },
   {
-    label: "图像",
+    label: "圖像",
     slot: "image"
   }
 ];

@@ -44,22 +44,22 @@ const {
       :model="form"
       class="search-form bg-bg_color w-full pl-8 pt-3 overflow-auto"
     >
-      <el-form-item label="所属模块" prop="module">
+      <el-form-item label="所属模組" prop="module">
         <el-input
           v-model="form.module"
-          placeholder="请输入所属模块"
+          placeholder="請輸入所属模組"
           clearable
           class="w-42.5!"
         />
       </el-form-item>
-      <el-form-item label="请求时间" prop="requestTime">
+      <el-form-item label="請求時間" prop="requestTime">
         <el-date-picker
           v-model="form.requestTime"
           :shortcuts="getPickerShortcuts()"
           type="datetimerange"
           range-separator="至"
-          start-placeholder="开始日期时间"
-          end-placeholder="结束日期时间"
+          start-placeholder="開始日期時間"
+          end-placeholder="結束日期時間"
         />
       </el-form-item>
       <el-form-item>
@@ -78,12 +78,12 @@ const {
     </el-form>
 
     <PureTableBar
-      title="系统日志（仅演示，操作后不生效）"
+      title="系統日志（僅演示，操作後不生效）"
       :columns="columns"
       @refresh="onSearch"
     >
       <template #buttons>
-        <el-popconfirm title="确定要删除所有日志数据吗？" @confirm="clearAll">
+        <el-popconfirm title="確定要删除所有日志數據吗？" @confirm="clearAll">
           <template #reference>
             <el-button type="danger" :icon="useRenderIcon(Delete)">
               清空日志
@@ -105,10 +105,10 @@ const {
               已选 {{ selectedNum }} 项
             </span>
             <el-button type="primary" text @click="onSelectionCancel">
-              取消选择
+              取消選擇
             </el-button>
           </div>
-          <el-popconfirm title="是否确认删除?" @confirm="onbatchDel">
+          <el-popconfirm title="是否確認删除?" @confirm="onbatchDel">
             <template #reference>
               <el-button type="danger" text class="mr-1!"> 批量删除 </el-button>
             </template>
@@ -144,7 +144,7 @@ const {
               :icon="useRenderIcon(View)"
               @click="onDetail(row)"
             >
-              详情
+              詳情
             </el-button>
           </template>
         </pure-table>

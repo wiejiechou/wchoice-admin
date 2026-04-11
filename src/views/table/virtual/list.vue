@@ -8,14 +8,14 @@ const tableData = ref([]);
 
 const columns = [
   { type: "seq", field: "seq", title: "序号", width: 100 },
-  { field: "name", title: "名称", sortable: true },
+  { field: "name", title: "名稱", sortable: true },
   { field: "role", title: "角色" },
   { field: "sex", title: "性别" }
 ];
 
 async function onSearch() {
   loading.value = true;
-  // 模拟数据
+  // 模擬數據
   const mockList = [];
   for (let index = 0; index < 500; index++) {
     mockList.push({

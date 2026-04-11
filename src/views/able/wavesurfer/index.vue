@@ -11,11 +11,11 @@ defineOptions({
 const loading = ref(true);
 const wavesurfer = ref(null);
 const wavesurferRef = ref();
-// 音频总时长（格式化后 mm:ss）
+// 音频总時長（格式化后 mm:ss）
 const totalTime = ref();
-// 音频总时长（单位秒）
+// 音频总時長（單位秒）
 const totalSecondTime = ref();
-// 音频当前播放位置时长
+// 音频當前播放位置時長
 const curTime = ref();
 // 音频是否正在播放
 const isPlay = ref(false);
@@ -38,7 +38,7 @@ function init() {
   // 音频被解码后触发
   wavesurfer.value.on("decode", () => (loading.value = false));
 
-  // 当音频已解码并可以播放时触发
+  // 當音频已解码并可以播放時触发
   wavesurfer.value.on("ready", () => {
     if (!wavesurfer.value) return;
     const { decodedData } = wavesurfer.value;
@@ -47,21 +47,21 @@ function init() {
     totalTime.value = `${m}:${s}`;
     // 光标位置取中
     wavesurfer.value.setTime(decodedData.duration / 2);
-    // 设置音频音量（范围0-1）
+    // 設定音频音量（範圍0-1）
     // wavesurfer.value.setVolume(1);
   });
 
-  // 音频位置改变时，播放期间连续触发
+  // 音频位置改变時，播放期间连续触发
   wavesurfer.value.on("timeupdate", timer => {
     if (timer > totalSecondTime.value) return;
     const { m, s } = getTime(timer);
     curTime.value = `${m}:${s}`;
   });
 
-  // 音频播放时触发
+  // 音频播放時触发
   wavesurfer.value.on("play", () => (isPlay.value = true));
 
-  // 音频暂停时触发
+  // 音频暫停時触发
   wavesurfer.value.on("pause", () => (isPlay.value = false));
 }
 
@@ -80,7 +80,7 @@ onBeforeUnmount(() => {
     <template #header>
       <div class="card-header">
         <span class="font-medium">
-          音频可视化，采用开源的
+          音频可视化，採用開源的
           <el-link
             href="https://wavesurfer-js.org/"
             target="_blank"
@@ -89,7 +89,7 @@ onBeforeUnmount(() => {
             wavesurfer.js
           </el-link>
           <span class="text-[red]">
-            （温馨提示：音频默认最大声音，播放时请调低电脑声音，以免影响到您）
+            （温馨提示：音频預設最大声音，播放時請調低电脑声音，以免影响到您）
           </span>
         </span>
       </div>
@@ -98,7 +98,7 @@ onBeforeUnmount(() => {
         href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/able/wavesurfer"
         target="_blank"
       >
-        代码位置 src/views/able/wavesurfer
+        程式碼位置 src/views/able/wavesurfer
       </el-link>
     </template>
     <div
@@ -115,7 +115,7 @@ onBeforeUnmount(() => {
       <div v-show="totalTime" class="flex mt-2 w-45 justify-around m-auto">
         <Rewind
           v-tippy="{
-            content: '快退（可长按）',
+            content: '快退（可長按）',
             placement: 'bottom'
           }"
           v-longpress:0:100="() => wavesurfer?.skip(-1)"
@@ -123,7 +123,7 @@ onBeforeUnmount(() => {
         />
         <div
           v-tippy="{
-            content: isPlay ? '暂停' : '播放',
+            content: isPlay ? '暫停' : '播放',
             placement: 'bottom'
           }"
           class="cursor-pointer"
@@ -134,7 +134,7 @@ onBeforeUnmount(() => {
         </div>
         <Forward
           v-tippy="{
-            content: '快进（可长按）',
+            content: '快进（可長按）',
             placement: 'bottom'
           }"
           v-longpress:0:100="() => wavesurfer?.skip(1)"

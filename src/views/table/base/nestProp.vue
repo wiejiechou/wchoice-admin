@@ -36,7 +36,7 @@ const tableData = [
         }
       }
     ],
-    role: "程序员鼓励师"
+    role: "程序員鼓励师"
   },
   {
     userInfo: { name: "Test4", age: 26 },
@@ -45,7 +45,7 @@ const tableData = [
       {
         more: {
           content:
-            '<a href="https://github.com/xiaoxian521" target="_black">我是链接，点我去 Follow</a>'
+            '<a href="https://github.com/xiaoxian521" target="_black">我是鏈接，點我去 Follow</a>'
         }
       }
     ],

@@ -16,24 +16,24 @@ defineOptions({
           href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/able/pinyin.vue"
           target="_blank"
         >
-          代码位置 src/views/able/pinyin.vue
+          程式碼位置 src/views/able/pinyin.vue
         </el-link>
       </div>
     </template>
-    <p v-html="html('带 音 调')" />
-    <p class="mt-2!" v-html="html('不 带 音 调', { toneType: 'none' })" />
+    <p v-html="html('帶 音 調')" />
+    <p class="mt-2!" v-html="html('不 帶 音 調', { toneType: 'none' })" />
     <p class="mt-2! custom" v-html="html('自 定 义 样 式')" />
   </el-card>
 </template>
 
 <style lang="scss" scoped>
 .custom {
-  /* 汉字的样式 */
+  /* 汉字的樣式 */
   :deep(.py-chinese-item) {
     color: #409eff;
   }
 
-  /* 拼音的样式 */
+  /* 拼音的樣式 */
   :deep(.py-pinyin-item) {
     color: #f56c6c;
   }

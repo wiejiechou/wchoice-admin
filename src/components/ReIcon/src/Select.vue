@@ -15,14 +15,14 @@ const inputValue = defineModel({ type: String });
 const iconList = ref(IconJson);
 const icon = ref();
 const currentActiveType = ref("ep:");
-// 深拷贝图标数据，前端做搜索
+// 深拷贝圖标數據，前端做搜索
 const copyIconList = cloneDeep(iconList.value);
 const totalPage = ref(0);
-// 每页显示35个图标
+// 每頁顯示35个圖标
 const pageSize = ref(35);
 const currentPage = ref(1);
 
-// 搜索条件
+// 搜索條件
 const filterValue = ref("");
 
 const tabsList = [
@@ -71,7 +71,7 @@ function setVal() {
 function onBeforeEnter() {
   if (isAllEmpty(icon.value)) return;
   setVal();
-  // 寻找当前图标在第几页
+  // 寻找當前圖标在第几頁
   const curIconIndex = copyIconList[currentActiveType.value].findIndex(
     i => i === icon.value
   );
@@ -144,7 +144,7 @@ watch(
           <el-input
             v-model="filterValue"
             class="px-2 pt-2"
-            placeholder="搜索图标"
+            placeholder="搜索圖标"
             clearable
           />
 
@@ -174,7 +174,7 @@ watch(
                 </ul>
                 <el-empty
                   v-show="pageList.length === 0"
-                  :description="`${filterValue} 图标不存在`"
+                  :description="`${filterValue} 圖标不存在`"
                   :image-size="60"
                 />
               </el-scrollbar>

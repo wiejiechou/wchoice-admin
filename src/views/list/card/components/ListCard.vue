@@ -62,7 +62,7 @@ const cardLogoClass = computed(() => [
             effect="dark"
             class="mx-1 list-card-item_detail--operation--tag"
           >
-            {{ product.isSetup ? "已启用" : "已停用" }}
+            {{ product.isSetup ? "已啟用" : "已停用" }}
           </el-tag>
           <el-dropdown trigger="click" :disabled="!product.isSetup">
             <IconifyIconOffline :icon="More2Fill" class="text-[24px]" />

@@ -28,7 +28,7 @@ const props = {
   tag: propTypes.string
     .validate((v: string) => ["canvas", "img"].includes(v))
     .def("canvas"),
-  // 二维码内容
+  // 二維碼内容
   text: {
     type: [String, Array] as PropType<string | Recordable[]>,
     default: null
@@ -38,16 +38,16 @@ const props = {
     type: Object as PropType<QRCodeRenderersOptions>,
     default: (): QRCodeRenderersOptions => ({})
   },
-  // 宽度
+  // 寬度
   width: propTypes.number.def(200),
   // logo
   logo: {
     type: [String, Object] as PropType<Partial<QrcodeLogo> | string>,
     default: (): QrcodeLogo | string => ""
   },
-  // 是否过期
+  // 是否過期
   disabled: propTypes.bool.def(false),
-  // 过期提示内容
+  // 過期提示内容
   disabledText: propTypes.string.def("")
 };
 
@@ -70,7 +70,7 @@ export default defineComponent({
       await nextTick();
       const options = cloneDeep(props.options || {});
       if (props.tag === "canvas") {
-        // 容错率，默认对内容少的二维码采用高容错率，内容多的二维码采用低容错率
+        // 容错率，預設對内容少的二維碼採用高容错率，内容多的二維碼採用低容错率
         options.errorCorrectionLevel =
           options.errorCorrectionLevel ||
           getErrorCorrectionLevel(unref(renderText));
@@ -176,7 +176,7 @@ export default defineComponent({
           ctx.fill();
         }
       };
-      // 将 logo绘制到 canvas上
+      // 將 logo绘制到 canvas上
       return new Promise((resolve: any) => {
         image.onload = () => {
           logoRadius ? drawLogoWithCanvas(image) : drawLogoWithImage(image);
@@ -184,7 +184,7 @@ export default defineComponent({
         };
       });
     };
-    // 得到原QrCode的大小，以便缩放得到正确的QrCode大小
+    // 得到原QrCode的大小，以便縮放得到正確的QrCode大小
     const getOriginWidth = async (
       content: string,
       options: QRCodeRenderersOptions
@@ -193,7 +193,7 @@ export default defineComponent({
       await toCanvas(_canvas, content, options);
       return _canvas.width;
     };
-    // 对于内容少的QrCode，增大容错率
+    // 對于内容少的QrCode，增大容错率
     const getErrorCorrectionLevel = (content: string) => {
       if (content.length > 36) {
         return "M";

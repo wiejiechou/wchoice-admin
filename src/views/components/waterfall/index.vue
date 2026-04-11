@@ -16,39 +16,39 @@ const options = reactive({
   gutter: 10,
   // 是否有周围的gutter
   hasAroundGutter: true,
-  // 卡片在PC上的宽度
+  // 卡片在PC上的寬度
   width: 320,
-  // 自定义行显示个数，主要用于对移动端的适配
+  // 自定義行顯示个数，主要用于對移動端的适配
   breakpoints: {
     1200: {
-      // 当屏幕宽度小于等于1200
+      // 當屏幕寬度小于等于1200
       rowPerView: 4
     },
     800: {
-      // 当屏幕宽度小于等于800
+      // 當屏幕寬度小于等于800
       rowPerView: 3
     },
     500: {
-      // 当屏幕宽度小于等于500
+      // 當屏幕寬度小于等于500
       rowPerView: 2
     }
   },
-  // 动画效果 https://animate.style/
+  // 動畫效果 https://animate.style/
   animationEffect: "animate__zoomInUp",
-  // 动画时间
+  // 動畫時間
   animationDuration: 1000,
-  // 动画延迟
+  // 動畫延迟
   animationDelay: 300,
   // 背景色
   // backgroundColor: "#2C2E3A",
-  // 图片字段选择器，如果层级较深，使用 xxx.xxx.xxx 方式
+  // 圖片字段選擇器，如果層級較深，使用 xxx.xxx.xxx 方式
   imgSelector: "src.original",
-  // 加载配置
+  // 加載配置
   loadProps: {
     loading,
     error
   },
-  // 是否懒加载
+  // 是否懒加載
   lazyload: true
 });
 
@@ -59,14 +59,14 @@ const scrollbarRef = ref();
 const isLoading = ref(false);
 const loadingInstance = ref();
 
-/** 加载更多 */
+/** 加載更多 */
 function handleLoadMore() {
   if (isLoading.value) return Promise.resolve();
   isLoading.value = true;
   loadingInstance.value = ElLoading.service({
     target: ".content",
     background: "transparent",
-    text: "加载中"
+    text: "加載中"
   });
   return new Promise<void>(resolve => {
     getList({
@@ -148,12 +148,12 @@ useInfiniteScroll(
           class="px-5! py-2! rounded-full bg-gray-700 text-md text-white cursor-pointer hover:bg-gray-800 transition-all duration-300 border-0"
           @click="handleLoadMore"
         >
-          加载更多
+          加載更多
         </button>
       </div> -->
 
     <el-backtop
-      title="回到顶部"
+      title="回到頂部"
       :right="35"
       :bottom="50"
       :visibility-height="400"

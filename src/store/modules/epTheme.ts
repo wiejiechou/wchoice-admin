@@ -21,7 +21,7 @@ export const useEpThemeStore = defineStore("pure-epTheme", {
     getEpThemeColor(state) {
       return state.epThemeColor;
     },
-    /** 用于mix菜单布局下hamburger-svg的fill属性 */
+    /** 用于mix選單布局下hamburger-svg的fill属性 */
     fill(state) {
       if (state.epTheme === "light") {
         return "#409eff";

@@ -41,22 +41,22 @@ function onFullscreen() {
       :model="form"
       class="search-form bg-bg_color w-full pl-8 pt-3 overflow-auto"
     >
-      <el-form-item label="部门名称：" prop="name">
+      <el-form-item label="部門名稱：" prop="name">
         <el-input
           v-model="form.name"
-          placeholder="请输入部门名称"
+          placeholder="請輸入部門名稱"
           clearable
           class="w-45!"
         />
       </el-form-item>
-      <el-form-item label="状态：" prop="status">
+      <el-form-item label="狀態：" prop="status">
         <el-select
           v-model="form.status"
-          placeholder="请选择状态"
+          placeholder="請選擇狀態"
           clearable
           class="w-45!"
         >
-          <el-option label="启用" :value="1" />
+          <el-option label="啟用" :value="1" />
           <el-option label="停用" :value="0" />
         </el-select>
       </el-form-item>
@@ -76,7 +76,7 @@ function onFullscreen() {
     </el-form>
 
     <PureTableBar
-      title="部门管理（仅演示，操作后不生效）"
+      title="部門管理（僅演示，操作後不生效）"
       :columns="columns"
       :tableRef="tableRef?.getTableRef()"
       @refresh="onSearch"
@@ -88,7 +88,7 @@ function onFullscreen() {
           :icon="useRenderIcon(AddFill)"
           @click="openDialog()"
         >
-          新增部门
+          新增部門
         </el-button>
       </template>
       <template v-slot="{ size, dynamicColumns }">
@@ -133,7 +133,7 @@ function onFullscreen() {
               新增
             </el-button>
             <el-popconfirm
-              :title="`是否确认删除部门名称为${row.name}的这条数据`"
+              :title="`是否確認删除部門名稱為${row.name}的这條數據`"
               @confirm="handleDelete(row)"
             >
               <template #reference>

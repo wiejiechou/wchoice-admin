@@ -14,14 +14,14 @@ const url = ref(`${VITE_PUBLIC_PATH}html/button.html`);
   <el-card shadow="never">
     <template #header>
       <div class="card-header">
-        <span class="font-medium">通过 iframe 引入按钮页面</span>
+        <span class="font-medium">通過 iframe 引入按鈕頁面</span>
       </div>
       <el-link
         class="mt-2"
         href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/components/button.vue"
         target="_blank"
       >
-        代码位置 src/views/components/button.vue
+        程式碼位置 src/views/components/button.vue
       </el-link>
     </template>
     <iframe :src="url" frameborder="0" class="iframe w-full h-[60vh]" />

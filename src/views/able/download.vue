@@ -28,13 +28,13 @@ function down() {
 <template>
   <el-card shadow="never">
     <template #header>
-      <p class="font-medium">文件下载功能</p>
+      <p class="font-medium">文件下載功能</p>
       <el-link
         class="mt-2"
         href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/able/download.vue"
         target="_blank"
       >
-        代码位置 src/views/able/download.vue
+        程式碼位置 src/views/able/download.vue
       </el-link>
     </template>
     <div class="flex flex-wrap">
@@ -46,11 +46,11 @@ function down() {
           )
         "
       >
-        下载在线图片
+        下載在線圖片
       </el-button>
 
       <el-button @click="downloadByBase64(base64, 'test-base64.png')">
-        基于 base64 下载图片
+        基于 base64 下載圖片
       </el-button>
 
       <el-button
@@ -61,10 +61,10 @@ function down() {
           )
         "
       >
-        根据文件地址下载文件
+        根據文件地址下載文件
       </el-button>
 
-      <el-button @click="down"> 根据后台接口文件流下载 </el-button>
+      <el-button @click="down"> 根據後台接口文件流下載 </el-button>
     </div>
   </el-card>
 </template>

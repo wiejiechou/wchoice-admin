@@ -80,7 +80,7 @@ const tableData: User[] = [
   <el-card shadow="never">
     <template #header>
       <div class="card-header">
-        <span class="font-medium">打印功能（报表、图表、图片）</span>
+        <span class="font-medium">打印功能（報表、圖表、圖片）</span>
         <el-select
           v-model="value"
           class="w-25! mr-2"
@@ -103,7 +103,7 @@ const tableData: User[] = [
         href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/able/print"
         target="_blank"
       >
-        代码位置 src/views/able/print
+        程式碼位置 src/views/able/print
       </el-link>
     </template>
     <el-row :gutter="24">

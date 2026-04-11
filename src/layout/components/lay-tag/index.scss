@@ -118,7 +118,7 @@
     }
   }
 
-  /* 右键菜单 */
+  /* 右鍵選單 */
   .contextmenu {
     position: absolute;
     padding: 5px 0;
@@ -253,7 +253,7 @@
   }
 }
 
-/* 卡片模式下鼠标移入显示蓝色边框 */
+/* 卡片模式下滑鼠移入顯示蓝色边框 */
 .card-in {
   color: var(--el-color-primary);
 
@@ -262,7 +262,7 @@
   }
 }
 
-/* 卡片模式下鼠标移出隐藏蓝色边框 */
+/* 卡片模式下滑鼠移出隱藏蓝色边框 */
 .card-out {
   color: #666;
   border: none;
@@ -272,7 +272,7 @@
   }
 }
 
-/* 灵动模式 */
+/* 灵動模式 */
 .schedule-active {
   position: absolute;
   bottom: 0;
@@ -282,7 +282,7 @@
   background: var(--el-color-primary);
 }
 
-/* 灵动模式下鼠标移入显示蓝色进度条 */
+/* 灵動模式下滑鼠移入顯示蓝色進度條 */
 .schedule-in {
   position: absolute;
   bottom: 0;
@@ -293,7 +293,7 @@
   animation: schedule-in-width 200ms ease-in;
 }
 
-/* 灵动模式下鼠标移出隐藏蓝色进度条 */
+/* 灵動模式下滑鼠移出隱藏蓝色進度條 */
 .schedule-out {
   position: absolute;
   bottom: 0;
@@ -304,7 +304,7 @@
   animation: schedule-out-width 200ms ease-in;
 }
 
-/* 谷歌风格的页签 */
+/* 谷歌風格的頁签 */
 .chrome-tab {
   position: relative;
   display: inline-flex;

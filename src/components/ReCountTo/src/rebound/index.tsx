@@ -20,7 +20,7 @@ export default defineComponent({
       const testUA = regexp => regexp.test(ua);
       const isSafari = testUA(/safari/g) && !testUA(/chrome/g);
 
-      // Safari浏览器的兼容代码
+      // Safari瀏覽器的兼容代码
       isSafari &&
         (timer.value = setTimeout(() => {
           ulRef.value.setAttribute(

@@ -25,7 +25,7 @@ defineOptions({
         href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/components/virtual-list"
         target="_blank"
       >
-        代码位置 src/views/components/virtual-list
+        程式碼位置 src/views/components/virtual-list
       </el-link>
     </template>
     <div class="w-full flex justify-around flex-wrap">

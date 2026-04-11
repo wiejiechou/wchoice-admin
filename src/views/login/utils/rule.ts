@@ -4,14 +4,14 @@ import type { FormRules } from "element-plus";
 import { $t, transformI18n } from "@/plugins/i18n";
 import { useUserStoreHook } from "@/store/modules/user";
 
-/** 6位数字验证码正则 */
+/** 6位数字驗證码正则 */
 export const REGEXP_SIX = /^\d{6}$/;
 
-/** 密码正则（密码格式应为8-18位数字、字母、符号的任意两种组合） */
+/** 密码正则（密码格式应為8-18位数字、字母、符号的任意两種組合） */
 export const REGEXP_PWD =
   /^(?![0-9]+$)(?![a-z]+$)(?![A-Z]+$)(?!([^(0-9a-zA-Z)]|[()])+$)(?!^.*[\u4E00-\u9FA5].*$)([^(0-9a-zA-Z)]|[()]|[a-z]|[A-Z]|[0-9]){8,18}$/;
 
-/** 登录校验 */
+/** 登入校驗 */
 const loginRules = reactive<FormRules>({
   password: [
     {
@@ -45,7 +45,7 @@ const loginRules = reactive<FormRules>({
   ]
 });
 
-/** 手机登录校验 */
+/** 手机登入校驗 */
 const phoneRules = reactive<FormRules>({
   phone: [
     {
@@ -77,7 +77,7 @@ const phoneRules = reactive<FormRules>({
   ]
 });
 
-/** 忘记密码校验 */
+/** 忘记密码校驗 */
 const updateRules = reactive<FormRules>({
   phone: [
     {

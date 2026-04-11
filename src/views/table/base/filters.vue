@@ -44,7 +44,7 @@ const columns: TableColumnList = [
     prop: "address"
   },
   {
-    label: "标签",
+    label: "標籤",
     prop: "tag",
     filters: [
       { text: "Home", value: "Home" },

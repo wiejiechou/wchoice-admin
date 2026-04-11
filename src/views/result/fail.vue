@@ -11,20 +11,20 @@ const { columns } = useColumns();
   <el-card shadow="never">
     <template #header>
       <div class="card-header">
-        <span class="font-medium">失败页</span>
+        <span class="font-medium">失敗頁</span>
       </div>
       <el-link
         class="mt-2"
         href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/result/fail.vue"
         target="_blank"
       >
-        代码位置 src/views/result/fail.vue
+        程式碼位置 src/views/result/fail.vue
       </el-link>
     </template>
     <el-result
       icon="error"
-      title="提交失败"
-      sub-title="请核对并修改以下信息后，再重新提交。"
+      title="提交失敗"
+      sub-title="請核對并修改以下信息后，再重新提交。"
     >
       <template #extra>
         <el-button type="primary">返回修改</el-button>
@@ -32,7 +32,7 @@ const { columns } = useColumns();
     </el-result>
     <PureDescriptions
       :columns="columns"
-      title="您提交的内容有如下错误："
+      title="您提交的内容有如下錯誤："
       class="p-6 w-[90%] m-auto bg-[#fafafa] dark:bg-[#1d1d1d]"
     />
   </el-card>

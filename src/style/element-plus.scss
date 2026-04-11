@@ -20,7 +20,7 @@
   margin-left: 2px !important;
 }
 
-/* 自定义 popover 的类名 */
+/* 自定義 popover 的类名 */
 .pure-popper {
   padding: 0 !important;
 }
@@ -64,7 +64,7 @@
   }
 }
 
-/* 全局覆盖element-plus的el-tour、el-dialog、el-drawer、el-message-box、el-notification组件右上角关闭图标和el-upload上传文件列表右侧关闭图标的样式，表现更鲜明 */
+/* 全局覆盖element-plus的el-tour、el-dialog、el-drawer、el-message-box、el-notification組件右上角關閉圖标和el-upload上傳文件列表右側關閉圖标的樣式，表現更鲜明 */
 .el-dialog__headerbtn,
 .el-message-box__headerbtn {
   &:hover {
@@ -101,7 +101,7 @@
   }
 }
 
-/* 克隆并自定义 ElMessage 样式，不会影响 ElMessage 原本样式，在 src/utils/message.ts 中调用自定义样式 ElMessage 方法即可，整体暗色风格在 src/style/dark.scss 文件进行了适配 */
+/* 克隆并自定義 ElMessage 樣式，不會影响 ElMessage 原本樣式，在 src/utils/message.ts 中調用自定義樣式 ElMessage 方法即可，整体暗色風格在 src/style/dark.scss 文件进行了适配 */
 .pure-message {
   background: #fff !important;
   border-width: 0 !important;
@@ -129,7 +129,7 @@
   }
 }
 
-/* 自定义菜单搜索样式 */
+/* 自定義選單搜索樣式 */
 .pure-search-dialog {
   @media screen and (width > 760px) and (width <= 940px) {
     .el-input__inner {
@@ -161,29 +161,29 @@
   }
 }
 
-/* 仿 el-scrollbar 滚动条样式，支持大多数浏览器，如Chrome、Edge、Firefox、Safari等。整体暗色风格在 src/style/dark.scss 文件进行了适配 */
+/* 仿 el-scrollbar 滚動條樣式，支持大多数瀏覽器，如Chrome、Edge、Firefox、Safari等。整体暗色風格在 src/style/dark.scss 文件进行了适配 */
 .pure-scrollbar {
-  scrollbar-color: rgb(221 222 224) transparent; /* 滑块颜色、轨道颜色 */
+  scrollbar-color: rgb(221 222 224) transparent; /* 滑桿颜色、軌道颜色 */
 
   /* Firefox */
-  scrollbar-width: thin; /* 可选值为 'auto', 'thin', 'none' */
+  scrollbar-width: thin; /* 可选值為 'auto', 'thin', 'none' */
   ::-webkit-scrollbar {
-    width: 6px; /* 滚动条宽度 */
+    width: 6px; /* 滚動條寬度 */
   }
 
-  /* 滚动条轨道 */
+  /* 滚動條軌道 */
   ::-webkit-scrollbar-track {
-    background: transparent; /* 轨道颜色 */
+    background: transparent; /* 軌道颜色 */
   }
 
-  /* 滚动条滑块 */
+  /* 滚動條滑桿 */
   ::-webkit-scrollbar-thumb {
     background-color: rgb(221 222 224);
     border-radius: 4px;
   }
 
-  /* 滚动条滑块：hover状态 */
+  /* 滚動條滑桿：hover狀態 */
   ::-webkit-scrollbar-thumb:hover {
-    background: rgb(199 201 203); /* 滑块hover颜色 */
+    background: rgb(199 201 203); /* 滑桿hover颜色 */
   }
 }

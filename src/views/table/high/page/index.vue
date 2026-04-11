@@ -20,18 +20,18 @@ const {
 <template>
   <div>
     <el-space class="float-right mb-4">
-      <p class="text-sm">多选：</p>
+      <p class="text-sm">多選：</p>
       <el-radio-group v-model="select" size="small">
         <el-radio-button value="yes">是</el-radio-button>
         <el-radio-button value="no">否</el-radio-button>
       </el-radio-group>
       <el-divider direction="vertical" />
-      <p class="text-sm">动态列：</p>
+      <p class="text-sm">動態列：</p>
       <el-radio-group v-model="hideVal" size="small">
-        <el-radio-button value="nohide">不隐藏</el-radio-button>
-        <el-radio-button value="hideDate">隐藏日期</el-radio-button>
-        <el-radio-button value="hideName">隐藏姓名</el-radio-button>
-        <el-radio-button value="hideAddress">隐藏地址</el-radio-button>
+        <el-radio-button value="nohide">不隱藏</el-radio-button>
+        <el-radio-button value="hideDate">隱藏日期</el-radio-button>
+        <el-radio-button value="hideName">隱藏姓名</el-radio-button>
+        <el-radio-button value="hideAddress">隱藏地址</el-radio-button>
       </el-radio-group>
       <el-divider direction="vertical" />
       <p class="text-sm">表格大小：</p>
@@ -41,14 +41,14 @@ const {
         <el-radio-button value="small">small</el-radio-button>
       </el-radio-group>
       <el-divider direction="vertical" />
-      <p class="text-sm">分页大小：</p>
+      <p class="text-sm">分頁大小：</p>
       <el-radio-group v-model="pagination.size" size="small" @change="onChange">
         <el-radio-button value="large">large</el-radio-button>
         <el-radio-button value="default">default</el-radio-button>
         <el-radio-button value="small">small</el-radio-button>
       </el-radio-group>
       <el-divider direction="vertical" />
-      <p class="text-sm">分页的对齐方式：</p>
+      <p class="text-sm">分頁的對齐方式：</p>
       <el-radio-group v-model="paginationAlign" size="small">
         <el-radio-button value="right">right</el-radio-button>
         <el-radio-button value="center">center</el-radio-button>

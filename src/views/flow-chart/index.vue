@@ -33,20 +33,20 @@ function initLf() {
   LogicFlow.use(Snapshot);
   // 使用bpmn插件，引入bpmn元素，这些元素可以在turbo中转换后使用
   LogicFlow.use(BpmnElement);
-  // 启动右键菜单
+  // 啟動右鍵選單
   LogicFlow.use(Menu);
   const domLf = new LogicFlow({
     ...unref(config),
     container: document.querySelector("#turbo")
   });
   lf.value = domLf;
-  // 设置边类型bpmn:sequenceFlow为默认类型
+  // 設定边類型bpmn:sequenceFlow為預設類型
   unref(lf).setDefaultEdgeType("bpmn:sequenceFlow");
   onRender();
 }
 
 function onRender() {
-  // Turbo数据转换为LogicFlow内部识别的数据结构
+  // Turbo數據转换為LogicFlow内部识别的數據結构
   const lFData = toLogicflowData(demoData);
   lf.value.render(lFData);
 }
@@ -66,7 +66,7 @@ onMounted(() => {
     <template #header>
       <div class="card-header">
         <span class="font-medium">
-          流程图组件，采用开源的
+          流程圖組件，採用開源的
           <el-link
             href="https://site.logic-flow.cn/tutorial/get-started"
             target="_blank"
@@ -81,11 +81,11 @@ onMounted(() => {
         href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/flow-chart"
         target="_blank"
       >
-        代码位置 src/views/flow-chart
+        程式碼位置 src/views/flow-chart
       </el-link>
     </template>
     <div class="logic-flow-view">
-      <!-- 辅助工具栏 -->
+      <!-- 辅助工具欄 -->
       <Control
         v-if="lf"
         class="demo-control"
@@ -93,15 +93,15 @@ onMounted(() => {
         :catTurboData="false"
         @catData="catData"
       />
-      <!-- 节点面板 -->
+      <!-- 节點面板 -->
       <NodePanel v-if="lf" :lf="lf" :nodeList="nodeList" />
       <!-- 画布 -->
       <div id="turbo" />
-      <!-- 数据查看面板 -->
+      <!-- 數據查看面板 -->
       <el-dialog
         v-model="dataVisible"
         class="flow-dialog"
-        title="数据"
+        title="數據"
         width="50%"
       >
         <el-scrollbar>

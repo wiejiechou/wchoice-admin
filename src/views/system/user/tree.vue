@@ -79,7 +79,7 @@ function toggleRowExpansionAll(status) {
   }
 }
 
-/** 重置部门树状态（选中状态、搜索框值、树初始化） */
+/** 重置部門树狀態（选中狀態、搜索框值、树初始化） */
 function onTreeReset() {
   highlightMap.value = {};
   searchValue.value = "";
@@ -104,7 +104,7 @@ defineExpose({ onTreeReset });
         v-model="searchValue"
         class="ml-2"
         size="small"
-        placeholder="请输入部门名称"
+        placeholder="請輸入部門名稱"
         clearable
       >
         <template #suffix>
@@ -128,7 +128,7 @@ defineExpose({ onTreeReset });
                 :icon="useRenderIcon(isExpand ? ExpandIcon : UnExpandIcon)"
                 @click="toggleRowExpansionAll(isExpand ? false : true)"
               >
-                {{ isExpand ? "折叠全部" : "展开全部" }}
+                {{ isExpand ? "折叠全部" : "展開全部" }}
               </el-button>
             </el-dropdown-item>
             <!-- <el-dropdown-item>
@@ -139,7 +139,7 @@ defineExpose({ onTreeReset });
                 :icon="useRenderIcon(Reset)"
                 @click="onTreeReset"
               >
-                重置状态
+                重置狀態
               </el-button>
             </el-dropdown-item> -->
           </el-dropdown-menu>

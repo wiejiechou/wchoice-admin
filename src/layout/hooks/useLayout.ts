@@ -15,7 +15,7 @@ export function useLayout() {
     ) {
       $storage.tags = routerArrays;
     }
-    /** 国际化 */
+    /** 國際化 */
     if (!$storage.locale) {
       $storage.locale = { locale: $config?.Locale ?? "zh-TW" };
       useI18n().locale.value = $config?.Locale ?? "zh-TW";
@@ -32,7 +32,7 @@ export function useLayout() {
         themeMode: $config?.ThemeMode ?? "light"
       };
     }
-    /** 灰色模式、色弱模式、隐藏标签页 */
+    /** 灰色模式、色弱模式、隱藏標籤頁 */
     if (!$storage.configure) {
       $storage.configure = {
         grey: $config?.Grey ?? false,
@@ -49,7 +49,7 @@ export function useLayout() {
     }
   };
 
-  /** 清空缓存后从platform-config.json读取默认配置并赋值到storage中 */
+  /** 清空缓存后从platform-config.json读取預設配置并赋值到storage中 */
   const layout = computed(() => {
     return $storage?.layout.layout;
   });

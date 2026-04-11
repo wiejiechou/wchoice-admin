@@ -26,20 +26,20 @@ const handleChange = value => {
 <template>
   <el-card shadow="never">
     <template #header>
-      <p class="font-medium">区域级联选择器</p>
+      <p class="font-medium">區域級联選擇器</p>
       <el-link
         class="mt-2"
         href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/components/cascader.vue"
         target="_blank"
       >
-        代码位置 src/views/components/cascader.vue
+        程式碼位置 src/views/components/cascader.vue
       </el-link>
     </template>
     <el-row :gutter="24">
       <el-col :xl="12" :lg="12" :md="24" :sm="24" :xs="24">
         <div class="flex-c flex-col">
           <span class="text-(--el-color-primary)">
-            1. 二级联动（不带“全部”选项）
+            1. 二級联動（不帶“全部”選項）
             <el-cascader
               v-model="selectedOptions1"
               :options="provinceAndCityData"
@@ -49,12 +49,12 @@ const handleChange = value => {
           <div class="leading-10">
             <div>绑定值：{{ selectedOptions1 }}</div>
             <div>
-              区域码转汉字：
+              區域码转汉字：
               {{ CodeToText[selectedOptions1[0]] }},
               {{ CodeToText[selectedOptions1[1]] }}
             </div>
             <div>
-              汉字转区域码：
+              汉字转區域码：
               {{
                 convertTextToCode(
                   CodeToText[selectedOptions1[0]],
@@ -68,7 +68,7 @@ const handleChange = value => {
       <el-col :xl="12" :lg="12" :md="24" :sm="24" :xs="24">
         <div class="flex-c flex-col mt-3">
           <span class="text-(--el-color-primary)">
-            2. 二级联动（带有“全部”选项）
+            2. 二級联動（帶有“全部”選項）
             <el-cascader
               v-model="selectedOptions3"
               :options="provinceAndCityDataPlus"
@@ -78,12 +78,12 @@ const handleChange = value => {
           <div class="leading-10">
             <div>绑定值：{{ selectedOptions3 }}</div>
             <div>
-              区域码转汉字：
+              區域码转汉字：
               {{ CodeToText[selectedOptions3[0]] }},
               {{ CodeToText[selectedOptions3[1]] }}
             </div>
             <div>
-              汉字转区域码：
+              汉字转區域码：
               {{
                 convertTextToCode(
                   CodeToText[selectedOptions3[0]],
@@ -97,7 +97,7 @@ const handleChange = value => {
       <el-col :xl="12" :lg="12" :md="24" :sm="24" :xs="24">
         <div class="flex-c flex-col mt-3">
           <span class="text-(--el-color-primary)">
-            3. 三级联动（不带“全部”选项）
+            3. 三級联動（不帶“全部”選項）
             <el-cascader
               v-model="selectedOptions2"
               :options="regionData"
@@ -107,13 +107,13 @@ const handleChange = value => {
           <div class="leading-10">
             <div>绑定值：{{ selectedOptions2 }}</div>
             <div>
-              区域码转汉字：
+              區域码转汉字：
               {{ CodeToText[selectedOptions2[0]] }},
               {{ CodeToText[selectedOptions2[1]] }},
               {{ CodeToText[selectedOptions2[2]] }}
             </div>
             <div>
-              汉字转区域码：
+              汉字转區域码：
               {{
                 convertTextToCode(
                   CodeToText[selectedOptions2[0]],
@@ -128,7 +128,7 @@ const handleChange = value => {
       <el-col :xl="12" :lg="12" :md="24" :sm="24" :xs="24">
         <div class="flex-c flex-col mt-3">
           <span class="text-(--el-color-primary)">
-            4. 三级联动（带"全部选项"）
+            4. 三級联動（帶"全部選項"）
             <el-cascader
               v-model="selectedOptions4"
               :options="regionDataPlus"
@@ -138,13 +138,13 @@ const handleChange = value => {
           <div class="leading-10">
             <div>绑定值：{{ selectedOptions4 }}</div>
             <div>
-              区域码转汉字：
+              區域码转汉字：
               {{ CodeToText[selectedOptions4[0]] }},
               {{ CodeToText[selectedOptions4[1]] }},
               {{ CodeToText[selectedOptions4[2]] }}
             </div>
             <div>
-              汉字转区域码：
+              汉字转區域码：
               {{
                 convertTextToCode(
                   CodeToText[selectedOptions4[0]],
