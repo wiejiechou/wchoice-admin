@@ -4,143 +4,149 @@
 
 ```
 root
-├── .github  # GitHub 配置文件
-│   ├── ISSUE_TEMPLATE  # 问题提交参考模板
-│   ├── workflows git  # 工作流
-├── .husky  # 代码提交前校验配置文件
-├── .vscode  # IDE 工具推荐配置文件
-│   │   ├── extensions.json  # 一键安装平台推荐的 vscode 插件
-│   │   ├── settings.json  # 设置扩展程序或 vscode 编辑器的一些属性
-│   │   ├── vue3.0.code-snippets  # vue3.0 代码片段
-│   │   └── vue3.2.code-snippets  # vue3.2 代码片段
-│   │   └── vue3.3.code-snippets  # vue3.3 代码片段
-├── build  # 构建工具
-│   │   ├── cdn.ts  # 打包时采用 cdn 模式
-│   │   ├── compress.ts  # 打包时启用 gzip 压缩或 brotli 压缩
-│   │   ├── info.ts  # 输出打包信息（大小、用时）
-│   │   ├── optimize.ts  # vite 依赖预构建配置项
-│   │   ├── plugins.ts  # vite 相关插件存放处
-│   │   ├── utils.ts  # 构建工具常用方法抽离
-├── locales  # 国际化文件存放处
-│   │   ├── en.yaml  # 英文配置
-│   │   ├── zh-CN.yaml  # 中文配置
-├── mock  # mock 模拟后台数据
-│   │   ├── asyncRoutes.ts  # 模拟后台返回动态路由
+├── .github  # GitHub 設定檔
+│   ├── ISSUE_TEMPLATE  # 問題回報參考範本
+│   ├── workflows git  # 工作流 (Workflows)
+├── .husky  # 程式碼提交前校驗 (Git Hooks) 設定檔
+├── .vscode  # IDE 工具推薦設定
+│   │   ├── extensions.json  # 一鍵安裝平台推薦的 VS Code 套件
+│   │   ├── settings.json  # 設定擴充套件或 VS Code 編輯器的相關屬性
+│   │   ├── vue3.0.code-snippets  # Vue 3.0 程式碼片段 (Snippets)
+│   │   ├── vue3.2.code-snippets  # Vue 3.2 程式碼片段 (Snippets)
+│   │   └── vue3.3.code-snippets  # Vue 3.3 程式碼片段 (Snippets)
+├── build  # 建置工具
+│   │   ├── cdn.ts  # 打包時採用 CDN 模式
+│   │   ├── compress.ts  # 打包時啟用 Gzip 或 Brotli 壓縮
+│   │   ├── info.ts  # 輸出打包資訊（檔案大小、耗時）
+│   │   ├── optimize.ts  # Vite 相依套件預建置 (Pre-bundling) 設定項目
+│   │   ├── plugins.ts  # Vite 相關外掛存放處
+│   │   ├── utils.ts  # 建置工具常用方法抽離
+├── locales  # 多國語系 (i18n) 檔案存放處
+│   │   ├── en.yaml  # 英文語系設定
+│   │   ├── zh-CN.yaml  # 簡體中文設定
+│   │   ├── zh-TW.yaml  # 繁體中文設定
+├── mock  # Mock 模擬後端資料
+│   │   ├── asyncRoutes.ts  # 模擬後端回傳動態路由
 │   │   ├── ...
-├── node_modules  # 模块依赖
-├── public  # 静态资源
-│   │   ├── audio  # 音频文件
-│   │   ├── html  # 静态 iframe 页面
-│   │   ├── wasm  # wasm 文件以及胶水代码
-│   │   ├── favicon.ico  # favicon
-│   │   ├── logo.svg  # logo
-│   │   ├── platform-config.json  # 全局配置文件（打包后修改也可生效）
+├── node_modules  # 專案相依套件
+├── public  # 靜態資源
+│   │   ├── audio  # 音訊檔案
+│   │   ├── html  # 靜態 iframe 頁面
+│   │   ├── wasm  # WebAssembly 檔案及相關膠水程式碼 (Glue code)
+│   │   ├── favicon.ico  # 網站圖示 (Favicon)
+│   │   ├── logo.svg  # 標誌 (Logo)
+│   │   ├── platform-config.json  # 全局設定檔（打包後修改亦可生效）
 ├── src
-│   ├── api  # 接口请求统一管理
-│   ├── assets  # 字体、图片等静态资源
-│   ├── components  # 自定义通用组件
-│   │   ├── ReAnimateSelector  # [animate.css](https://animate.style/) 选择器组件
-│   │   ├── ReAuth  # 按钮级别权限组件（根据路由meta中的auths字段进行判断）
-│   │   ├── ReBarcode  # 条形码组件
-│   │   ├── ReCol  # 封装 element-plus 的 el-col 组件
-│   │   ├── ReCountTo  # 数字动画组件
-│   │   ├── ReCropper  # 图片裁剪组件
-│   │   ├── ReCropperPreview  # 图片裁剪预览组件
-│   │   ├── ReDialog  # 基于 element-plus 中 el-dialog 组件开发的函数式弹框
-│   │   ├── ReFlicker  # 圆点、方形闪烁动画组件
-│   │   ├── ReFlop  # 时间翻牌组件
-│   │   ├── ReFlowChart  # LogicFlow 流程图组件
-│   │   ├── ReIcon  # 图标组件
-│   │   ├── ReImageVerify  # 图形验证码组件
-│   │   ├── ReMap  # 高德地图组件
-│   │   ├── RePerms  # 按钮级别权限组件（根据登录接口返回的permissions字段进行判断）
-│   │   ├── RePureTableBar  # 配合 `@pureadmin/table` 实现快速便捷的表格操作 https://github.com/pure-admin/pure-admin-table */
-│   │   ├── ReQrcode  # 二维码组件
-│   │   ├── ReSeamlessScroll  # 无缝滚动组件
-│   │   ├── ReSegmented  # 分段控制器组件
-│   │   ├── ReSelector  # 选择器组件
-│   │   ├── ReSplitPane  # 切割面板组件
-│   │   ├── ReText  # 支持 Tooltip 提示的文本省略组件
-│   │   ├── ReTreeLine  # 树形连接线组件（基于element-plus）
-│   │   ├── ReTypeit  # 打字机效果组件
-│   │   ├── ReVxeTableBar  # 配合 vxe-table 实现快速便捷的表格操作
-│   ├── config  # 获取平台动态全局配置
-│   ├── directives  # 自定义指令
-│   │   ├── auth  # 按钮级别权限指令（根据路由meta中的auths字段进行判断）
-│   │   ├── copy  # 文本复制指令（默认双击复制）
-│   │   ├── longpress  # 长按指令
-│   │   ├── optimize  # 防抖、节流指令
-│   │   ├── perms  # 按钮级别权限指令（根据登录接口返回的permissions字段进行判断）
-│   │   ├── ripple  # 水波纹效果指令
-│   ├── layout  # 主要页面布局
-│   ├── plugins  # 处理一些库或插件，导出更方便的 api
-│   ├── router  # 路由配置
-│   ├── store  # pinia 状态管理
-│   ├── style  # 全局样式
-│   │   ├── dark.scss  # 暗黑模式样式适配文件
-│   │   ├── element-plus.scss  # 全局覆盖 element-plus 样式文件
-│   │   ├── reset.scss  # 全局重置样式文件
-│   │   ├── sidebar.scss  # layout 布局样式文件
-│   │   ├── tailwind.css  # tailwindcss 自定义样式配置文件
+│   ├── api  # API 請求統一管理
+│   ├── assets  # 字體、圖片等靜態資源
+│   ├── components  # 自定義通用元件
+│   │   ├── ReAnimateSelector  # [animate.css](https://animate.style/) 選擇器元件
+│   │   ├── ReAuth  # 按鈕等級權限元件（根據路由 meta 中的 auths 欄位判斷）
+│   │   ├── ReBarcode  # 條碼元件
+│   │   ├── ReCol  # 封裝 Element Plus 的 el-col 元件
+│   │   ├── ReCountTo  # 數字動畫元件
+│   │   ├── ReCropper  # 圖片裁剪元件
+│   │   ├── ReCropperPreview  # 圖片裁剪預覽元件
+│   │   ├── ReDialog  # 基於 Element Plus el-dialog 開發的函式調用彈窗
+│   │   ├── ReFlicker  # 圓點、方形閃爍動畫元件
+│   │   ├── ReFlop  # 時間翻牌元件
+│   │   ├── ReFlowChart  # LogicFlow 流程圖元件
+│   │   ├── ReIcon  # 圖示元件
+│   │   ├── ReImageVerify  # 圖形驗證碼元件
+│   │   ├── ReMap  # 高德地圖元件
+│   │   ├── RePerms  # 按鈕等級權限元件（根據登入介面回傳的 permissions 欄位判斷）
+│   │   ├── RePureTableBar  # 配合 `@pureadmin/table` 實現快速便捷的表格操作 (https://github.com/pure-admin/pure-admin-table)
+│   │   ├── ReQrcode  # 二維碼 (QR Code) 元件
+│   │   ├── ReSeamlessScroll  # 無縫捲動元件
+│   │   ├── ReSegmented  # 分段控制器元件
+│   │   ├── ReSelector  # 選擇器元件
+│   │   ├── ReSplitPane  # 切割面板元件
+│   │   ├── ReText  # 支援 Tooltip 提示的文字省略元件
+│   │   ├── ReTreeLine  # 樹形連接線元件（基於 Element Plus）
+│   │   ├── ReTypeit  # 打字機效果元件
+│   │   ├── ReVxeTableBar  # 配合 vxe-table 實現快速便捷的表格操作
+│   ├── config  # 獲取平台動態全局設定
+│   ├── directives  # 自定義指令 (Directives)
+│   │   ├── auth  # 按鈕等級權限指令（根據路由 meta 中的 auths 欄位判斷）
+│   │   ├── copy  # 文字複製指令（預設按兩下複製）
+│   │   ├── longpress  # 長按指令
+│   │   ├── optimize  # 防抖 (Debounce)、節流 (Throttle) 指令
+│   │   ├── perms  # 按鈕等級權限指令（根據登入介面回傳的 permissions 欄位判斷）
+│   │   ├── ripple  # 水波紋效果指令
+│   ├── layout  # 主要頁面佈局
+│   ├── plugins  # 處理函式庫或外掛，匯出更方便的 API
+│   ├── router  # 路由設定
+│   │   ├── modules  # 靜態路由模組 (含官方 Demo)
+│   │   ├── index.ts  # 路由入口，自動掃描 modules
+│   │   ├── perm-declaration.ts  # [客製化] 權限角色集中管理定義
+│   │   └── utils.ts  # 路由工具，已擴大掃描 views-custom
+│   ├── store  # Pinia 狀態管理
+│   ├── style  # 全局樣式
+│   │   ├── dark.scss  # 暗黑模式樣式適配檔案
+│   │   ├── element-plus.scss  # 全局覆蓋 Element Plus 樣式檔案
+│   │   ├── reset.scss  # 全局重設樣式檔案 (CSS Reset)
+│   │   ├── sidebar.scss  # Layout 佈局樣式檔案
+│   │   ├── tailwind.css  # Tailwind CSS 自定義樣式設定檔
 │   │   ├── ...
 │   ├── utils  # 全局工具方法
-│   │   ├── http  # 封装 axios 文件
-│   │   ├── localforage  # 二次封装 localforage (https://localforage.docschina.org/) 支持设置过期时间，提供完整的类型提示
-│   │   ├── progress  # 封装 nprogress
-│   │   └── auth.ts  # 处理用户信息和 token 相关
-│   │   └── chinaArea.ts  # 汉字转区域码
-│   │   └── globalPolyfills.ts  # 解决项目可能因为安装某个依赖出现 `global is not defined` 报错
-│   │   └── message.ts  # 消息提示函数
-│   │   ├── mitt.ts  # 触发公共事件，类似 EventBus
-│   │   ├── preventDefault.ts  # 阻止键盘F12、浏览器默认右键菜单、页面元素选中、图片默认可拖动的方法
-│   │   ├── print.ts  # 打印函数
-│   │   ├── propTypes.ts  # 二次封装 vue 的 propTypes
-│   │   ├── responsive.ts  # 全局响应式 storage 配置
-│   │   ├── sso.ts  # 前端单点登录逻辑处理
-│   │   ├── tree.ts  # 树结构相关处理函数
-│   ├── views  # 存放编写业务代码页面
-│   ├── App.vue  # 入口页面
-│   ├── main.ts  # 入口文件
-├── types  # 全局 TS 类型配置
-│   │   ├── directives.d.ts  # 全局自定义指令类型声明
-│   │   ├── global-components.d.ts  # 自定义全局组件获得 Volar 提示（自定义的全局组件需要在这里声明下才能获得 Volar 类型提示哦）
-│   │   ├── global.d.ts  # 全局类型声明，无需引入直接在 `.vue` 、`.ts` 、`.tsx` 文件使用即可获得类型提示
-│   │   ├── index.d.ts  # 此文件跟同级目录的 global.d.ts 文件一样也是全局类型声明，只不过这里存放一些零散的全局类型，无需引入直接在 .vue 、.ts 、.tsx 文件使用即可获得类型提示
-│   │   ├── router.d.ts  # 全局路由类型声明
-│   │   ├── shims-tsx.d.ts  # 该文件是为了给 .tsx 文件提供类型支持，在编写时能正确识别语法
-│   │   └── shims-vue.d.ts  # .vue、.scss 文件不是常规的文件类型，typescript 无法识别，所以我们需要通过下图的代码告诉 typescript 这些文件的类型，防止类型报错
-├── .browserslistrc  # 配置目标浏览器的环境
-├── .dockerignore  # 排除不需要上传到 docker 服务端的文件或目录
-├── .editorconfig  # 编辑器读取文件格式及样式定义配置 https://editorconfig.org/
-├── .env  # 全局环境变量配置（当 .env 文件与 .env.development、.env.production、.env.staging 这三个文件之一存在相同的配置 key 时，.env 优先级更低）
-├── .env.development  # 开发环境变量配置
-├── .env.production  # 生产环境变量配置
-├── .env.staging  # 预发布环境变量配置
-├── .gitattributes  # 自定义指定文件属性
-├── .gitignore  # git 提交忽略文件
-├── .gitpod.yml  # gitpod 部署配置
-├── .lintstagedrc  # lint-staged 配置
-├── .markdownlint.json  # markdown 格式检查配置
-├── .npmrc  # npm 配置文件
-├── .nvmrc  # 用于指定在使用 Node Version Manager（NVM）时要使用的特定 Node.js 版本
-├── .prettierignore  # prettier 语法检查忽略文件
-├── .prettierrc.js  # prettier 插件配置
-├── .stylelintignore  # stylelint 语法检查忽略文件
-├── CHANGELOG.en_US.md  # 版本更新日志（英文版）
-├── CHANGELOG.md  # 版本更新日志（英文版）
-├── CHANGELOG.zh_CN.md  # 版本更新日志（中文版）
-├── Dockerfile  # 用来构建 docker 镜像
-├── LICENSE  # 证书
-├── README.en-US.md  # README（英文版）
-├── README.md  # README
-├── commitlint.config.js  # git 提交前检查配置
-├── eslint.config.js  # eslint 语法检查配置
-├── index.html  # html 主入口
-├── package.json  # 依赖包管理以及命令配置
-├── pnpm-lock.yaml  # 依赖包版本锁定文件
-├── postcss.config.js  # postcss 插件配置
-├── stylelint.config.js  # stylelint 配置
-├── tailwind.config.ts  # tailwindcss 配置
-├── tsconfig.json  # typescript 配置
-└── vite.config.ts  # vite 配置
+│   │   ├── http  # 封裝 Axios 檔案
+│   │   ├── localforage  # 二次封裝 localForage，支援設定過期時間與完整類型提示 (https://localforage.docschina.org/)
+│   │   ├── progress  # 封裝 nprogress (進度條)
+│   │   └── auth.ts  # 處理使用者資訊與 Token 相關邏輯
+│   │   └── chinaArea.ts  # 漢字轉區域碼
+│   │   └── globalPolyfills.ts  # 解決因安裝相依套件出現 `global is not defined` 的錯誤
+│   │   └── message.ts  # 訊息提示函式
+│   │   ├── mitt.ts  # 觸發公共事件，類似 EventBus
+│   │   ├── preventDefault.ts  # 阻止 F12、右鍵選單、文字選中、圖片拖動等預設行為的方法
+│   │   ├── print.ts  # 列印函式
+│   │   ├── propTypes.ts  # 二次封裝 Vue 的 propTypes
+│   │   ├── responsive.ts  # 全局響應式 Storage 設定
+│   │   ├── sso.ts  # 前端單擊登入 (SSO) 邏輯處理
+│   │   ├── tree.ts  # 樹狀結構相關處理函式
+│   ├── views  # 官方範例業務頁面存放處
+│   ├── views-custom  # [客製化] 專案實際業務邏輯頁面存放處
+│   ├── App.vue  # 入口頁面元件
+│   ├── main.ts  # 入口檔案
+├── types  # 全局 TypeScript 類型定義 (Type Definitions)
+│   │   ├── directives.d.ts  # 全局自定義指令類型宣告
+│   │   ├── global-components.d.ts  # 自定義全局元件的 Volar 類型提示宣告
+│   │   ├── global.d.ts  # 全局類型宣告，無需引入即可在 .vue、.ts、.tsx 中使用
+│   │   ├── index.d.ts  # 零散的全局類型宣告
+│   │   ├── router.d.ts  # 全局路由類型宣告
+│   │   ├── shims-tsx.d.ts  # 提供 .tsx 檔案的類型支援與語法識別
+│   │   └── shims-vue.d.ts  # 協助 TypeScript 識別 .vue 與 .scss 等非標準檔案類型
+├── .browserslistrc  # 設定目標瀏覽器環境支援範圍
+├── .dockerignore  # 排除不需要上傳到 Docker 伺服端的檔案或目錄
+├── .editorconfig  # 跨編輯器檔案格式與樣式定義設定 https://editorconfig.org/
+├── .env  # 全局環境變數設定（當 .env 檔案與 .env.development、.env.production、.env.staging 這三個檔案之一存在相同的設定 key 時，.env 優先權較低）
+├── .env.development  # 開發環境變數設定
+├── .env.production  # 正式環境變數設定
+├── .env.staging  # 預發布 (Staging) 環境變數設定
+├── .gitattributes  # 自定義指定檔案屬性
+├── .gitignore  # Git 提交忽略檔案清單
+├── .gitpod.yml  # Gitpod 部署設定
+├── .lintstagedrc  # lint-staged 設定（僅檢查提交的檔案）
+├── .markdownlint.json  # Markdown 格式檢查設定
+├── .npmrc  # npm 設定檔
+├── .nvmrc  # 指定專案建議使用的 Node.js 版本 (NVM)
+├── .prettierignore  # Prettier 代碼格式化忽略檔案
+├── .prettierrc.js  # Prettier 外掛設定
+├── .stylelintignore  # Stylelint 樣式檢查忽略檔案
+├── CHANGELOG.en_US.md  # 版本更新日誌（英文版）
+├── CHANGELOG.md  # 版本更新日誌
+├── CHANGELOG.zh_CN.md  # 版本更新日誌（簡體中文版）
+├── Dockerfile  # 用於建置 Docker 鏡像 (Image)
+├── LICENSE  # 授權條款
+├── README.en-US.md  # 專案說明文件（英文版）
+├── README.md  # 專案說明文件
+├── commitlint.config.js  # Git 提交訊息格式檢查設定
+├── eslint.config.js  # ESLint 代碼語法檢查設定
+├── index.html  # HTML 主進入點
+├── package.json  # 套件管理與腳本指令設定
+├── pnpm-lock.yaml  # 相依套件版本鎖定檔案
+├── postcss.config.js  # PostCSS 外掛設定
+├── stylelint.config.js  # Stylelint 樣式檢查設定
+├── tailwind.config.ts  # Tailwind CSS 設定
+├── tsconfig.json  # TypeScript 編譯設定
+└── vite.config.ts  # Vite 建置工具設定
 ```

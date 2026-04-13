@@ -39,14 +39,22 @@
 
 ## 🚀 3. 待辦事項 (Pending Tasks)
 
-### 🔴 高優先級：i18n 語系規劃
+### 🟢 已完成：i18n 語系規劃
 
-- **現況**：目前框架預設為 `zh-CN`。
-- **決策**：應建立 `locales/zh-TW.yaml` 而非直接覆蓋 `zh-CN`。
+- **現況**：已掛載 `zh-TW` 並設為全域預設語系。
+- **已執行步驟**：
+  - [x] 建立 `zh-TW.yaml`。
+  - [x] 在 `i18n.ts` 註冊 `zh-TW` 及 Element Plus 繁中語言包。
+  - [x] 修改 `platform-config.json` 預設 Locale 為 `zh-TW`。
+  - [x] 在 `useLayout.ts`、`responsive.ts` 及 `useTranslationLang.ts` 寫入預設 fallback。
+  - [x] 於 UI 導航列與首頁登入加入繁體中文切換選項。
+
+### 🔴 高優先級：熟悉選單維護與管理方式
+
+- **目標**：掌握在 `wchoice-admin` 專案中配置路由與選單結構的標準做法，釐清靜態與動態路由的管理機制。
 - **待執行步驟**：
-  - [ ] 建立 `zh-TW.yaml`。
-  - [ ] 在 `i18n.ts` 註冊 `zh-TW`。
-  - [ ] 修改 `platform-config.json` 預設 Locale。
+  - [ ] 閱讀 `src/router` 以及相關文檔。
+  - [ ] 確認角色權限 (RBAC) 在前端的映射方式。
 
 ### 🟡 中優先級：API 介接與環境環境
 

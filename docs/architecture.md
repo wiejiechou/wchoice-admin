@@ -16,19 +16,23 @@
 
 ### A. 開放性、封閉原則
 
-- **UI 與 邏輯分離**：通過 `Hooks` (位於 `utils` 或 `views/xxx/utils`) 抽離複雜邏輯，保持 `.vue` 檔案簡潔。
-- **動態路由**：支援由後端驅動的動態菜單與路由生成，並結合前進/後退緩存。
+### B. 模組重用與開發規範 (Reusability)
 
-### B. 配置管理 (Platform Config)
+- **範例先行**：在開發 `src/views-custom` 定製功能前，必須先調研 `src/views` 下的官方範例（如表格、表單、Hooks 等），嚴禁「土法煉鋼」或「黑盒開發」。
+- **元件重用**：優先複用框架封裝的元件 (如 `RePureTableBar`, `v-auth` 等)，確保與原體系的交互體驗一致。
+
+### C. 配置管理 (Platform Config)
 
 - **Runtime Configuration**：`public/platform-config.json` 允許在專案打包後，無需重新編譯即可修改全局配置（如 API Base URL、平台標題等）。
 - **環境變數**：支援 `.env`, `.env.development`, `.env.staging`, `.env.production` 多套環境切換。
 
 ## 🔐 3. 權限與安全 (Auth & Security)
 
+- **權限宣告中心**：建立 `src/router/perm-declaration.ts` 集中管理角色組合（如 `DEMO_DEFAULT`, `ADMIN_ONLY`），實現路由配置與角色定義的解耦。
+- **路徑過濾策略**：針對官方 Demo 路由，透過引用 `PERM_SETTINGS.DEMO_DEFAULT` 統一口徑，便於在演示或正式版中一鍵調整（如對 `wchoice` 角色隱藏）。
 - **路由守衛**：透過網址導航守衛進行 Token 驗證與權限檢查。
 - **按鈕權限**：提供 `v-auth` 或 `v-perms` 自定義指令，精確控制組件/按鈕的顯示。
-- **HTTP 封裝**：統一封裝 Axios，集中處理 Token 注入與 401/403 等異常攔截。
+- **HTTP 封裝**：統一封裝 Axios，集中處理 Token 注入與 401/403 等異常攔攔。
 
 ## 🚀 4. 自動化維運 (DevOps)
 
@@ -44,7 +48,7 @@
 
 ## 🛠 5. 擴展與維護規範
 
-- **Directory Standard**：嚴格遵循專案既有的目錄規範（詳見 `docs/directory-structure.md`）。
+- **Directory Standard**：嚴格遵循專案既有的目錄規範，並區隔官方與自定義視圖（詳見 `docs/directory-structure.md`）。
 - **Commit Style**：遵循 Angular 提交規範 (`feat/fix/chore...`)。
 - **Style Consistency**：自動化 Prettier 與 Stylelint 校驗。
 
@@ -52,4 +56,5 @@
 
 ## 📅 更新記錄
 
+- **2026-04-13**：重構權限宣告體系，引入 `PERM_SETTINGS` 管理靜態與動態路由選單 (Antigravity)
 - **2026-04-08**：初次建立架構摘要 (Antigravity vj.chou)
