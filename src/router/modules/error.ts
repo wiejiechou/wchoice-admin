@@ -6,7 +6,7 @@ export default {
   redirect: "/error/403",
   meta: {
     icon: "ri/information-line",
-    // showLink: false,
+    showLink: false, // 不在選單中顯示
     title: $t("menus.pureAbnormal"),
     rank: error
   },

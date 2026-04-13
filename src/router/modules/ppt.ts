@@ -1,4 +1,6 @@
 import { ppt } from "@/router/enums";
+import { PERM_SETTINGS } from "../perm-declaration";
+
 const IFrame = () => import("@/layout/frame.vue");
 
 export default {
@@ -18,7 +20,8 @@ export default {
         title: "PPT",
         keepAlive: true,
         frameSrc: "https://pipipi-pikachu.github.io/PPTist/",
-        frameLoading: false
+        frameLoading: false,
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     }
   ]

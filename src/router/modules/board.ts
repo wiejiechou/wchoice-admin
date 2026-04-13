@@ -1,5 +1,7 @@
 import { $t } from "@/plugins/i18n";
 import { board } from "@/router/enums";
+import { PERM_SETTINGS } from "../perm-declaration";
+
 const IFrame = () => import("@/layout/frame.vue");
 
 export default {
@@ -18,7 +20,8 @@ export default {
       meta: {
         title: $t("menus.pureBoard"),
         keepAlive: true,
-        frameSrc: "https://songlh.top/paint-board/"
+        frameSrc: "https://songlh.top/paint-board/",
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     }
   ]

@@ -1,5 +1,6 @@
 import { $t } from "@/plugins/i18n";
 import { about } from "@/router/enums";
+import { PERM_SETTINGS } from "../perm-declaration";
 
 export default {
   path: "/about",
@@ -15,7 +16,8 @@ export default {
       name: "About",
       component: () => import("@/views/about/index.vue"),
       meta: {
-        title: $t("menus.pureAbout")
+        title: $t("menus.pureAbout"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     }
   ]

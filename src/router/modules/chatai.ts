@@ -1,4 +1,5 @@
 import { chatai } from "@/router/enums";
+import { PERM_SETTINGS } from "../perm-declaration";
 
 export default {
   path: "/chatai",
@@ -15,7 +16,8 @@ export default {
       component: () => import("@/views/chatai/index.vue"),
       meta: {
         title: "chat-ai",
-        extraIcon: "IF-pure-iconfont-new svg"
+        extraIcon: "IF-pure-iconfont-new svg",
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     }
   ]

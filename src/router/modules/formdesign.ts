@@ -1,5 +1,7 @@
 import { $t } from "@/plugins/i18n";
 import { formdesign } from "@/router/enums";
+import { PERM_SETTINGS } from "../perm-declaration";
+
 const IFrame = () => import("@/layout/frame.vue");
 
 export default {
@@ -20,7 +22,8 @@ export default {
         keepAlive: true,
         frameSrc:
           "https://haixin-fang.github.io/vue-form-design/playground/index.html",
-        frameLoading: false
+        frameLoading: false,
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     }
   ]

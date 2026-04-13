@@ -1,5 +1,6 @@
 import { $t } from "@/plugins/i18n";
 import { form } from "@/router/enums";
+import { PERM_SETTINGS } from "../perm-declaration";
 
 export default {
   path: "/form",
@@ -15,7 +16,8 @@ export default {
       name: "SchemaForm",
       component: () => import("@/views/schema-form/index.vue"),
       meta: {
-        title: $t("menus.pureSchemaForm")
+        title: $t("menus.pureSchemaForm"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     }
   ]

@@ -1,5 +1,6 @@
 import { $t } from "@/plugins/i18n";
 import { nested } from "@/router/enums";
+import { PERM_SETTINGS } from "../perm-declaration";
 
 export default {
   path: "/nested",
@@ -14,7 +15,8 @@ export default {
       path: "/nested/menu1",
       meta: {
         title: $t("menus.pureMenu1"),
-        keepAlive: true
+        keepAlive: true,
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       },
       redirect: "/nested/menu1/menu1-1",
       children: [
@@ -74,7 +76,8 @@ export default {
       component: () => import("@/views/nested/menu2/index.vue"),
       meta: {
         title: $t("menus.pureMenu2"),
-        keepAlive: true
+        keepAlive: true,
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     }
   ]

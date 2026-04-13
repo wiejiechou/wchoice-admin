@@ -1,6 +1,6 @@
-// 完整版選單比較多，將 rank 抽離出来，在此方便维护
+// 完整版選單比較多，將 rank 抽離出來，在此方便維護
 
-const home = 0, // 平台规定只有 home 路由的 rank 才能為 0 ，所以后端在返回 rank 的時候需要从非 0 開始
+const home = 0, // 平台規定只有 home 路由的 rank 才能是 0 ，所以後端在回傳 rank 的時候需要從非 0 開始
   chatai = 1,
   vueflow = 2,
   ganttastic = 3,

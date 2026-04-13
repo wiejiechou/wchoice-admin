@@ -1,5 +1,6 @@
 import { $t } from "@/plugins/i18n";
 import { editor } from "@/router/enums";
+import { PERM_SETTINGS } from "../perm-declaration";
 
 export default {
   path: "/editor",
@@ -16,7 +17,8 @@ export default {
       component: () => import("@/views/editor/index.vue"),
       meta: {
         title: $t("menus.pureEditor"),
-        keepAlive: true
+        keepAlive: true,
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     }
   ]

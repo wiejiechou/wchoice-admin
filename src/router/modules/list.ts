@@ -1,5 +1,6 @@
 import { $t } from "@/plugins/i18n";
 import { list } from "@/router/enums";
+import { PERM_SETTINGS } from "../perm-declaration";
 
 export default {
   path: "/list",
@@ -17,7 +18,8 @@ export default {
       meta: {
         icon: "ri/bank-card-line",
         title: $t("menus.pureCardList"),
-        showParent: true
+        showParent: true,
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     }
   ]

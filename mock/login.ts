@@ -31,7 +31,7 @@ export default defineFakeRoute([
             avatar: "./assets/avatar/wchoice.jpg",
             username: "wchoice",
             nickname: "王寵系統用戶",
-            roles: ["admin"],
+            roles: ["wchoice"], // 新角色
             permissions: ["*:*:*"],
             accessToken: "eyJhbGciOiJIUzUxMiJ9.wchoice",
             refreshToken: "eyJhbGciOiJIUzUxMiJ9.wchoiceRefresh",

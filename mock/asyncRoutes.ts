@@ -1,13 +1,14 @@
-// 模拟后端动态生成路由
+// 模擬後端動態產生路由
 import { defineFakeRoute } from "vite-plugin-fake-server/client";
 import { system, monitor, permission, frame, tabs } from "@/router/enums";
 
 /**
- * roles：页面级别权限，这里模拟二种 "admin"、"common"
- * admin：管理员角色
+ * roles：頁面等級權限，這裡模擬二種 "admin"、"common"、"wchoice"
+ * admin：管理員角色
  * common：普通角色
+ * wchoice：為王寵數位建立的角色
  */
-
+// 系統管理
 const systemManagementRouter = {
   path: "/system",
   meta: {
@@ -54,7 +55,7 @@ const systemManagementRouter = {
     }
   ]
 };
-
+// 系統監控
 const systemMonitorRouter = {
   path: "/monitor",
   meta: {
@@ -105,7 +106,7 @@ const systemMonitorRouter = {
     }
   ]
 };
-
+// 權限管理
 const permissionRouter = {
   path: "/permission",
   meta: {
@@ -154,7 +155,7 @@ const permissionRouter = {
     }
   ]
 };
-
+// 外部頁面
 const frameRouter = {
   path: "/iframe",
   meta: {
@@ -277,7 +278,7 @@ const frameRouter = {
     }
   ]
 };
-
+// 標籤頁操作
 const tabsRouter = {
   path: "/tabs",
   meta: {
@@ -319,6 +320,36 @@ const tabsRouter = {
     }
   ]
 };
+// 加入王寵專案中所需要的功能清單
+const wchoiceQuotationRouter = {
+  path: "/quotation",
+  meta: {
+    title: "報價管理",
+    icon: "ri:file-list-3-line",
+    rank: 0.1 // 選單排序 (刻意將數字調小, 使其排序在上方)
+  },
+  children: [
+    {
+      name: "QuotationList",
+      path: "/quotation/list", // rest 路徑
+      component: "/quotation/index", // 檔案真實位置
+      meta: {
+        icon: "ri:list-unordered",
+        title: "報價單維護",
+        roles: ["wchoice"]
+      }
+    },
+    {
+      name: "QuotationForm",
+      path: "/quotation/form",
+      component: "/quotation/form",
+      meta: {
+        showLink: false, // 不在選單中顯示
+        title: "報價單新增與編輯"
+      }
+    }
+  ]
+};
 
 export default defineFakeRoute([
   {
@@ -333,7 +364,8 @@ export default defineFakeRoute([
           systemMonitorRouter,
           permissionRouter,
           frameRouter,
-          tabsRouter
+          tabsRouter,
+          wchoiceQuotationRouter // 手動加入
         ]
       };
     }

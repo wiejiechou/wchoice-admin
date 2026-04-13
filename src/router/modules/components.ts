@@ -1,5 +1,6 @@
 import { $t } from "@/plugins/i18n";
 import { components } from "@/router/enums";
+import { PERM_SETTINGS } from "../perm-declaration";
 
 export default {
   path: "/components",
@@ -15,7 +16,8 @@ export default {
       name: "DialogPage",
       component: () => import("@/views/components/dialog/index.vue"),
       meta: {
-        title: $t("menus.pureDialog")
+        title: $t("menus.pureDialog"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     },
     {
@@ -23,7 +25,8 @@ export default {
       name: "DrawerPage",
       component: () => import("@/views/components/drawer/index.vue"),
       meta: {
-        title: $t("menus.pureDrawer")
+        title: $t("menus.pureDrawer"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     },
     {
@@ -31,7 +34,8 @@ export default {
       name: "Message",
       component: () => import("@/views/components/message.vue"),
       meta: {
-        title: $t("menus.pureMessage")
+        title: $t("menus.pureMessage"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     },
     {
@@ -39,7 +43,8 @@ export default {
       name: "PureUpload",
       component: () => import("@/views/components/upload/index.vue"),
       meta: {
-        title: $t("menus.pureUpload")
+        title: $t("menus.pureUpload"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     },
     {
@@ -47,7 +52,8 @@ export default {
       name: "CheckCard",
       component: () => import("@/views/components/check-card.vue"),
       meta: {
-        title: $t("menus.pureCheckCard")
+        title: $t("menus.pureCheckCard"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     },
     {
@@ -55,7 +61,8 @@ export default {
       name: "DatePicker",
       component: () => import("@/views/components/date-picker.vue"),
       meta: {
-        title: $t("menus.pureDatePicker")
+        title: $t("menus.pureDatePicker"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     },
     {
@@ -63,7 +70,8 @@ export default {
       name: "DateTimePicker",
       component: () => import("@/views/components/datetime-picker.vue"),
       meta: {
-        title: $t("menus.pureDateTimePicker")
+        title: $t("menus.pureDateTimePicker"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     },
     {
@@ -71,7 +79,8 @@ export default {
       name: "TimePicker",
       component: () => import("@/views/components/time-picker.vue"),
       meta: {
-        title: $t("menus.pureTimePicker")
+        title: $t("menus.pureTimePicker"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     },
     {
@@ -79,7 +88,8 @@ export default {
       name: "IconSelect",
       component: () => import("@/views/components/icon-select.vue"),
       meta: {
-        title: $t("menus.pureIconSelect")
+        title: $t("menus.pureIconSelect"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     },
     {
@@ -87,7 +97,8 @@ export default {
       name: "AnimateCss",
       component: () => import("@/views/components/animatecss.vue"),
       meta: {
-        title: $t("menus.pureAnimatecss")
+        title: $t("menus.pureAnimatecss"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     },
     {
@@ -95,7 +106,8 @@ export default {
       name: "Cropping",
       component: () => import("@/views/components/cropping/index.vue"),
       meta: {
-        title: $t("menus.pureCropping")
+        title: $t("menus.pureCropping"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     },
     {
@@ -103,7 +115,8 @@ export default {
       name: "Segmented",
       component: () => import("@/views/components/segmented.vue"),
       meta: {
-        title: $t("menus.pureSegmented")
+        title: $t("menus.pureSegmented"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     },
     {
@@ -111,7 +124,8 @@ export default {
       name: "PureText",
       component: () => import("@/views/components/text.vue"),
       meta: {
-        title: $t("menus.pureText")
+        title: $t("menus.pureText"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     },
     {
@@ -119,7 +133,8 @@ export default {
       name: "PureSlider",
       component: () => import("@/views/components/slider/index.vue"),
       meta: {
-        title: $t("menus.pureSlider")
+        title: $t("menus.pureSlider"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     },
     {
@@ -127,7 +142,8 @@ export default {
       name: "PureButton",
       component: () => import("@/views/components/el-button.vue"),
       meta: {
-        title: $t("menus.pureElButton")
+        title: $t("menus.pureElButton"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     },
     {
@@ -135,7 +151,8 @@ export default {
       name: "CheckButton",
       component: () => import("@/views/components/check-button.vue"),
       meta: {
-        title: $t("menus.pureCheckButton")
+        title: $t("menus.pureCheckButton"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     },
     {
@@ -143,7 +160,8 @@ export default {
       name: "ButtonPage",
       component: () => import("@/views/components/button.vue"),
       meta: {
-        title: $t("menus.pureButton")
+        title: $t("menus.pureButton"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     },
     {
@@ -151,7 +169,8 @@ export default {
       name: "PureProgress",
       component: () => import("@/views/components/progress.vue"),
       meta: {
-        title: $t("menus.pureProgress")
+        title: $t("menus.pureProgress"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     },
     {
@@ -159,7 +178,8 @@ export default {
       name: "PureTag",
       component: () => import("@/views/components/tag.vue"),
       meta: {
-        title: $t("menus.pureTag")
+        title: $t("menus.pureTag"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     },
     {
@@ -167,7 +187,8 @@ export default {
       name: "Statistic",
       component: () => import("@/views/components/statistic.vue"),
       meta: {
-        title: $t("menus.pureStatistic")
+        title: $t("menus.pureStatistic"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     },
     {
@@ -175,7 +196,8 @@ export default {
       name: "Collapse",
       component: () => import("@/views/components/collapse.vue"),
       meta: {
-        title: $t("menus.pureCollapse")
+        title: $t("menus.pureCollapse"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     },
     {
@@ -183,7 +205,8 @@ export default {
       name: "Cascader",
       component: () => import("@/views/components/cascader.vue"),
       meta: {
-        title: $t("menus.pureCascader")
+        title: $t("menus.pureCascader"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     },
     {
@@ -191,7 +214,8 @@ export default {
       name: "ColorPicker",
       component: () => import("@/views/components/color-picker.vue"),
       meta: {
-        title: $t("menus.pureColorPicker")
+        title: $t("menus.pureColorPicker"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     },
     {
@@ -200,7 +224,8 @@ export default {
       component: () => import("@/views/components/color-picker-panel.vue"),
       meta: {
         title: $t("menus.pureColorPickerPanel"),
-        extraIcon: "IF-pure-iconfont-new svg"
+        extraIcon: "IF-pure-iconfont-new svg",
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     },
     {
@@ -208,7 +233,8 @@ export default {
       name: "Selector",
       component: () => import("@/views/components/selector.vue"),
       meta: {
-        title: $t("menus.pureSelector")
+        title: $t("menus.pureSelector"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     },
     {
@@ -216,7 +242,8 @@ export default {
       name: "Waterfall",
       component: () => import("@/views/components/waterfall/index.vue"),
       meta: {
-        title: $t("menus.pureWaterfall")
+        title: $t("menus.pureWaterfall"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     },
     {
@@ -224,7 +251,8 @@ export default {
       name: "SplitPane",
       component: () => import("@/views/components/split-pane.vue"),
       meta: {
-        title: $t("menus.pureSplitPane")
+        title: $t("menus.pureSplitPane"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     },
     {
@@ -232,7 +260,8 @@ export default {
       name: "Swiper",
       component: () => import("@/views/components/swiper.vue"),
       meta: {
-        title: $t("menus.pureSwiper")
+        title: $t("menus.pureSwiper"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     },
     {
@@ -240,7 +269,8 @@ export default {
       name: "TimeLine",
       component: () => import("@/views/components/timeline.vue"),
       meta: {
-        title: $t("menus.pureTimeline")
+        title: $t("menus.pureTimeline"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     },
     {
@@ -248,7 +278,8 @@ export default {
       name: "CountTo",
       component: () => import("@/views/components/count-to.vue"),
       meta: {
-        title: $t("menus.pureCountTo")
+        title: $t("menus.pureCountTo"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     },
     {
@@ -256,7 +287,8 @@ export default {
       name: "ContextMenu",
       component: () => import("@/views/components/contextmenu/index.vue"),
       meta: {
-        title: $t("menus.pureContextmenu")
+        title: $t("menus.pureContextmenu"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     },
     {
@@ -264,7 +296,8 @@ export default {
       name: "JsonEditor",
       component: () => import("@/views/components/json-editor.vue"),
       meta: {
-        title: $t("menus.pureJsonEditor")
+        title: $t("menus.pureJsonEditor"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     },
     {
@@ -272,7 +305,8 @@ export default {
       name: "SeamlessScroll",
       component: () => import("@/views/components/seamless-scroll.vue"),
       meta: {
-        title: $t("menus.pureSeamless")
+        title: $t("menus.pureSeamless"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     },
     {
@@ -280,7 +314,8 @@ export default {
       name: "VirtualList",
       component: () => import("@/views/components/virtual-list/index.vue"),
       meta: {
-        title: $t("menus.pureVirtualList")
+        title: $t("menus.pureVirtualList"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     }
   ]

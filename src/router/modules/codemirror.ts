@@ -1,5 +1,6 @@
 import { $t } from "@/plugins/i18n";
 import { codemirror } from "@/router/enums";
+import { PERM_SETTINGS } from "../perm-declaration";
 
 export default {
   path: "/codemirror",
@@ -16,7 +17,8 @@ export default {
       component: () => import("@/views/codemirror/index.vue"),
       meta: {
         title: $t("menus.pureCodeMirror"),
-        extraIcon: "IF-pure-iconfont-new svg"
+        extraIcon: "IF-pure-iconfont-new svg",
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     }
   ]

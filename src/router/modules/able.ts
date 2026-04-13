@@ -1,5 +1,6 @@
 import { $t } from "@/plugins/i18n";
 import { able } from "@/router/enums";
+import { PERM_SETTINGS } from "../perm-declaration";
 
 export default {
   path: "/able",
@@ -15,7 +16,8 @@ export default {
       name: "MqttClient",
       component: () => import("@/views/able/mqtt-client.vue"),
       meta: {
-        title: $t("menus.pureMqtt")
+        title: $t("menus.pureMqtt"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     },
     {
@@ -23,7 +25,8 @@ export default {
       name: "Verify",
       component: () => import("@/views/able/verify.vue"),
       meta: {
-        title: $t("menus.pureVerify")
+        title: $t("menus.pureVerify"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     },
     {
@@ -31,7 +34,8 @@ export default {
       name: "WaterMark",
       component: () => import("@/views/able/watermark.vue"),
       meta: {
-        title: $t("menus.pureWatermark")
+        title: $t("menus.pureWatermark"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     },
     {
@@ -39,7 +43,8 @@ export default {
       name: "Print",
       component: () => import("@/views/able/print/index.vue"),
       meta: {
-        title: $t("menus.purePrint")
+        title: $t("menus.purePrint"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     },
     {
@@ -47,7 +52,8 @@ export default {
       name: "Download",
       component: () => import("@/views/able/download.vue"),
       meta: {
-        title: $t("menus.pureDownload")
+        title: $t("menus.pureDownload"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     },
     {
@@ -55,7 +61,8 @@ export default {
       name: "Excel",
       component: () => import("@/views/able/excel.vue"),
       meta: {
-        title: $t("menus.pureExcel")
+        title: $t("menus.pureExcel"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     },
     {
@@ -63,7 +70,8 @@ export default {
       name: "Ripple",
       component: () => import("@/views/able/ripple.vue"),
       meta: {
-        title: $t("menus.pureRipple")
+        title: $t("menus.pureRipple"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     },
     {
@@ -71,7 +79,8 @@ export default {
       name: "Debounce",
       component: () => import("@/views/able/debounce.vue"),
       meta: {
-        title: $t("menus.pureDebounce")
+        title: $t("menus.pureDebounce"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     },
     {
@@ -79,7 +88,8 @@ export default {
       name: "Directives",
       component: () => import("@/views/able/directives.vue"),
       meta: {
-        title: $t("menus.pureOptimize")
+        title: $t("menus.pureOptimize"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     },
     {
@@ -91,7 +101,8 @@ export default {
         transition: {
           enterTransition: "animate__zoomIn",
           leaveTransition: "animate__zoomOut"
-        }
+        },
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     },
     {
@@ -99,7 +110,8 @@ export default {
       name: "Pdf",
       component: () => import("@/views/able/pdf.vue"),
       meta: {
-        title: $t("menus.purePdf")
+        title: $t("menus.purePdf"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     },
     {
@@ -107,7 +119,8 @@ export default {
       name: "BarCode",
       component: () => import("@/views/able/barcode.vue"),
       meta: {
-        title: $t("menus.pureBarcode")
+        title: $t("menus.pureBarcode"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     },
     {
@@ -115,7 +128,8 @@ export default {
       name: "QrCode",
       component: () => import("@/views/able/qrcode.vue"),
       meta: {
-        title: $t("menus.pureQrcode")
+        title: $t("menus.pureQrcode"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     },
     {
@@ -127,7 +141,8 @@ export default {
         keepAlive: true,
         transition: {
           name: "fade"
-        }
+        },
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     },
     {
@@ -135,7 +150,8 @@ export default {
       name: "Wavesurfer",
       component: () => import("@/views/able/wavesurfer/index.vue"),
       meta: {
-        title: $t("menus.pureWavesurfer")
+        title: $t("menus.pureWavesurfer"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     },
     {
@@ -143,7 +159,8 @@ export default {
       name: "VideoPage",
       component: () => import("@/views/able/video.vue"),
       meta: {
-        title: $t("menus.pureVideo")
+        title: $t("menus.pureVideo"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     },
     {
@@ -151,7 +168,8 @@ export default {
       name: "VideoFrame",
       component: () => import("@/views/able/video-frame/index.vue"),
       meta: {
-        title: $t("menus.pureVideoFrame")
+        title: $t("menus.pureVideoFrame"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     },
     {
@@ -159,7 +177,8 @@ export default {
       name: "Danmaku",
       component: () => import("@/views/able/danmaku/index.vue"),
       meta: {
-        title: $t("menus.pureDanmaku")
+        title: $t("menus.pureDanmaku"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     },
     {
@@ -167,7 +186,8 @@ export default {
       name: "InfiniteScroll",
       component: () => import("@/views/able/infinite-scroll.vue"),
       meta: {
-        title: $t("menus.pureInfiniteScroll")
+        title: $t("menus.pureInfiniteScroll"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     },
     {
@@ -175,7 +195,8 @@ export default {
       name: "MenuTree",
       component: () => import("@/views/able/menu-tree.vue"),
       meta: {
-        title: $t("menus.pureMenuTree")
+        title: $t("menus.pureMenuTree"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     },
     {
@@ -183,7 +204,8 @@ export default {
       name: "LineTree",
       component: () => import("@/views/able/line-tree.vue"),
       meta: {
-        title: $t("menus.pureLineTree")
+        title: $t("menus.pureLineTree"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     },
     {
@@ -191,7 +213,8 @@ export default {
       name: "Typeit",
       component: () => import("@/views/able/typeit.vue"),
       meta: {
-        title: $t("menus.pureTypeit")
+        title: $t("menus.pureTypeit"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     },
     {
@@ -199,7 +222,8 @@ export default {
       name: "Sensitive",
       component: () => import("@/views/able/sensitive.vue"),
       meta: {
-        title: $t("menus.pureSensitive")
+        title: $t("menus.pureSensitive"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     },
     {
@@ -207,7 +231,8 @@ export default {
       name: "Pinyin",
       component: () => import("@/views/able/pinyin.vue"),
       meta: {
-        title: $t("menus.purePinyin")
+        title: $t("menus.purePinyin"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     }
   ]

@@ -1,4 +1,5 @@
 import { vueflow } from "@/router/enums";
+import { PERM_SETTINGS } from "../perm-declaration";
 
 export default {
   path: "/vue-flow",
@@ -14,7 +15,8 @@ export default {
       name: "VueFlow",
       component: () => import("@/views/vue-flow/layouting/index.vue"),
       meta: {
-        title: "vue-flow"
+        title: "vue-flow",
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     }
   ]

@@ -24,7 +24,10 @@ import { useMultiTagsStoreHook } from "@/store/modules/multiTags";
 import { usePermissionStoreHook } from "@/store/modules/permission";
 const IFrame = () => import("@/layout/frame.vue");
 // https://cn.vitejs.dev/guide/features.html#glob-import
-const modulesRoutes = import.meta.glob("/src/views/**/*.{vue,tsx}");
+const modulesRoutes = import.meta.glob([
+  "/src/views/**/*.{vue,tsx}",
+  "/src/views-custom/**/*.{vue,tsx}"
+]); // 增加模組掃描路徑
 
 // 動態路由
 import { getAsyncRoutes } from "@/api/routes";
@@ -39,7 +42,7 @@ function handRank(routeInfo: any) {
     : false;
 }
 
-/** 按照路由中meta下的rank等級升序来排序路由 */
+/** 依照路由中 meta 下的 rank 等級升序來排序路由 */
 function ascending(arr: any[]) {
   arr.forEach((v, index) => {
     // 當rank不存在時，根據顺序自動创建，首頁路由永遠在第一位
@@ -52,7 +55,7 @@ function ascending(arr: any[]) {
   );
 }
 
-/** 過滤meta中showLink為false的選單 */
+/** 過濾 meta 中 showLink 為 false 的選單 */
 function filterTree(data: RouteComponent[]) {
   const newTree = cloneDeep(data).filter(
     (v: { meta: { showLink: boolean } }) => v.meta?.showLink !== false

@@ -1,5 +1,6 @@
 import { $t } from "@/plugins/i18n";
 import { result } from "@/router/enums";
+import { PERM_SETTINGS } from "../perm-declaration";
 
 export default {
   path: "/result",
@@ -15,7 +16,8 @@ export default {
       name: "Success",
       component: () => import("@/views/result/success.vue"),
       meta: {
-        title: $t("menus.pureSuccess")
+        title: $t("menus.pureSuccess"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     },
     {
@@ -23,7 +25,8 @@ export default {
       name: "Fail",
       component: () => import("@/views/result/fail.vue"),
       meta: {
-        title: $t("menus.pureFail")
+        title: $t("menus.pureFail"),
+        roles: PERM_SETTINGS.DEMO_DEFAULT // 使用集中管理的權限定義
       }
     }
   ]
