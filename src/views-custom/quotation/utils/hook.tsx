@@ -1,153 +1,121 @@
-import dayjs from "dayjs";
-import editForm from "../form.vue";
-import { handleTree } from "@/utils/tree";
-import { message } from "@/utils/message";
-import { ElMessageBox } from "element-plus";
-import { usePublicHooks } from "@/views/system/hooks";
-import { transformI18n } from "@/plugins/i18n";
-import { addDialog } from "@/components/ReDialog";
-import type { FormItemProps } from "../utils/types";
+import { reactive, ref, onMounted, toRaw, h, computed } from "vue";
+import { utils, writeFile } from "xlsx";
+import { useRouter } from "vue-router";
 import type { PaginationProps } from "@pureadmin/table";
-import { getKeyList, deviceDetection } from "@pureadmin/utils";
-import { getRoleList, getRoleMenu, getRoleMenuIds } from "@/api/system";
-import { type Ref, reactive, ref, onMounted, h, toRaw, watch } from "vue";
+import { delay } from "@pureadmin/utils";
+import { message } from "@/utils/message";
+import { QUOTATION_DATA, getQuotationDetail } from "./data";
+import type { SearchFormProps } from "./types";
+import { addDrawer, closeDrawer } from "@/components/ReDrawer";
+import QuotationForm from "../form.vue";
 
-export function useRole(treeRef: Ref) {
-  const form = reactive({
-    name: "",
-    code: "",
-    status: ""
+export function useQuotation() {
+  const router = useRouter();
+  const form = reactive<SearchFormProps>({
+    client: "",
+    status: "",
+    address: ""
   });
-  const curRow = ref();
-  const formRef = ref();
+
   const dataList = ref([]);
-  const treeIds = ref([]);
-  const treeData = ref([]);
-  const isShow = ref(false);
+  const quickSearch = ref("");
   const loading = ref(true);
-  const isLinkage = ref(false);
-  const treeSearchValue = ref();
-  const switchLoadMap = ref({});
-  const isExpandAll = ref(false);
-  const isSelectAll = ref(false);
-  const { switchStyle } = usePublicHooks();
-  const treeProps = {
-    value: "id",
-    label: "title",
-    children: "children"
-  };
+  const tableRef = ref();
+
+  /** 根據表頭輸入框進行即時過濾 (Live Filter) */
+  const filteredData = computed(() => {
+    return dataList.value.filter(data => {
+      // 如果沒有輸入或者是空字串，則顯示全部
+      if (!quickSearch.value) return true;
+      // 模糊搜尋客戶名稱或報價編號
+      const search = quickSearch.value.toLowerCase();
+      return (
+        data.client.toLowerCase().includes(search) ||
+        data.id.toLowerCase().includes(search)
+      );
+    });
+  });
+
   const pagination = reactive<PaginationProps>({
     total: 0,
     pageSize: 10,
     currentPage: 1,
     background: true
   });
+
   const columns: TableColumnList = [
     {
-      label: "角色編號",
-      prop: "id"
+      label: "報價編號",
+      prop: "id",
+      minWidth: 150
     },
     {
-      label: "角色名稱",
-      prop: "name"
+      label: "客戶名稱",
+      prop: "client",
+      minWidth: 120
     },
     {
-      label: "角色識別",
-      prop: "code"
+      label: "聯絡電話",
+      prop: "phone",
+      minWidth: 120
     },
     {
-      label: "狀態",
-      cellRenderer: scope => (
-        <el-switch
-          size={scope.props.size === "small" ? "small" : "default"}
-          loading={switchLoadMap.value[scope.index]?.loading}
-          v-model={scope.row.status}
-          active-value={1}
-          inactive-value={0}
-          active-text="已啟用"
-          inactive-text="已停用"
-          inline-prompt
-          style={switchStyle.value}
-          onChange={() => onChange(scope as any)}
-        />
-      ),
-      minWidth: 90
+      label: "服務地址",
+      prop: "address",
+      minWidth: 200,
+      showOverflowTooltip: true
     },
     {
-      label: "備註",
-      prop: "remark",
-      minWidth: 160
+      label: "金額",
+      prop: "price",
+      minWidth: 100,
+      formatter: ({ price }) => `$` + price.toLocaleString()
     },
     {
-      label: "建立時間",
-      prop: "createTime",
-      minWidth: 160,
-      formatter: ({ createTime }) =>
-        dayjs(createTime).format("YYYY-MM-DD HH:mm:ss")
+      label: "報價狀態",
+      prop: "status",
+      minWidth: 120,
+      cellRenderer: ({ row }) => {
+        const statusMap = {
+          pending: { text: "報價中", color: "#e6a23c" },
+          approved: { text: "報價成立", color: "#67c23a" },
+          rejected: { text: "報價不成立", color: "#f56c6c" }
+        };
+        const { text, color } = statusMap[row.status];
+        return (
+          <el-tooltip content={text} placement="top">
+            <span
+              style={{
+                display: "inline-block",
+                width: "12px",
+                height: "12px",
+                borderRadius: "50%",
+                backgroundColor: color,
+                cursor: "pointer",
+                marginLeft: "12px"
+              }}
+            />
+          </el-tooltip>
+        );
+      }
+    },
+    {
+      label: "服務專員",
+      prop: "agent",
+      minWidth: 100
+    },
+    {
+      label: "建立日期",
+      prop: "date",
+      minWidth: 120
     },
     {
       label: "操作",
       fixed: "right",
-      width: 210,
+      width: 180,
       slot: "operation"
     }
   ];
-  // const buttonClass = computed(() => {
-  //   return [
-  //     "h-5!",
-  //     "reset-margin",
-  //     "text-gray-500!",
-  //     "dark:text-white!",
-  //     "dark:hover:text-primary!"
-  //   ];
-  // });
-
-  function onChange({ row, index }) {
-    ElMessageBox.confirm(
-      `確認要<strong>${
-        row.status === 0 ? "停用" : "啟用"
-      }</strong><strong style='color:var(--el-color-primary)'>${
-        row.name
-      }</strong>吗?`,
-      "系統提示",
-      {
-        confirmButtonText: "確定",
-        cancelButtonText: "取消",
-        type: "warning",
-        dangerouslyUseHTMLString: true,
-        draggable: true
-      }
-    )
-      .then(() => {
-        switchLoadMap.value[index] = Object.assign(
-          {},
-          switchLoadMap.value[index],
-          {
-            loading: true
-          }
-        );
-        setTimeout(() => {
-          switchLoadMap.value[index] = Object.assign(
-            {},
-            switchLoadMap.value[index],
-            {
-              loading: false
-            }
-          );
-          message(`已${row.status === 0 ? "停用" : "啟用"}${row.name}`, {
-            type: "success"
-          });
-        }, 300);
-      })
-      .catch(() => {
-        row.status === 0 ? (row.status = 1) : (row.status = 0);
-      });
-  }
-
-  function handleDelete(row) {
-    message(`您删除了角色名稱為${row.name}的这條數據`, { type: "success" });
-    onSearch();
-  }
 
   function handleSizeChange(val: number) {
     console.log(`${val} items per page`);
@@ -163,17 +131,29 @@ export function useRole(treeRef: Ref) {
 
   async function onSearch() {
     loading.value = true;
-    const { code, data } = await getRoleList(toRaw(form));
-    if (code === 0) {
-      dataList.value = data.list;
-      pagination.total = data.total;
-      pagination.pageSize = data.pageSize;
-      pagination.currentPage = data.currentPage;
-    }
+    const rawForm = toRaw(form);
+    // 模擬網路請求
+    delay(500).then(() => {
+      let filtered = QUOTATION_DATA;
 
-    setTimeout(() => {
+      if (rawForm.client) {
+        filtered = filtered.filter(item =>
+          item.client.includes(rawForm.client)
+        );
+      }
+      if (rawForm.status) {
+        filtered = filtered.filter(item => item.status === rawForm.status);
+      }
+      if (rawForm.address) {
+        filtered = filtered.filter(item =>
+          item.address.includes(rawForm.address)
+        );
+      }
+
+      dataList.value = filtered;
+      pagination.total = filtered.length;
       loading.value = false;
-    }, 500);
+    });
   }
 
   const resetForm = formEl => {
@@ -182,141 +162,111 @@ export function useRole(treeRef: Ref) {
     onSearch();
   };
 
-  function openDialog(title = "新增", row?: FormItemProps) {
-    addDialog({
-      title: `${title}角色`,
-      props: {
-        formInline: {
-          name: row?.name ?? "",
-          code: row?.code ?? "",
-          remark: row?.remark ?? ""
-        }
-      },
-      width: "40%",
-      draggable: true,
-      fullscreen: deviceDetection(),
-      fullscreenIcon: true,
-      closeOnClickModal: false,
-      contentRenderer: () => h(editForm, { ref: formRef, formInline: null }),
-      beforeSure: (done, { options }) => {
-        const FormRef = formRef.value.getRef();
-        const curData = options.props.formInline as FormItemProps;
-        function chores() {
-          message(`您${title}了角色名稱為${curData.name}的这條數據`, {
-            type: "success"
-          });
-          done(); // 關閉彈框
-          onSearch(); // 刷新表格數據
-        }
-        FormRef.validate(valid => {
-          if (valid) {
-            console.log("curData", curData);
-            // 表單规则校驗通過
-            if (title === "新增") {
-              // 实际開发先調用新增接口，再進行下面操作
-              chores();
-            } else {
-              // 实际開发先調用修改接口，再進行下面操作
-              chores();
+  /** 跳轉至表單頁面或打開抽屜 */
+  function handleAction(type: string, row?: any) {
+    if (type === "add") {
+      addDrawer({
+        title: "新增報價單",
+        size: "100%",
+        hideFooter: true,
+        contentRenderer: ({ options, index }) =>
+          h(QuotationForm, {
+            onClose: () => {
+              closeDrawer(options, index);
+            },
+            onSubmit: (data: any) => {
+              console.log("Submitted Data:", data);
+              if (data.isDraft) {
+                message("報價單草稿已儲存！", { type: "success" });
+              } else {
+                message("報價單產製成功！已推播至客戶。", { type: "success" });
+              }
+              closeDrawer(options, index);
+              onSearch();
             }
-          }
-        });
-      }
-    });
-  }
-
-  /** 選單權限 */
-  async function handleMenu(row?: any) {
-    const { id } = row;
-    if (id) {
-      curRow.value = row;
-      isShow.value = true;
-      const { code, data } = await getRoleMenuIds({ id });
-      if (code === 0) {
-        treeRef.value.setCheckedKeys(data);
-      }
-    } else {
-      curRow.value = null;
-      isShow.value = false;
+          })
+      });
+    } else if (type === "edit") {
+      const detailData = getQuotationDetail(row.id);
+      addDrawer({
+        title: "修改報價單",
+        size: "100%",
+        hideFooter: true,
+        contentRenderer: ({ options, index }) =>
+          h(QuotationForm, {
+            initialData: detailData,
+            onClose: () => {
+              closeDrawer(options, index);
+            },
+            onSubmit: (data: any) => {
+              console.log("Updated Data:", data);
+              if (data.isDraft) {
+                message("報價單草稿已更新！", { type: "success" });
+              } else {
+                message("報價單更新並產製成功！", { type: "success" });
+              }
+              closeDrawer(options, index);
+              onSearch();
+            }
+          })
+      });
+    } else if (type === "view") {
+      router.push({ name: "QuotationTrace", query: { id: row.id } });
     }
   }
 
-  /** 高亮當前權限选中行 */
-  function rowStyle({ row: { id } }) {
-    return {
-      cursor: "pointer",
-      background: id === curRow.value?.id ? "var(--el-fill-color-light)" : ""
-    };
-  }
+  /** 匯出 Excel */
+  function exportExcel() {
+    // 準備標題行
+    const exportColumns = columns.filter(col => col.label && col.prop);
+    const titleList = exportColumns.map(col => col.label);
 
-  /** 選單權限-保存 */
-  function handleSave() {
-    const { id, name } = curRow.value;
-    // 根據用戶 id 調用实际项目中選單權限修改接口
-    console.log(id, treeRef.value.getCheckedKeys());
-    message(`角色名稱為${name}的選單權限修改成功`, {
-      type: "success"
+    // 準備數據行 (依照當前過濾後的結果)
+    const res = filteredData.value.map(item => {
+      return exportColumns.map(col => {
+        if (col.prop === "status") {
+          const statusMap = {
+            pending: "報價中",
+            approved: "報價成立",
+            rejected: "報價不成立"
+          };
+          return statusMap[item.status];
+        }
+        if (col.prop === "price") {
+          return item.price; // 數值
+        }
+        return item[col.prop as string];
+      });
     });
+
+    // 合併標題與數據
+    res.unshift(titleList);
+
+    const workSheet = utils.aoa_to_sheet(res);
+    const workBook = utils.book_new();
+    utils.book_append_sheet(workBook, workSheet, "報價單列表");
+    writeFile(workBook, `報價單清單_${new Date().getTime()}.xlsx`);
+
+    message("匯出成功", { type: "success" });
   }
 
-  /** 數據權限 可自行開发 */
-  // function handleDatabase() {}
-
-  const onQueryChanged = (query: string) => {
-    treeRef.value!.filter(query);
-  };
-
-  const filterMethod = (query: string, node) => {
-    return transformI18n(node.title)!.includes(query);
-  };
-
-  onMounted(async () => {
+  onMounted(() => {
     onSearch();
-    const { code, data } = await getRoleMenu();
-    if (code === 0) {
-      treeIds.value = getKeyList(data, "id");
-      treeData.value = handleTree(data);
-    }
-  });
-
-  watch(isExpandAll, val => {
-    val
-      ? treeRef.value.setExpandedKeys(treeIds.value)
-      : treeRef.value.setExpandedKeys([]);
-  });
-
-  watch(isSelectAll, val => {
-    val
-      ? treeRef.value.setCheckedKeys(treeIds.value)
-      : treeRef.value.setCheckedKeys([]);
   });
 
   return {
     form,
-    isShow,
-    curRow,
     loading,
     columns,
-    rowStyle,
     dataList,
-    treeData,
-    treeProps,
-    isLinkage,
+    filteredData,
+    quickSearch,
     pagination,
-    isExpandAll,
-    isSelectAll,
-    treeSearchValue,
-    // buttonClass,
+    tableRef,
     onSearch,
     resetForm,
-    openDialog,
-    handleMenu,
-    handleSave,
-    handleDelete,
-    filterMethod,
-    transformI18n,
-    onQueryChanged,
-    // handleDatabase,
+    exportExcel,
+    handleAction,
     handleSizeChange,
     handleCurrentChange,
     handleSelectionChange
