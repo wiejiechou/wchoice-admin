@@ -26,7 +26,10 @@ root
 │   │   ├── zh-CN.yaml  # 簡體中文設定
 │   │   ├── zh-TW.yaml  # 繁體中文設定
 ├── mock  # Mock 模擬後端資料
-│   │   ├── asyncRoutes.ts  # 模擬後端回傳動態路由
+│   │   ├── wchoice  # [客製化] WChoice 業務模組 Mock 數據
+│   │   │   ├── wchoiceRoutes.ts  # 業務路由定義 (L1 模組化匯出)
+│   │   │   ├── wchoiceUsers.ts  # 業務用戶與權限數據
+│   │   ├── asyncRoutes.ts  # 模擬後端回傳動態路由 (入口，引導各模組)
 │   │   ├── ...
 ├── node_modules  # 專案相依套件
 ├── public  # 靜態資源
@@ -104,7 +107,11 @@ root
 │   │   ├── sso.ts  # 前端單擊登入 (SSO) 邏輯處理
 │   │   ├── tree.ts  # 樹狀結構相關處理函式
 │   ├── views  # 官方範例業務頁面存放處
-│   ├── views-custom  # [客製化] 專案實際業務邏輯頁面存放處
+│   ├── views-custom  # [客製化] 專案實際業務邏輯頁面存放處 (採 L1/L2 結構)
+111: │   │   ├── item-portfolio  # 報價項目管理 (作業區域、服務項目)
+112: │   │   ├── quotation       # 報價管理 (報價清單維護)
+113: │   │   ├── service-workspace # 服務管理 (服務單、派工、結案)
+114: │   │   └── system           # 系統管理 (使用者維護、角色維護)
 │   ├── App.vue  # 入口頁面元件
 │   ├── main.ts  # 入口檔案
 ├── types  # 全局 TypeScript 類型定義 (Type Definitions)
