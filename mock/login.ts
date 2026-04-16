@@ -1,5 +1,6 @@
 // 根據角色動態產生路由
 import { defineFakeRoute } from "vite-plugin-fake-server/client";
+import { wchoiceUser } from "./wchoice/wchoiceUsers";
 
 export default defineFakeRoute([
   {
@@ -23,20 +24,12 @@ export default defineFakeRoute([
             expires: "2030/10/30 00:00:00"
           }
         };
-      } else if (body.username === "wchoice") {
+      } else if (body.username === wchoiceUser.username) {
+        // 登入的帳號是 wchoice，則回傳 wchoice 的使用者資訊
         return {
           code: 0,
           message: "操作成功",
-          data: {
-            avatar: "./assets/avatar/wchoice.jpg",
-            username: "wchoice",
-            nickname: "王寵系統用戶",
-            roles: ["wchoice"], // 新角色
-            permissions: ["*:*:*"],
-            accessToken: "eyJhbGciOiJIUzUxMiJ9.wchoice",
-            refreshToken: "eyJhbGciOiJIUzUxMiJ9.wchoiceRefresh",
-            expires: "2030/10/30 00:00:00"
-          }
+          data: wchoiceUser
         };
       } else {
         return {

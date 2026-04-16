@@ -1,16 +1,22 @@
 // 模擬後端動態產生路由
 import { defineFakeRoute } from "vite-plugin-fake-server/client";
-import { system, monitor, permission, frame, tabs } from "@/router/enums";
+// import { system, monitor, permission, frame, tabs } from "@/router/enums";
+import { monitor, permission, frame, tabs } from "@/router/enums";
 // 引入王寵專案的路由定義，確保 wchoiceQuotationRouter 中的 component 能正確解析
-import wchoiceQuotationRouter from "./wchoice/wchoiceRoutes";
+import {
+  wchoiceItemRouter,
+  wchoiceQuotationRouter,
+  wchoiceServiceRouter,
+  wchoiceSystemRouter
+} from "./wchoice/wchoiceRoutes";
 
 /**
- * roles：頁面等級權限，這裡模擬三種 "admin"、"common"、"wchoice"
+ * roles：頁面等級權限，這裡模擬二種 "admin"、"common"
  * admin：管理員角色
  * common：普通角色
- * wchoice：為王寵數位建立的角色
  */
 // 系統管理
+/*
 const systemManagementRouter = {
   path: "/system",
   meta: {
@@ -57,6 +63,7 @@ const systemManagementRouter = {
     }
   ]
 };
+*/
 // 系統監控
 const systemMonitorRouter = {
   path: "/monitor",
@@ -332,12 +339,15 @@ export default defineFakeRoute([
         code: 0,
         message: "操作成功",
         data: [
-          systemManagementRouter,
+          wchoiceItemRouter,
+          wchoiceQuotationRouter,
+          wchoiceServiceRouter,
+          wchoiceSystemRouter,
+          // systemManagementRouter, // 關閉官方預設系統管理，避免與 wchoice 衝突
           systemMonitorRouter,
           permissionRouter,
           frameRouter,
-          tabsRouter,
-          wchoiceQuotationRouter // 手動加入
+          tabsRouter
         ]
       };
     }

@@ -11,6 +11,7 @@ import AddFill from "~icons/ri/add-circle-line";
 import EditPen from "~icons/ep/edit-pen";
 import View from "~icons/ep/view";
 import Download from "~icons/ep/download";
+import ArrowDown from "~icons/ep/arrow-down";
 
 // 定義組件名稱 (用於頁面快取或 DevTools 調試)
 defineOptions({
@@ -99,16 +100,30 @@ const {
           class="w-55! mr-2"
           :prefix-icon="useRenderIcon(Search)"
         />
-        <el-button
-          type="primary"
-          :icon="useRenderIcon(AddFill)"
-          @click="handleAction('add')"
-        >
-          建立報價單
-        </el-button>
-        <el-button :icon="useRenderIcon(Download)" @click="exportExcel">
-          匯出 Excel
-        </el-button>
+        <el-dropdown trigger="hover">
+          <el-button type="primary">
+            操作
+            <el-icon class="el-icon--right">
+              <component :is="useRenderIcon(ArrowDown)" />
+            </el-icon>
+          </el-button>
+          <template #dropdown>
+            <el-dropdown-menu>
+              <el-dropdown-item
+                :icon="useRenderIcon(AddFill)"
+                @click="handleAction('add')"
+              >
+                建立報價單
+              </el-dropdown-item>
+              <el-dropdown-item
+                :icon="useRenderIcon(Download)"
+                @click="exportExcel"
+              >
+                匯出 Excel
+              </el-dropdown-item>
+            </el-dropdown-menu>
+          </template>
+        </el-dropdown>
       </template>
       <template v-slot="{ size, dynamicColumns }">
         <pure-table
