@@ -4,11 +4,13 @@ import { defineFakeRoute } from "vite-plugin-fake-server/client";
 import { monitor, permission, frame, tabs } from "@/router/enums";
 // 引入王寵專案的路由定義，確保 wchoiceQuotationRouter 中的 component 能正確解析
 import {
-  wchoiceItemRouter,
+  wchoiceCustomerManagerRouter,
   wchoiceQuotationRouter,
   wchoiceServiceRouter,
+  wchoiceItemRouter,
   wchoiceSystemRouter
-} from "./wchoice/wchoiceRoutes";
+} from "./wchoice/internal/asyncRoutes";
+import { wchoiceExternalRouter } from "./wchoice/external/asyncRoutes";
 
 /**
  * roles：頁面等級權限，這裡模擬二種 "admin"、"common"
@@ -339,10 +341,14 @@ export default defineFakeRoute([
         code: 0,
         message: "操作成功",
         data: [
+          // 內部選單路由
+          wchoiceCustomerManagerRouter,
           wchoiceItemRouter,
           wchoiceQuotationRouter,
           wchoiceServiceRouter,
           wchoiceSystemRouter,
+          // 外部選單路由
+          wchoiceExternalRouter,
           // systemManagementRouter, // 關閉官方預設系統管理，避免與 wchoice 衝突
           systemMonitorRouter,
           permissionRouter,
