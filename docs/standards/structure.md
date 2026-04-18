@@ -27,7 +27,8 @@ root
 │   │   ├── zh-TW.yaml  # 繁體中文設定
 ├── mock  # Mock 模擬後端資料
 │   │   ├── wchoice  # [客製化] WChoice 業務模組 Mock 數據
-│   │   │   ├── wchoiceRoutes.ts  # 業務路由定義 (L1 模組化匯出)
+│   │   │   ├── internal  # [v0.5] 內部管理路由定義 (asyncRoutes.ts)
+│   │   │   ├── external  # [v0.5] 外部(顧客)路由定義預留
 │   │   │   ├── wchoiceUsers.ts  # 業務用戶與權限數據
 │   │   ├── asyncRoutes.ts  # 模擬後端回傳動態路由 (入口，引導各模組)
 │   │   ├── ...
@@ -107,11 +108,22 @@ root
 │   │   ├── sso.ts  # 前端單擊登入 (SSO) 邏輯處理
 │   │   ├── tree.ts  # 樹狀結構相關處理函式
 │   ├── views  # 官方範例業務頁面存放處
-│   ├── views-custom  # [客製化] 專案實際業務邏輯頁面存放處 (採 L1/L2 結構)
-111: │   │   ├── item-portfolio  # 報價項目管理 (作業區域、服務項目)
-112: │   │   ├── quotation       # 報價管理 (報價清單維護)
-113: │   │   ├── service-workspace # 服務管理 (服務單、派工、結案)
-114: │   │   └── system           # 系統管理 (使用者維護、角色維護)
+│   ├── views-custom  # [客製化] 專案實際業務邏輯頁面存放處 (v0.5 物理隔離)
+│   │   ├── internal  # 內部管理視角
+│   │   │   ├── customer           # 客戶管理 (Business Entity CRM)
+│   │   │   ├── service-portfolio  # 服務內容管理 (原報價項目維護)
+│   │   │   │   ├── space          # 作業區域維護
+│   │   │   │   └── service-item   # 服務項目維護
+│   │   │   ├── quotation          # 報價管理 (列表、編輯、追蹤)
+│   │   │   ├── service-workspace  # 服務專區 (對標物流化模型)
+│   │   │   │   ├── order          # 派工與施作維護 (執行視角)
+│   │   │   │   ├── dispatch       # [NEW] 派工單維護
+│   │   │   │   └── completion     # 結案維護 (收款視角)
+│   │   │   └── system             # 系統管理 (使用者維護、角色維護)
+│   │   ├── external  # 外部顧客視角 (Phase 2 預定)
+│   │   │   ├── my-quotation       # 我的報價
+│   │   │   ├── my-order           # 我的訂單
+│   │   │   └── profile            # 基本資料
 │   ├── App.vue  # 入口頁面元件
 │   ├── main.ts  # 入口檔案
 ├── types  # 全局 TypeScript 類型定義 (Type Definitions)
