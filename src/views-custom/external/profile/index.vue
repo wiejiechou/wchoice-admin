@@ -1,6 +1,6 @@
 <script setup lang="ts">
 defineOptions({
-  name: "UserMaintenance"
+  name: "ExternalProfile"
 });
 </script>
 
@@ -9,10 +9,11 @@ defineOptions({
     <div class="w-full flex-c h-125">
       <div class="text-center">
         <h1 class="text-3xl font-bold text-primary mb-4">
-          使用者維護 [待開發]
+          基本資料 (Profile) [待開發]
         </h1>
         <p class="text-gray-500">
-          此頁面為預留占位頁，後續將依照規劃進行實作。
+          此頁面為預留占位頁，後續將依照規劃進行實作。 <br />
+          [L1: profile / L2: index.vue] - 對齊 v0.5 規劃
         </p>
       </div>
     </div>
