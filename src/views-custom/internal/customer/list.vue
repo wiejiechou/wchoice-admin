@@ -164,7 +164,7 @@ const {
   margin-bottom: 12px;
 }
 
-.main {
+.main-content {
   margin: 24px 24px 0 !important;
 }
 
