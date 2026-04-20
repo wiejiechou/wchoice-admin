@@ -170,6 +170,7 @@
     "vite-plugin-cdn-import": "^1.0.1",
     "vite-plugin-compression": "^0.5.1",
     "vite-plugin-fake-server": "^2.2.3",
+    "vite-plugin-pwa": "^1.2.0",
     "vite-plugin-remove-console": "^2.2.0",
     "vite-plugin-router-warn": "^2.0.0",
     "vite-svg-loader": "^5.1.1",
@@ -203,9 +204,6 @@
       "typeit",
       "vue-demi"
     ],
-    "ignoredBuiltDependencies": [
-      "@tailwindcss/oxide",
-      "vue3-danmaku"
-    ]
+    "ignoredBuiltDependencies": ["@tailwindcss/oxide", "vue3-danmaku"]
   }
 }
