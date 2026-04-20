@@ -24,10 +24,10 @@ import { useMultiTagsStoreHook } from "@/store/modules/multiTags";
 import { usePermissionStoreHook } from "@/store/modules/permission";
 const IFrame = () => import("@/layout/frame.vue");
 // https://cn.vitejs.dev/guide/features.html#glob-import
-const modulesRoutes = import.meta.glob([
-  "/src/views/**/*.{vue,tsx}",
-  "/src/views-custom/**/*.{vue,tsx}"
-]); // 增加模組掃描路徑
+const modulesRoutes = {
+  ...import.meta.glob("/src/views/**/*.{vue,tsx}"),
+  ...import.meta.glob("/src/views-custom/**/*.{vue,tsx}")
+}; // 增加模組掃描路徑
 
 // 動態路由
 import { getAsyncRoutes } from "@/api/routes";
