@@ -28,7 +28,9 @@ export default async ({ mode }: ConfigEnv): Promise<UserConfigExport> => {
       // 預熱檔案以提前轉換和快取結果，降低啟動期間的初始頁面載入時間並防止轉換瀑布
       warmup: {
         clientFiles: ["./index.html", "./src/{views,components}/*"]
-      }
+      },
+      // 將穿透測試使用的連結 (Ngrok)，放入允許清單，以利測試
+      allowedHosts: ["calced-illiquidly-carlena.ngrok-free.dev"]
     },
     plugins: await getPluginsList(VITE_CDN, VITE_COMPRESSION),
     // https://cn.vitejs.dev/config/dep-optimization-options.html#dep-optimization-options
