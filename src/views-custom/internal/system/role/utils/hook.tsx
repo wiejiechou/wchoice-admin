@@ -141,7 +141,8 @@ export function useRole() {
   function handleAction(type: string, row?: any) {
     addDrawer({
       title: type === "add" ? "新增角色" : "編輯角色",
-      size: "500px",
+      // 行動端 100%，電腦端 650px
+      size: window.innerWidth < 768 ? "100%" : "650px",
       hideFooter: true,
       contentRenderer: ({ options, index }) =>
         h(RoleForm, {

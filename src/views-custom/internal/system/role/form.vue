@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, reactive } from "vue";
+import { ref, reactive, nextTick } from "vue";
 import type { RoleFormProps } from "./utils/types";
 import { formRules } from "./utils/rule";
 import { useRenderIcon } from "@/components/ReIcon/src/hooks";
@@ -29,10 +29,30 @@ function getRef() {
 }
 
 const handleSubmit = () => {
-  formRef.value.validate(valid => {
+  formRef.value.validate((valid, fields) => {
     if (valid) {
       if (props.onSubmit) {
         props.onSubmit(newFormInline);
+      }
+    } else {
+      // 獲取第一個校驗失敗的欄位名
+      const firstField = Object.keys(fields)[0];
+      if (firstField) {
+        // 捲動到該欄位
+        formRef.value.scrollToField(firstField);
+
+        // 強制聚焦 (Focus)
+        nextTick(() => {
+          const el = formRef.value.$el.querySelector(
+            `[prop="${firstField}"] input, [prop="${firstField}"] textarea`
+          );
+          if (el) {
+            el.focus();
+          } else {
+            const fallbackEl = document.getElementsByName(firstField)[0];
+            fallbackEl?.focus();
+          }
+        });
       }
     }
   });
@@ -43,7 +63,7 @@ defineExpose({ getRef });
 
 <template>
   <div class="flex flex-col h-full overflow-hidden">
-    <div class="flex-1 overflow-y-auto px-4 py-6">
+    <div class="flex-1 overflow-y-auto px-4 sm:px-6 py-6 scrollbar-thin">
       <el-form
         ref="formRef"
         :model="newFormInline"
@@ -52,7 +72,7 @@ defineExpose({ getRef });
         class="max-w-3xl mx-auto"
       >
         <el-row :gutter="24">
-          <el-col :span="24">
+          <el-col :xs="24" :sm="12">
             <el-form-item label="角色名稱" prop="name">
               <el-input
                 v-model="newFormInline.name"
@@ -63,7 +83,7 @@ defineExpose({ getRef });
             </el-form-item>
           </el-col>
 
-          <el-col :span="24">
+          <el-col :xs="24" :sm="12">
             <el-form-item label="角色標識" prop="code">
               <el-input
                 v-model="newFormInline.code"
@@ -74,7 +94,7 @@ defineExpose({ getRef });
             </el-form-item>
           </el-col>
 
-          <el-col :span="24">
+          <el-col :xs="24" :sm="12">
             <el-form-item label="角色狀態">
               <el-switch
                 v-model="newFormInline.status"
@@ -103,10 +123,21 @@ defineExpose({ getRef });
 
     <!-- Sticky Footer -->
     <div
-      class="px-8 py-4 bg-white border-t border-(--el-border-color-light) flex justify-end gap-3 shrink-0 shadow-[0_-2px_12px_rgba(0,0,0,0.05)]"
+      class="p-4 sm:px-8 bg-white border-t border-(--el-border-color-light) flex-c gap-3 shrink-0 shadow-[0_-2px_12px_rgba(0,0,0,0.05)]"
     >
-      <el-button size="large" @click="emit('close')">取消離開</el-button>
-      <el-button type="primary" size="large" @click="handleSubmit">
+      <el-button
+        class="flex-1 sm:flex-none sm:w-32"
+        size="large"
+        @click="emit('close')"
+      >
+        取消離開
+      </el-button>
+      <el-button
+        class="flex-1 sm:flex-none sm:w-32 ml-0!"
+        type="primary"
+        size="large"
+        @click="handleSubmit"
+      >
         {{ initialData?.id ? "儲存修改" : "確認新增" }}
       </el-button>
     </div>
@@ -116,5 +147,21 @@ defineExpose({ getRef });
 <style scoped lang="scss">
 :deep(.el-form-item) {
   margin-bottom: 24px;
+
+  @media (width <= 640px) {
+    margin-bottom: 16px;
+  }
+}
+
+/* 針對行動端垂直捲軸優化 */
+.scrollbar-thin {
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #e5e7eb;
+    border-radius: 10px;
+  }
 }
 </style>

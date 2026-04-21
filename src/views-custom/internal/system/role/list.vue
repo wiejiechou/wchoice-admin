@@ -84,7 +84,7 @@ const {
       </el-form-item>
     </el-form>
 
-    <PureTableBar title="角色管理" :columns="columns" @refresh="onSearch">
+    <PureTableBar title="角色清單" :columns="columns" @refresh="onSearch">
       <template #buttons>
         <el-input
           v-model="quickSearch"
@@ -93,7 +93,7 @@ const {
           class="w-55! mr-2"
           :prefix-icon="useRenderIcon(SearchIcon)"
         />
-        <el-dropdown trigger="hover" class="mr-2">
+        <el-dropdown trigger="hover">
           <el-button type="primary">
             操作
             <el-icon class="el-icon--right">
@@ -113,73 +113,175 @@ const {
         </el-dropdown>
       </template>
       <template v-slot="{ size, dynamicColumns }">
-        <pure-table
-          ref="tableRef"
-          row-key="id"
-          adaptive
-          :adaptiveConfig="{ offsetBottom: 108 }"
-          align-whole="center"
-          table-layout="auto"
-          showOverflowTooltip
-          :loading="loading"
-          :size="size"
-          :data="filteredData"
-          :columns="dynamicColumns"
-          :pagination="{ ...pagination, size }"
-          :header-cell-style="{
-            background: 'var(--el-fill-color-light)',
-            color: 'var(--el-text-color-primary)'
-          }"
-          @selection-change="handleSelectionChange"
-          @page-size-change="handleSizeChange"
-          @page-current-change="handleCurrentChange"
-        >
-          <template #operation="{ row }">
-            <el-button
-              class="reset-margin"
-              link
-              type="primary"
-              :size="size"
-              :icon="useRenderIcon(EditPen)"
-              @click="handleAction('edit', row)"
+        <!-- Desktop Table View -->
+        <div class="hidden md:block">
+          <pure-table
+            ref="tableRef"
+            row-key="id"
+            adaptive
+            :adaptiveConfig="{ offsetBottom: 108 }"
+            align-whole="center"
+            table-layout="auto"
+            showOverflowTooltip
+            :loading="loading"
+            :size="size"
+            :data="filteredData"
+            :columns="dynamicColumns"
+            :pagination="{ ...pagination, size }"
+            :header-cell-style="{
+              background: 'var(--el-fill-color-light)',
+              color: 'var(--el-text-color-primary)'
+            }"
+            @selection-change="handleSelectionChange"
+            @page-size-change="handleSizeChange"
+            @page-current-change="handleCurrentChange"
+          >
+            <template #operation="{ row }">
+              <el-button
+                class="reset-margin"
+                link
+                type="primary"
+                :size="size"
+                :icon="useRenderIcon(EditPen)"
+                @click="handleAction('edit', row)"
+              >
+                編輯
+              </el-button>
+              <el-popconfirm
+                :title="`是否確認刪除角色「${row.name}」?`"
+                @confirm="onSearch"
+              >
+                <template #reference>
+                  <el-button
+                    class="reset-margin"
+                    link
+                    type="danger"
+                    :size="size"
+                    :icon="useRenderIcon(DeleteIcon)"
+                  >
+                    刪除
+                  </el-button>
+                </template>
+              </el-popconfirm>
+            </template>
+          </pure-table>
+        </div>
+
+        <!-- Mobile Card View -->
+        <div class="md:hidden">
+          <div v-if="filteredData.length > 0" class="flex flex-col gap-3">
+            <el-card
+              v-for="row in filteredData"
+              :key="row.id"
+              shadow="never"
+              class="mobile-card"
             >
-              編輯
-            </el-button>
-            <el-popconfirm
-              :title="`是否確認刪除角色「${row.name}」?`"
-              @confirm="onSearch"
-            >
-              <template #reference>
-                <el-button
-                  class="reset-margin"
-                  link
-                  type="danger"
-                  :size="size"
-                  :icon="useRenderIcon(DeleteIcon)"
+              <div class="flex justify-between items-start mb-2">
+                <div class="flex items-center gap-2">
+                  <span class="font-bold text-lg text-gray-800">{{
+                    row.name
+                  }}</span>
+                  <el-tag
+                    :type="row.status === 1 ? 'success' : 'danger'"
+                    size="small"
+                  >
+                    {{ row.status === 1 ? "正常" : "停用" }}
+                  </el-tag>
+                </div>
+                <el-dropdown trigger="click">
+                  <el-button link :icon="useRenderIcon(ArrowDown)" />
+                  <template #dropdown>
+                    <el-dropdown-menu>
+                      <el-dropdown-item
+                        :icon="useRenderIcon(EditPen)"
+                        @click="handleAction('edit', row)"
+                        >編輯</el-dropdown-item
+                      >
+                      <el-dropdown-item
+                        divided
+                        class="text-red-500!"
+                        :icon="useRenderIcon(DeleteIcon)"
+                        @click="onSearch"
+                        >刪除角色</el-dropdown-item
+                      >
+                    </el-dropdown-menu>
+                  </template>
+                </el-dropdown>
+              </div>
+              <div class="space-y-1 text-sm text-gray-500">
+                <div class="flex-bc">
+                  <span>角色標識：</span>
+                  <span
+                    class="font-mono text-gray-700 bg-gray-100 px-1 rounded"
+                  >
+                    {{ row.code }}
+                  </span>
+                </div>
+                <div class="flex-bc">
+                  <span>建立日期：</span>
+                  <span>{{ row.createTime }}</span>
+                </div>
+                <div
+                  v-if="row.remark"
+                  class="mt-2 text-xs border-t pt-2 italic"
                 >
-                  刪除
-                </el-button>
-              </template>
-            </el-popconfirm>
-          </template>
-        </pure-table>
+                  {{ row.remark }}
+                </div>
+              </div>
+            </el-card>
+            <el-pagination
+              v-model:current-page="pagination.currentPage"
+              v-model:page-size="pagination.pageSize"
+              :total="pagination.total"
+              layout="prev, pager, next"
+              class="mt-4 flex-cc"
+              @current-change="handleCurrentChange"
+            />
+          </div>
+          <el-empty v-else description="暫無數據" />
+        </div>
       </template>
     </PureTableBar>
   </div>
 </template>
 
 <style scoped lang="scss">
-:deep(.el-form-item) {
-  margin-bottom: 12px;
-}
-
 .main-content {
   margin: 24px 24px 0 !important;
 }
 
 .search-form {
+  /* 行動端適配 */
+  @media (width <= 768px) {
+    padding: 16px !important;
+
+    :deep(.el-form-item) {
+      display: flex;
+      width: 100%;
+      margin-right: 0;
+
+      .el-form-item__content {
+        flex: 1;
+      }
+
+      .el-input,
+      .el-select {
+        width: 100% !important;
+      }
+    }
+  }
+
   :deep(.el-form-item) {
     margin-bottom: 12px;
+  }
+}
+
+.mobile-card {
+  border: 1px solid var(--el-border-color-light);
+  border-radius: 12px;
+
+  :deep(.el-card__body) {
+    padding: 16px;
   }
 }
 </style>
