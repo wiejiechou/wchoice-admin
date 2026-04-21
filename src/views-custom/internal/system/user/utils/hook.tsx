@@ -152,7 +152,8 @@ export function useUser() {
   function handleAction(type: string, row?: any) {
     addDrawer({
       title: type === "add" ? "新增使用者" : "編輯使用者",
-      size: "650px",
+      // 行動端 100%，電腦端 650px
+      size: window.innerWidth < 768 ? "100%" : "650px",
       hideFooter: true,
       contentRenderer: ({ options, index }) =>
         h(UserForm, {
