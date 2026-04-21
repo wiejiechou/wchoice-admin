@@ -69,6 +69,26 @@ export interface ServiceRegion {
   sections: ServiceSection[];
 }
 
+/** 派工人員指派 (Staff Assignment) */
+export interface StaffAssignment {
+  name: string;
+  notes: string;
+}
+
+/** 施工時間軸項目 (Timeline Item) */
+export interface TimelineItem {
+  /** 施作區塊/項目 */
+  name: string;
+  /** 預計時段 (HH:mm ~ HH:mm) */
+  timeWindow: string;
+  /** 預計分鐘數 */
+  duration: number;
+  /** 實際施作時間 */
+  actualTime: string;
+  /** 備註 */
+  notes: string;
+}
+
 /** 服務單完整表單結構 (對齊原 QuotationForm 但更名以符合服務語境) */
 export interface ServiceOrderForm {
   // 客戶資訊
@@ -85,6 +105,15 @@ export interface ServiceOrderForm {
   // 施工資訊
   executionPriority: string;
   executionNotes: string;
+
+  // 派工與工具
+  staffList: StaffAssignment[];
+  defaultEquipment: string;
+
+  // 專業施工
+  timeline: TimelineItem[];
+  estChemicalUsage: string;
+  actualChemicalUsage: string;
 
   // 動態服務項目
   regions: ServiceRegion[];

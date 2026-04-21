@@ -265,7 +265,39 @@ export function useServiceOrderForm(initialData?: Partial<ServiceOrderForm>) {
     executionNotes: initialData?.executionNotes || "",
     salesName: initialData?.salesName || "",
     salesPhone: initialData?.salesPhone || "",
-    expiryDate: initialData?.expiryDate || "",
+    // 計畫施作日：預設為系統日期 + 7 天
+    expiryDate:
+      initialData?.expiryDate ||
+      new Date(Date.now() + 7 * 24 * 60 * 60 * 1000)
+        .toISOString()
+        .split("T")[0],
+    staffList: initialData?.staffList || [{ name: "", notes: "" }],
+    defaultEquipment: initialData?.defaultEquipment || "",
+    timeline: initialData?.timeline || [
+      {
+        name: "出發",
+        timeWindow: "09:00 ~ 09:30",
+        duration: 30,
+        actualTime: "",
+        notes: ""
+      },
+      {
+        name: "主要作業區",
+        timeWindow: "09:30 ~ 11:30",
+        duration: 120,
+        actualTime: "",
+        notes: ""
+      },
+      {
+        name: "結案(收尾/垃圾清運)",
+        timeWindow: "11:30 ~ 12:00",
+        duration: 30,
+        actualTime: "",
+        notes: ""
+      }
+    ],
+    estChemicalUsage: initialData?.estChemicalUsage || "",
+    actualChemicalUsage: initialData?.actualChemicalUsage || "",
     regions: initialData?.regions || JSON.parse(JSON.stringify(MOCK_REGIONS))
   });
 
@@ -309,11 +341,22 @@ export function useServiceOrderForm(initialData?: Partial<ServiceOrderForm>) {
     return Number((totalTimeMin.value / 120).toFixed(1));
   });
 
-  const submitForm = () => {
+  const submitForm = (isDraft = false) => {
+    // 基礎驗證 (草稿也會驗證的基本資料)
     if (!form.clientName || !form.clientAddress) {
       message("請填寫客戶名稱與服務地址", { type: "warning" });
       return null;
     }
+
+    // 正式安排驗證 (Confirm Dispatch)
+    if (!isDraft) {
+      const activeStaff = form.staffList.filter(s => s.name && s.name.trim());
+      if (activeStaff.length === 0) {
+        message("確認派工前，請至少指派一名施工人員", { type: "warning" });
+        return null;
+      }
+    }
+
     return {
       ...form, // Return combined payload
       totalPrice: totalPrice.value,
